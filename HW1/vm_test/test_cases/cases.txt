@@ -1,0 +1,53 @@
+# COP 3402 Systems Software - HW1 autograder test case manifest
+#
+# One test case per line. Fields are separated by a single TAB character.
+#
+#   field 1  case name        also the name of the expected-output file
+#   field 2  expected exit    0        the program must exit with status 0
+#                             nonzero  the program must exit with any status other than 0
+#   field 3  points           what this case is worth; the 28 cases total 100
+#   field 4+ arguments        passed to ./vm in this order
+#
+# If test_cases/inputs/<case name>.stdin exists it is redirected to standard input.
+# Blank lines and lines beginning with # are ignored.
+#
+# Category totals: control flow 35, memory and stack 20, error handling 20,
+# arithmetic and relational 15, trace format and I/O contract 10.
+
+# --- Control flow and procedure linkage (35 points) ---
+c01_jmp_forward	0	4	test_cases/inputs/c01_jmp_forward.txt
+c02_jpc_taken	0	4	test_cases/inputs/c02_jpc_taken.txt
+c03_jpc_not_taken	0	4	test_cases/inputs/c03_jpc_not_taken.txt
+c04_cal_rtn_single	0	6	test_cases/inputs/c04_cal_rtn_single.txt
+c05_cal_nested_levels	0	6	test_cases/inputs/c05_cal_nested_levels.txt
+c06_recursion	0	6	test_cases/inputs/c06_recursion.txt
+c07_static_vs_dynamic_link	0	5	test_cases/inputs/c07_static_vs_dynamic_link.txt
+
+# --- Memory and stack discipline (20 points) ---
+m01_lit_inc	0	5	test_cases/inputs/m01_lit_inc.txt
+m02_lod_sto_local	0	5	test_cases/inputs/m02_lod_sto_local.txt
+m03_lod_sto_nonlocal	0	5	test_cases/inputs/m03_lod_sto_nonlocal.txt
+m04_stack_discipline	0	5	test_cases/inputs/m04_stack_discipline.txt
+
+# --- Arithmetic and relational OPR sub-operations (15 points) ---
+a01_opr_arithmetic	0	7	test_cases/inputs/a01_opr_arithmetic.txt
+a02_opr_relational	0	8	test_cases/inputs/a02_opr_relational.txt
+
+# --- Error handling and graceful exit (20 points) ---
+e01_div_zero	nonzero	2	test_cases/inputs/e01_div_zero.txt
+e02_unknown_opcode	nonzero	2	test_cases/inputs/e02_unknown_opcode.txt
+e03_unknown_opr	nonzero	2	test_cases/inputs/e03_unknown_opr.txt
+e04_unknown_sys	nonzero	2	test_cases/inputs/e04_unknown_sys.txt
+e05_stack_overflow	nonzero	2.5	test_cases/inputs/e05_stack_overflow.txt
+e06_data_address_out_of_range_sto	nonzero	2.5	test_cases/inputs/e06_data_address_out_of_range_sto.txt
+e07_data_address_out_of_range_lod	nonzero	2.5	test_cases/inputs/e07_data_address_out_of_range_lod.txt
+e08_program_too_large	nonzero	2.5	test_cases/inputs/e08_program_too_large.txt
+e09_pc_left_text_segment	nonzero	2	test_cases/inputs/e09_pc_left_text_segment.txt
+
+# --- Trace format and I/O contract (10 points) ---
+t01_sys_read_write_halt	0	3	test_cases/inputs/t01_sys_read_write_halt.txt
+t02_initial_values	0	2	test_cases/inputs/t02_initial_values.txt
+t03_activation_record_separator	0	2	test_cases/inputs/t03_activation_record_separator.txt
+t04_usage_no_arguments	nonzero	1
+t05_usage_extra_arguments	nonzero	1	test_cases/inputs/t02_initial_values.txt	extra
+t06_missing_input_file	nonzero	1	test_cases/inputs/does_not_exist.txt

@@ -1,0 +1,9 @@
+	L	M	PC	BP	SP	stack
+Initial values:		200	999	1000	
+INC	0	3	203	999	997	0    0    0    
+LIT	0	0	206	999	996	0    0    0    0    
+JPC	0	218	218	999	997	0    0    0    
+LIT	0	222	221	999	996	0    0    0    222  
+Output result is: 222
+SYS	0	1	224	999	997	0    0    0    
+SYS	0	3	227	999	997	0    0    0    

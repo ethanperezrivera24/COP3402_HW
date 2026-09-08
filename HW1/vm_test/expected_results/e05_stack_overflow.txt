@@ -1,0 +1,5 @@
+	L	M	PC	BP	SP	stack
+Initial values:		200	999	1000	
+INC	0	3	203	999	997	0    0    0    
+
+Error: stack overflow
