@@ -38,8 +38,11 @@ Due Date: See Webcourses
 #include <stdio.h>
 #include <stdlib.h>
 
-int base();
-void print();
+static int pas[1000];
+int PC = 200, BP = 999, SP = 1000;
+
+int base(void);
+void print(void);
 
 int main(int argc, char *argv[]) {
     if(argc != 2) {
@@ -52,16 +55,29 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "Error: could not open file %s\n", argv[1]);
         return 1;
     }
+    
+    int op, L, M;
+    int instr_c = 0;
+
+    while(fscanf(file, "%d %d %d", &op, &L, &M) == 3) {
+        pas[200 + 3*instr_c] = op;
+        pas[200 + 3*instr_c + 1] = L;
+        pas[200 + 3*instr_c + 2] = M;
+        // printf("OP: %d | L: %d | M: %d\n", op, L, M);
+        // printf("Pas location> OP: %d | L: %d | M: %d\n", (200+3*instr_c), (200 + 3*instr_c + 1), (200 + 3*instr_c + 2));
+
+        instr_c++;
+    }
 
     fclose(file);
 
     return 0;
 }
 
-int base() {
+int base(void) {
     return 0;
 }
 
-void print() {
+void print(void) {
     
 }
