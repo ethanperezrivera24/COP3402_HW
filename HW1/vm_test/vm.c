@@ -43,7 +43,7 @@ static int pas[1000];
 int PC = 200, BP = 999, SP = 1000;
 
 int base(void);
-void print(void);
+void print(const char *name, int L, int M);
 
 int main(int argc, char *argv[]) {
     // Check for file invocation + input file
@@ -77,6 +77,10 @@ int main(int argc, char *argv[]) {
     // Close file, isn't needed anymore
     fclose(file);
 
+    // Print header line and initial register values, once before execution
+    printf("\tL\tM\tPC\tBP\tSP\tstack\n");
+    printf("Initial values:\t\t%d\t%d\t%d\n", PC, BP, SP);
+
     // Fetch-execute cycle
     int op, L, M;
     int exit_status = 0;
@@ -91,7 +95,10 @@ int main(int argc, char *argv[]) {
         switch(op) {
             // LIT
             case 1:
-                printf("LIT\n");
+                // Push M onto the stack
+                SP = SP - 1;
+                pas[SP] = M;
+                print("LIT", L, M);
                 break;
 
             // SYS
@@ -100,7 +107,8 @@ int main(int argc, char *argv[]) {
                 switch(M) {
                     // HALT
                     case 3:
-                        printf("HALT\n");
+                        // HALT is the last instruction traced
+                        print("SYS", L, M);
                         goto finish;
                 }
         }
@@ -115,6 +123,15 @@ int base(void) {
     return 0;
 }
 
-void print(void) {
-    
+// Trace printer: prints one line for the instruction that just executed.
+// Columns are the mnemonic, L, M, then PC, BP and SP after execution,
+// followed by the stack contents from address 999 down to SP.
+void print(const char *name, int L, int M) {
+    printf("%s\t%d\t%d\t%d\t%d\t%d\t", name, L, M, PC, BP, SP);
+
+    // Stack grows downward, so walk from the highest address to the top (SP)
+    for(int addr = 999; addr >= SP; addr--) {
+        printf("%d ", pas[addr]);
+    }
+    printf("\n");
 }
