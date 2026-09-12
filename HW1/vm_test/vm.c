@@ -38,6 +38,7 @@ Due Date: See Webcourses
 #include <stdio.h>
 #include <stdlib.h>
 
+// Initialize globals
 static int pas[1000];
 int PC = 200, BP = 999, SP = 1000;
 
@@ -45,33 +46,69 @@ int base(void);
 void print(void);
 
 int main(int argc, char *argv[]) {
+    // Check for file invocation + input file
     if(argc != 2) {
         fprintf(stderr, "Usage: %s <input file>\n", argv[0]);
         return 1;
     }
 
+    // Check input file opens
     FILE *file = fopen(argv[1], "r");
     if(!file) {
         fprintf(stderr, "Error: could not open file %s\n", argv[1]);
         return 1;
     }
     
-    int op, L, M;
+    // Read file into pas with specific file-loading varaibles
+    int fop, fL, fM;
     int instr_c = 0;
-
-    while(fscanf(file, "%d %d %d", &op, &L, &M) == 3) {
-        pas[200 + 3*instr_c] = op;
-        pas[200 + 3*instr_c + 1] = L;
-        pas[200 + 3*instr_c + 2] = M;
-        // printf("OP: %d | L: %d | M: %d\n", op, L, M);
-        // printf("Pas location> OP: %d | L: %d | M: %d\n", (200+3*instr_c), (200 + 3*instr_c + 1), (200 + 3*instr_c + 2));
+    // Loop while 3 inputs, stops when EOF or misinput
+    while(fscanf(file, "%d %d %d", &fop, &fL, &fM) == 3) {
+        pas[200 + 3*instr_c] = fop;
+        pas[200 + 3*instr_c + 1] = fL;
+        pas[200 + 3*instr_c + 2] = fM;
+        /* Checks file is correctly read into correct pas indexes
+        printf("OP: %d | L: %d | M: %d\n", op, L, M);
+        printf("Pas location> OP: %d | L: %d | M: %d\n", (200+3*instr_c), (200 + 3*instr_c + 1), (200 + 3*instr_c + 2)); */
 
         instr_c++;
     }
 
+    // Close file, isn't needed anymore
     fclose(file);
 
-    return 0;
+    // Fetch-execute cycle
+    int op, L, M;
+    int exit_status = 0;
+    while(1) {
+        // Read current instruction and parse, increment PC counter
+        op = pas[PC];
+        L = pas[PC + 1];
+        M = pas[PC + 2];
+        PC += 3;
+
+        // Depending on op, decide what to do
+        switch(op) {
+            // LIT
+            case 1:
+                printf("LIT\n");
+                break;
+
+            // SYS
+            case 9:
+                // SYS has 3 dif func based on M
+                switch(M) {
+                    // HALT
+                    case 3:
+                        printf("HALT\n");
+                        goto finish;
+                }
+        }
+    }
+
+    // Finish label to prevent scattered return statements
+    finish: 
+        return exit_status;
 }
 
 int base(void) {
