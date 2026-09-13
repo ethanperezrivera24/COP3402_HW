@@ -42,7 +42,7 @@ Due Date: See Webcourses
 static int pas[1000];
 int PC = 200, BP = 999, SP = 1000;
 
-int base(void);
+int base(int bp, int L);
 void print(const char *name, int L, int M);
 
 int main(int argc, char *argv[]) {
@@ -101,10 +101,155 @@ int main(int argc, char *argv[]) {
                 print("LIT", L, M);
                 break;
 
+            // OPR
+            case 2:
+                int a, b;
+                // Sub-ops based on M
+                switch(M) {
+                  // RTN
+                  case 0:
+                      break;
+
+                  // For ADD, SUB, MUL, & DIV, pop stack into b, adjust SP, pop stack into a, overwrite a's location with result & print tracer
+                  // ADD
+                  case 1:
+                      b = pas[SP];
+                      SP += 1;
+                      a = pas[SP];
+                      pas[SP] = a + b;
+                      print("ADD", L, M);
+                      break;
+
+                  // SUB
+                  case 2:
+                      b = pas[SP];
+                      SP += 1;
+                      a = pas[SP];
+                      pas[SP] = a - b;
+                      print("SUB", L, M);
+                      break;
+
+                  // MUL
+                  case 3:
+                      b = pas[SP];
+                      SP += 1;
+                      a = pas[SP];
+                      pas[SP] = a * b;
+                      print("MUL", L, M);
+                      break;
+
+                  // DIV
+                  case 4:
+                      b = pas[SP]; // Needs error check for 0
+                      SP += 1;
+                      a = pas[SP];
+                      pas[SP] = a / b;
+                      print("DIV", L, M);
+                      break;
+
+                  // For conditionals, same format but switch operator for the conditional statement
+                  // EQL
+                  case 5:
+                      b = pas[SP];
+                      SP += 1;
+                      a = pas[SP];
+                      pas[SP] = (a == b);
+                      print("EQL", L, M);
+                      break;
+
+                  // NEQ
+                  case 6:
+                      b = pas[SP];
+                      SP += 1;
+                      a = pas[SP];
+                      pas[SP] = (a != b);
+                      print("NEQ", L, M);
+                      break;
+
+                  // LSS
+                  case 7:
+                      b = pas[SP];
+                      SP += 1;
+                      a = pas[SP];
+                      pas[SP] = (a < b);
+                      print("LSS", L, M);
+                      break;
+
+                  // LEQ
+                  case 8:
+                      b = pas[SP];
+                      SP += 1;
+                      a = pas[SP];
+                      pas[SP] = (a <= b);
+                      print("LEQ", L, M);
+                      break;
+
+                  // GTR
+                  case 9:
+                      b = pas[SP];
+                      SP += 1;
+                      a = pas[SP];
+                      pas[SP] = (a > b);
+                      print("GTR", L, M);
+                      break;
+
+                  // GEQ
+                  case 10:
+                      b = pas[SP];
+                      SP += 1;
+                      a = pas[SP];
+                      pas[SP] = (a >= b);
+                      print("GEQ", L, M);
+                      break;
+                }
+                break;
+
+            // LOD & STO wrapped in curly braces to not mix up addr variable
+            // LOD
+            // Get address of target activation record w/ base(), move SP and load into that slot
+            case 3: {
+                int addr = base(BP, L) - M;
+                SP = SP - 1;
+                pas[SP] = pas[addr];
+                print("LOD", L, M);
+                break;
+            }
+
+            // STO
+            // Get address of target activation record w/ base(), store into that slot and move SP
+            case 4: {
+                int addr = base(BP, L) - M;
+                pas[addr] = pas[SP];
+                SP = SP + 1;
+                print("STO", L, M);
+                break;
+            }
+
             // SYS
             case 9:
                 // SYS has 3 dif func based on M
                 switch(M) {
+                    // WRITE (pops stack and prints)
+                    case 1: {
+                        int val = pas[SP];
+                        SP = SP + 1;
+                        printf("Output result is: %d\n", val);
+                        print("SYS", L, M);
+                        break;
+                    }
+
+                    // READ (prints prompt to get int and pushes on stack)
+                    case 2: {
+                        int val;
+                        printf("Please Enter an Integer: ");
+                        (void)scanf("%d", &val); // void to prevent warning since scanf returns an integer like fscanf does
+                        printf("%d\n", val);
+                        SP = SP - 1;
+                        pas[SP] = val;
+                        print("SYS", L, M);
+                        break;
+        }
+
                     // HALT
                     case 3:
                         // HALT is the last instruction traced
@@ -119,8 +264,14 @@ int main(int argc, char *argv[]) {
         return exit_status;
 }
 
-int base(void) {
-    return 0;
+int base(int bp, int L) {
+    int arb = bp;
+    while(L > 0) {
+        arb = pas[arb];
+        L--;
+    }
+
+    return arb;
 }
 
 // Trace printer: prints one line for the instruction that just executed.
