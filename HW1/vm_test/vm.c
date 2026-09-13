@@ -107,7 +107,12 @@ int main(int argc, char *argv[]) {
                 // Sub-ops based on M
                 switch(M) {
                   // RTN
+                  // Discard current activation record, restore caller's BP (dynamic link) and PC (return address)
                   case 0:
+                      SP = BP + 1;
+                      BP = pas[SP - 2];
+                      PC = pas[SP - 3];
+                      print("RTN", L, M);
                       break;
 
                   // For ADD, SUB, MUL, & DIV, pop stack into b, adjust SP, pop stack into a, overwrite a's location with result & print tracer
@@ -224,6 +229,42 @@ int main(int argc, char *argv[]) {
                 print("STO", L, M);
                 break;
             }
+
+            // CAL
+            // Build activation record below the stack top: static link, dynamic link, return address
+            // SP is not moved here; the callee's INC allocates the space
+            case 5:
+                pas[SP - 1] = base(BP, L);
+                pas[SP - 2] = BP;
+                pas[SP - 3] = PC;
+                BP = SP - 1;
+                PC = M;
+                print("CAL", L, M);
+                break;
+
+            // INC
+            // Allocate M words on the stack
+            case 6:
+                SP = SP - M;
+                print("INC", L, M);
+                break;
+
+            // JMP
+            // Jump to absolute address M
+            case 7:
+                PC = M;
+                print("JMP", L, M);
+                break;
+
+            // JPC
+            // Pop the top of the stack, jump to M only if the popped value was 0 (pop always happens)
+            case 8:
+                if(pas[SP] == 0) {
+                    PC = M;
+                }
+                SP = SP + 1;
+                print("JPC", L, M);
+                break;
 
             // SYS
             case 9:
