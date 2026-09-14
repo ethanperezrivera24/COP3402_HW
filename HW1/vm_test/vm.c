@@ -397,8 +397,31 @@ int base(int bp, int L) {
 void print(const char *name, int L, int M) {
     printf("%s\t%d\t%d\t%d\t%d\t%d\t", name, L, M, PC, BP, SP);
 
+    // Walk dynamic link chain from current BP to every AR's base address from innermost to 999
+    int bases[50];
+    int num_bases = 0;
+    int current = BP;
+    while (1) {
+        bases[num_bases] = current;
+        num_bases++;
+        if (current == 999) {
+            break;
+        }
+        current = pas[current - 1];
+    }
+
     // Stack grows downward, so walk from the highest address to the top (SP)
-    for(int addr = 999; addr >= SP; addr--) {
+    for (int addr = 999; addr >= SP; addr--) {
+        // If this address is a record base, other than the outermost (999),
+        // print a separator before the value
+        if (addr != 999) {
+            for (int i = 0; i < num_bases; i++) {
+                if (bases[i] == addr) {
+                    printf("| ");
+                    break;
+                }
+            }
+        }
         printf("%d ", pas[addr]);
     }
     printf("\n");
