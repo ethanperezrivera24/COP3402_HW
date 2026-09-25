@@ -1,0 +1,2 @@
+var x;
+/* a star, a space and a slash * /

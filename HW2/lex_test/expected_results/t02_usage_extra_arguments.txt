@@ -1,0 +1,1 @@
+Usage: ./lex <input file>

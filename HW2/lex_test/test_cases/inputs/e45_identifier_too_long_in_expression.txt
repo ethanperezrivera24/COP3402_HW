@@ -1,0 +1,2 @@
+var short;
+begin short = averylongidentifier + 1 end.

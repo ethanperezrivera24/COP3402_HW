@@ -1,0 +1,2 @@
+var x, y;
+begin x = 1/**/2; y = 3/* and here */4 end.

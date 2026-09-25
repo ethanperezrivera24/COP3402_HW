@@ -1,0 +1,5 @@
+var x, y;
+begin
+  if x <
+= y then write x fi
+end.

@@ -1,0 +1,220 @@
+# COP 3402 Systems Software - HW2 autograder test case manifest
+#
+# One test case per line. Fields are separated by a single TAB character.
+#
+#   field 1  case name        also the name of the expected-output files
+#   field 2  expected exit    0        the program must exit with status 0
+#                             nonzero  the program must exit with any status other than 0
+#   field 3  stdout points    what the captured standard output is worth
+#   field 4  file points      what tokens.txt and nametable.txt are worth
+#   field 5+ arguments        passed to ./lex in this order
+#
+# The stdout column totals 90 and the file column totals 10.
+# Blank lines and lines beginning with # are ignored.
+#
+# Every case inside a category is worth the same for its standard output. Ten
+# cases, one in each category but t, also carry one point for the two written
+# files; those are the only non-zero entries in the file column.
+#
+# Category totals, standard output: lexical errors 24, operators and longest
+# match 18, comments 10, scanning basics 9, reserved words against
+# identifiers 9, whitespace and layout 8, name table 7, argument and file
+# contract 5.
+
+# --- s: scanning basics (9 points, 0.75 each) ---
+s01_minimal	0	0.75	0	test_cases/inputs/s01_minimal.txt
+s02_every_token	0	0.75	1	test_cases/inputs/s02_every_token.txt
+s03_all_reserved_words	0	0.75	0	test_cases/inputs/s03_all_reserved_words.txt
+s04_all_symbols	0	0.75	0	test_cases/inputs/s04_all_symbols.txt
+s05_one_token	0	0.75	0	test_cases/inputs/s05_one_token.txt
+s06_spine_program	0	0.75	0	test_cases/inputs/s06_spine_program.txt
+s07_large_program	0	0.75	1	test_cases/inputs/s07_large_program.txt
+s08_single_identifier	0	0.75	0	test_cases/inputs/s08_single_identifier.txt
+s09_single_number	0	0.75	0	test_cases/inputs/s09_single_number.txt
+s10_declarations_only	0	0.75	0	test_cases/inputs/s10_declarations_only.txt
+s11_nested_blocks	0	0.75	0	test_cases/inputs/s11_nested_blocks.txt
+s12_procedure_program	0	0.75	0	test_cases/inputs/s12_procedure_program.txt
+
+# --- p: whitespace and layout (8 points, 0.5 each) ---
+p01_tabs_and_blank_lines	0	0.5	0	test_cases/inputs/p01_tabs_and_blank_lines.txt
+p02_no_whitespace	0	0.5	0	test_cases/inputs/p02_no_whitespace.txt
+p03_tabs_only_separators	0	0.5	0	test_cases/inputs/p03_tabs_only_separators.txt
+p04_leading_blank_lines	0	0.5	0	test_cases/inputs/p04_leading_blank_lines.txt
+p05_crlf_line_endings	0	0.5	0	test_cases/inputs/p05_crlf_line_endings.txt
+p06_no_trailing_newline	0	0.5	0	test_cases/inputs/p06_no_trailing_newline.txt
+p07_stray_carriage_return	0	0.5	1	test_cases/inputs/p07_stray_carriage_return.txt
+p08_cr_only_line_endings	0	0.5	0	test_cases/inputs/p08_cr_only_line_endings.txt
+p09_mixed_line_endings	0	0.5	0	test_cases/inputs/p09_mixed_line_endings.txt
+p10_trailing_whitespace	0	0.5	0	test_cases/inputs/p10_trailing_whitespace.txt
+p11_wide_gaps_between_tokens	0	0.5	0	test_cases/inputs/p11_wide_gaps_between_tokens.txt
+p12_blank_lines_inside_declarations	0	0.5	0	test_cases/inputs/p12_blank_lines_inside_declarations.txt
+p13_leading_carriage_return	0	0.5	0	test_cases/inputs/p13_leading_carriage_return.txt
+p14_trailing_carriage_return	0	0.5	0	test_cases/inputs/p14_trailing_carriage_return.txt
+p15_very_long_line	0	0.5	0	test_cases/inputs/p15_very_long_line.txt
+p16_many_blank_lines_between_tokens	0	0.5	0	test_cases/inputs/p16_many_blank_lines_between_tokens.txt
+
+# --- o: operators and longest match (18 points, 0.6 each) ---
+o01_equality	0	0.6	0	test_cases/inputs/o01_equality.txt
+o02_assignment	0	0.6	0	test_cases/inputs/o02_assignment.txt
+o03_not_equal	0	0.6	0	test_cases/inputs/o03_not_equal.txt
+o04_relational_all	0	0.6	0	test_cases/inputs/o04_relational_all.txt
+o05_angle_pair_is_two_tokens	0	0.6	1	test_cases/inputs/o05_angle_pair_is_two_tokens.txt
+o06_triple_equals	0	0.6	0	test_cases/inputs/o06_triple_equals.txt
+o07_bang_double_equals	0	0.6	0	test_cases/inputs/o07_bang_double_equals.txt
+o08_colon_double_equals	0	0.6	0	test_cases/inputs/o08_colon_double_equals.txt
+o09_operators_no_spaces	0	0.6	1	test_cases/inputs/o09_operators_no_spaces.txt
+o10_const_init	0	0.6	0	test_cases/inputs/o10_const_init.txt
+o11_reversed_relational	0	0.6	0	test_cases/inputs/o11_reversed_relational.txt
+o12_mult_then_slash	0	0.6	0	test_cases/inputs/o12_mult_then_slash.txt
+o13_space_breaks_the_pair	0	0.6	0	test_cases/inputs/o13_space_breaks_the_pair.txt
+o14_newline_breaks_the_pair	0	0.6	0	test_cases/inputs/o14_newline_breaks_the_pair.txt
+o15_every_pair_adjacent	0	0.6	0	test_cases/inputs/o15_every_pair_adjacent.txt
+o16_equals_run_of_five	0	0.6	0	test_cases/inputs/o16_equals_run_of_five.txt
+o17_less_at_end_of_file	0	0.6	0	test_cases/inputs/o17_less_at_end_of_file.txt
+o18_slash_at_end_of_file	0	0.6	0	test_cases/inputs/o18_slash_at_end_of_file.txt
+o19_star_at_end_of_file	0	0.6	0	test_cases/inputs/o19_star_at_end_of_file.txt
+o20_plus_then_equals	0	0.6	0	test_cases/inputs/o20_plus_then_equals.txt
+o21_minus_then_equals	0	0.6	0	test_cases/inputs/o21_minus_then_equals.txt
+o22_greater_then_less	0	0.6	0	test_cases/inputs/o22_greater_then_less.txt
+o23_tab_breaks_the_pair	0	0.6	0	test_cases/inputs/o23_tab_breaks_the_pair.txt
+o24_comment_breaks_the_pair	0	0.6	0	test_cases/inputs/o24_comment_breaks_the_pair.txt
+o25_equals_at_end_of_file	0	0.6	0	test_cases/inputs/o25_equals_at_end_of_file.txt
+o26_greater_at_end_of_file	0	0.6	0	test_cases/inputs/o26_greater_at_end_of_file.txt
+o27_number_then_period	0	0.6	0	test_cases/inputs/o27_number_then_period.txt
+o28_period_run	0	0.6	0	test_cases/inputs/o28_period_run.txt
+o29_minus_run	0	0.6	0	test_cases/inputs/o29_minus_run.txt
+o30_punctuation_run	0	0.6	0	test_cases/inputs/o30_punctuation_run.txt
+
+# --- w: reserved words against identifiers (9 points, 0.5 each) ---
+w01_od_odd_prefix	0	0.5	1	test_cases/inputs/w01_od_odd_prefix.txt
+w02_fi_prefix	0	0.5	0	test_cases/inputs/w02_fi_prefix.txt
+w03_elihw_prefix	0	0.5	0	test_cases/inputs/w03_elihw_prefix.txt
+w04_case_sensitive	0	0.5	0	test_cases/inputs/w04_case_sensitive.txt
+w05_keyword_inside_identifier	0	0.5	0	test_cases/inputs/w05_keyword_inside_identifier.txt
+w06_identifier_at_limit	0	0.5	0	test_cases/inputs/w06_identifier_at_limit.txt
+w07_identifiers_with_digits	0	0.5	0	test_cases/inputs/w07_identifiers_with_digits.txt
+w08_number_at_limit	0	0.5	0	test_cases/inputs/w08_number_at_limit.txt
+w09_keywords_against_punctuation	0	0.5	0	test_cases/inputs/w09_keywords_against_punctuation.txt
+w10_keyword_with_trailing_digit	0	0.5	0	test_cases/inputs/w10_keyword_with_trailing_digit.txt
+w11_do_od_odd_run_together	0	0.5	0	test_cases/inputs/w11_do_od_odd_run_together.txt
+w12_procedure_prefixes	0	0.5	0	test_cases/inputs/w12_procedure_prefixes.txt
+w13_keywords_uppercase	0	0.5	0	test_cases/inputs/w13_keywords_uppercase.txt
+w14_keyword_plus_one_letter	0	0.5	0	test_cases/inputs/w14_keyword_plus_one_letter.txt
+w15_every_keyword_adjacent_pairs	0	0.5	0	test_cases/inputs/w15_every_keyword_adjacent_pairs.txt
+w16_keyword_prefix_at_limit	0	0.5	0	test_cases/inputs/w16_keyword_prefix_at_limit.txt
+w17_single_letter_identifiers	0	0.5	0	test_cases/inputs/w17_single_letter_identifiers.txt
+w18_twelve_characters_ending_in_digits	0	0.5	0	test_cases/inputs/w18_twelve_characters_ending_in_digits.txt
+
+# --- c: comments (10 points, 0.4 each) ---
+c01_single_line	0	0.4	0	test_cases/inputs/c01_single_line.txt
+c02_multi_line	0	0.4	0	test_cases/inputs/c02_multi_line.txt
+c03_tokens_inside_ignored	0	0.4	1	test_cases/inputs/c03_tokens_inside_ignored.txt
+c04_comment_then_division	0	0.4	0	test_cases/inputs/c04_comment_then_division.txt
+c05_comment_first	0	0.4	0	test_cases/inputs/c05_comment_first.txt
+c06_comment_last	0	0.4	0	test_cases/inputs/c06_comment_last.txt
+c07_comment_no_whitespace	0	0.4	0	test_cases/inputs/c07_comment_no_whitespace.txt
+c08_empty_comment	0	0.4	0	test_cases/inputs/c08_empty_comment.txt
+c09_delimiter_chars_inside	0	0.4	0	test_cases/inputs/c09_delimiter_chars_inside.txt
+c10_non_ascii_inside_comment	0	0.4	0	test_cases/inputs/c10_non_ascii_inside_comment.txt
+c11_many_comments_in_a_row	0	0.4	0	test_cases/inputs/c11_many_comments_in_a_row.txt
+c12_crlf_inside_comment	0	0.4	0	test_cases/inputs/c12_crlf_inside_comment.txt
+c13_comment_spanning_many_lines	0	0.4	0	test_cases/inputs/c13_comment_spanning_many_lines.txt
+c14_comment_between_declaration_parts	0	0.4	0	test_cases/inputs/c14_comment_between_declaration_parts.txt
+c15_comment_of_stars_only	0	0.4	0	test_cases/inputs/c15_comment_of_stars_only.txt
+c16_error_characters_inside_comment	0	0.4	0	test_cases/inputs/c16_error_characters_inside_comment.txt
+c17_slash_right_after_opener	0	0.4	0	test_cases/inputs/c17_slash_right_after_opener.txt
+c18_star_right_before_close	0	0.4	0	test_cases/inputs/c18_star_right_before_close.txt
+c19_star_run_before_close	0	0.4	0	test_cases/inputs/c19_star_run_before_close.txt
+c20_slash_space_star_is_not_an_opener	0	0.4	0	test_cases/inputs/c20_slash_space_star_is_not_an_opener.txt
+c21_star_space_slash_does_not_close	0	0.4	0	test_cases/inputs/c21_star_space_slash_does_not_close.txt
+c22_close_split_across_lines	0	0.4	0	test_cases/inputs/c22_close_split_across_lines.txt
+c23_opener_split_across_lines	0	0.4	0	test_cases/inputs/c23_opener_split_across_lines.txt
+c24_comment_between_two_identifiers	0	0.4	0	test_cases/inputs/c24_comment_between_two_identifiers.txt
+c25_comment_between_two_numbers	0	0.4	0	test_cases/inputs/c25_comment_between_two_numbers.txt
+
+# --- n: name table (7 points, 0.5 each) ---
+n01_index_reuse	0	0.5	1	test_cases/inputs/n01_index_reuse.txt
+n02_many_identifiers	0	0.5	0	test_cases/inputs/n02_many_identifiers.txt
+n03_first_occurrence_position	0	0.5	1	test_cases/inputs/n03_first_occurrence_position.txt
+n04_no_identifiers	0	0.5	0	test_cases/inputs/n04_no_identifiers.txt
+n05_mixed_declarations	0	0.5	0	test_cases/inputs/n05_mixed_declarations.txt
+n06_first_seen_in_expression	0	0.5	0	test_cases/inputs/n06_first_seen_in_expression.txt
+n07_case_variants_are_separate	0	0.5	0	test_cases/inputs/n07_case_variants_are_separate.txt
+n08_identifier_at_limit_stored	0	0.5	0	test_cases/inputs/n08_identifier_at_limit_stored.txt
+n09_seventy_identifiers	0	0.5	0	test_cases/inputs/n09_seventy_identifiers.txt
+n10_same_name_on_many_lines	0	0.5	0	test_cases/inputs/n10_same_name_on_many_lines.txt
+n11_position_after_comment	0	0.5	0	test_cases/inputs/n11_position_after_comment.txt
+n12_position_after_blank_lines	0	0.5	0	test_cases/inputs/n12_position_after_blank_lines.txt
+n13_first_seen_at_high_column	0	0.5	0	test_cases/inputs/n13_first_seen_at_high_column.txt
+n14_hundred_identifiers	0	0.5	0	test_cases/inputs/n14_hundred_identifiers.txt
+
+# --- e: lexical errors (24 points, 0.4 each) ---
+e01_invalid_character	nonzero	0.4	0	test_cases/inputs/e01_invalid_character.txt
+e02_identifier_one_over	nonzero	0.4	0	test_cases/inputs/e02_identifier_one_over.txt
+e03_number_one_over	nonzero	0.4	0	test_cases/inputs/e03_number_one_over.txt
+e04_colon_alone	nonzero	0.4	0	test_cases/inputs/e04_colon_alone.txt
+e05_bang_alone	nonzero	0.4	0	test_cases/inputs/e05_bang_alone.txt
+e06_number_then_letter	nonzero	0.4	0	test_cases/inputs/e06_number_then_letter.txt
+e07_unterminated_comment	nonzero	0.4	0	test_cases/inputs/e07_unterminated_comment.txt
+e08_close_without_open	nonzero	0.4	0	test_cases/inputs/e08_close_without_open.txt
+e09_nested_comment_open	nonzero	0.4	0	test_cases/inputs/e09_nested_comment_open.txt
+e10_non_ascii_byte	nonzero	0.4	0	test_cases/inputs/e10_non_ascii_byte.txt
+e11_empty_file	nonzero	0.4	0	test_cases/inputs/e11_empty_file.txt
+e12_whitespace_only	nonzero	0.4	0	test_cases/inputs/e12_whitespace_only.txt
+e13_comment_only	nonzero	0.4	0	test_cases/inputs/e13_comment_only.txt
+e14_length_and_letter	nonzero	0.4	0	test_cases/inputs/e14_length_and_letter.txt
+e15_valid_prefix_then_error	nonzero	0.4	1	test_cases/inputs/e15_valid_prefix_then_error.txt
+e16_underscore	nonzero	0.4	0	test_cases/inputs/e16_underscore.txt
+e17_backtick	nonzero	0.4	0	test_cases/inputs/e17_backtick.txt
+e18_control_character	nonzero	0.4	0	test_cases/inputs/e18_control_character.txt
+e19_identifier_far_over	nonzero	0.4	0	test_cases/inputs/e19_identifier_far_over.txt
+e20_number_far_over	nonzero	0.4	0	test_cases/inputs/e20_number_far_over.txt
+e21_dollar_sign	nonzero	0.4	0	test_cases/inputs/e21_dollar_sign.txt
+e22_number_then_keyword	nonzero	0.4	0	test_cases/inputs/e22_number_then_keyword.txt
+e23_tabs_and_newlines_only	nonzero	0.4	0	test_cases/inputs/e23_tabs_and_newlines_only.txt
+e24_carriage_returns_only	nonzero	0.4	0	test_cases/inputs/e24_carriage_returns_only.txt
+e25_number_then_underscore	nonzero	0.4	0	test_cases/inputs/e25_number_then_underscore.txt
+e26_leading_zeros_too_long	nonzero	0.4	0	test_cases/inputs/e26_leading_zeros_too_long.txt
+e27_bang_at_end_of_file	nonzero	0.4	0	test_cases/inputs/e27_bang_at_end_of_file.txt
+e28_colon_at_end_of_file	nonzero	0.4	0	test_cases/inputs/e28_colon_at_end_of_file.txt
+e29_comment_opener_at_end_of_file	nonzero	0.4	0	test_cases/inputs/e29_comment_opener_at_end_of_file.txt
+e30_error_on_first_character	nonzero	0.4	0	test_cases/inputs/e30_error_on_first_character.txt
+e31_error_on_last_character	nonzero	0.4	0	test_cases/inputs/e31_error_on_last_character.txt
+e32_apostrophe	nonzero	0.4	0	test_cases/inputs/e32_apostrophe.txt
+e33_square_bracket	nonzero	0.4	0	test_cases/inputs/e33_square_bracket.txt
+e34_brace	nonzero	0.4	0	test_cases/inputs/e34_brace.txt
+e35_backslash	nonzero	0.4	0	test_cases/inputs/e35_backslash.txt
+e36_nul_byte	nonzero	0.4	0	test_cases/inputs/e36_nul_byte.txt
+e37_delete_byte	nonzero	0.4	0	test_cases/inputs/e37_delete_byte.txt
+e38_unit_separator_byte	nonzero	0.4	0	test_cases/inputs/e38_unit_separator_byte.txt
+e39_high_byte_alone	nonzero	0.4	0	test_cases/inputs/e39_high_byte_alone.txt
+e40_only_the_first_error	nonzero	0.4	0	test_cases/inputs/e40_only_the_first_error.txt
+e41_colon_space_equals	nonzero	0.4	0	test_cases/inputs/e41_colon_space_equals.txt
+e42_bang_space_equals	nonzero	0.4	0	test_cases/inputs/e42_bang_space_equals.txt
+e43_nested_opener_after_valid_comment	nonzero	0.4	0	test_cases/inputs/e43_nested_opener_after_valid_comment.txt
+e44_close_without_open_after_comment	nonzero	0.4	0	test_cases/inputs/e44_close_without_open_after_comment.txt
+e45_identifier_too_long_in_expression	nonzero	0.4	0	test_cases/inputs/e45_identifier_too_long_in_expression.txt
+e46_error_after_multiline_comment	nonzero	0.4	0	test_cases/inputs/e46_error_after_multiline_comment.txt
+e47_error_on_last_line_no_newline	nonzero	0.4	0	test_cases/inputs/e47_error_on_last_line_no_newline.txt
+e48_question_mark	nonzero	0.4	0	test_cases/inputs/e48_question_mark.txt
+e49_star_at_end_inside_comment	nonzero	0.4	0	test_cases/inputs/e49_star_at_end_inside_comment.txt
+e50_slash_at_end_inside_comment	nonzero	0.4	0	test_cases/inputs/e50_slash_at_end_inside_comment.txt
+e51_star_space_slash_then_end	nonzero	0.4	0	test_cases/inputs/e51_star_space_slash_then_end.txt
+e52_opener_then_slash_only	nonzero	0.4	0	test_cases/inputs/e52_opener_then_slash_only.txt
+e53_close_split_then_end	nonzero	0.4	0	test_cases/inputs/e53_close_split_then_end.txt
+e54_close_without_open_at_start	nonzero	0.4	0	test_cases/inputs/e54_close_without_open_at_start.txt
+e55_close_then_opener	nonzero	0.4	0	test_cases/inputs/e55_close_then_opener.txt
+e56_comment_closed_twice	nonzero	0.4	0	test_cases/inputs/e56_comment_closed_twice.txt
+e57_bang_then_newline	nonzero	0.4	0	test_cases/inputs/e57_bang_then_newline.txt
+e58_colon_then_newline	nonzero	0.4	0	test_cases/inputs/e58_colon_then_newline.txt
+e59_bang_then_bang	nonzero	0.4	0	test_cases/inputs/e59_bang_then_bang.txt
+e60_colon_then_colon	nonzero	0.4	0	test_cases/inputs/e60_colon_then_colon.txt
+
+# --- t: argument and file contract (5 points, 1 each) ---
+# These do not scan a program. They check that the program refuses a wrong
+# argument count and an unopenable file before it prints anything.
+t01_usage_no_arguments	nonzero	1	0
+t02_usage_extra_arguments	nonzero	1	0	test_cases/inputs/s01_minimal.txt	extra
+t03_missing_input_file	nonzero	1	0	test_cases/inputs/does_not_exist.txt
+t04_three_arguments	nonzero	1	0	test_cases/inputs/s01_minimal.txt	extra	more
+t05_missing_directory_path	nonzero	1	0	test_cases/inputs/no_such_dir/x.txt

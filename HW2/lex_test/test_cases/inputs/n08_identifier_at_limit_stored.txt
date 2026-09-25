@@ -1,0 +1,2 @@
+var abcdefghijkl, mnopqrstuvwx;
+begin abcdefghijkl = mnopqrstuvwx end.

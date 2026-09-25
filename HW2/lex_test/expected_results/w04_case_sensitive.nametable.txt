@@ -1,0 +1,7 @@
+0 BEGIN 1 1
+1 End 1 7
+2 Fi 1 11
+3 IF 1 14
+4 Odd 1 17
+5 WHILE 1 21
+6 Elihw 1 27

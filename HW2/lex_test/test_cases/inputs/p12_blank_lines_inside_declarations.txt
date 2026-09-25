@@ -1,0 +1,18 @@
+var
+
+  alpha,
+
+
+  beta,
+
+    gamma;
+
+begin
+
+  alpha = 1;
+
+  beta = alpha;
+
+  gamma = beta
+
+end.

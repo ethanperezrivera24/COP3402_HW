@@ -1,0 +1,6 @@
+0 bbegin 1 1
+1 beginb 1 8
+2 vary 1 15
+3 varx 1 20
+4 constant 1 25
+5 procedures 1 34

@@ -1,0 +1,24 @@
+Source Program:
+
+od odd odds do dod oddly
+
+Lexeme Table:
+
+lexeme         token
+od             28
+odd            29
+odds           1
+do             27
+dod            1
+oddly          1
+
+Name Table:
+
+index  name           line   column
+0      odds           1      8
+1      dod            1      16
+2      oddly          1      20
+
+Token List:
+
+28 29 1 0 27 1 1 1 2 

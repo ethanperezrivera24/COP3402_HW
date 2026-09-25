@@ -1,0 +1,27 @@
+Source Program:
+
+var a;
+begin a = b[1] end.
+
+Lexeme Table:
+
+lexeme         token
+var            32
+a              1
+;              16
+begin          20
+a              1
+=              18
+b              1
+
+Name Table:
+
+index  name           line   column
+0      a              1      5
+1      b              2      11
+
+Token List:
+
+32 1 0 16 20 1 0 18 1 1 
+
+Error 1 at line 2, column 12: invalid character '['

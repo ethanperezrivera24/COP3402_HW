@@ -1,0 +1,6 @@
+var x, y;
+begin
+  x = 1 # 2;
+  y = 3 @ 4;
+  x = y $ 5
+end.

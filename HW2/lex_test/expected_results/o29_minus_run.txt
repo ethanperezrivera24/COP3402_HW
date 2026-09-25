@@ -1,0 +1,32 @@
+Source Program:
+
+var a, b;
+begin a = a--b end.
+
+Lexeme Table:
+
+lexeme         token
+var            32
+a              1
+,              15
+b              1
+;              16
+begin          20
+a              1
+=              18
+a              1
+-              4
+-              4
+b              1
+end            21
+.              17
+
+Name Table:
+
+index  name           line   column
+0      a              1      5
+1      b              1      8
+
+Token List:
+
+32 1 0 15 1 1 16 20 1 0 18 1 0 4 4 1 1 21 17 

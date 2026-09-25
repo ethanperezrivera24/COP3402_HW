@@ -1,0 +1,17 @@
+Source Program:
+
+x
+
+Lexeme Table:
+
+lexeme         token
+x              1
+
+Name Table:
+
+index  name           line   column
+0      x              1      1
+
+Token List:
+
+1 0 

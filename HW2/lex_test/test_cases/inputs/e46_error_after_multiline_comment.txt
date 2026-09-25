@@ -1,0 +1,5 @@
+var x;
+/* one
+two
+three */
+begin x = 1 ? 2 end.

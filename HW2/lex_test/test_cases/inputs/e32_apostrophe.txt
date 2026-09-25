@@ -1,0 +1,2 @@
+var ch;
+begin ch = '5' end.

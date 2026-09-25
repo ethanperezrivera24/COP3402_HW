@@ -1,0 +1,16 @@
+var n, r;
+begin
+  n = 5;
+  r = 1;
+  while n > 0 then
+    begin
+      r = r * n;
+      n = n - 1
+    end
+  elihw;
+  if r > 100 then
+    write r
+  else
+    write n
+  fi
+end.

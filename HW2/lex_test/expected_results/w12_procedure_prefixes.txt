@@ -1,0 +1,24 @@
+Source Program:
+
+proc procedur procedure procedures procedurea
+
+Lexeme Table:
+
+lexeme         token
+proc           1
+procedur       1
+procedure      33
+procedures     1
+procedurea     1
+
+Name Table:
+
+index  name           line   column
+0      proc           1      1
+1      procedur       1      6
+2      procedures     1      25
+3      procedurea     1      36
+
+Token List:
+
+1 0 1 1 33 1 2 1 3 

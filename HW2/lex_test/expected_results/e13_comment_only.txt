@@ -1,0 +1,17 @@
+Source Program:
+
+/* only a comment */
+
+Lexeme Table:
+
+lexeme         token
+
+Name Table:
+
+index  name           line   column
+
+Token List:
+
+
+
+Error 11 at line 1, column 1: no tokens in the source program

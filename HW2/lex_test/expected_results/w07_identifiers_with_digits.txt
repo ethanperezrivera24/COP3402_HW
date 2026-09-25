@@ -1,0 +1,23 @@
+Source Program:
+
+cop3402 x2y3 a1 z9z9z9
+
+Lexeme Table:
+
+lexeme         token
+cop3402        1
+x2y3           1
+a1             1
+z9z9z9         1
+
+Name Table:
+
+index  name           line   column
+0      cop3402        1      1
+1      x2y3           1      9
+2      a1             1      14
+3      z9z9z9         1      17
+
+Token List:
+
+1 0 1 1 1 2 1 3 

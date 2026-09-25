@@ -1,0 +1,25 @@
+Source Program:
+
+var ch;
+begin ch = '5' end.
+
+Lexeme Table:
+
+lexeme         token
+var            32
+ch             1
+;              16
+begin          20
+ch             1
+=              18
+
+Name Table:
+
+index  name           line   column
+0      ch             1      5
+
+Token List:
+
+32 1 0 16 20 1 0 18 
+
+Error 1 at line 2, column 12: invalid character '''

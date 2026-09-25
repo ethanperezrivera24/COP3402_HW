@@ -1,0 +1,4 @@
+/* @ # $ ? ! : _ ` [ ] { } \\ and even * and / alone
+   are all ignored in here */
+var ok;
+begin ok = 1 end.

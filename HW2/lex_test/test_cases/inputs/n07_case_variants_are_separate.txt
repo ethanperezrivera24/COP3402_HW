@@ -1,0 +1,2 @@
+var Total, total, TOTAL, ToTaL;
+begin total = Total + TOTAL end.

@@ -1,0 +1,5 @@
+var x;
+/* this comment
+   spans three
+   lines */
+begin x = 1 end.

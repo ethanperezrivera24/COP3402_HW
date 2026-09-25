@@ -1,0 +1,3 @@
+var x, y;
+/* a comment */
+begin x = y / 2 end.

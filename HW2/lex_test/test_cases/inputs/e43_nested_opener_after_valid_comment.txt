@@ -1,0 +1,4 @@
+/* a closed comment */
+var x;
+/* now /* a nested opener */
+begin x = 1 end.

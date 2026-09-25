@@ -1,0 +1,21 @@
+Source Program:
+
+const k := 7;
+
+Lexeme Table:
+
+lexeme         token
+const          31
+k              1
+:=             19
+7              2
+;              16
+
+Name Table:
+
+index  name           line   column
+0      k              1      7
+
+Token List:
+
+31 1 0 19 2 7 16 

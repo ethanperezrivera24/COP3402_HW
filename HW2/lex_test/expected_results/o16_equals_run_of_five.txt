@@ -1,0 +1,22 @@
+Source Program:
+
+a=====b
+
+Lexeme Table:
+
+lexeme         token
+a              1
+==             7
+==             7
+=              18
+b              1
+
+Name Table:
+
+index  name           line   column
+0      a              1      1
+1      b              1      7
+
+Token List:
+
+1 0 7 7 18 1 1 

@@ -1,0 +1,191 @@
+# COP 3402 Systems Software - HW2 test case purposes
+#
+# One line per case in test_cases/cases.txt, in the same order: the case name,
+# a TAB, and the scenario that case exists to cover. Every case covers a
+# scenario no other case covers. The autograder prints this line when a case
+# fails, so the report says what the case was checking and not only that it
+# did not match.
+#
+# generate_expected_results.sh refuses to finish when a case here has no case
+# in the manifest, or a case in the manifest has no line here.
+
+s01_minimal	the smallest complete program: one declaration, one assignment, one period
+s02_every_token	every one of the 36 token codes appears at least once in one file
+s03_all_reserved_words	all seventeen reserved words, each recognized as a word and not as an identifier
+s04_all_symbols	all seventeen special symbols, each given its own code
+s05_one_token	a file holding a single token and nothing else
+s06_spine_program	an ordinary program of the kind the rest of the course uses
+s07_large_program	5,770 bytes, 1,706 tokens and 100 names: the source buffer, token array and name table all have to grow
+s08_single_identifier	a file that is one identifier, with no punctuation to end it
+s09_single_number	a file that is one number, with no punctuation to end it
+s10_declarations_only	twenty-six one-letter names in one declaration and no statements at all
+s11_nested_blocks	blocks inside blocks: begin/end, if/fi and while/elihw all nested
+s12_procedure_program	a program using procedure, call, read and write
+p01_tabs_and_blank_lines	tabs as indentation and blank lines between statements
+p02_no_whitespace	a whole program with whitespace only where the language forces it
+p03_tabs_only_separators	every separator in the file is a tab rather than a space
+p04_leading_blank_lines	five blank and whitespace-only lines before the first token, so the first line number is not 1
+p05_crlf_line_endings	CR LF line endings throughout: the carriage return must not advance a column
+p06_no_trailing_newline	the last line has no newline terminator
+p07_stray_carriage_return	a carriage return in the middle of a line, before an identifier whose recorded column shows it
+p08_cr_only_line_endings	carriage returns with no newline at all, so no line number ever advances
+p09_mixed_line_endings	CR LF and LF endings mixed in one file
+p10_trailing_whitespace	spaces, tabs and blank lines after the final period
+p11_wide_gaps_between_tokens	runs of many spaces between tokens
+p12_blank_lines_inside_declarations	one declaration split over several lines with blank lines inside it
+p13_leading_carriage_return	the file begins with a carriage return, so the first token is still at line 1 column 1
+p14_trailing_carriage_return	the file ends with a carriage return and no newline
+p15_very_long_line	one line of several hundred characters, so columns run into the hundreds
+p16_many_blank_lines_between_tokens	twenty blank lines in a row between two tokens
+o01_equality	== taken as one token rather than two assignments
+o02_assignment	= alone, where no = follows it
+o03_not_equal	!= taken as one token
+o04_relational_all	all six relational operators in one expression, the two-character ones among the one-character ones
+o05_angle_pair_is_two_tokens	<> is two tokens, because this language has no <> operator
+o06_triple_equals	a run of three = characters: the pair first, then the leftover
+o07_bang_double_equals	!== is != and then =
+o08_colon_double_equals	:== is := and then =
+o09_operators_no_spaces	operators and operands with no whitespace anywhere between them
+o10_const_init	:= in its one real use, giving a constant its value
+o11_reversed_relational	=< and => , which are not operators: each is two tokens
+o12_mult_then_slash	* and / separated by a space, which is multiply then divide and not a comment close
+o13_space_breaks_the_pair	a space between < and =, which makes two tokens instead of <=
+o14_newline_breaks_the_pair	a newline between < and =, which makes two tokens instead of <=
+o15_every_pair_adjacent	all five two-character operators written end to end with nothing between them
+o16_equals_run_of_five	a run of five = characters: two pairs and a leftover
+o17_less_at_end_of_file	the file ends in <, so the lookahead has nothing to read and < is a complete token
+o18_slash_at_end_of_file	the file ends in /, which is division and not the start of a comment
+o19_star_at_end_of_file	the file ends in *, which is multiplication and not the end of a comment
+o20_plus_then_equals	+= is + and then =, because + has no two-character form
+o21_minus_then_equals	-= is - and then =
+o22_greater_then_less	>< is > and then <
+o23_tab_breaks_the_pair	a tab between < and =, which makes two tokens instead of <=
+o24_comment_breaks_the_pair	a comment between < and =, which makes two tokens instead of <=
+o25_equals_at_end_of_file	the file ends in =, which is assignment and not half of ==
+o26_greater_at_end_of_file	the file ends in >, which is a complete token
+o27_number_then_period	1.5 is a number, a period and a number, because this language has no decimals
+o28_period_run	two periods in a row, each its own token
+o29_minus_run	two minus signs in a row, each its own token
+o30_punctuation_run	nested parentheses and runs of commas, semicolons and periods
+w01_od_odd_prefix	od is a reserved word and odd is a different one, so a prefix match gets both wrong
+w02_fi_prefix	fi against identifiers that begin with those two letters
+w03_elihw_prefix	elihw against identifiers that begin with it
+w04_case_sensitive	Begin and BEGIN are identifiers, because the lookup is case sensitive
+w05_keyword_inside_identifier	a reserved word appearing inside a longer identifier
+w06_identifier_at_limit	an identifier of exactly twelve characters, the longest allowed
+w07_identifiers_with_digits	identifiers holding digits after the first letter
+w08_number_at_limit	a number of exactly six digits, the longest allowed
+w09_keywords_against_punctuation	reserved words with punctuation against them and no whitespace
+w10_keyword_with_trailing_digit	a reserved word with one digit appended is an identifier
+w11_do_od_odd_run_together	three reserved words written end to end are one identifier, not three words
+w12_procedure_prefixes	proc, procedur, procedure and procedures: only the exact spelling is the word
+w13_keywords_uppercase	reserved words in upper case and mixed case, all identifiers
+w14_keyword_plus_one_letter	every reserved word with one extra letter, all identifiers
+w15_every_keyword_adjacent_pairs	pairs of reserved words with no space between them, each pair one identifier
+w16_keyword_prefix_at_limit	a twelve-character identifier built out of repeated reserved words
+w17_single_letter_identifiers	identifiers one character long, the shortest allowed
+w18_twelve_characters_ending_in_digits	a twelve-character identifier whose last two characters are digits
+c01_single_line	a comment opened and closed on one line
+c02_multi_line	a comment spanning several lines
+c03_tokens_inside_ignored	text inside a comment that would be tokens anywhere else
+c04_comment_then_division	a comment followed by a division, so / is read both ways in one file
+c05_comment_first	the file opens with a comment, before any token
+c06_comment_last	the file ends with a comment, after the final period
+c07_comment_no_whitespace	a comment with no whitespace between it and the tokens on either side
+c08_empty_comment	a comment with nothing at all between its delimiters
+c09_delimiter_chars_inside	single stars and single slashes inside a comment, neither of which closes it
+c10_non_ascii_inside_comment	bytes that are not ASCII inside a comment, which are skipped rather than reported
+c11_many_comments_in_a_row	several comments end to end and between the parts of a declaration
+c12_crlf_inside_comment	a multi-line comment with CR LF endings, so lines inside it still count
+c13_comment_spanning_many_lines	a five-line comment, so the token after it carries the right line number
+c14_comment_between_declaration_parts	a comment between every part of a declaration
+c15_comment_of_stars_only	a comment whose whole body is stars
+c16_error_characters_inside_comment	every character that is an error outside a comment, inside one
+c17_slash_right_after_opener	a slash immediately after the opener, so /*/ does not close anything
+c18_star_right_before_close	a star immediately before the close, so **/ still closes once
+c19_star_run_before_close	a run of stars immediately before the close
+c20_slash_space_star_is_not_an_opener	a slash and a star with a space between them, which is divide then multiply
+c21_star_space_slash_does_not_close	a star and a slash with a space between them inside a comment, which does not close it
+c22_close_split_across_lines	a star at the end of one line and a slash at the start of the next, which does not close the comment
+c23_opener_split_across_lines	a slash at the end of one line and a star at the start of the next, which does not open a comment
+c24_comment_between_two_identifiers	a comment standing where whitespace would, between an identifier and an operator
+c25_comment_between_two_numbers	a comment between two digit runs, which makes two numbers and not one
+n01_index_reuse	an identifier used many times takes the same index every time
+n02_many_identifiers	enough distinct identifiers to fill several rows in order
+n03_first_occurrence_position	the line and column recorded are those of the first occurrence, not the last
+n04_no_identifiers	a program with no identifiers at all, so the table is empty
+n05_mixed_declarations	names introduced by const, var and procedure in one program
+n06_first_seen_in_expression	a name first seen in a statement rather than in a declaration
+n07_case_variants_are_separate	Total, total, TOTAL and ToTaL are four separate names
+n08_identifier_at_limit_stored	twelve-character names stored whole, which needs thirteen bytes each
+n09_seventy_identifiers	seventy names, so a table starting at sixty-four has to grow
+n10_same_name_on_many_lines	one name used on five different lines, added once
+n11_position_after_comment	a name first seen after a multi-line comment, so its recorded line depends on counting inside the comment
+n12_position_after_blank_lines	a name first seen after several blank lines and deep indentation
+n13_first_seen_at_high_column	a name first seen past column seventy
+n14_hundred_identifiers	one hundred names, so a table starting at sixty-four has to grow twice
+e01_invalid_character	error 1 on a printable character the language has no use for
+e02_identifier_one_over	error 2 on an identifier of thirteen characters, one past the limit
+e03_number_one_over	error 3 on a number of seven digits, one past the limit
+e04_colon_alone	error 4 on a colon with something other than = after it
+e05_bang_alone	error 5 on an exclamation mark with something other than = after it
+e06_number_then_letter	error 6 on a digit run with a letter immediately after it
+e07_unterminated_comment	error 7, reported at the opener rather than at the end of the file
+e08_close_without_open	error 8 on a comment close with no opener
+e09_nested_comment_open	error 9 on a second opener inside a comment
+e10_non_ascii_byte	error 10 on the three-byte quotation mark a word processor produces
+e11_empty_file	error 11 on a file of zero bytes
+e12_whitespace_only	error 11 on a file of spaces, tabs and newlines
+e13_comment_only	error 11 on a file holding one closed comment and nothing else
+e14_length_and_letter	error 6 rather than error 3 when the run is both too long and followed by a letter
+e15_valid_prefix_then_error	everything scanned before the error is printed, and nothing after it is
+e16_underscore	error 1 on an underscore, which is not a letter in this language
+e17_backtick	error 1 on a backtick
+e18_control_character	error 10 on a vertical tab, which is not one of the four whitespace characters
+e19_identifier_far_over	error 2 on an identifier far past the limit, not just one over
+e20_number_far_over	error 3 on a number far past the limit, not just one over
+e21_dollar_sign	error 1 on a dollar sign
+e22_number_then_keyword	error 6 where the letter after the digits begins a reserved word
+e23_tabs_and_newlines_only	error 11 on a file of tabs and newlines with no spaces
+e24_carriage_returns_only	error 11 on a file of carriage returns alone
+e25_number_then_underscore	error 1 rather than error 6, because an underscore is not a letter
+e26_leading_zeros_too_long	error 3 where the seven digits are mostly leading zeros
+e27_bang_at_end_of_file	error 5 where the file ends immediately after the exclamation mark
+e28_colon_at_end_of_file	error 4 where the file ends immediately after the colon
+e29_comment_opener_at_end_of_file	error 7 where the opener is the last thing in the file
+e30_error_on_first_character	error 1 at line 1, column 1
+e31_error_on_last_character	error 1 on the last character before the newline
+e32_apostrophe	error 1 on an apostrophe, since this language has no character literals
+e33_square_bracket	error 1 on a square bracket, since this language has no arrays
+e34_brace	error 1 on a brace, which is not how this language groups statements
+e35_backslash	error 1 on a backslash
+e36_nul_byte	error 10 on a zero byte, which a scanner using C string functions treats as the end
+e37_delete_byte	error 10 on 0x7F, one past the printable range
+e38_unit_separator_byte	error 10 on 0x1F, one below the printable range
+e39_high_byte_alone	error 10 on 0x80, the first byte with its high bit set
+e40_only_the_first_error	three bad characters on three lines, and only the first is reported
+e41_colon_space_equals	error 4 where a space separates the colon from the = that would have completed it
+e42_bang_space_equals	error 5 where a space separates the exclamation mark from its =
+e43_nested_opener_after_valid_comment	error 9 where an earlier comment closed correctly, so the state must have been reset
+e44_close_without_open_after_comment	error 8 where an earlier comment closed correctly
+e45_identifier_too_long_in_expression	error 2 on an over-long name used in a statement rather than declared
+e46_error_after_multiline_comment	error 1 whose reported line depends on counting the lines inside a comment
+e47_error_on_last_line_no_newline	an error on a last line that has no newline terminator
+e48_question_mark	error 1 on a question mark
+e49_star_at_end_inside_comment	error 7 where the file ends on a star inside a comment
+e50_slash_at_end_inside_comment	error 7 where the file ends on a slash inside a comment
+e51_star_space_slash_then_end	error 7 where the file ends on a star, a space and a slash
+e52_opener_then_slash_only	error 7 on /*/ alone, which looks closed and is not
+e53_close_split_then_end	error 7 where a star ends one line and a slash ends the file on the next
+e54_close_without_open_at_start	error 8 at line 1, column 1
+e55_close_then_opener	error 8 on */* , where the close is read before the opener
+e56_comment_closed_twice	error 8 where a closed comment is followed immediately by a second close
+e57_bang_then_newline	error 5 where a newline separates the exclamation mark from its =
+e58_colon_then_newline	error 4 where a newline separates the colon from its =
+e59_bang_then_bang	error 5 where a second exclamation mark follows the first
+e60_colon_then_colon	error 4 where a second colon follows the first
+t01_usage_no_arguments	no argument at all: the usage message, and nothing scanned
+t02_usage_extra_arguments	two arguments: the usage message, even though the first one names a real file
+t03_missing_input_file	a file that does not exist: the open-failure message naming the path
+t04_three_arguments	three arguments: the usage message
+t05_missing_directory_path	a path whose directory does not exist, so the open fails for a different reason

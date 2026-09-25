@@ -1,0 +1,22 @@
+Source Program:
+
+var x;
+/* a star, a space and a slash * /
+
+Lexeme Table:
+
+lexeme         token
+var            32
+x              1
+;              16
+
+Name Table:
+
+index  name           line   column
+0      x              1      5
+
+Token List:
+
+32 1 0 16 
+
+Error 7 at line 2, column 1: comment is not closed before end of file

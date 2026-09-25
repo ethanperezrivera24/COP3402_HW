@@ -1,0 +1,7 @@
+var early;
+/* line two
+line three
+line four
+line five
+line six */
+begin early = 1 end.

@@ -1,0 +1,29 @@
+Source Program:
+
+var x, y;
+begin x = y*/2 end.
+
+Lexeme Table:
+
+lexeme         token
+var            32
+x              1
+,              15
+y              1
+;              16
+begin          20
+x              1
+=              18
+y              1
+
+Name Table:
+
+index  name           line   column
+0      x              1      5
+1      y              1      8
+
+Token List:
+
+32 1 0 15 1 1 16 20 1 0 18 1 1 
+
+Error 8 at line 2, column 12: '*/' without a matching '/*'

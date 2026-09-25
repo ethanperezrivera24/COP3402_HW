@@ -1,0 +1,3 @@
+/* a * / is not a close, so this is all comment */
+var q;
+begin q = 1 end.

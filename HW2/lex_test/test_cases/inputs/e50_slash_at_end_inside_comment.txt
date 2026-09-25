@@ -1,0 +1,2 @@
+var x;
+/* the comment ends on a slash /

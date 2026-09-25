@@ -1,0 +1,3 @@
+0 odds 1 8
+1 dod 1 16
+2 oddly 1 20
