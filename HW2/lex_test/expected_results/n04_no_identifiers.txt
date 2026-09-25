@@ -1,0 +1,18 @@
+Source Program:
+
+begin end.
+
+Lexeme Table:
+
+lexeme         token
+begin          20
+end            21
+.              17
+
+Name Table:
+
+index  name           line   column
+
+Token List:
+
+20 21 17 

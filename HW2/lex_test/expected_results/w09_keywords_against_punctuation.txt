@@ -1,0 +1,32 @@
+Source Program:
+
+begin,end;if.while(do)odd,od;fi.then
+
+Lexeme Table:
+
+lexeme         token
+begin          20
+,              15
+end            21
+;              16
+if             22
+.              17
+while          25
+(              13
+do             27
+)              14
+odd            29
+,              15
+od             28
+;              16
+fi             23
+.              17
+then           24
+
+Name Table:
+
+index  name           line   column
+
+Token List:
+
+20 15 21 16 22 17 25 13 27 14 29 15 28 16 23 17 24 

@@ -1,0 +1,29 @@
+Source Program:
+
+var a, b;
+begin if a !
+= b then write a fi end.
+
+Lexeme Table:
+
+lexeme         token
+var            32
+a              1
+,              15
+b              1
+;              16
+begin          20
+if             22
+a              1
+
+Name Table:
+
+index  name           line   column
+0      a              1      5
+1      b              1      8
+
+Token List:
+
+32 1 0 15 1 1 16 20 22 1 0 
+
+Error 5 at line 2, column 12: '!' must be followed by '='

@@ -1,0 +1,2 @@
+var x;
+begin x = 7 end.

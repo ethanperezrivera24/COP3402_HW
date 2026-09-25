@@ -1,0 +1,29 @@
+Source Program:
+
+var x;
+/* one
+two
+three */
+begin x = 1 ? 2 end.
+
+Lexeme Table:
+
+lexeme         token
+var            32
+x              1
+;              16
+begin          20
+x              1
+=              18
+1              2
+
+Name Table:
+
+index  name           line   column
+0      x              1      5
+
+Token List:
+
+32 1 0 16 20 1 0 18 2 1 
+
+Error 1 at line 5, column 13: invalid character '?'

@@ -1,0 +1,3 @@
+var a, b;
+begin if a !
+= b then write a fi end.

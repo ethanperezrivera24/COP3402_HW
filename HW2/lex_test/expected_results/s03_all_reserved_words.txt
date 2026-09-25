@@ -1,0 +1,32 @@
+Source Program:
+
+begin end if fi then while elihw do od odd call const var procedure write read else
+
+Lexeme Table:
+
+lexeme         token
+begin          20
+end            21
+if             22
+fi             23
+then           24
+while          25
+elihw          26
+do             27
+od             28
+odd            29
+call           30
+const          31
+var            32
+procedure      33
+write          34
+read           35
+else           36
+
+Name Table:
+
+index  name           line   column
+
+Token List:
+
+20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 

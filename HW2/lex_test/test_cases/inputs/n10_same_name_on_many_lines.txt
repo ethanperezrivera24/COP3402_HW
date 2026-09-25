@@ -1,0 +1,7 @@
+var repeated;
+begin
+  repeated = 1;
+  repeated = repeated + 1;
+  repeated = repeated + repeated;
+  write repeated
+end.

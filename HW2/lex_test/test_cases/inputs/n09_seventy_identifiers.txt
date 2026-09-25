@@ -1,0 +1,84 @@
+var
+ name00, name01, name02, name03, name04, name05, name06,
+ name07, name08, name09, name10, name11, name12, name13,
+ name14, name15, name16, name17, name18, name19, name20,
+ name21, name22, name23, name24, name25, name26, name27,
+ name28, name29, name30, name31, name32, name33, name34,
+ name35, name36, name37, name38, name39, name40, name41,
+ name42, name43, name44, name45, name46, name47, name48,
+ name49, name50, name51, name52, name53, name54, name55,
+ name56, name57, name58, name59, name60, name61, name62,
+ name63, name64, name65, name66, name67, name68, name69;
+begin
+  name00 = 0;
+  name01 = 1;
+  name02 = 2;
+  name03 = 3;
+  name04 = 4;
+  name05 = 5;
+  name06 = 6;
+  name07 = 7;
+  name08 = 8;
+  name09 = 9;
+  name10 = 10;
+  name11 = 11;
+  name12 = 12;
+  name13 = 13;
+  name14 = 14;
+  name15 = 15;
+  name16 = 16;
+  name17 = 17;
+  name18 = 18;
+  name19 = 19;
+  name20 = 20;
+  name21 = 21;
+  name22 = 22;
+  name23 = 23;
+  name24 = 24;
+  name25 = 25;
+  name26 = 26;
+  name27 = 27;
+  name28 = 28;
+  name29 = 29;
+  name30 = 30;
+  name31 = 31;
+  name32 = 32;
+  name33 = 33;
+  name34 = 34;
+  name35 = 35;
+  name36 = 36;
+  name37 = 37;
+  name38 = 38;
+  name39 = 39;
+  name40 = 40;
+  name41 = 41;
+  name42 = 42;
+  name43 = 43;
+  name44 = 44;
+  name45 = 45;
+  name46 = 46;
+  name47 = 47;
+  name48 = 48;
+  name49 = 49;
+  name50 = 50;
+  name51 = 51;
+  name52 = 52;
+  name53 = 53;
+  name54 = 54;
+  name55 = 55;
+  name56 = 56;
+  name57 = 57;
+  name58 = 58;
+  name59 = 59;
+  name60 = 60;
+  name61 = 61;
+  name62 = 62;
+  name63 = 63;
+  name64 = 64;
+  name65 = 65;
+  name66 = 66;
+  name67 = 67;
+  name68 = 68;
+  name69 = 69;
+  write name69
+end.

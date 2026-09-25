@@ -1,0 +1,24 @@
+Source Program:
+
+/* a closed comment */
+var x;
+/* now /* a nested opener */
+begin x = 1 end.
+
+Lexeme Table:
+
+lexeme         token
+var            32
+x              1
+;              16
+
+Name Table:
+
+index  name           line   column
+0      x              2      5
+
+Token List:
+
+32 1 0 16 
+
+Error 9 at line 3, column 8: '/*' inside a comment

@@ -1,0 +1,79 @@
+Source Program:
+
+var n, r;
+begin
+  n = 5;
+  r = 1;
+  while n > 0 then
+    begin
+      r = r * n;
+      n = n - 1
+    end
+  elihw;
+  if r > 100 then
+    write r
+  else
+    write n
+  fi
+end.
+
+Lexeme Table:
+
+lexeme         token
+var            32
+n              1
+,              15
+r              1
+;              16
+begin          20
+n              1
+=              18
+5              2
+;              16
+r              1
+=              18
+1              2
+;              16
+while          25
+n              1
+>              11
+0              2
+then           24
+begin          20
+r              1
+=              18
+r              1
+*              5
+n              1
+;              16
+n              1
+=              18
+n              1
+-              4
+1              2
+end            21
+elihw          26
+;              16
+if             22
+r              1
+>              11
+100            2
+then           24
+write          34
+r              1
+else           36
+write          34
+n              1
+fi             23
+end            21
+.              17
+
+Name Table:
+
+index  name           line   column
+0      n              1      5
+1      r              1      8
+
+Token List:
+
+32 1 0 15 1 1 16 20 1 0 18 2 5 16 1 1 18 2 1 16 25 1 0 11 2 0 24 20 1 1 18 1 1 5 1 0 16 1 0 18 1 0 4 2 1 21 26 16 22 1 1 11 2 100 24 34 1 1 36 34 1 0 23 21 17 

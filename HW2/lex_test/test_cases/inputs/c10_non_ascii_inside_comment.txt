@@ -1,0 +1,3 @@
+/* “quoted” and   */
+var q;
+begin q = 1 end.

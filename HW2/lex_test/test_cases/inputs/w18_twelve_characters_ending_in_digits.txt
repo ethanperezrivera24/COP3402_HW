@@ -1,0 +1,2 @@
+var abcdefghij12, klmnopqrst34;
+begin abcdefghij12 = klmnopqrst34 end.

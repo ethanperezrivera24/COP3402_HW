@@ -1,0 +1,26 @@
+Source Program:
+
+var jump;
+begin jump = 77? end.
+
+Lexeme Table:
+
+lexeme         token
+var            32
+jump           1
+;              16
+begin          20
+jump           1
+=              18
+77             2
+
+Name Table:
+
+index  name           line   column
+0      jump           1      5
+
+Token List:
+
+32 1 0 16 20 1 0 18 2 77 
+
+Error 1 at line 2, column 16: invalid character '?'

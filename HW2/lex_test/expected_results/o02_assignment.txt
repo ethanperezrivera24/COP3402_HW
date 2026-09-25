@@ -1,0 +1,20 @@
+Source Program:
+
+a = b
+
+Lexeme Table:
+
+lexeme         token
+a              1
+=              18
+b              1
+
+Name Table:
+
+index  name           line   column
+0      a              1      1
+1      b              1      5
+
+Token List:
+
+1 0 18 1 1 

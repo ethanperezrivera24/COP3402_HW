@@ -1,0 +1,5 @@
+/* the star ends this line *
+/ and the slash begins the next, so neither closes
+   the real close is here */
+var q;
+begin q = 1 end.

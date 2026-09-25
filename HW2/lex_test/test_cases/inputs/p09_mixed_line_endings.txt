@@ -1,0 +1,5 @@
+var one, two;
+begin
+  one = 1;
+  two = one + 1
+end.

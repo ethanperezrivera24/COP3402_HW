@@ -1,0 +1,22 @@
+Source Program:
+
+const k : = 3;
+var x;
+begin x = k end.
+
+Lexeme Table:
+
+lexeme         token
+const          31
+k              1
+
+Name Table:
+
+index  name           line   column
+0      k              1      7
+
+Token List:
+
+31 1 0 
+
+Error 4 at line 1, column 9: ':' must be followed by '='

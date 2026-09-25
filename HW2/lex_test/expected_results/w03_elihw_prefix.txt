@@ -1,0 +1,23 @@
+Source Program:
+
+elihw elihwx elih while whilex
+
+Lexeme Table:
+
+lexeme         token
+elihw          26
+elihwx         1
+elih           1
+while          25
+whilex         1
+
+Name Table:
+
+index  name           line   column
+0      elihwx         1      7
+1      elih           1      14
+2      whilex         1      25
+
+Token List:
+
+26 1 0 1 1 25 1 2 

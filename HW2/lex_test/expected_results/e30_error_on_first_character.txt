@@ -1,0 +1,18 @@
+Source Program:
+
+@ var x;
+begin x = 1 end.
+
+Lexeme Table:
+
+lexeme         token
+
+Name Table:
+
+index  name           line   column
+
+Token List:
+
+
+
+Error 1 at line 1, column 1: invalid character '@'

@@ -1,0 +1,4 @@
+begin
+  result = left + right;
+  left = result
+end.

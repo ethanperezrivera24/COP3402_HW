@@ -1,0 +1,21 @@
+Source Program:
+
+oddoddoddod oddoddoddo procedureaa
+
+Lexeme Table:
+
+lexeme         token
+oddoddoddod    1
+oddoddoddo     1
+procedureaa    1
+
+Name Table:
+
+index  name           line   column
+0      oddoddoddod    1      1
+1      oddoddoddo     1      13
+2      procedureaa    1      24
+
+Token List:
+
+1 0 1 1 1 2 

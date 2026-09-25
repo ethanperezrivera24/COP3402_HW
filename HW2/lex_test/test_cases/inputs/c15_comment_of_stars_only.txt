@@ -1,0 +1,3 @@
+/*****/
+var s;
+begin s = 1 end.

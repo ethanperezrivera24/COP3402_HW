@@ -1,0 +1,18 @@
+Source Program:
+
+*/*
+var x;
+
+Lexeme Table:
+
+lexeme         token
+
+Name Table:
+
+index  name           line   column
+
+Token List:
+
+
+
+Error 8 at line 1, column 1: '*/' without a matching '/*'

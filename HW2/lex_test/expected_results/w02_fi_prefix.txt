@@ -1,0 +1,25 @@
+Source Program:
+
+fi fix iff if f fi2
+
+Lexeme Table:
+
+lexeme         token
+fi             23
+fix            1
+iff            1
+if             22
+f              1
+fi2            1
+
+Name Table:
+
+index  name           line   column
+0      fix            1      4
+1      iff            1      8
+2      f              1      15
+3      fi2            1      17
+
+Token List:
+
+23 1 0 1 1 22 1 2 1 3 

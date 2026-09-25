@@ -1,0 +1,2 @@
+const var procedure begin end if fi then else while do od odd elihw call read write
+x 5 + - * / == != < <= > >= ( ) , ; . = :=

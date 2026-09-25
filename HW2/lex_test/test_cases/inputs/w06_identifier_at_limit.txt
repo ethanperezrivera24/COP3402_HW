@@ -1,0 +1,2 @@
+var abcdefghijkl;
+begin abcdefghijkl = 1 end.

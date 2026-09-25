@@ -1,0 +1,7 @@
+const one := 1;
+var alpha, beta;
+begin
+  alpha = one;
+  beta = alpha;
+  alpha = beta
+end.

@@ -1,0 +1,38 @@
+Source Program:
+
+var x, y;
+begin
+  if x <
+= y then write x fi
+end.
+
+Lexeme Table:
+
+lexeme         token
+var            32
+x              1
+,              15
+y              1
+;              16
+begin          20
+if             22
+x              1
+<              9
+=              18
+y              1
+then           24
+write          34
+x              1
+fi             23
+end            21
+.              17
+
+Name Table:
+
+index  name           line   column
+0      x              1      5
+1      y              1      8
+
+Token List:
+
+32 1 0 15 1 1 16 20 22 1 0 9 18 1 1 24 34 1 0 23 21 17 

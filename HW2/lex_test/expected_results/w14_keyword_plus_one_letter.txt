@@ -1,0 +1,49 @@
+Source Program:
+
+begina endz ifx fiy thenq whilew elihwe dop odq oddr calls constt varu procedurev writew readx elsey
+
+Lexeme Table:
+
+lexeme         token
+begina         1
+endz           1
+ifx            1
+fiy            1
+thenq          1
+whilew         1
+elihwe         1
+dop            1
+odq            1
+oddr           1
+calls          1
+constt         1
+varu           1
+procedurev     1
+writew         1
+readx          1
+elsey          1
+
+Name Table:
+
+index  name           line   column
+0      begina         1      1
+1      endz           1      8
+2      ifx            1      13
+3      fiy            1      17
+4      thenq          1      21
+5      whilew         1      27
+6      elihwe         1      34
+7      dop            1      41
+8      odq            1      45
+9      oddr           1      49
+10     calls          1      54
+11     constt         1      60
+12     varu           1      67
+13     procedurev     1      72
+14     writew         1      83
+15     readx          1      90
+16     elsey          1      96
+
+Token List:
+
+1 0 1 1 1 2 1 3 1 4 1 5 1 6 1 7 1 8 1 9 1 10 1 11 1 12 1 13 1 14 1 15 1 16 

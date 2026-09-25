@@ -1,0 +1,19 @@
+Source Program:
+
+var verylongidentifiername;
+begin end.
+
+Lexeme Table:
+
+lexeme         token
+var            32
+
+Name Table:
+
+index  name           line   column
+
+Token List:
+
+32 
+
+Error 2 at line 1, column 5: identifier too long 'verylongidentifiername'

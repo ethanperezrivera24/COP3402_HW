@@ -1,0 +1,11 @@
+const limit := 10;
+var n, total;
+begin
+  n = 1;
+  total = 0;
+  while n <= limit then
+    total = total + n;
+    n = n + 1
+  elihw;
+  write total
+end.

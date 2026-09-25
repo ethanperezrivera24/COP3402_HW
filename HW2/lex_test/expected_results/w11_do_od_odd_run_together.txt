@@ -1,0 +1,21 @@
+Source Program:
+
+doododd ododdo oddodod
+
+Lexeme Table:
+
+lexeme         token
+doododd        1
+ododdo         1
+oddodod        1
+
+Name Table:
+
+index  name           line   column
+0      doododd        1      1
+1      ododdo         1      9
+2      oddodod        1      16
+
+Token List:
+
+1 0 1 1 1 2 

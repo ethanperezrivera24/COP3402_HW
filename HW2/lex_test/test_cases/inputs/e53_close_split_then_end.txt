@@ -1,0 +1,3 @@
+var x;
+/* the star ends the line *
+/

@@ -1,0 +1,25 @@
+Source Program:
+
+var x;
+begin x = €1 end.
+
+Lexeme Table:
+
+lexeme         token
+var            32
+x              1
+;              16
+begin          20
+x              1
+=              18
+
+Name Table:
+
+index  name           line   column
+0      x              1      5
+
+Token List:
+
+32 1 0 16 20 1 0 18 
+
+Error 10 at line 2, column 11: byte 0x80 is not part of this language

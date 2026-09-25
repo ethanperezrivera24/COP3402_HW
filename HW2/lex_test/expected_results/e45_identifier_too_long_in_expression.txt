@@ -1,0 +1,25 @@
+Source Program:
+
+var short;
+begin short = averylongidentifier + 1 end.
+
+Lexeme Table:
+
+lexeme         token
+var            32
+short          1
+;              16
+begin          20
+short          1
+=              18
+
+Name Table:
+
+index  name           line   column
+0      short          1      5
+
+Token List:
+
+32 1 0 16 20 1 0 18 
+
+Error 2 at line 2, column 15: identifier too long 'averylongidentifier'

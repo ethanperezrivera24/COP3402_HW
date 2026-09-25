@@ -1,0 +1,23 @@
+Source Program:
+
+var a;
+begin { a = 1 } end.
+
+Lexeme Table:
+
+lexeme         token
+var            32
+a              1
+;              16
+begin          20
+
+Name Table:
+
+index  name           line   column
+0      a              1      5
+
+Token List:
+
+32 1 0 16 20 
+
+Error 1 at line 2, column 7: invalid character '{'
