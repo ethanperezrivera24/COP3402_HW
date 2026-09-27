@@ -119,6 +119,8 @@ int nameCount = 0, nameCap = 0;
 
 int addToken(int code, int value, const char *lexeme);
 int findOrAddName(const char *name, int line, int col);
+int peekChar(const char *buf, size_t bytesRead, size_t i, int offset);
+void advance(const char *buf, size_t *i, int *line, int *col);
 
 int main(int argc, char* argv[]) {
   // Check for correct usage
@@ -157,15 +159,130 @@ int main(int argc, char* argv[]) {
     // Read the entire file into buf using fread because source
     // may contain bytes that would stop fgets or fscanf
     size_t bytesRead = fread(buf, 1, (size_t)fileSize, fp);
+
+    size_t i = 0;      // index into buf
+    int line = 1;       // current line number
+    int col = 1;         // current column number
+
+    // Advance loop
+    while (i < bytesRead) {
+        // skip any run of whitespace
+        while (i < bytesRead && (buf[i] == ' ' || buf[i] == '\t' || buf[i] == '\r' || buf[i] == '\n')) {
+            advance(buf, &i, &line, &col);
+        }
+
+        // if EOF break
+        if (i >= bytesRead) {
+            break;
+        }
+
+        // save position of token
+        int startLine = line;
+        int startCol = col;
+
+        char c = buf[i];
+
+        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+            // collect the whole run: first char is a letter, then any letters/digits follow
+            char run[256];
+            int len = 0;
+
+            while (i < bytesRead) {
+                char cur = buf[i];
+                int isLetter = (cur >= 'a' && cur <= 'z') || (cur >= 'A' && cur <= 'Z');
+                int isDigit  = (cur >= '0' && cur <= '9');
+                if (!isLetter && !isDigit) {
+                    break;   // run has ended, stop consuming
+                }
+                if (len < 255) {          // guard overflow in run[]
+                    run[len] = cur;
+                }
+                len++;
+                advance(buf, &i, &line, &col);
+            }
+            run[(len < 255) ? len : 255] = '\0';    // Put null terminator at end of run
+
+            if(len > MAX_IDENT_LEN) {
+                // Error 2!!!
+            } else {
+                int match = 0;
+                for(int j = 0; j < numReserved; j++) {
+                    if(strcmp(run, reservedWords[j].word) == 0) {
+                        addToken(reservedWords[j].code, 0, run);
+                        match = 1;
+                        break;
+                    }
+                }
+                if(!match) {
+                    int idx = findOrAddName(run, startLine, startCol);
+                    addToken(identsym, idx, run);
+                }
+            }
+        } else if (c >= '0' && c <= '9') {
+            char run[256];
+            int len = 0;
+
+            while (i < bytesRead && buf[i] >= '0' && buf[i] <= '9') {
+                if (len < 255) {
+                    run[len] = buf[i];
+                }
+                len++;
+                advance(buf, &i, &line, &col);
+            }
+            run[(len < 255) ? len : 255] = '\0';
+
+            int nextIsLetter = (i < bytesRead) && ((buf[i] >= 'a' && buf[i] <= 'z') || (buf[i] >= 'A' && buf[i] <= 'Z'));
+
+            if (nextIsLetter) {
+            // error 6, keep consuming the rest of the alphanumeric run
+                while (i < bytesRead) {
+                    char cur = buf[i];
+                    int isLetter = (cur >= 'a' && cur <= 'z') || (cur >= 'A' && cur <= 'Z');
+                    int isDigit  = (cur >= '0' && cur <= '9');
+                    if (!isLetter && !isDigit)  {
+                        break;
+                    }
+                    if (len < 255) {
+                        run[len] = cur;
+                    }
+                    len++;
+                    advance(buf, &i, &line, &col);
+                }
+            run[(len < 255) ? len : 255] = '\0';
+            // Error 6!!! lexeme = run, position = startLine/startCol
+            } else {
+                run[(len < 255) ? len : 255] = '\0';
+                if (len > MAX_NUM_LEN) {
+                // Error 3!!! lexeme = run, position = startLine/startCol
+                } else {
+                    addToken(numbersym, 0, run);
+                }
+            }
+        } else {
+        // TEMPORARY: operators/punctuation/comments/errors not built yet.
+        // consume one char so the loop can't hang on them.
+        advance(buf, &i, &line, &col);
+        }
+    }
+
+    // TEMPORARY DEBUG: print every token collected so far, to check against
+    // the handout's worked example by hand. Delete before Phase 7/submission.
+    for (int t = 0; t < tokenCount; t++) {
+        printf("token[%d]: code=%d value=%d lexeme='%s'\n", t, tokens[t].code, tokens[t].value, tokens[t].lexeme);
+    }
+
+    printf("---\nname table:\n");
+    for (int n = 0; n < nameCount; n++) {
+        printf("  [%d] '%s' at line %d, col %d\n", n, names[n].name, names[n].line, names[n].col);
+    }
+
+    // error 11: no tokens in the source program
+    if (tokenCount == 0) {
+
+    }
     
     // Close file
     fclose(fp);
-
-    /* Debug: prints every character in file
-    for(int i = 0; i < bytesRead; i++) {
-      printf("%c", buf[i]);
-    }
-    */
 
     // Free buf, token list and name table
     free(buf);
@@ -233,4 +350,27 @@ int findOrAddName(const char *name, int line, int col){
     nameCount++;
 
     return nameCount - 1;
+}
+
+// Returns char at buf[i + offset], or -1 if s past EOF
+int peekChar(const char *buf, size_t bytesRead, size_t i, int offset) {
+    size_t target = i + (size_t)offset;
+    if (target >= bytesRead) {
+        return -1;
+    }
+    return (unsigned char)buf[target];
+}
+
+void advance(const char *buf, size_t *i, int *line, int *col) {
+    char c = buf[*i];
+
+    if (c == '\n') {
+        (*line)++;
+        (*col) = 1;
+    } else if (c == '\r') {
+    } else {
+        (*col)++;
+    }
+
+    (*i)++;
 }
