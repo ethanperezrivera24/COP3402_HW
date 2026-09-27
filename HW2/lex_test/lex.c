@@ -258,10 +258,141 @@ int main(int argc, char* argv[]) {
                     addToken(numbersym, 0, run);
                 }
             }
+        } 
+        else if (c == '/' && peekChar(buf, bytesRead, i, 1) == '*'){
+            // comment skipper: everything from /* to the next */ is discarded, no token
+            // startLine/startCol hold the opener's position, which is where error 7 is reported
+
+            // consume both chars of the opener, so the '/' in /*/ can't be reused to close it
+            advance(buf, &i, &line, &col);
+            advance(buf, &i, &line, &col);
+
+            // local flag, starts at 0 for every comment so a closed comment leaves no trace
+            int closed = 0;
+
+            while (i < bytesRead){
+                int next = peekChar(buf, bytesRead, i, 1);
+
+                // close only on '*' immediately followed by '/', and consume both
+                // "* /" or a '*' ending one line with '/' starting the next doesn't close
+                if (buf[i] == '*' && next == '/'){
+                    advance(buf, &i, &line, &col);
+                    advance(buf, &i, &line, &col);
+                    closed = 1;
+                    break;
+                }
+
+                // comments don't nest
+                if (buf[i] == '/' && next == '*'){
+                    // Error 9!!! position = line/col (the inner '/')
+                }
+
+                // anything else is comment text and isn't examined (weird bytes, @, etc.)
+                // advance still counts lines & columns inside the comment
+                advance(buf, &i, &line, &col);
+            }
+
+            if (!closed){
+                // Error 7!!! position = startLine/startCol (the opener, not EOF)
+            }
         } else {
-        // TEMPORARY: operators/punctuation/comments/errors not built yet.
-        // consume one char so the loop can't hang on them.
-        advance(buf, &i, &line, &col);
+            // operators & punctuation
+            // peek at the char after the one we're holding before consuming anything
+            // next = -1 at EOF, so a file can end right after an operator without reading past buf
+            int next = peekChar(buf, bytesRead, i, 1);
+            int code = 0;   // stays 0 if c doesn't start a token
+            int len = 1;    // becomes 2 only when the longer operator matches
+
+            switch (c){
+                // single char symbols, no lookahead needed
+                case '+': code = plussym; break;
+                case '-': code = minussym; break;
+                case '(': code = lparentsym; break;
+                case ')': code = rparentsym; break;
+                case ',': code = commasym; break;
+                case ';': code = semicolonsym; break;
+                case '.': code = periodsym; break;
+
+                // '*' right before '/' outside a comment closes a comment that was never opened
+                // (b*/c is error 8 too, a space is needed to multiply then divide)
+                case '*':
+                    if (next == '/'){
+                        // Error 8!!! position = startLine/startCol (the '*')
+                    }
+                    else{
+                        code = multsym;
+                    }
+                    break;
+
+                // "/*" was already taken by the comment skipper above, so this '/' is division
+                case '/': code = slashsym; break;
+
+                // longest match: if next is '=' take the 2 char operator
+                // alone, =, < and > are still complete tokens
+                case '=':
+                    if (next == '='){
+                        code = eqsym;
+                        len = 2;
+                    } else{
+                        code = assignsym;
+                    }
+                    break;
+
+                case '<':
+                    if (next == '='){
+                        code = leqsym;
+                        len = 2;
+                    } else{
+                        code = lessym;
+                    }
+                    break;
+
+                case '>':
+                    if (next == '='){
+                        code = geqsym;
+                        len = 2;
+                    } else{
+                        code = gtrsym;
+                    }
+                    break;
+
+                // alone, ! and : aren't tokens, so a missing '=' is an error instead
+                case '!':
+                    if (next == '='){
+                        code = neqsym;
+                        len = 2;
+                    }
+                    // else Error 5!!! position = startLine/startCol
+                    break;
+
+                case ':':
+                    if (next == '='){
+                        code = initsym;
+                        len = 2;
+                    }
+                    // else Error 4!!! position = startLine/startCol
+                    break;
+
+                // Error 1 / Error 10!!! (Phase 7), position = startLine/startCol
+                default:
+                    break;
+            }
+
+            // lexeme is the held char, plus the '=' only if the pair matched
+            char lexeme[3] = {c, '\0', '\0'};
+            if (len == 2){
+                lexeme[1] = (char)next;
+            }
+
+            // consume exactly the chars the token used, never the peeked char unless it matched
+            // (errors still consume 1 char for now so the loop can't hang on them)
+            for (int k = 0; k < len; k++){
+                advance(buf, &i, &line, &col);
+            }
+
+            if (code != 0){
+                addToken(code, 0, lexeme);
+            }
         }
     }
 
