@@ -1,0 +1,6 @@
+Test Case: o07_bang_double_equals
+What this case covers: !== is != and then =
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o07_bang_double_equals.txt
+Expected: expected_results/o07_bang_double_equals.txt
+Your Output: student_output/o07_bang_double_equals_output.txt

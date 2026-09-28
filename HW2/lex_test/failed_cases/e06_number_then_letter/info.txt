@@ -1,0 +1,6 @@
+Test Case: e06_number_then_letter
+What this case covers: error 6 on a digit run with a letter immediately after it
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e06_number_then_letter.txt
+Expected: expected_results/e06_number_then_letter.txt
+Your Output: student_output/e06_number_then_letter_output.txt

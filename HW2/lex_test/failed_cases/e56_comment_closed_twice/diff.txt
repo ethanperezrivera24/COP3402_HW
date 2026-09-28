@@ -1,0 +1,27 @@
+1,7c1,18
+< token[0]: code=6 value=0 lexeme='/'
+< token[1]: code=32 value=0 lexeme='var'
+< token[2]: code=1 value=0 lexeme='x'
+< token[3]: code=16 value=0 lexeme=';'
+< ---
+< name table:
+<   [0] 'x' at line 2, col 5
+---
+> Source Program:
+> 
+> /* one comment */*/
+> var x;
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 
+> Token List:
+> 
+> 
+> 
+> Error 8 at line 1, column 18: '*/' without a matching '/*'

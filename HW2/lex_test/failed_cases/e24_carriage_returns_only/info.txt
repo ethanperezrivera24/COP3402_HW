@@ -1,0 +1,6 @@
+Test Case: e24_carriage_returns_only
+What this case covers: error 11 on a file of carriage returns alone
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e24_carriage_returns_only.txt
+Expected: expected_results/e24_carriage_returns_only.txt
+Your Output: student_output/e24_carriage_returns_only_output.txt

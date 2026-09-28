@@ -1,0 +1,10 @@
+token[0]: code=1 value=0 lexeme='cop3402'
+token[1]: code=1 value=1 lexeme='x2y3'
+token[2]: code=1 value=2 lexeme='a1'
+token[3]: code=1 value=3 lexeme='z9z9z9'
+---
+name table:
+  [0] 'cop3402' at line 1, col 1
+  [1] 'x2y3' at line 1, col 9
+  [2] 'a1' at line 1, col 14
+  [3] 'z9z9z9' at line 1, col 17

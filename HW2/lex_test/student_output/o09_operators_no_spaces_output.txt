@@ -1,0 +1,22 @@
+token[0]: code=1 value=0 lexeme='a'
+token[1]: code=10 value=0 lexeme='<='
+token[2]: code=1 value=1 lexeme='b'
+token[3]: code=12 value=0 lexeme='>='
+token[4]: code=1 value=2 lexeme='c'
+token[5]: code=9 value=0 lexeme='<'
+token[6]: code=1 value=3 lexeme='d'
+token[7]: code=11 value=0 lexeme='>'
+token[8]: code=1 value=4 lexeme='e'
+token[9]: code=7 value=0 lexeme='=='
+token[10]: code=1 value=5 lexeme='f'
+token[11]: code=8 value=0 lexeme='!='
+token[12]: code=1 value=6 lexeme='g'
+---
+name table:
+  [0] 'a' at line 1, col 1
+  [1] 'b' at line 1, col 4
+  [2] 'c' at line 1, col 7
+  [3] 'd' at line 1, col 9
+  [4] 'e' at line 1, col 11
+  [5] 'f' at line 1, col 14
+  [6] 'g' at line 1, col 17

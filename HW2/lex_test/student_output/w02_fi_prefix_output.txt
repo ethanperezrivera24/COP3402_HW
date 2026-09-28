@@ -1,0 +1,12 @@
+token[0]: code=23 value=0 lexeme='fi'
+token[1]: code=1 value=0 lexeme='fix'
+token[2]: code=1 value=1 lexeme='iff'
+token[3]: code=22 value=0 lexeme='if'
+token[4]: code=1 value=2 lexeme='f'
+token[5]: code=1 value=3 lexeme='fi2'
+---
+name table:
+  [0] 'fix' at line 1, col 4
+  [1] 'iff' at line 1, col 8
+  [2] 'f' at line 1, col 15
+  [3] 'fi2' at line 1, col 17

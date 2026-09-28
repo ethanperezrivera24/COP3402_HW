@@ -1,0 +1,6 @@
+Test Case: e17_backtick
+What this case covers: error 1 on a backtick
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e17_backtick.txt
+Expected: expected_results/e17_backtick.txt
+Your Output: student_output/e17_backtick_output.txt

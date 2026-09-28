@@ -1,0 +1,6 @@
+Test Case: p11_wide_gaps_between_tokens
+What this case covers: runs of many spaces between tokens
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/p11_wide_gaps_between_tokens.txt
+Expected: expected_results/p11_wide_gaps_between_tokens.txt
+Your Output: student_output/p11_wide_gaps_between_tokens_output.txt

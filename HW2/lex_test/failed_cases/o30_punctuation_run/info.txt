@@ -1,0 +1,6 @@
+Test Case: o30_punctuation_run
+What this case covers: nested parentheses and runs of commas, semicolons and periods
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o30_punctuation_run.txt
+Expected: expected_results/o30_punctuation_run.txt
+Your Output: student_output/o30_punctuation_run_output.txt

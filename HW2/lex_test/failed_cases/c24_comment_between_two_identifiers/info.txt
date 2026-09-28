@@ -1,0 +1,6 @@
+Test Case: c24_comment_between_two_identifiers
+What this case covers: a comment standing where whitespace would, between an identifier and an operator
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/c24_comment_between_two_identifiers.txt
+Expected: expected_results/c24_comment_between_two_identifiers.txt
+Your Output: student_output/c24_comment_between_two_identifiers_output.txt

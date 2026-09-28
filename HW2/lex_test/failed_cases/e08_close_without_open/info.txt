@@ -1,0 +1,6 @@
+Test Case: e08_close_without_open
+What this case covers: error 8 on a comment close with no opener
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e08_close_without_open.txt
+Expected: expected_results/e08_close_without_open.txt
+Your Output: student_output/e08_close_without_open_output.txt

@@ -1,0 +1,4 @@
+token[0]: code=1 value=0 lexeme='counter'
+---
+name table:
+  [0] 'counter' at line 1, col 1

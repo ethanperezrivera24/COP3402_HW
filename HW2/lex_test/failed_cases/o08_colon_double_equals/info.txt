@@ -1,0 +1,6 @@
+Test Case: o08_colon_double_equals
+What this case covers: :== is := and then =
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o08_colon_double_equals.txt
+Expected: expected_results/o08_colon_double_equals.txt
+Your Output: student_output/o08_colon_double_equals_output.txt

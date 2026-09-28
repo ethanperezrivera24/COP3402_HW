@@ -1,0 +1,6 @@
+Test Case: o21_minus_then_equals
+What this case covers: -= is - and then =
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o21_minus_then_equals.txt
+Expected: expected_results/o21_minus_then_equals.txt
+Your Output: student_output/o21_minus_then_equals_output.txt

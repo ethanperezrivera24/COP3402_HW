@@ -1,0 +1,6 @@
+Test Case: n07_case_variants_are_separate
+What this case covers: Total, total, TOTAL and ToTaL are four separate names
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/n07_case_variants_are_separate.txt
+Expected: expected_results/n07_case_variants_are_separate.txt
+Your Output: student_output/n07_case_variants_are_separate_output.txt

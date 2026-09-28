@@ -1,0 +1,6 @@
+Test Case: e40_only_the_first_error
+What this case covers: three bad characters on three lines, and only the first is reported
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e40_only_the_first_error.txt
+Expected: expected_results/e40_only_the_first_error.txt
+Your Output: student_output/e40_only_the_first_error_output.txt

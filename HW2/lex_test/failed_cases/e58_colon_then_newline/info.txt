@@ -1,0 +1,6 @@
+Test Case: e58_colon_then_newline
+What this case covers: error 4 where a newline separates the colon from its =
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e58_colon_then_newline.txt
+Expected: expected_results/e58_colon_then_newline.txt
+Your Output: student_output/e58_colon_then_newline_output.txt

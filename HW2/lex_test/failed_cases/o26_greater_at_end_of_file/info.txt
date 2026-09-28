@@ -1,0 +1,6 @@
+Test Case: o26_greater_at_end_of_file
+What this case covers: the file ends in >, which is a complete token
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o26_greater_at_end_of_file.txt
+Expected: expected_results/o26_greater_at_end_of_file.txt
+Your Output: student_output/o26_greater_at_end_of_file_output.txt

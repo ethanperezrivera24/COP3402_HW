@@ -1,0 +1,20 @@
+token[0]: code=1 value=0 lexeme='begin1'
+token[1]: code=1 value=1 lexeme='end2'
+token[2]: code=1 value=2 lexeme='if3'
+token[3]: code=1 value=3 lexeme='fi4'
+token[4]: code=1 value=4 lexeme='do5'
+token[5]: code=1 value=5 lexeme='od6'
+token[6]: code=1 value=6 lexeme='odd7'
+token[7]: code=1 value=7 lexeme='while8'
+token[8]: code=1 value=8 lexeme='elihw9'
+---
+name table:
+  [0] 'begin1' at line 1, col 1
+  [1] 'end2' at line 1, col 8
+  [2] 'if3' at line 1, col 13
+  [3] 'fi4' at line 1, col 17
+  [4] 'do5' at line 1, col 21
+  [5] 'od6' at line 1, col 25
+  [6] 'odd7' at line 1, col 29
+  [7] 'while8' at line 1, col 34
+  [8] 'elihw9' at line 1, col 41

@@ -1,0 +1,6 @@
+Test Case: e37_delete_byte
+What this case covers: error 10 on 0x7F, one past the printable range
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e37_delete_byte.txt
+Expected: expected_results/e37_delete_byte.txt
+Your Output: student_output/e37_delete_byte_output.txt

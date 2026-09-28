@@ -1,0 +1,6 @@
+Test Case: o29_minus_run
+What this case covers: two minus signs in a row, each its own token
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o29_minus_run.txt
+Expected: expected_results/o29_minus_run.txt
+Your Output: student_output/o29_minus_run_output.txt

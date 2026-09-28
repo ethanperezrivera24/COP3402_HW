@@ -1,0 +1,6 @@
+Test Case: e01_invalid_character
+What this case covers: error 1 on a printable character the language has no use for
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e01_invalid_character.txt
+Expected: expected_results/e01_invalid_character.txt
+Your Output: student_output/e01_invalid_character_output.txt

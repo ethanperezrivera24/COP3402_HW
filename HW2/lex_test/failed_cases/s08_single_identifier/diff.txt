@@ -1,0 +1,23 @@
+1,4c1,17
+< token[0]: code=1 value=0 lexeme='counter'
+< ---
+< name table:
+<   [0] 'counter' at line 1, col 1
+---
+> Source Program:
+> 
+> counter
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> counter        1
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 0      counter        1      1
+> 
+> Token List:
+> 
+> 1 0 

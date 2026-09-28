@@ -1,0 +1,49 @@
+1,17c1,30
+< token[0]: code=1 value=0 lexeme='beginend'
+< token[1]: code=1 value=1 lexeme='ififi'
+< token[2]: code=1 value=2 lexeme='thenwhile'
+< token[3]: code=1 value=3 lexeme='doododd'
+< token[4]: code=1 value=4 lexeme='callconst'
+< token[5]: code=1 value=5 lexeme='varprocedure'
+< token[6]: code=1 value=6 lexeme='writeread'
+< token[7]: code=36 value=0 lexeme='else'
+< ---
+< name table:
+<   [0] 'beginend' at line 1, col 1
+<   [1] 'ififi' at line 1, col 10
+<   [2] 'thenwhile' at line 1, col 16
+<   [3] 'doododd' at line 1, col 26
+<   [4] 'callconst' at line 1, col 34
+<   [5] 'varprocedure' at line 1, col 44
+<   [6] 'writeread' at line 1, col 57
+---
+> Source Program:
+> 
+> beginend ififi thenwhile doododd callconst varprocedure writeread else
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> beginend       1
+> ififi          1
+> thenwhile      1
+> doododd        1
+> callconst      1
+> varprocedure   1
+> writeread      1
+> else           36
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 0      beginend       1      1
+> 1      ififi          1      10
+> 2      thenwhile      1      16
+> 3      doododd        1      26
+> 4      callconst      1      34
+> 5      varprocedure   1      44
+> 6      writeread      1      57
+> 
+> Token List:
+> 
+> 1 0 1 1 1 2 1 3 1 4 1 5 1 6 36 

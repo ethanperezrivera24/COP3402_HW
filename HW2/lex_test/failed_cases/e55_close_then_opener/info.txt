@@ -1,0 +1,6 @@
+Test Case: e55_close_then_opener
+What this case covers: error 8 on */* , where the close is read before the opener
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e55_close_then_opener.txt
+Expected: expected_results/e55_close_then_opener.txt
+Your Output: student_output/e55_close_then_opener_output.txt

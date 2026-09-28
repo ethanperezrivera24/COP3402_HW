@@ -1,0 +1,6 @@
+Test Case: n04_no_identifiers
+What this case covers: a program with no identifiers at all, so the table is empty
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/n04_no_identifiers.txt
+Expected: expected_results/n04_no_identifiers.txt
+Your Output: student_output/n04_no_identifiers_output.txt

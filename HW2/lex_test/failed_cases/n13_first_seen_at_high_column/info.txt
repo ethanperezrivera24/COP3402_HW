@@ -1,0 +1,6 @@
+Test Case: n13_first_seen_at_high_column
+What this case covers: a name first seen past column seventy
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/n13_first_seen_at_high_column.txt
+Expected: expected_results/n13_first_seen_at_high_column.txt
+Your Output: student_output/n13_first_seen_at_high_column_output.txt

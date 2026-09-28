@@ -121,6 +121,8 @@ int addToken(int code, int value, const char *lexeme);
 int findOrAddName(const char *name, int line, int col);
 int peekChar(const char *buf, size_t bytesRead, size_t i, int offset);
 void advance(const char *buf, size_t *i, int *line, int *col);
+void setError(int *errCode, int *errLine, int *errCol, char *errMsg, int code, int line, int col, char* msg);
+void printError(int errCode, int errLine, int errCol, char* errMsg);
 
 int main(int argc, char* argv[]) {
   // Check for correct usage
@@ -164,6 +166,8 @@ int main(int argc, char* argv[]) {
     int line = 1;       // current line number
     int col = 1;         // current column number
 
+    int errCode, errLine, errCol;
+    char errMsg[300];
     // Advance loop
     while (i < bytesRead) {
         // skip any run of whitespace
@@ -203,7 +207,7 @@ int main(int argc, char* argv[]) {
             run[(len < 255) ? len : 255] = '\0';    // Put null terminator at end of run
 
             if(len > MAX_IDENT_LEN) {
-                // Error 2!!!
+                setError(&errCode, &errLine, &errCol, &errMsg, 2, startLine, startCol, "identifier too long ’lexeme’, with the whole run in place of lexeme. A letter-led run longer than twelve characters.");
             } else {
                 int match = 0;
                 for(int j = 0; j < numReserved; j++) {
@@ -234,7 +238,7 @@ int main(int argc, char* argv[]) {
             int nextIsLetter = (i < bytesRead) && ((buf[i] >= 'a' && buf[i] <= 'z') || (buf[i] >= 'A' && buf[i] <= 'Z'));
 
             if (nextIsLetter) {
-            // error 6, keep consuming the rest of the alphanumeric run
+            setError(&errCode, &errLine, &errCol, errMsg, 6, startLine, startCol, "number followed by a letter ’lexeme’, with the whole alphanumeric run in place of lexeme. A digit run with a letter immediately after it, such as 123abc.");
                 while (i < bytesRead) {
                     char cur = buf[i];
                     int isLetter = (cur >= 'a' && cur <= 'z') || (cur >= 'A' && cur <= 'Z');
@@ -253,7 +257,7 @@ int main(int argc, char* argv[]) {
             } else {
                 run[(len < 255) ? len : 255] = '\0';
                 if (len > MAX_NUM_LEN) {
-                // Error 3!!! lexeme = run, position = startLine/startCol
+                    setError(&errCode, &errLine, &errCol, errMsg, 3, startLine, startCol, "number too long ’lexeme’. A digit run longer than six digits.");
                 } else {
                     addToken(numbersym, 0, run);
                 }
@@ -409,9 +413,12 @@ int main(int argc, char* argv[]) {
 
     // error 11: no tokens in the source program
     if (tokenCount == 0) {
-
+        setError(&errCode, &errLine, &errCol, &errMsg, 11, line, col, "no tokens in the source program. Reported at line 1, column 1");
     }
     
+    if(errCode != 0)
+        printError(errCode, errLine, errCol, errMsg);
+
     // Close file
     fclose(fp);
 
@@ -504,4 +511,18 @@ void advance(const char *buf, size_t *i, int *line, int *col) {
     }
 
     (*i)++;
+}
+
+void setError(int *errCode, int *errLine, int *errCol, char* errMsg, int code, int line, int col, char* msg) {
+    if(errCode != 0)
+        return;
+
+    (*errCode) = code;
+    (*errLine) = line;
+    (*errCol) = col;
+    strcpy(errMsg, msg);
+}
+
+void printError(int errCode, int errLine, int errCol, char* errMsg) {
+    printf("Error %d at line %d, column %d: %s\n", errCode, errLine, errCol, errMsg);
 }

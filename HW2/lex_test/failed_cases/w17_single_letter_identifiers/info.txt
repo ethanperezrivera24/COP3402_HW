@@ -1,0 +1,6 @@
+Test Case: w17_single_letter_identifiers
+What this case covers: identifiers one character long, the shortest allowed
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w17_single_letter_identifiers.txt
+Expected: expected_results/w17_single_letter_identifiers.txt
+Your Output: student_output/w17_single_letter_identifiers_output.txt

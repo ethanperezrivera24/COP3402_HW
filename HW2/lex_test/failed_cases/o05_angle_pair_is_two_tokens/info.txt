@@ -1,0 +1,6 @@
+Test Case: o05_angle_pair_is_two_tokens
+What this case covers: <> is two tokens, because this language has no <> operator
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o05_angle_pair_is_two_tokens.txt
+Expected: expected_results/o05_angle_pair_is_two_tokens.txt
+Your Output: student_output/o05_angle_pair_is_two_tokens_output.txt

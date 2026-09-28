@@ -1,0 +1,6 @@
+Test Case: e02_identifier_one_over
+What this case covers: error 2 on an identifier of thirteen characters, one past the limit
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e02_identifier_one_over.txt
+Expected: expected_results/e02_identifier_one_over.txt
+Your Output: student_output/e02_identifier_one_over_output.txt

@@ -1,0 +1,6 @@
+Test Case: n02_many_identifiers
+What this case covers: enough distinct identifiers to fill several rows in order
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/n02_many_identifiers.txt
+Expected: expected_results/n02_many_identifiers.txt
+Your Output: student_output/n02_many_identifiers_output.txt

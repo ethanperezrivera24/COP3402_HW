@@ -1,0 +1,6 @@
+Test Case: n08_identifier_at_limit_stored
+What this case covers: twelve-character names stored whole, which needs thirteen bytes each
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/n08_identifier_at_limit_stored.txt
+Expected: expected_results/n08_identifier_at_limit_stored.txt
+Your Output: student_output/n08_identifier_at_limit_stored_output.txt

@@ -1,0 +1,6 @@
+Test Case: p07_stray_carriage_return
+What this case covers: a carriage return in the middle of a line, before an identifier whose recorded column shows it
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/p07_stray_carriage_return.txt
+Expected: expected_results/p07_stray_carriage_return.txt
+Your Output: student_output/p07_stray_carriage_return_output.txt

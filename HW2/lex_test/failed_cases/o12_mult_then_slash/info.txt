@@ -1,0 +1,6 @@
+Test Case: o12_mult_then_slash
+What this case covers: * and / separated by a space, which is multiply then divide and not a comment close
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o12_mult_then_slash.txt
+Expected: expected_results/o12_mult_then_slash.txt
+Your Output: student_output/o12_mult_then_slash_output.txt

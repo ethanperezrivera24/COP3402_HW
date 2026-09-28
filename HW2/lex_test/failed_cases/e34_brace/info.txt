@@ -1,0 +1,6 @@
+Test Case: e34_brace
+What this case covers: error 1 on a brace, which is not how this language groups statements
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e34_brace.txt
+Expected: expected_results/e34_brace.txt
+Your Output: student_output/e34_brace_output.txt

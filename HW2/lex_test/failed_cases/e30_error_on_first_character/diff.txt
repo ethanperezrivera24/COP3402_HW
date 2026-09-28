@@ -1,0 +1,32 @@
+1,12c1,18
+< token[0]: code=32 value=0 lexeme='var'
+< token[1]: code=1 value=0 lexeme='x'
+< token[2]: code=16 value=0 lexeme=';'
+< token[3]: code=20 value=0 lexeme='begin'
+< token[4]: code=1 value=0 lexeme='x'
+< token[5]: code=18 value=0 lexeme='='
+< token[6]: code=2 value=0 lexeme='1'
+< token[7]: code=21 value=0 lexeme='end'
+< token[8]: code=17 value=0 lexeme='.'
+< ---
+< name table:
+<   [0] 'x' at line 1, col 7
+---
+> Source Program:
+> 
+> @ var x;
+> begin x = 1 end.
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 
+> Token List:
+> 
+> 
+> 
+> Error 1 at line 1, column 1: invalid character '@'

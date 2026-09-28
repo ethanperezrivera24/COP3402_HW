@@ -1,0 +1,6 @@
+Test Case: o19_star_at_end_of_file
+What this case covers: the file ends in *, which is multiplication and not the end of a comment
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o19_star_at_end_of_file.txt
+Expected: expected_results/o19_star_at_end_of_file.txt
+Your Output: student_output/o19_star_at_end_of_file_output.txt

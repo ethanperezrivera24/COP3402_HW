@@ -1,0 +1,6 @@
+Test Case: e59_bang_then_bang
+What this case covers: error 5 where a second exclamation mark follows the first
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e59_bang_then_bang.txt
+Expected: expected_results/e59_bang_then_bang.txt
+Your Output: student_output/e59_bang_then_bang_output.txt

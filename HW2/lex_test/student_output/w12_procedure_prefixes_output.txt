@@ -1,0 +1,11 @@
+token[0]: code=1 value=0 lexeme='proc'
+token[1]: code=1 value=1 lexeme='procedur'
+token[2]: code=33 value=0 lexeme='procedure'
+token[3]: code=1 value=2 lexeme='procedures'
+token[4]: code=1 value=3 lexeme='procedurea'
+---
+name table:
+  [0] 'proc' at line 1, col 1
+  [1] 'procedur' at line 1, col 6
+  [2] 'procedures' at line 1, col 25
+  [3] 'procedurea' at line 1, col 36

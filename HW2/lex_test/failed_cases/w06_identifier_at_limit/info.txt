@@ -1,0 +1,6 @@
+Test Case: w06_identifier_at_limit
+What this case covers: an identifier of exactly twelve characters, the longest allowed
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w06_identifier_at_limit.txt
+Expected: expected_results/w06_identifier_at_limit.txt
+Your Output: student_output/w06_identifier_at_limit_output.txt

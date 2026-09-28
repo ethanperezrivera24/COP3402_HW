@@ -1,0 +1,17 @@
+token[0]: code=1 value=0 lexeme='beginend'
+token[1]: code=1 value=1 lexeme='ififi'
+token[2]: code=1 value=2 lexeme='thenwhile'
+token[3]: code=1 value=3 lexeme='doododd'
+token[4]: code=1 value=4 lexeme='callconst'
+token[5]: code=1 value=5 lexeme='varprocedure'
+token[6]: code=1 value=6 lexeme='writeread'
+token[7]: code=36 value=0 lexeme='else'
+---
+name table:
+  [0] 'beginend' at line 1, col 1
+  [1] 'ififi' at line 1, col 10
+  [2] 'thenwhile' at line 1, col 16
+  [3] 'doododd' at line 1, col 26
+  [4] 'callconst' at line 1, col 34
+  [5] 'varprocedure' at line 1, col 44
+  [6] 'writeread' at line 1, col 57

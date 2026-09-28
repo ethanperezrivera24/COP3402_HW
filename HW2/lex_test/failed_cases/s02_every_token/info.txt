@@ -1,0 +1,6 @@
+Test Case: s02_every_token
+What this case covers: every one of the 36 token codes appears at least once in one file
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/s02_every_token.txt
+Expected: expected_results/s02_every_token.txt
+Your Output: student_output/s02_every_token_output.txt

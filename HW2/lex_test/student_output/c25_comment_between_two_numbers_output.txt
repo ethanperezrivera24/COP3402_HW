@@ -1,0 +1,21 @@
+token[0]: code=32 value=0 lexeme='var'
+token[1]: code=1 value=0 lexeme='x'
+token[2]: code=15 value=0 lexeme=','
+token[3]: code=1 value=1 lexeme='y'
+token[4]: code=16 value=0 lexeme=';'
+token[5]: code=20 value=0 lexeme='begin'
+token[6]: code=1 value=0 lexeme='x'
+token[7]: code=18 value=0 lexeme='='
+token[8]: code=2 value=0 lexeme='1'
+token[9]: code=2 value=0 lexeme='2'
+token[10]: code=16 value=0 lexeme=';'
+token[11]: code=1 value=1 lexeme='y'
+token[12]: code=18 value=0 lexeme='='
+token[13]: code=2 value=0 lexeme='3'
+token[14]: code=2 value=0 lexeme='4'
+token[15]: code=21 value=0 lexeme='end'
+token[16]: code=17 value=0 lexeme='.'
+---
+name table:
+  [0] 'x' at line 1, col 5
+  [1] 'y' at line 1, col 8

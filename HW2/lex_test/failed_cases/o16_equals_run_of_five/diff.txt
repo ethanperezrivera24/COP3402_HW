@@ -1,0 +1,33 @@
+1,9c1,22
+< token[0]: code=1 value=0 lexeme='a'
+< token[1]: code=7 value=0 lexeme='=='
+< token[2]: code=7 value=0 lexeme='=='
+< token[3]: code=18 value=0 lexeme='='
+< token[4]: code=1 value=1 lexeme='b'
+< ---
+< name table:
+<   [0] 'a' at line 1, col 1
+<   [1] 'b' at line 1, col 7
+---
+> Source Program:
+> 
+> a=====b
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> a              1
+> ==             7
+> ==             7
+> =              18
+> b              1
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 0      a              1      1
+> 1      b              1      7
+> 
+> Token List:
+> 
+> 1 0 7 7 18 1 1 

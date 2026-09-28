@@ -1,0 +1,6 @@
+Test Case: n10_same_name_on_many_lines
+What this case covers: one name used on five different lines, added once
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/n10_same_name_on_many_lines.txt
+Expected: expected_results/n10_same_name_on_many_lines.txt
+Your Output: student_output/n10_same_name_on_many_lines_output.txt

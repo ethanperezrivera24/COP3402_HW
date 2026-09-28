@@ -1,0 +1,6 @@
+Test Case: w02_fi_prefix
+What this case covers: fi against identifiers that begin with those two letters
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w02_fi_prefix.txt
+Expected: expected_results/w02_fi_prefix.txt
+Your Output: student_output/w02_fi_prefix_output.txt

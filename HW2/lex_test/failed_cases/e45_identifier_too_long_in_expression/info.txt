@@ -1,0 +1,6 @@
+Test Case: e45_identifier_too_long_in_expression
+What this case covers: error 2 on an over-long name used in a statement rather than declared
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e45_identifier_too_long_in_expression.txt
+Expected: expected_results/e45_identifier_too_long_in_expression.txt
+Your Output: student_output/e45_identifier_too_long_in_expression_output.txt

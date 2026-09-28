@@ -1,0 +1,6 @@
+Test Case: p13_leading_carriage_return
+What this case covers: the file begins with a carriage return, so the first token is still at line 1 column 1
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/p13_leading_carriage_return.txt
+Expected: expected_results/p13_leading_carriage_return.txt
+Your Output: student_output/p13_leading_carriage_return_output.txt

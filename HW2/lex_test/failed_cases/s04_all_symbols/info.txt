@@ -1,0 +1,6 @@
+Test Case: s04_all_symbols
+What this case covers: all seventeen special symbols, each given its own code
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/s04_all_symbols.txt
+Expected: expected_results/s04_all_symbols.txt
+Your Output: student_output/s04_all_symbols_output.txt

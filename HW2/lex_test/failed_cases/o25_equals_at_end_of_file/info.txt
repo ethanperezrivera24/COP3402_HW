@@ -1,0 +1,6 @@
+Test Case: o25_equals_at_end_of_file
+What this case covers: the file ends in =, which is assignment and not half of ==
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o25_equals_at_end_of_file.txt
+Expected: expected_results/o25_equals_at_end_of_file.txt
+Your Output: student_output/o25_equals_at_end_of_file_output.txt

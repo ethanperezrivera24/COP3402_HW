@@ -1,0 +1,40 @@
+1,10c1,28
+< token[0]: code=20 value=0 lexeme='begin'
+< token[1]: code=34 value=0 lexeme='write'
+< token[2]: code=21 value=0 lexeme='end'
+< token[3]: code=17 value=0 lexeme='.'
+< token[4]: code=1 value=0 lexeme='later'
+< token[5]: code=18 value=0 lexeme='='
+< token[6]: code=2 value=0 lexeme='1'
+< ---
+< name table:
+<   [0] 'later' at line 6, col 5
+---
+> Source Program:
+> 
+> begin
+>   write
+> end.
+> 
+> 
+>     later = 1
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> begin          20
+> write          34
+> end            21
+> .              17
+> later          1
+> =              18
+> 1              2
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 0      later          6      5
+> 
+> Token List:
+> 
+> 20 34 21 17 1 0 18 2 1 

@@ -1,0 +1,6 @@
+Test Case: w13_keywords_uppercase
+What this case covers: reserved words in upper case and mixed case, all identifiers
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w13_keywords_uppercase.txt
+Expected: expected_results/w13_keywords_uppercase.txt
+Your Output: student_output/w13_keywords_uppercase_output.txt

@@ -1,0 +1,20 @@
+token[0]: code=1 value=0 lexeme='BEGIN'
+token[1]: code=1 value=1 lexeme='Begin'
+token[2]: code=1 value=2 lexeme='bEgIn'
+token[3]: code=1 value=3 lexeme='END'
+token[4]: code=1 value=4 lexeme='End'
+token[5]: code=1 value=5 lexeme='eNd'
+token[6]: code=1 value=6 lexeme='ODD'
+token[7]: code=1 value=7 lexeme='Odd'
+token[8]: code=1 value=8 lexeme='oDd'
+---
+name table:
+  [0] 'BEGIN' at line 1, col 1
+  [1] 'Begin' at line 1, col 7
+  [2] 'bEgIn' at line 1, col 13
+  [3] 'END' at line 1, col 19
+  [4] 'End' at line 1, col 23
+  [5] 'eNd' at line 1, col 27
+  [6] 'ODD' at line 1, col 31
+  [7] 'Odd' at line 1, col 35
+  [8] 'oDd' at line 1, col 39

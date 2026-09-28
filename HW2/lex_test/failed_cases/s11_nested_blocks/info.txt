@@ -1,0 +1,6 @@
+Test Case: s11_nested_blocks
+What this case covers: blocks inside blocks: begin/end, if/fi and while/elihw all nested
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/s11_nested_blocks.txt
+Expected: expected_results/s11_nested_blocks.txt
+Your Output: student_output/s11_nested_blocks_output.txt

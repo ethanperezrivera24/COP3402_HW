@@ -1,0 +1,6 @@
+Test Case: o02_assignment
+What this case covers: = alone, where no = follows it
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o02_assignment.txt
+Expected: expected_results/o02_assignment.txt
+Your Output: student_output/o02_assignment_output.txt

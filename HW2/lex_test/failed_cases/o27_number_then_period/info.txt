@@ -1,0 +1,6 @@
+Test Case: o27_number_then_period
+What this case covers: 1.5 is a number, a period and a number, because this language has no decimals
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o27_number_then_period.txt
+Expected: expected_results/o27_number_then_period.txt
+Your Output: student_output/o27_number_then_period_output.txt

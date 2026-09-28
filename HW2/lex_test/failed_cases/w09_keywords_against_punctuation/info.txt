@@ -1,0 +1,6 @@
+Test Case: w09_keywords_against_punctuation
+What this case covers: reserved words with punctuation against them and no whitespace
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w09_keywords_against_punctuation.txt
+Expected: expected_results/w09_keywords_against_punctuation.txt
+Your Output: student_output/w09_keywords_against_punctuation_output.txt

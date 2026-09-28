@@ -1,0 +1,8 @@
+token[0]: code=1 value=0 lexeme='oddoddoddod'
+token[1]: code=1 value=1 lexeme='oddoddoddo'
+token[2]: code=1 value=2 lexeme='procedureaa'
+---
+name table:
+  [0] 'oddoddoddod' at line 1, col 1
+  [1] 'oddoddoddo' at line 1, col 13
+  [2] 'procedureaa' at line 1, col 24

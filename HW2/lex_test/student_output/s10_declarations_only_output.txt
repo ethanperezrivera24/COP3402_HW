@@ -1,0 +1,81 @@
+token[0]: code=32 value=0 lexeme='var'
+token[1]: code=1 value=0 lexeme='a'
+token[2]: code=15 value=0 lexeme=','
+token[3]: code=1 value=1 lexeme='b'
+token[4]: code=15 value=0 lexeme=','
+token[5]: code=1 value=2 lexeme='c'
+token[6]: code=15 value=0 lexeme=','
+token[7]: code=1 value=3 lexeme='d'
+token[8]: code=15 value=0 lexeme=','
+token[9]: code=1 value=4 lexeme='e'
+token[10]: code=15 value=0 lexeme=','
+token[11]: code=1 value=5 lexeme='f'
+token[12]: code=15 value=0 lexeme=','
+token[13]: code=1 value=6 lexeme='g'
+token[14]: code=15 value=0 lexeme=','
+token[15]: code=1 value=7 lexeme='h'
+token[16]: code=15 value=0 lexeme=','
+token[17]: code=1 value=8 lexeme='i'
+token[18]: code=15 value=0 lexeme=','
+token[19]: code=1 value=9 lexeme='j'
+token[20]: code=15 value=0 lexeme=','
+token[21]: code=1 value=10 lexeme='k'
+token[22]: code=15 value=0 lexeme=','
+token[23]: code=1 value=11 lexeme='l'
+token[24]: code=15 value=0 lexeme=','
+token[25]: code=1 value=12 lexeme='m'
+token[26]: code=15 value=0 lexeme=','
+token[27]: code=1 value=13 lexeme='n'
+token[28]: code=15 value=0 lexeme=','
+token[29]: code=1 value=14 lexeme='o'
+token[30]: code=15 value=0 lexeme=','
+token[31]: code=1 value=15 lexeme='p'
+token[32]: code=15 value=0 lexeme=','
+token[33]: code=1 value=16 lexeme='q'
+token[34]: code=15 value=0 lexeme=','
+token[35]: code=1 value=17 lexeme='r'
+token[36]: code=15 value=0 lexeme=','
+token[37]: code=1 value=18 lexeme='s'
+token[38]: code=15 value=0 lexeme=','
+token[39]: code=1 value=19 lexeme='t'
+token[40]: code=15 value=0 lexeme=','
+token[41]: code=1 value=20 lexeme='u'
+token[42]: code=15 value=0 lexeme=','
+token[43]: code=1 value=21 lexeme='v'
+token[44]: code=15 value=0 lexeme=','
+token[45]: code=1 value=22 lexeme='w'
+token[46]: code=15 value=0 lexeme=','
+token[47]: code=1 value=23 lexeme='x'
+token[48]: code=15 value=0 lexeme=','
+token[49]: code=1 value=24 lexeme='y'
+token[50]: code=15 value=0 lexeme=','
+token[51]: code=1 value=25 lexeme='z'
+token[52]: code=16 value=0 lexeme=';'
+---
+name table:
+  [0] 'a' at line 1, col 5
+  [1] 'b' at line 1, col 7
+  [2] 'c' at line 1, col 9
+  [3] 'd' at line 1, col 11
+  [4] 'e' at line 1, col 13
+  [5] 'f' at line 1, col 15
+  [6] 'g' at line 1, col 17
+  [7] 'h' at line 1, col 19
+  [8] 'i' at line 1, col 21
+  [9] 'j' at line 1, col 23
+  [10] 'k' at line 1, col 25
+  [11] 'l' at line 1, col 27
+  [12] 'm' at line 1, col 29
+  [13] 'n' at line 1, col 31
+  [14] 'o' at line 1, col 33
+  [15] 'p' at line 1, col 35
+  [16] 'q' at line 1, col 37
+  [17] 'r' at line 1, col 39
+  [18] 's' at line 1, col 41
+  [19] 't' at line 1, col 43
+  [20] 'u' at line 1, col 45
+  [21] 'v' at line 1, col 47
+  [22] 'w' at line 1, col 49
+  [23] 'x' at line 1, col 51
+  [24] 'y' at line 1, col 53
+  [25] 'z' at line 1, col 55

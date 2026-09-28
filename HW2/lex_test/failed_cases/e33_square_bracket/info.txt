@@ -1,0 +1,6 @@
+Test Case: e33_square_bracket
+What this case covers: error 1 on a square bracket, since this language has no arrays
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e33_square_bracket.txt
+Expected: expected_results/e33_square_bracket.txt
+Your Output: student_output/e33_square_bracket_output.txt

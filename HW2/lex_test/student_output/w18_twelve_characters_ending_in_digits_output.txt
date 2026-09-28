@@ -1,0 +1,15 @@
+token[0]: code=32 value=0 lexeme='var'
+token[1]: code=1 value=0 lexeme='abcdefghij12'
+token[2]: code=15 value=0 lexeme=','
+token[3]: code=1 value=1 lexeme='klmnopqrst34'
+token[4]: code=16 value=0 lexeme=';'
+token[5]: code=20 value=0 lexeme='begin'
+token[6]: code=1 value=0 lexeme='abcdefghij12'
+token[7]: code=18 value=0 lexeme='='
+token[8]: code=1 value=1 lexeme='klmnopqrst34'
+token[9]: code=21 value=0 lexeme='end'
+token[10]: code=17 value=0 lexeme='.'
+---
+name table:
+  [0] 'abcdefghij12' at line 1, col 5
+  [1] 'klmnopqrst34' at line 1, col 19

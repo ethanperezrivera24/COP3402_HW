@@ -1,0 +1,6 @@
+Test Case: o10_const_init
+What this case covers: := in its one real use, giving a constant its value
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o10_const_init.txt
+Expected: expected_results/o10_const_init.txt
+Your Output: student_output/o10_const_init_output.txt

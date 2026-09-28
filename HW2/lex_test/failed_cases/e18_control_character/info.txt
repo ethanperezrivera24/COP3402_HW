@@ -1,0 +1,6 @@
+Test Case: e18_control_character
+What this case covers: error 10 on a vertical tab, which is not one of the four whitespace characters
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e18_control_character.txt
+Expected: expected_results/e18_control_character.txt
+Your Output: student_output/e18_control_character_output.txt

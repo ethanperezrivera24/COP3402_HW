@@ -1,0 +1,117 @@
+1,46c1,69
+< token[0]: code=31 value=0 lexeme='const'
+< token[1]: code=1 value=0 lexeme='limit'
+< token[2]: code=19 value=0 lexeme=':='
+< token[3]: code=2 value=0 lexeme='10'
+< token[4]: code=16 value=0 lexeme=';'
+< token[5]: code=32 value=0 lexeme='var'
+< token[6]: code=1 value=1 lexeme='n'
+< token[7]: code=15 value=0 lexeme=','
+< token[8]: code=1 value=2 lexeme='total'
+< token[9]: code=16 value=0 lexeme=';'
+< token[10]: code=20 value=0 lexeme='begin'
+< token[11]: code=1 value=1 lexeme='n'
+< token[12]: code=18 value=0 lexeme='='
+< token[13]: code=2 value=0 lexeme='1'
+< token[14]: code=16 value=0 lexeme=';'
+< token[15]: code=1 value=2 lexeme='total'
+< token[16]: code=18 value=0 lexeme='='
+< token[17]: code=2 value=0 lexeme='0'
+< token[18]: code=16 value=0 lexeme=';'
+< token[19]: code=25 value=0 lexeme='while'
+< token[20]: code=1 value=1 lexeme='n'
+< token[21]: code=10 value=0 lexeme='<='
+< token[22]: code=1 value=0 lexeme='limit'
+< token[23]: code=24 value=0 lexeme='then'
+< token[24]: code=1 value=2 lexeme='total'
+< token[25]: code=18 value=0 lexeme='='
+< token[26]: code=1 value=2 lexeme='total'
+< token[27]: code=3 value=0 lexeme='+'
+< token[28]: code=1 value=1 lexeme='n'
+< token[29]: code=16 value=0 lexeme=';'
+< token[30]: code=1 value=1 lexeme='n'
+< token[31]: code=18 value=0 lexeme='='
+< token[32]: code=1 value=1 lexeme='n'
+< token[33]: code=3 value=0 lexeme='+'
+< token[34]: code=2 value=0 lexeme='1'
+< token[35]: code=26 value=0 lexeme='elihw'
+< token[36]: code=16 value=0 lexeme=';'
+< token[37]: code=34 value=0 lexeme='write'
+< token[38]: code=1 value=2 lexeme='total'
+< token[39]: code=21 value=0 lexeme='end'
+< token[40]: code=17 value=0 lexeme='.'
+< ---
+< name table:
+<   [0] 'limit' at line 1, col 7
+<   [1] 'n' at line 2, col 5
+<   [2] 'total' at line 2, col 8
+---
+> Source Program:
+> 
+> const limit := 10;
+> var n, total;
+> begin
+>   n = 1;
+>   total = 0;
+>   while n <= limit then
+>     total = total + n;
+>     n = n + 1
+>   elihw;
+>   write total
+> end.
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> const          31
+> limit          1
+> :=             19
+> 10             2
+> ;              16
+> var            32
+> n              1
+> ,              15
+> total          1
+> ;              16
+> begin          20
+> n              1
+> =              18
+> 1              2
+> ;              16
+> total          1
+> =              18
+> 0              2
+> ;              16
+> while          25
+> n              1
+> <=             10
+> limit          1
+> then           24
+> total          1
+> =              18
+> total          1
+> +              3
+> n              1
+> ;              16
+> n              1
+> =              18
+> n              1
+> +              3
+> 1              2
+> elihw          26
+> ;              16
+> write          34
+> total          1
+> end            21
+> .              17
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 0      limit          1      7
+> 1      n              2      5
+> 2      total          2      8
+> 
+> Token List:
+> 
+> 31 1 0 19 2 10 16 32 1 1 15 1 2 16 20 1 1 18 2 1 16 1 2 18 2 0 16 25 1 1 10 1 0 24 1 2 18 1 2 3 1 1 16 1 1 18 1 1 3 2 1 26 16 34 1 2 21 17 

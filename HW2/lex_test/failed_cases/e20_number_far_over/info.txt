@@ -1,0 +1,6 @@
+Test Case: e20_number_far_over
+What this case covers: error 3 on a number far past the limit, not just one over
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e20_number_far_over.txt
+Expected: expected_results/e20_number_far_over.txt
+Your Output: student_output/e20_number_far_over_output.txt

@@ -1,0 +1,6 @@
+Test Case: w15_every_keyword_adjacent_pairs
+What this case covers: pairs of reserved words with no space between them, each pair one identifier
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w15_every_keyword_adjacent_pairs.txt
+Expected: expected_results/w15_every_keyword_adjacent_pairs.txt
+Your Output: student_output/w15_every_keyword_adjacent_pairs_output.txt

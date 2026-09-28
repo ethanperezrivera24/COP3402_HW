@@ -1,0 +1,6 @@
+Test Case: e56_comment_closed_twice
+What this case covers: error 8 where a closed comment is followed immediately by a second close
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e56_comment_closed_twice.txt
+Expected: expected_results/e56_comment_closed_twice.txt
+Your Output: student_output/e56_comment_closed_twice_output.txt

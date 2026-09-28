@@ -1,0 +1,6 @@
+Test Case: e36_nul_byte
+What this case covers: error 10 on a zero byte, which a scanner using C string functions treats as the end
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e36_nul_byte.txt
+Expected: expected_results/e36_nul_byte.txt
+Your Output: student_output/e36_nul_byte_output.txt

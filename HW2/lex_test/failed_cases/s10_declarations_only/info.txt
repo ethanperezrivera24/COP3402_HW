@@ -1,0 +1,6 @@
+Test Case: s10_declarations_only
+What this case covers: twenty-six one-letter names in one declaration and no statements at all
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/s10_declarations_only.txt
+Expected: expected_results/s10_declarations_only.txt
+Your Output: student_output/s10_declarations_only_output.txt

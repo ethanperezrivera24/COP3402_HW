@@ -1,0 +1,6 @@
+Test Case: e48_question_mark
+What this case covers: error 1 on a question mark
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e48_question_mark.txt
+Expected: expected_results/e48_question_mark.txt
+Your Output: student_output/e48_question_mark_output.txt

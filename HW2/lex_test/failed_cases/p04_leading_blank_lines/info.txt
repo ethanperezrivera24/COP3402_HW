@@ -1,0 +1,6 @@
+Test Case: p04_leading_blank_lines
+What this case covers: five blank and whitespace-only lines before the first token, so the first line number is not 1
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/p04_leading_blank_lines.txt
+Expected: expected_results/p04_leading_blank_lines.txt
+Your Output: student_output/p04_leading_blank_lines_output.txt

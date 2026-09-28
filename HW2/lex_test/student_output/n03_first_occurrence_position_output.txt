@@ -1,0 +1,10 @@
+token[0]: code=20 value=0 lexeme='begin'
+token[1]: code=34 value=0 lexeme='write'
+token[2]: code=21 value=0 lexeme='end'
+token[3]: code=17 value=0 lexeme='.'
+token[4]: code=1 value=0 lexeme='later'
+token[5]: code=18 value=0 lexeme='='
+token[6]: code=2 value=0 lexeme='1'
+---
+name table:
+  [0] 'later' at line 6, col 5

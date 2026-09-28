@@ -1,0 +1,53 @@
+1,19c1,32
+< token[0]: code=20 value=0 lexeme='begin'
+< token[1]: code=21 value=0 lexeme='end'
+< token[2]: code=22 value=0 lexeme='if'
+< token[3]: code=23 value=0 lexeme='fi'
+< token[4]: code=24 value=0 lexeme='then'
+< token[5]: code=25 value=0 lexeme='while'
+< token[6]: code=26 value=0 lexeme='elihw'
+< token[7]: code=27 value=0 lexeme='do'
+< token[8]: code=28 value=0 lexeme='od'
+< token[9]: code=29 value=0 lexeme='odd'
+< token[10]: code=30 value=0 lexeme='call'
+< token[11]: code=31 value=0 lexeme='const'
+< token[12]: code=32 value=0 lexeme='var'
+< token[13]: code=33 value=0 lexeme='procedure'
+< token[14]: code=34 value=0 lexeme='write'
+< token[15]: code=35 value=0 lexeme='read'
+< token[16]: code=36 value=0 lexeme='else'
+< ---
+< name table:
+---
+> Source Program:
+> 
+> begin end if fi then while elihw do od odd call const var procedure write read else
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> begin          20
+> end            21
+> if             22
+> fi             23
+> then           24
+> while          25
+> elihw          26
+> do             27
+> od             28
+> odd            29
+> call           30
+> const          31
+> var            32
+> procedure      33
+> write          34
+> read           35
+> else           36
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 
+> Token List:
+> 
+> 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 

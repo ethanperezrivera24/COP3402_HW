@@ -1,0 +1,7 @@
+token[0]: code=7 value=0 lexeme='=='
+token[1]: code=8 value=0 lexeme='!='
+token[2]: code=10 value=0 lexeme='<='
+token[3]: code=12 value=0 lexeme='>='
+token[4]: code=19 value=0 lexeme=':='
+---
+name table:

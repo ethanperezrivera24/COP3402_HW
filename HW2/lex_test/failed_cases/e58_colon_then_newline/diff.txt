@@ -1,0 +1,36 @@
+1,12c1,22
+< token[0]: code=31 value=0 lexeme='const'
+< token[1]: code=1 value=0 lexeme='k'
+< token[2]: code=18 value=0 lexeme='='
+< token[3]: code=2 value=0 lexeme='3'
+< token[4]: code=16 value=0 lexeme=';'
+< token[5]: code=32 value=0 lexeme='var'
+< token[6]: code=1 value=1 lexeme='x'
+< token[7]: code=16 value=0 lexeme=';'
+< ---
+< name table:
+<   [0] 'k' at line 1, col 7
+<   [1] 'x' at line 3, col 5
+---
+> Source Program:
+> 
+> const k :
+> = 3;
+> var x;
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> const          31
+> k              1
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 0      k              1      7
+> 
+> Token List:
+> 
+> 31 1 0 
+> 
+> Error 4 at line 1, column 9: ':' must be followed by '='

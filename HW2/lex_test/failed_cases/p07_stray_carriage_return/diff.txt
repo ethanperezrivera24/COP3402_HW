@@ -1,0 +1,46 @@
+1,15c1,29
+< token[0]: code=32 value=0 lexeme='var'
+< token[1]: code=1 value=0 lexeme='alpha'
+< token[2]: code=15 value=0 lexeme=','
+< token[3]: code=1 value=1 lexeme='beta'
+< token[4]: code=16 value=0 lexeme=';'
+< token[5]: code=20 value=0 lexeme='begin'
+< token[6]: code=1 value=0 lexeme='alpha'
+< token[7]: code=18 value=0 lexeme='='
+< token[8]: code=1 value=1 lexeme='beta'
+< token[9]: code=21 value=0 lexeme='end'
+< token[10]: code=17 value=0 lexeme='.'
+< ---
+< name table:
+<   [0] 'alpha' at line 1, col 6
+<   [1] 'beta' at line 1, col 13
+---
+> Source Program:
+> 
+> var  alpha, beta;
+> begin alpha = beta end.
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> var            32
+> alpha          1
+> ,              15
+> beta           1
+> ;              16
+> begin          20
+> alpha          1
+> =              18
+> beta           1
+> end            21
+> .              17
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 0      alpha          1      6
+> 1      beta           1      13
+> 
+> Token List:
+> 
+> 32 1 0 15 1 1 16 20 1 0 18 1 1 21 17 

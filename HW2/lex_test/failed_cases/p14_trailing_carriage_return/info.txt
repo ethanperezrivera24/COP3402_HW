@@ -1,0 +1,6 @@
+Test Case: p14_trailing_carriage_return
+What this case covers: the file ends with a carriage return and no newline
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/p14_trailing_carriage_return.txt
+Expected: expected_results/p14_trailing_carriage_return.txt
+Your Output: student_output/p14_trailing_carriage_return_output.txt

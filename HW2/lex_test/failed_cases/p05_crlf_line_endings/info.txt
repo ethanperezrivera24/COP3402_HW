@@ -1,0 +1,6 @@
+Test Case: p05_crlf_line_endings
+What this case covers: CR LF line endings throughout: the carriage return must not advance a column
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/p05_crlf_line_endings.txt
+Expected: expected_results/p05_crlf_line_endings.txt
+Your Output: student_output/p05_crlf_line_endings_output.txt

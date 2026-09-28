@@ -1,0 +1,7 @@
+token[0]: code=32 value=0 lexeme='var'
+token[1]: code=16 value=0 lexeme=';'
+token[2]: code=20 value=0 lexeme='begin'
+token[3]: code=21 value=0 lexeme='end'
+token[4]: code=17 value=0 lexeme='.'
+---
+name table:

@@ -1,0 +1,6 @@
+Test Case: n03_first_occurrence_position
+What this case covers: the line and column recorded are those of the first occurrence, not the last
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/n03_first_occurrence_position.txt
+Expected: expected_results/n03_first_occurrence_position.txt
+Your Output: student_output/n03_first_occurrence_position_output.txt

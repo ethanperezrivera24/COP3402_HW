@@ -1,0 +1,45 @@
+token[0]: code=32 value=0 lexeme='var'
+token[1]: code=1 value=0 lexeme='alpha'
+token[2]: code=15 value=0 lexeme=','
+token[3]: code=1 value=1 lexeme='beta'
+token[4]: code=15 value=0 lexeme=','
+token[5]: code=1 value=2 lexeme='gamma'
+token[6]: code=15 value=0 lexeme=','
+token[7]: code=1 value=3 lexeme='delta'
+token[8]: code=15 value=0 lexeme=','
+token[9]: code=1 value=4 lexeme='epsilon'
+token[10]: code=15 value=0 lexeme=','
+token[11]: code=1 value=5 lexeme='zeta'
+token[12]: code=15 value=0 lexeme=','
+token[13]: code=1 value=6 lexeme='eta'
+token[14]: code=15 value=0 lexeme=','
+token[15]: code=1 value=7 lexeme='theta'
+token[16]: code=15 value=0 lexeme=','
+token[17]: code=1 value=8 lexeme='iota'
+token[18]: code=15 value=0 lexeme=','
+token[19]: code=1 value=9 lexeme='kappa'
+token[20]: code=15 value=0 lexeme=','
+token[21]: code=1 value=10 lexeme='lambda'
+token[22]: code=15 value=0 lexeme=','
+token[23]: code=1 value=11 lexeme='farout'
+token[24]: code=16 value=0 lexeme=';'
+token[25]: code=20 value=0 lexeme='begin'
+token[26]: code=1 value=11 lexeme='farout'
+token[27]: code=18 value=0 lexeme='='
+token[28]: code=1 value=0 lexeme='alpha'
+token[29]: code=21 value=0 lexeme='end'
+token[30]: code=17 value=0 lexeme='.'
+---
+name table:
+  [0] 'alpha' at line 1, col 5
+  [1] 'beta' at line 1, col 12
+  [2] 'gamma' at line 1, col 18
+  [3] 'delta' at line 1, col 25
+  [4] 'epsilon' at line 1, col 32
+  [5] 'zeta' at line 1, col 41
+  [6] 'eta' at line 1, col 47
+  [7] 'theta' at line 1, col 52
+  [8] 'iota' at line 1, col 59
+  [9] 'kappa' at line 1, col 65
+  [10] 'lambda' at line 1, col 72
+  [11] 'farout' at line 1, col 80

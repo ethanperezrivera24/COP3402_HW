@@ -1,0 +1,62 @@
+1,23c1,37
+< token[0]: code=32 value=0 lexeme='var'
+< token[1]: code=1 value=0 lexeme='Total'
+< token[2]: code=15 value=0 lexeme=','
+< token[3]: code=1 value=1 lexeme='total'
+< token[4]: code=15 value=0 lexeme=','
+< token[5]: code=1 value=2 lexeme='TOTAL'
+< token[6]: code=15 value=0 lexeme=','
+< token[7]: code=1 value=3 lexeme='ToTaL'
+< token[8]: code=16 value=0 lexeme=';'
+< token[9]: code=20 value=0 lexeme='begin'
+< token[10]: code=1 value=1 lexeme='total'
+< token[11]: code=18 value=0 lexeme='='
+< token[12]: code=1 value=0 lexeme='Total'
+< token[13]: code=3 value=0 lexeme='+'
+< token[14]: code=1 value=2 lexeme='TOTAL'
+< token[15]: code=21 value=0 lexeme='end'
+< token[16]: code=17 value=0 lexeme='.'
+< ---
+< name table:
+<   [0] 'Total' at line 1, col 5
+<   [1] 'total' at line 1, col 12
+<   [2] 'TOTAL' at line 1, col 19
+<   [3] 'ToTaL' at line 1, col 26
+---
+> Source Program:
+> 
+> var Total, total, TOTAL, ToTaL;
+> begin total = Total + TOTAL end.
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> var            32
+> Total          1
+> ,              15
+> total          1
+> ,              15
+> TOTAL          1
+> ,              15
+> ToTaL          1
+> ;              16
+> begin          20
+> total          1
+> =              18
+> Total          1
+> +              3
+> TOTAL          1
+> end            21
+> .              17
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 0      Total          1      5
+> 1      total          1      12
+> 2      TOTAL          1      19
+> 3      ToTaL          1      26
+> 
+> Token List:
+> 
+> 32 1 0 15 1 1 15 1 2 15 1 3 16 20 1 1 18 1 0 3 1 2 21 17 

@@ -1,0 +1,6 @@
+Test Case: w05_keyword_inside_identifier
+What this case covers: a reserved word appearing inside a longer identifier
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w05_keyword_inside_identifier.txt
+Expected: expected_results/w05_keyword_inside_identifier.txt
+Your Output: student_output/w05_keyword_inside_identifier_output.txt

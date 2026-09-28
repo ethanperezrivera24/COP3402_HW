@@ -1,0 +1,7 @@
+token[0]: code=6 value=0 lexeme='/'
+token[1]: code=32 value=0 lexeme='var'
+token[2]: code=1 value=0 lexeme='x'
+token[3]: code=16 value=0 lexeme=';'
+---
+name table:
+  [0] 'x' at line 2, col 5

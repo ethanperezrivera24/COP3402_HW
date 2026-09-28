@@ -1,0 +1,10 @@
+token[0]: code=26 value=0 lexeme='elihw'
+token[1]: code=1 value=0 lexeme='elihwx'
+token[2]: code=1 value=1 lexeme='elih'
+token[3]: code=25 value=0 lexeme='while'
+token[4]: code=1 value=2 lexeme='whilex'
+---
+name table:
+  [0] 'elihwx' at line 1, col 7
+  [1] 'elih' at line 1, col 14
+  [2] 'whilex' at line 1, col 25

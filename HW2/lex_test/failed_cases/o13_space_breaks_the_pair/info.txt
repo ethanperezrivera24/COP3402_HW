@@ -1,0 +1,6 @@
+Test Case: o13_space_breaks_the_pair
+What this case covers: a space between < and =, which makes two tokens instead of <=
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o13_space_breaks_the_pair.txt
+Expected: expected_results/o13_space_breaks_the_pair.txt
+Your Output: student_output/o13_space_breaks_the_pair_output.txt

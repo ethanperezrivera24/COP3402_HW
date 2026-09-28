@@ -1,0 +1,6 @@
+Test Case: e16_underscore
+What this case covers: error 1 on an underscore, which is not a letter in this language
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e16_underscore.txt
+Expected: expected_results/e16_underscore.txt
+Your Output: student_output/e16_underscore_output.txt

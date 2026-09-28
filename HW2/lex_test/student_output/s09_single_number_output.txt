@@ -1,0 +1,3 @@
+token[0]: code=2 value=0 lexeme='424242'
+---
+name table:

@@ -1,0 +1,6 @@
+Test Case: o18_slash_at_end_of_file
+What this case covers: the file ends in /, which is division and not the start of a comment
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o18_slash_at_end_of_file.txt
+Expected: expected_results/o18_slash_at_end_of_file.txt
+Your Output: student_output/o18_slash_at_end_of_file_output.txt

@@ -1,0 +1,37 @@
+1,11c1,24
+< token[0]: code=1 value=0 lexeme='proc'
+< token[1]: code=1 value=1 lexeme='procedur'
+< token[2]: code=33 value=0 lexeme='procedure'
+< token[3]: code=1 value=2 lexeme='procedures'
+< token[4]: code=1 value=3 lexeme='procedurea'
+< ---
+< name table:
+<   [0] 'proc' at line 1, col 1
+<   [1] 'procedur' at line 1, col 6
+<   [2] 'procedures' at line 1, col 25
+<   [3] 'procedurea' at line 1, col 36
+---
+> Source Program:
+> 
+> proc procedur procedure procedures procedurea
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> proc           1
+> procedur       1
+> procedure      33
+> procedures     1
+> procedurea     1
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 0      proc           1      1
+> 1      procedur       1      6
+> 2      procedures     1      25
+> 3      procedurea     1      36
+> 
+> Token List:
+> 
+> 1 0 1 1 33 1 2 1 3 

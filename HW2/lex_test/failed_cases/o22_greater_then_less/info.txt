@@ -1,0 +1,6 @@
+Test Case: o22_greater_then_less
+What this case covers: >< is > and then <
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o22_greater_then_less.txt
+Expected: expected_results/o22_greater_then_less.txt
+Your Output: student_output/o22_greater_then_less_output.txt

@@ -1,0 +1,6 @@
+Test Case: w12_procedure_prefixes
+What this case covers: proc, procedur, procedure and procedures: only the exact spelling is the word
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w12_procedure_prefixes.txt
+Expected: expected_results/w12_procedure_prefixes.txt
+Your Output: student_output/w12_procedure_prefixes_output.txt

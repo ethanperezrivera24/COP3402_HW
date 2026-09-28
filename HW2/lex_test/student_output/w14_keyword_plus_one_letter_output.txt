@@ -1,0 +1,36 @@
+token[0]: code=1 value=0 lexeme='begina'
+token[1]: code=1 value=1 lexeme='endz'
+token[2]: code=1 value=2 lexeme='ifx'
+token[3]: code=1 value=3 lexeme='fiy'
+token[4]: code=1 value=4 lexeme='thenq'
+token[5]: code=1 value=5 lexeme='whilew'
+token[6]: code=1 value=6 lexeme='elihwe'
+token[7]: code=1 value=7 lexeme='dop'
+token[8]: code=1 value=8 lexeme='odq'
+token[9]: code=1 value=9 lexeme='oddr'
+token[10]: code=1 value=10 lexeme='calls'
+token[11]: code=1 value=11 lexeme='constt'
+token[12]: code=1 value=12 lexeme='varu'
+token[13]: code=1 value=13 lexeme='procedurev'
+token[14]: code=1 value=14 lexeme='writew'
+token[15]: code=1 value=15 lexeme='readx'
+token[16]: code=1 value=16 lexeme='elsey'
+---
+name table:
+  [0] 'begina' at line 1, col 1
+  [1] 'endz' at line 1, col 8
+  [2] 'ifx' at line 1, col 13
+  [3] 'fiy' at line 1, col 17
+  [4] 'thenq' at line 1, col 21
+  [5] 'whilew' at line 1, col 27
+  [6] 'elihwe' at line 1, col 34
+  [7] 'dop' at line 1, col 41
+  [8] 'odq' at line 1, col 45
+  [9] 'oddr' at line 1, col 49
+  [10] 'calls' at line 1, col 54
+  [11] 'constt' at line 1, col 60
+  [12] 'varu' at line 1, col 67
+  [13] 'procedurev' at line 1, col 72
+  [14] 'writew' at line 1, col 83
+  [15] 'readx' at line 1, col 90
+  [16] 'elsey' at line 1, col 96

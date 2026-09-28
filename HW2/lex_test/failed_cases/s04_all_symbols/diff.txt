@@ -1,0 +1,53 @@
+1,19c1,32
+< token[0]: code=3 value=0 lexeme='+'
+< token[1]: code=4 value=0 lexeme='-'
+< token[2]: code=5 value=0 lexeme='*'
+< token[3]: code=6 value=0 lexeme='/'
+< token[4]: code=7 value=0 lexeme='=='
+< token[5]: code=8 value=0 lexeme='!='
+< token[6]: code=9 value=0 lexeme='<'
+< token[7]: code=10 value=0 lexeme='<='
+< token[8]: code=11 value=0 lexeme='>'
+< token[9]: code=12 value=0 lexeme='>='
+< token[10]: code=13 value=0 lexeme='('
+< token[11]: code=14 value=0 lexeme=')'
+< token[12]: code=15 value=0 lexeme=','
+< token[13]: code=16 value=0 lexeme=';'
+< token[14]: code=17 value=0 lexeme='.'
+< token[15]: code=18 value=0 lexeme='='
+< token[16]: code=19 value=0 lexeme=':='
+< ---
+< name table:
+---
+> Source Program:
+> 
+> + - * / == != < <= > >= ( ) , ; . = :=
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> +              3
+> -              4
+> *              5
+> /              6
+> ==             7
+> !=             8
+> <              9
+> <=             10
+> >              11
+> >=             12
+> (              13
+> )              14
+> ,              15
+> ;              16
+> .              17
+> =              18
+> :=             19
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 
+> Token List:
+> 
+> 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 

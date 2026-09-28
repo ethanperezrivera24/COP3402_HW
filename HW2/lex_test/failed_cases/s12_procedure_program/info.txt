@@ -1,0 +1,6 @@
+Test Case: s12_procedure_program
+What this case covers: a program using procedure, call, read and write
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/s12_procedure_program.txt
+Expected: expected_results/s12_procedure_program.txt
+Your Output: student_output/s12_procedure_program_output.txt

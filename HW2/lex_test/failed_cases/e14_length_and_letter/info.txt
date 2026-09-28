@@ -1,0 +1,6 @@
+Test Case: e14_length_and_letter
+What this case covers: error 6 rather than error 3 when the run is both too long and followed by a letter
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e14_length_and_letter.txt
+Expected: expected_results/e14_length_and_letter.txt
+Your Output: student_output/e14_length_and_letter_output.txt

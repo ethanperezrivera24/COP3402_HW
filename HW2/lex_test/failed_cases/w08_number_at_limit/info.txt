@@ -1,0 +1,6 @@
+Test Case: w08_number_at_limit
+What this case covers: a number of exactly six digits, the longest allowed
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w08_number_at_limit.txt
+Expected: expected_results/w08_number_at_limit.txt
+Your Output: student_output/w08_number_at_limit_output.txt

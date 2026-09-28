@@ -1,0 +1,6 @@
+Test Case: n11_position_after_comment
+What this case covers: a name first seen after a multi-line comment, so its recorded line depends on counting inside the comment
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/n11_position_after_comment.txt
+Expected: expected_results/n11_position_after_comment.txt
+Your Output: student_output/n11_position_after_comment_output.txt

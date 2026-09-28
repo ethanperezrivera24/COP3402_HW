@@ -1,0 +1,6 @@
+Test Case: n05_mixed_declarations
+What this case covers: names introduced by const, var and procedure in one program
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/n05_mixed_declarations.txt
+Expected: expected_results/n05_mixed_declarations.txt
+Your Output: student_output/n05_mixed_declarations_output.txt

@@ -1,0 +1,6 @@
+Test Case: s08_single_identifier
+What this case covers: a file that is one identifier, with no punctuation to end it
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/s08_single_identifier.txt
+Expected: expected_results/s08_single_identifier.txt
+Your Output: student_output/s08_single_identifier_output.txt

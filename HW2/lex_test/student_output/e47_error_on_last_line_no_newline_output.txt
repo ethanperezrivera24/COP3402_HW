@@ -1,0 +1,15 @@
+token[0]: code=32 value=0 lexeme='var'
+token[1]: code=1 value=0 lexeme='x'
+token[2]: code=16 value=0 lexeme=';'
+token[3]: code=20 value=0 lexeme='begin'
+token[4]: code=1 value=0 lexeme='x'
+token[5]: code=18 value=0 lexeme='='
+token[6]: code=2 value=0 lexeme='1'
+token[7]: code=16 value=0 lexeme=';'
+token[8]: code=1 value=0 lexeme='x'
+token[9]: code=18 value=0 lexeme='='
+token[10]: code=1 value=0 lexeme='x'
+token[11]: code=2 value=0 lexeme='2'
+---
+name table:
+  [0] 'x' at line 1, col 5

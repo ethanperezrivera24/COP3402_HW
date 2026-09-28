@@ -1,0 +1,6 @@
+Test Case: n12_position_after_blank_lines
+What this case covers: a name first seen after several blank lines and deep indentation
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/n12_position_after_blank_lines.txt
+Expected: expected_results/n12_position_after_blank_lines.txt
+Your Output: student_output/n12_position_after_blank_lines_output.txt

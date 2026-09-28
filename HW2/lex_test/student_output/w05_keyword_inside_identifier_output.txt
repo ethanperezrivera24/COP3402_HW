@@ -1,0 +1,14 @@
+token[0]: code=1 value=0 lexeme='bbegin'
+token[1]: code=1 value=1 lexeme='beginb'
+token[2]: code=1 value=2 lexeme='vary'
+token[3]: code=1 value=3 lexeme='varx'
+token[4]: code=1 value=4 lexeme='constant'
+token[5]: code=1 value=5 lexeme='procedures'
+---
+name table:
+  [0] 'bbegin' at line 1, col 1
+  [1] 'beginb' at line 1, col 8
+  [2] 'vary' at line 1, col 15
+  [3] 'varx' at line 1, col 20
+  [4] 'constant' at line 1, col 25
+  [5] 'procedures' at line 1, col 34

@@ -1,0 +1,6 @@
+Test Case: e49_star_at_end_inside_comment
+What this case covers: error 7 where the file ends on a star inside a comment
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e49_star_at_end_inside_comment.txt
+Expected: expected_results/e49_star_at_end_inside_comment.txt
+Your Output: student_output/e49_star_at_end_inside_comment_output.txt

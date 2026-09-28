@@ -1,0 +1,6 @@
+Test Case: p15_very_long_line
+What this case covers: one line of several hundred characters, so columns run into the hundreds
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/p15_very_long_line.txt
+Expected: expected_results/p15_very_long_line.txt
+Your Output: student_output/p15_very_long_line_output.txt

@@ -1,0 +1,44 @@
+1,15c1,27
+< token[0]: code=32 value=0 lexeme='var'
+< token[1]: code=1 value=0 lexeme='x'
+< token[2]: code=16 value=0 lexeme=';'
+< token[3]: code=20 value=0 lexeme='begin'
+< token[4]: code=1 value=0 lexeme='x'
+< token[5]: code=18 value=0 lexeme='='
+< token[6]: code=1 value=1 lexeme='a'
+< token[7]: code=1 value=2 lexeme='b'
+< token[8]: code=21 value=0 lexeme='end'
+< token[9]: code=17 value=0 lexeme='.'
+< ---
+< name table:
+<   [0] 'x' at line 1, col 5
+<   [1] 'a' at line 2, col 11
+<   [2] 'b' at line 2, col 13
+---
+> Source Program:
+> 
+> var x;
+> begin x = a_b end.
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> var            32
+> x              1
+> ;              16
+> begin          20
+> x              1
+> =              18
+> a              1
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 0      x              1      5
+> 1      a              2      11
+> 
+> Token List:
+> 
+> 32 1 0 16 20 1 0 18 1 1 
+> 
+> Error 1 at line 2, column 12: invalid character '_'

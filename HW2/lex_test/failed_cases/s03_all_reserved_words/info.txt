@@ -1,0 +1,6 @@
+Test Case: s03_all_reserved_words
+What this case covers: all seventeen reserved words, each recognized as a word and not as an identifier
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/s03_all_reserved_words.txt
+Expected: expected_results/s03_all_reserved_words.txt
+Your Output: student_output/s03_all_reserved_words_output.txt

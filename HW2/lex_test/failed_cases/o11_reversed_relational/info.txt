@@ -1,0 +1,6 @@
+Test Case: o11_reversed_relational
+What this case covers: =< and => , which are not operators: each is two tokens
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o11_reversed_relational.txt
+Expected: expected_results/o11_reversed_relational.txt
+Your Output: student_output/o11_reversed_relational_output.txt

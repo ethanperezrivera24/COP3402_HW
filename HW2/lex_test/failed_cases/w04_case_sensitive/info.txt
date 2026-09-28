@@ -1,0 +1,6 @@
+Test Case: w04_case_sensitive
+What this case covers: Begin and BEGIN are identifiers, because the lookup is case sensitive
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w04_case_sensitive.txt
+Expected: expected_results/w04_case_sensitive.txt
+Your Output: student_output/w04_case_sensitive_output.txt

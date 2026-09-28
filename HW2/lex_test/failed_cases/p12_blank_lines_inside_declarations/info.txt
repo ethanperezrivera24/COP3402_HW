@@ -1,0 +1,6 @@
+Test Case: p12_blank_lines_inside_declarations
+What this case covers: one declaration split over several lines with blank lines inside it
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/p12_blank_lines_inside_declarations.txt
+Expected: expected_results/p12_blank_lines_inside_declarations.txt
+Your Output: student_output/p12_blank_lines_inside_declarations_output.txt

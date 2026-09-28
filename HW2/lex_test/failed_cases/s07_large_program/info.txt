@@ -1,0 +1,6 @@
+Test Case: s07_large_program
+What this case covers: 5,770 bytes, 1,706 tokens and 100 names: the source buffer, token array and name table all have to grow
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/s07_large_program.txt
+Expected: expected_results/s07_large_program.txt
+Your Output: student_output/s07_large_program_output.txt

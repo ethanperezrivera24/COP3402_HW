@@ -1,0 +1,6 @@
+Test Case: c06_comment_last
+What this case covers: the file ends with a comment, after the final period
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/c06_comment_last.txt
+Expected: expected_results/c06_comment_last.txt
+Your Output: student_output/c06_comment_last_output.txt

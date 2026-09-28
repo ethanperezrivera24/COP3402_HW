@@ -1,0 +1,21 @@
+1,3c1,16
+< token[0]: code=2 value=0 lexeme='424242'
+< ---
+< name table:
+---
+> Source Program:
+> 
+> 424242
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> 424242         2
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 
+> Token List:
+> 
+> 2 424242 

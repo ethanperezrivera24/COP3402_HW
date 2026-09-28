@@ -1,0 +1,6 @@
+Test Case: p08_cr_only_line_endings
+What this case covers: carriage returns with no newline at all, so no line number ever advances
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/p08_cr_only_line_endings.txt
+Expected: expected_results/p08_cr_only_line_endings.txt
+Your Output: student_output/p08_cr_only_line_endings_output.txt

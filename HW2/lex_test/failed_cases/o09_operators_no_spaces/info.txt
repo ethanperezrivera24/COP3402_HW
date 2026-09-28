@@ -1,0 +1,6 @@
+Test Case: o09_operators_no_spaces
+What this case covers: operators and operands with no whitespace anywhere between them
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o09_operators_no_spaces.txt
+Expected: expected_results/o09_operators_no_spaces.txt
+Your Output: student_output/o09_operators_no_spaces_output.txt

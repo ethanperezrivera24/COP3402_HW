@@ -1,0 +1,6 @@
+Test Case: o04_relational_all
+What this case covers: all six relational operators in one expression, the two-character ones among the one-character ones
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o04_relational_all.txt
+Expected: expected_results/o04_relational_all.txt
+Your Output: student_output/o04_relational_all_output.txt

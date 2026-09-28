@@ -1,0 +1,39 @@
+1,12c1,25
+< token[0]: code=23 value=0 lexeme='fi'
+< token[1]: code=1 value=0 lexeme='fix'
+< token[2]: code=1 value=1 lexeme='iff'
+< token[3]: code=22 value=0 lexeme='if'
+< token[4]: code=1 value=2 lexeme='f'
+< token[5]: code=1 value=3 lexeme='fi2'
+< ---
+< name table:
+<   [0] 'fix' at line 1, col 4
+<   [1] 'iff' at line 1, col 8
+<   [2] 'f' at line 1, col 15
+<   [3] 'fi2' at line 1, col 17
+---
+> Source Program:
+> 
+> fi fix iff if f fi2
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> fi             23
+> fix            1
+> iff            1
+> if             22
+> f              1
+> fi2            1
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 0      fix            1      4
+> 1      iff            1      8
+> 2      f              1      15
+> 3      fi2            1      17
+> 
+> Token List:
+> 
+> 23 1 0 1 1 22 1 2 1 3 

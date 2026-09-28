@@ -1,0 +1,6 @@
+Test Case: e51_star_space_slash_then_end
+What this case covers: error 7 where the file ends on a star, a space and a slash
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e51_star_space_slash_then_end.txt
+Expected: expected_results/e51_star_space_slash_then_end.txt
+Your Output: student_output/e51_star_space_slash_then_end_output.txt

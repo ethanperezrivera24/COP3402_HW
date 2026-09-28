@@ -1,0 +1,6 @@
+Test Case: c01_single_line
+What this case covers: a comment opened and closed on one line
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/c01_single_line.txt
+Expected: expected_results/c01_single_line.txt
+Your Output: student_output/c01_single_line_output.txt

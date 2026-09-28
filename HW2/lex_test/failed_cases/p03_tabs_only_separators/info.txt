@@ -1,0 +1,6 @@
+Test Case: p03_tabs_only_separators
+What this case covers: every separator in the file is a tab rather than a space
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/p03_tabs_only_separators.txt
+Expected: expected_results/p03_tabs_only_separators.txt
+Your Output: student_output/p03_tabs_only_separators_output.txt

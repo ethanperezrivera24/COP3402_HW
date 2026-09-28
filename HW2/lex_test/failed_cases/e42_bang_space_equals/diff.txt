@@ -1,0 +1,50 @@
+1,20c1,28
+< token[0]: code=32 value=0 lexeme='var'
+< token[1]: code=1 value=0 lexeme='x'
+< token[2]: code=15 value=0 lexeme=','
+< token[3]: code=1 value=1 lexeme='y'
+< token[4]: code=16 value=0 lexeme=';'
+< token[5]: code=20 value=0 lexeme='begin'
+< token[6]: code=22 value=0 lexeme='if'
+< token[7]: code=1 value=0 lexeme='x'
+< token[8]: code=18 value=0 lexeme='='
+< token[9]: code=1 value=1 lexeme='y'
+< token[10]: code=24 value=0 lexeme='then'
+< token[11]: code=34 value=0 lexeme='write'
+< token[12]: code=1 value=0 lexeme='x'
+< token[13]: code=23 value=0 lexeme='fi'
+< token[14]: code=21 value=0 lexeme='end'
+< token[15]: code=17 value=0 lexeme='.'
+< ---
+< name table:
+<   [0] 'x' at line 1, col 5
+<   [1] 'y' at line 1, col 8
+---
+> Source Program:
+> 
+> var x, y;
+> begin if x ! = y then write x fi end.
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> var            32
+> x              1
+> ,              15
+> y              1
+> ;              16
+> begin          20
+> if             22
+> x              1
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 0      x              1      5
+> 1      y              1      8
+> 
+> Token List:
+> 
+> 32 1 0 15 1 1 16 20 22 1 0 
+> 
+> Error 5 at line 2, column 12: '!' must be followed by '='

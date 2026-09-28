@@ -1,0 +1,6 @@
+Test Case: w11_do_od_odd_run_together
+What this case covers: three reserved words written end to end are one identifier, not three words
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w11_do_od_odd_run_together.txt
+Expected: expected_results/w11_do_od_odd_run_together.txt
+Your Output: student_output/w11_do_od_odd_run_together_output.txt

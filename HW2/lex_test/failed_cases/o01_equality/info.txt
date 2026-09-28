@@ -1,0 +1,6 @@
+Test Case: o01_equality
+What this case covers: == taken as one token rather than two assignments
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o01_equality.txt
+Expected: expected_results/o01_equality.txt
+Your Output: student_output/o01_equality_output.txt

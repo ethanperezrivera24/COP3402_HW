@@ -1,0 +1,6 @@
+Test Case: c16_error_characters_inside_comment
+What this case covers: every character that is an error outside a comment, inside one
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/c16_error_characters_inside_comment.txt
+Expected: expected_results/c16_error_characters_inside_comment.txt
+Your Output: student_output/c16_error_characters_inside_comment_output.txt

@@ -1,0 +1,6 @@
+Test Case: p10_trailing_whitespace
+What this case covers: spaces, tabs and blank lines after the final period
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/p10_trailing_whitespace.txt
+Expected: expected_results/p10_trailing_whitespace.txt
+Your Output: student_output/p10_trailing_whitespace_output.txt

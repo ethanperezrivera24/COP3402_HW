@@ -1,0 +1,6 @@
+Test Case: e04_colon_alone
+What this case covers: error 4 on a colon with something other than = after it
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e04_colon_alone.txt
+Expected: expected_results/e04_colon_alone.txt
+Your Output: student_output/e04_colon_alone_output.txt

@@ -1,0 +1,6 @@
+Test Case: e30_error_on_first_character
+What this case covers: error 1 at line 1, column 1
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e30_error_on_first_character.txt
+Expected: expected_results/e30_error_on_first_character.txt
+Your Output: student_output/e30_error_on_first_character_output.txt

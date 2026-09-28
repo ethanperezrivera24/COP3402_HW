@@ -1,0 +1,8 @@
+token[0]: code=1 value=0 lexeme='x'
+token[1]: code=19 value=0 lexeme=':='
+token[2]: code=18 value=0 lexeme='='
+token[3]: code=1 value=1 lexeme='y'
+---
+name table:
+  [0] 'x' at line 1, col 1
+  [1] 'y' at line 1, col 5

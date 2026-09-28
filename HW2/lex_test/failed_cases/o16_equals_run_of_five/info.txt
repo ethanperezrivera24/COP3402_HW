@@ -1,0 +1,6 @@
+Test Case: o16_equals_run_of_five
+What this case covers: a run of five = characters: two pairs and a leftover
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o16_equals_run_of_five.txt
+Expected: expected_results/o16_equals_run_of_five.txt
+Your Output: student_output/o16_equals_run_of_five_output.txt

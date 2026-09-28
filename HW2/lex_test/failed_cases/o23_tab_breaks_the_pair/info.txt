@@ -1,0 +1,6 @@
+Test Case: o23_tab_breaks_the_pair
+What this case covers: a tab between < and =, which makes two tokens instead of <=
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o23_tab_breaks_the_pair.txt
+Expected: expected_results/o23_tab_breaks_the_pair.txt
+Your Output: student_output/o23_tab_breaks_the_pair_output.txt

@@ -1,0 +1,6 @@
+Test Case: e12_whitespace_only
+What this case covers: error 11 on a file of spaces, tabs and newlines
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e12_whitespace_only.txt
+Expected: expected_results/e12_whitespace_only.txt
+Your Output: student_output/e12_whitespace_only_output.txt

@@ -1,0 +1,6 @@
+Test Case: w01_od_odd_prefix
+What this case covers: od is a reserved word and odd is a different one, so a prefix match gets both wrong
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w01_od_odd_prefix.txt
+Expected: expected_results/w01_od_odd_prefix.txt
+Your Output: student_output/w01_od_odd_prefix_output.txt

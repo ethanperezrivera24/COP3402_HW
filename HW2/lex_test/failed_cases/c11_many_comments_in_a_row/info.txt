@@ -1,0 +1,6 @@
+Test Case: c11_many_comments_in_a_row
+What this case covers: several comments end to end and between the parts of a declaration
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/c11_many_comments_in_a_row.txt
+Expected: expected_results/c11_many_comments_in_a_row.txt
+Your Output: student_output/c11_many_comments_in_a_row_output.txt

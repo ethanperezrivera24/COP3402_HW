@@ -1,0 +1,6 @@
+Test Case: s06_spine_program
+What this case covers: an ordinary program of the kind the rest of the course uses
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/s06_spine_program.txt
+Expected: expected_results/s06_spine_program.txt
+Your Output: student_output/s06_spine_program_output.txt

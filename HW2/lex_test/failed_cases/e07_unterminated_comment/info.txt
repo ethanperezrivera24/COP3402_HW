@@ -1,0 +1,6 @@
+Test Case: e07_unterminated_comment
+What this case covers: error 7, reported at the opener rather than at the end of the file
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e07_unterminated_comment.txt
+Expected: expected_results/e07_unterminated_comment.txt
+Your Output: student_output/e07_unterminated_comment_output.txt

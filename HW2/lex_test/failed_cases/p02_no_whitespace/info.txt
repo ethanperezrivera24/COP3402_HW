@@ -1,0 +1,6 @@
+Test Case: p02_no_whitespace
+What this case covers: a whole program with whitespace only where the language forces it
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/p02_no_whitespace.txt
+Expected: expected_results/p02_no_whitespace.txt
+Your Output: student_output/p02_no_whitespace_output.txt

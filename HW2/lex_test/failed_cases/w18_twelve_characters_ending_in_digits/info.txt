@@ -1,0 +1,6 @@
+Test Case: w18_twelve_characters_ending_in_digits
+What this case covers: a twelve-character identifier whose last two characters are digits
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w18_twelve_characters_ending_in_digits.txt
+Expected: expected_results/w18_twelve_characters_ending_in_digits.txt
+Your Output: student_output/w18_twelve_characters_ending_in_digits_output.txt

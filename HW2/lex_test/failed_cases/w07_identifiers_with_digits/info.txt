@@ -1,0 +1,6 @@
+Test Case: w07_identifiers_with_digits
+What this case covers: identifiers holding digits after the first letter
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w07_identifiers_with_digits.txt
+Expected: expected_results/w07_identifiers_with_digits.txt
+Your Output: student_output/w07_identifiers_with_digits_output.txt

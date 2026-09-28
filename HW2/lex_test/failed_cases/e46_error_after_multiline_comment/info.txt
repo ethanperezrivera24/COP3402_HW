@@ -1,0 +1,6 @@
+Test Case: e46_error_after_multiline_comment
+What this case covers: error 1 whose reported line depends on counting the lines inside a comment
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e46_error_after_multiline_comment.txt
+Expected: expected_results/e46_error_after_multiline_comment.txt
+Your Output: student_output/e46_error_after_multiline_comment_output.txt

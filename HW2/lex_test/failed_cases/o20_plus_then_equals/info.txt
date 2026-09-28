@@ -1,0 +1,6 @@
+Test Case: o20_plus_then_equals
+What this case covers: += is + and then =, because + has no two-character form
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o20_plus_then_equals.txt
+Expected: expected_results/o20_plus_then_equals.txt
+Your Output: student_output/o20_plus_then_equals_output.txt

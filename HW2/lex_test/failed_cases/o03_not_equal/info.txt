@@ -1,0 +1,6 @@
+Test Case: o03_not_equal
+What this case covers: != taken as one token
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o03_not_equal.txt
+Expected: expected_results/o03_not_equal.txt
+Your Output: student_output/o03_not_equal_output.txt

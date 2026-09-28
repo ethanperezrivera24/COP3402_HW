@@ -1,0 +1,6 @@
+Test Case: e09_nested_comment_open
+What this case covers: error 9 on a second opener inside a comment
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e09_nested_comment_open.txt
+Expected: expected_results/e09_nested_comment_open.txt
+Your Output: student_output/e09_nested_comment_open_output.txt

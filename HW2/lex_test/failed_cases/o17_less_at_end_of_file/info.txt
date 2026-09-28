@@ -1,0 +1,6 @@
+Test Case: o17_less_at_end_of_file
+What this case covers: the file ends in <, so the lookahead has nothing to read and < is a complete token
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o17_less_at_end_of_file.txt
+Expected: expected_results/o17_less_at_end_of_file.txt
+Your Output: student_output/o17_less_at_end_of_file_output.txt

@@ -1,0 +1,23 @@
+token[0]: code=32 value=0 lexeme='var'
+token[1]: code=1 value=0 lexeme='Total'
+token[2]: code=15 value=0 lexeme=','
+token[3]: code=1 value=1 lexeme='total'
+token[4]: code=15 value=0 lexeme=','
+token[5]: code=1 value=2 lexeme='TOTAL'
+token[6]: code=15 value=0 lexeme=','
+token[7]: code=1 value=3 lexeme='ToTaL'
+token[8]: code=16 value=0 lexeme=';'
+token[9]: code=20 value=0 lexeme='begin'
+token[10]: code=1 value=1 lexeme='total'
+token[11]: code=18 value=0 lexeme='='
+token[12]: code=1 value=0 lexeme='Total'
+token[13]: code=3 value=0 lexeme='+'
+token[14]: code=1 value=2 lexeme='TOTAL'
+token[15]: code=21 value=0 lexeme='end'
+token[16]: code=17 value=0 lexeme='.'
+---
+name table:
+  [0] 'Total' at line 1, col 5
+  [1] 'total' at line 1, col 12
+  [2] 'TOTAL' at line 1, col 19
+  [3] 'ToTaL' at line 1, col 26

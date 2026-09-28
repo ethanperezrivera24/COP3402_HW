@@ -1,0 +1,37 @@
+1,11c1,24
+< token[0]: code=28 value=0 lexeme='od'
+< token[1]: code=29 value=0 lexeme='odd'
+< token[2]: code=1 value=0 lexeme='odds'
+< token[3]: code=27 value=0 lexeme='do'
+< token[4]: code=1 value=1 lexeme='dod'
+< token[5]: code=1 value=2 lexeme='oddly'
+< ---
+< name table:
+<   [0] 'odds' at line 1, col 8
+<   [1] 'dod' at line 1, col 16
+<   [2] 'oddly' at line 1, col 20
+---
+> Source Program:
+> 
+> od odd odds do dod oddly
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> od             28
+> odd            29
+> odds           1
+> do             27
+> dod            1
+> oddly          1
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 0      odds           1      8
+> 1      dod            1      16
+> 2      oddly          1      20
+> 
+> Token List:
+> 
+> 28 29 1 0 27 1 1 1 2 

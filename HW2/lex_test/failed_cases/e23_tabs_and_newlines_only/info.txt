@@ -1,0 +1,6 @@
+Test Case: e23_tabs_and_newlines_only
+What this case covers: error 11 on a file of tabs and newlines with no spaces
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e23_tabs_and_newlines_only.txt
+Expected: expected_results/e23_tabs_and_newlines_only.txt
+Your Output: student_output/e23_tabs_and_newlines_only_output.txt

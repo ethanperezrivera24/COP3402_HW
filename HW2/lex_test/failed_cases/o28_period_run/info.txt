@@ -1,0 +1,6 @@
+Test Case: o28_period_run
+What this case covers: two periods in a row, each its own token
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o28_period_run.txt
+Expected: expected_results/o28_period_run.txt
+Your Output: student_output/o28_period_run_output.txt

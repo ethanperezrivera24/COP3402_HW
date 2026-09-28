@@ -1,0 +1,11 @@
+token[0]: code=28 value=0 lexeme='od'
+token[1]: code=29 value=0 lexeme='odd'
+token[2]: code=1 value=0 lexeme='odds'
+token[3]: code=27 value=0 lexeme='do'
+token[4]: code=1 value=1 lexeme='dod'
+token[5]: code=1 value=2 lexeme='oddly'
+---
+name table:
+  [0] 'odds' at line 1, col 8
+  [1] 'dod' at line 1, col 16
+  [2] 'oddly' at line 1, col 20

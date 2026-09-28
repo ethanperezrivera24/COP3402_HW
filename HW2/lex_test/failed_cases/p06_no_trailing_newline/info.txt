@@ -1,0 +1,6 @@
+Test Case: p06_no_trailing_newline
+What this case covers: the last line has no newline terminator
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/p06_no_trailing_newline.txt
+Expected: expected_results/p06_no_trailing_newline.txt
+Your Output: student_output/p06_no_trailing_newline_output.txt

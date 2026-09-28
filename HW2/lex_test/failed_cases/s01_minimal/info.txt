@@ -1,0 +1,6 @@
+Test Case: s01_minimal
+What this case covers: the smallest complete program: one declaration, one assignment, one period
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/s01_minimal.txt
+Expected: expected_results/s01_minimal.txt
+Your Output: student_output/s01_minimal_output.txt

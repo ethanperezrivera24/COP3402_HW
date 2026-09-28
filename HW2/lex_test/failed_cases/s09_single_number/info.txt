@@ -1,0 +1,6 @@
+Test Case: s09_single_number
+What this case covers: a file that is one number, with no punctuation to end it
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/s09_single_number.txt
+Expected: expected_results/s09_single_number.txt
+Your Output: student_output/s09_single_number_output.txt

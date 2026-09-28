@@ -1,0 +1,6 @@
+Test Case: o14_newline_breaks_the_pair
+What this case covers: a newline between < and =, which makes two tokens instead of <=
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o14_newline_breaks_the_pair.txt
+Expected: expected_results/o14_newline_breaks_the_pair.txt
+Your Output: student_output/o14_newline_breaks_the_pair_output.txt

@@ -1,0 +1,6 @@
+Test Case: n14_hundred_identifiers
+What this case covers: one hundred names, so a table starting at sixty-four has to grow twice
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/n14_hundred_identifiers.txt
+Expected: expected_results/n14_hundred_identifiers.txt
+Your Output: student_output/n14_hundred_identifiers_output.txt

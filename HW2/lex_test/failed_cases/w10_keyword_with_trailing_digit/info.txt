@@ -1,0 +1,6 @@
+Test Case: w10_keyword_with_trailing_digit
+What this case covers: a reserved word with one digit appended is an identifier
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w10_keyword_with_trailing_digit.txt
+Expected: expected_results/w10_keyword_with_trailing_digit.txt
+Your Output: student_output/w10_keyword_with_trailing_digit_output.txt

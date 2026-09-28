@@ -1,0 +1,6 @@
+Test Case: n06_first_seen_in_expression
+What this case covers: a name first seen in a statement rather than in a declaration
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/n06_first_seen_in_expression.txt
+Expected: expected_results/n06_first_seen_in_expression.txt
+Your Output: student_output/n06_first_seen_in_expression_output.txt

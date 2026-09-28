@@ -1,0 +1,6 @@
+Test Case: e22_number_then_keyword
+What this case covers: error 6 where the letter after the digits begins a reserved word
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e22_number_then_keyword.txt
+Expected: expected_results/e22_number_then_keyword.txt
+Your Output: student_output/e22_number_then_keyword_output.txt

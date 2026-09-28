@@ -1,0 +1,6 @@
+Test Case: p09_mixed_line_endings
+What this case covers: CR LF and LF endings mixed in one file
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/p09_mixed_line_endings.txt
+Expected: expected_results/p09_mixed_line_endings.txt
+Your Output: student_output/p09_mixed_line_endings_output.txt

@@ -1,0 +1,6 @@
+Test Case: n09_seventy_identifiers
+What this case covers: seventy names, so a table starting at sixty-four has to grow
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/n09_seventy_identifiers.txt
+Expected: expected_results/n09_seventy_identifiers.txt
+Your Output: student_output/n09_seventy_identifiers_output.txt

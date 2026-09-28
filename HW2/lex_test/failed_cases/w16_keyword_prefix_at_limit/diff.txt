@@ -1,0 +1,31 @@
+1,8c1,21
+< token[0]: code=1 value=0 lexeme='oddoddoddod'
+< token[1]: code=1 value=1 lexeme='oddoddoddo'
+< token[2]: code=1 value=2 lexeme='procedureaa'
+< ---
+< name table:
+<   [0] 'oddoddoddod' at line 1, col 1
+<   [1] 'oddoddoddo' at line 1, col 13
+<   [2] 'procedureaa' at line 1, col 24
+---
+> Source Program:
+> 
+> oddoddoddod oddoddoddo procedureaa
+> 
+> Lexeme Table:
+> 
+> lexeme         token
+> oddoddoddod    1
+> oddoddoddo     1
+> procedureaa    1
+> 
+> Name Table:
+> 
+> index  name           line   column
+> 0      oddoddoddod    1      1
+> 1      oddoddoddo     1      13
+> 2      procedureaa    1      24
+> 
+> Token List:
+> 
+> 1 0 1 1 1 2 

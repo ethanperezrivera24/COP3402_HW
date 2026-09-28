@@ -1,0 +1,6 @@
+Test Case: e19_identifier_far_over
+What this case covers: error 2 on an identifier far past the limit, not just one over
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e19_identifier_far_over.txt
+Expected: expected_results/e19_identifier_far_over.txt
+Your Output: student_output/e19_identifier_far_over_output.txt

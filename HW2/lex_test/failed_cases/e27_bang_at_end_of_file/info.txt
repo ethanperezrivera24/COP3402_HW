@@ -1,0 +1,6 @@
+Test Case: e27_bang_at_end_of_file
+What this case covers: error 5 where the file ends immediately after the exclamation mark
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e27_bang_at_end_of_file.txt
+Expected: expected_results/e27_bang_at_end_of_file.txt
+Your Output: student_output/e27_bang_at_end_of_file_output.txt

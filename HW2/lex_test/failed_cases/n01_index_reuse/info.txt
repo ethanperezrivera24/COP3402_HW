@@ -1,0 +1,6 @@
+Test Case: n01_index_reuse
+What this case covers: an identifier used many times takes the same index every time
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/n01_index_reuse.txt
+Expected: expected_results/n01_index_reuse.txt
+Your Output: student_output/n01_index_reuse_output.txt

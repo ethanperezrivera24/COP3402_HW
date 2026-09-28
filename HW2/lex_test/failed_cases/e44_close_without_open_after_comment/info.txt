@@ -1,0 +1,6 @@
+Test Case: e44_close_without_open_after_comment
+What this case covers: error 8 where an earlier comment closed correctly
+Reason: Wrong exit status (expected nonzero, got 0)
+Command: ./lex test_cases/inputs/e44_close_without_open_after_comment.txt
+Expected: expected_results/e44_close_without_open_after_comment.txt
+Your Output: student_output/e44_close_without_open_after_comment_output.txt

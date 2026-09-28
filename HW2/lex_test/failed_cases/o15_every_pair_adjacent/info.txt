@@ -1,0 +1,6 @@
+Test Case: o15_every_pair_adjacent
+What this case covers: all five two-character operators written end to end with nothing between them
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/o15_every_pair_adjacent.txt
+Expected: expected_results/o15_every_pair_adjacent.txt
+Your Output: student_output/o15_every_pair_adjacent_output.txt

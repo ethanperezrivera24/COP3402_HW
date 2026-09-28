@@ -1,0 +1,16 @@
+token[0]: code=1 value=0 lexeme='BEGIN'
+token[1]: code=1 value=1 lexeme='End'
+token[2]: code=1 value=2 lexeme='Fi'
+token[3]: code=1 value=3 lexeme='IF'
+token[4]: code=1 value=4 lexeme='Odd'
+token[5]: code=1 value=5 lexeme='WHILE'
+token[6]: code=1 value=6 lexeme='Elihw'
+---
+name table:
+  [0] 'BEGIN' at line 1, col 1
+  [1] 'End' at line 1, col 7
+  [2] 'Fi' at line 1, col 11
+  [3] 'IF' at line 1, col 14
+  [4] 'Odd' at line 1, col 17
+  [5] 'WHILE' at line 1, col 21
+  [6] 'Elihw' at line 1, col 27

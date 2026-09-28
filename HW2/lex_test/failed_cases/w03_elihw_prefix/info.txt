@@ -1,0 +1,6 @@
+Test Case: w03_elihw_prefix
+What this case covers: elihw against identifiers that begin with it
+Reason: Output mismatch
+Command: ./lex test_cases/inputs/w03_elihw_prefix.txt
+Expected: expected_results/w03_elihw_prefix.txt
+Your Output: student_output/w03_elihw_prefix_output.txt
