@@ -121,6 +121,8 @@ int addToken(int code, int value, const char *lexeme);
 int findOrAddName(const char *name, int line, int col);
 int peekChar(const char *buf, size_t bytesRead, size_t i, int offset);
 void advance(const char *buf, size_t *i, int *line, int *col);
+void setError(int *errCode, int *errLine, int *errCol, char *errMsg, int code, int line, int col, char* msg);
+void printError(int errCode, int errLine, int errCol, char* errMsg);
 
 int main(int argc, char* argv[]) {
   // Check for correct usage
@@ -164,8 +166,14 @@ int main(int argc, char* argv[]) {
     int line = 1;       // current line number
     int col = 1;         // current column number
 
-    // Advance loop
-    while (i < bytesRead) {
+    // first lexical error found, errCode stays 0 if the whole file scans
+    int errCode = 0, errLine = 0, errCol = 0;
+    char errMsg[300];
+    char msg[300];      // scratch buffer for messages that include the lexeme
+
+    // scanning loop: skip whitespace, then read one token (or skip one comment) per pass
+    // stops at the end of buf or at the first error, so nothing after an error is scanned
+    while (i < bytesRead && errCode == 0) {
         // skip any run of whitespace
         while (i < bytesRead && (buf[i] == ' ' || buf[i] == '\t' || buf[i] == '\r' || buf[i] == '\n')) {
             advance(buf, &i, &line, &col);
@@ -203,7 +211,9 @@ int main(int argc, char* argv[]) {
             run[(len < 255) ? len : 255] = '\0';    // Put null terminator at end of run
 
             if(len > MAX_IDENT_LEN) {
-                // Error 2!!!
+                // error 2 names the whole run
+                snprintf(msg, sizeof(msg), "identifier too long '%s'", run);
+                setError(&errCode, &errLine, &errCol, errMsg, 2, startLine, startCol, msg);
             } else {
                 int match = 0;
                 for(int j = 0; j < numReserved; j++) {
@@ -234,7 +244,8 @@ int main(int argc, char* argv[]) {
             int nextIsLetter = (i < bytesRead) && ((buf[i] >= 'a' && buf[i] <= 'z') || (buf[i] >= 'A' && buf[i] <= 'Z'));
 
             if (nextIsLetter) {
-            // error 6, keep consuming the rest of the alphanumeric run
+                // error 6, keep consuming the rest of the alphanumeric run so the message has all of it
+                // checked before the length, so 1234567abc is error 6 and not error 3
                 while (i < bytesRead) {
                     char cur = buf[i];
                     int isLetter = (cur >= 'a' && cur <= 'z') || (cur >= 'A' && cur <= 'Z');
@@ -248,12 +259,15 @@ int main(int argc, char* argv[]) {
                     len++;
                     advance(buf, &i, &line, &col);
                 }
-            run[(len < 255) ? len : 255] = '\0';
-            // Error 6!!! lexeme = run, position = startLine/startCol
+                run[(len < 255) ? len : 255] = '\0';
+                snprintf(msg, sizeof(msg), "number followed by a letter '%s'", run);
+                setError(&errCode, &errLine, &errCol, errMsg, 6, startLine, startCol, msg);
             } else {
                 run[(len < 255) ? len : 255] = '\0';
                 if (len > MAX_NUM_LEN) {
-                // Error 3!!! lexeme = run, position = startLine/startCol
+                    // error 3, leading zeros count as digits (0000001 is too long)
+                    snprintf(msg, sizeof(msg), "number too long '%s'", run);
+                    setError(&errCode, &errLine, &errCol, errMsg, 3, startLine, startCol, msg);
                 } else {
                     addToken(numbersym, 0, run);
                 }
@@ -283,8 +297,10 @@ int main(int argc, char* argv[]) {
                 }
 
                 // comments don't nest
+                // error 9 is at the inner '/', break so the main loop sees errCode and stops
                 if (buf[i] == '/' && next == '*'){
-                    // Error 9!!! position = line/col (the inner '/')
+                    setError(&errCode, &errLine, &errCol, errMsg, 9, line, col, "'/*' inside a comment");
+                    break;
                 }
 
                 // anything else is comment text and isn't examined (weird bytes, @, etc.)
@@ -292,8 +308,10 @@ int main(int argc, char* argv[]) {
                 advance(buf, &i, &line, &col);
             }
 
-            if (!closed){
-                // Error 7!!! position = startLine/startCol (the opener, not EOF)
+            // hit EOF before the close, error 7 is at the opener not EOF
+            // (errCode check so an error 9 above isn't reported as error 7)
+            if (!closed && errCode == 0){
+                setError(&errCode, &errLine, &errCol, errMsg, 7, startLine, startCol, "comment is not closed before end of file");
             }
         } else {
             // operators & punctuation
@@ -317,7 +335,7 @@ int main(int argc, char* argv[]) {
                 // (b*/c is error 8 too, a space is needed to multiply then divide)
                 case '*':
                     if (next == '/'){
-                        // Error 8!!! position = startLine/startCol (the '*')
+                        setError(&errCode, &errLine, &errCol, errMsg, 8, startLine, startCol, "'*/' without a matching '/*'");
                     }
                     else{
                         code = multsym;
@@ -361,21 +379,37 @@ int main(int argc, char* argv[]) {
                     if (next == '='){
                         code = neqsym;
                         len = 2;
+                    } else{
+                        setError(&errCode, &errLine, &errCol, errMsg, 5, startLine, startCol, "'!' must be followed by '='");
                     }
-                    // else Error 5!!! position = startLine/startCol
                     break;
 
                 case ':':
                     if (next == '='){
                         code = initsym;
                         len = 2;
+                    } else{
+                        setError(&errCode, &errLine, &errCol, errMsg, 4, startLine, startCol, "':' must be followed by '='");
                     }
-                    // else Error 4!!! position = startLine/startCol
                     break;
 
-                // Error 1 / Error 10!!! (Phase 7), position = startLine/startCol
-                default:
+                // c doesn't start any token
+                default: {
+                    // cast so bytes above 0x7F compare & print as 0x80-0xFF, not negative
+                    unsigned char uc = (unsigned char)c;
+
+                    if (uc >= 0x20 && uc <= 0x7E){
+                        // error 1: a printable char this language doesn't use (@, #, $, _, ...)
+                        snprintf(msg, sizeof(msg), "invalid character '%c'", c);
+                        setError(&errCode, &errLine, &errCol, errMsg, 1, startLine, startCol, msg);
+                    } else{
+                        // error 10: anything else (0x00, control bytes, 0x7F, non-ASCII)
+                        // print the byte's value, never the byte itself
+                        snprintf(msg, sizeof(msg), "byte 0x%02X is not part of this language", uc);
+                        setError(&errCode, &errLine, &errCol, errMsg, 10, startLine, startCol, msg);
+                    }
                     break;
+                }
             }
 
             // lexeme is the held char, plus the '=' only if the pair matched
@@ -385,7 +419,7 @@ int main(int argc, char* argv[]) {
             }
 
             // consume exactly the chars the token used, never the peeked char unless it matched
-            // (errors still consume 1 char for now so the loop can't hang on them)
+            // (on an error nothing is added and the main loop stops on errCode)
             for (int k = 0; k < len; k++){
                 advance(buf, &i, &line, &col);
             }
@@ -407,11 +441,15 @@ int main(int argc, char* argv[]) {
         printf("  [%d] '%s' at line %d, col %d\n", n, names[n].name, names[n].line, names[n].col);
     }
 
-    // error 11: no tokens in the source program
+    // error 11: no tokens in the source program (empty, only whitespace, or only a comment)
+    // always at line 1, column 1; setError ignores it if an earlier error was already found
     if (tokenCount == 0) {
-
+        setError(&errCode, &errLine, &errCol, errMsg, 11, 1, 1, "no tokens in the source program");
     }
-    
+
+    if(errCode != 0)
+        printError(errCode, errLine, errCol, errMsg);
+
     // Close file
     fclose(fp);
 
@@ -420,6 +458,10 @@ int main(int argc, char* argv[]) {
     free(tokens);
     free(names);
 
+    // exit status: non-zero on any lexical error, 0 only if the whole file scanned
+    if(errCode != 0){
+        return 1;
+    }
     return 0;
 }
 
@@ -504,4 +546,19 @@ void advance(const char *buf, size_t *i, int *line, int *col) {
     }
 
     (*i)++;
+}
+
+// records an error, but only the first one: once *errCode is set, later calls do nothing
+void setError(int *errCode, int *errLine, int *errCol, char* errMsg, int code, int line, int col, char* msg){
+    if(*errCode != 0)
+        return;
+
+    (*errCode) = code;
+    (*errLine) = line;
+    (*errCol) = col;
+    strcpy(errMsg, msg);
+}
+
+void printError(int errCode, int errLine, int errCol, char* errMsg){
+    printf("Error %d at line %d, column %d: %s\n", errCode, errLine, errCol, errMsg);
 }
