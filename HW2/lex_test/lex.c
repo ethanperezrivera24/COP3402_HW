@@ -121,11 +121,11 @@ int addToken(int code, int value, const char *lexeme);
 int findOrAddName(const char *name, int line, int col);
 int peekChar(const char *buf, size_t bytesRead, size_t i, int offset);
 void advance(const char *buf, size_t *i, int *line, int *col);
-void setError(int *errCode, int *errLine, int *errCol, char *errMsg, int code, int line, int col, char* msg);
-void printError(int errCode, int errLine, int errCol, char* errMsg);
+void setError(int *errCode, int *errLine, int *errCol, char *errMsg, int code, int line, int col, const char* msg);
+void printError(int errCode, int errLine, int errCol, const char* errMsg);
 
 int main(int argc, char* argv[]) {
-  // Check for correct usage
+    // Check for correct usage
     if(argc != 2) {
         printf("Usage: %s <input file>\n", argv[0]);
         return 1;
@@ -162,9 +162,9 @@ int main(int argc, char* argv[]) {
     // may contain bytes that would stop fgets or fscanf
     size_t bytesRead = fread(buf, 1, (size_t)fileSize, fp);
 
-    size_t i = 0;      // index into buf
-    int line = 1;       // current line number
-    int col = 1;         // current column number
+    size_t i = 0;   // index into buf
+    int line = 1;   // current line number
+    int col = 1;    // current column number
 
     // first lexical error found, errCode stays 0 if the whole file scans
     int errCode = 0, errLine = 0, errCol = 0;
@@ -430,16 +430,45 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    // TEMPORARY DEBUG: print every token collected so far, to check against
-    // the handout's worked example by hand. Delete before Phase 7/submission.
-    for (int t = 0; t < tokenCount; t++) {
-        printf("token[%d]: code=%d value=%d lexeme='%s'\n", t, tokens[t].code, tokens[t].value, tokens[t].lexeme);
-    }
+    //PRINT RESULTS
 
-    printf("---\nname table:\n");
-    for (int n = 0; n < nameCount; n++) {
-        printf("  [%d] '%s' at line %d, col %d\n", n, names[n].name, names[n].line, names[n].col);
+    // Source Program
+    printf("Source Program:\n\n");
+    fwrite(buf, 1, bytesRead, stdout);
+    if (bytesRead == 0 || buf[bytesRead - 1] != '\n') {
+        printf("\n");
     }
+    printf("\n");
+
+    // Lexeme Table
+    printf("Lexeme Table:\n\n");
+    printf("lexeme\ttoken\n");
+    for (int t = 0; t < tokenCount; t++) {
+        printf("%s\t%d\n", tokens[t].lexeme, tokens[t].code);
+    }
+    printf("\n");
+
+    // Name Table
+    printf("Name Table:\n\n");
+    printf("index\tname\tline\tcolumn\n");
+    for (int n = 0; n < nameCount; n++) {
+        printf("%d\t%s\t%d\t%d\n", n, names[n].name, names[n].line, names[n].col);
+    }
+    printf("\n");
+
+    // Token List
+    printf("Token List:\n\n");
+    for (int t = 0; t < tokenCount; t++) {
+        if (tokens[t].code == identsym) {
+            printf("%d %d", tokens[t].code, tokens[t].value);
+        } else if (tokens[t].code == numbersym) {
+            printf("%d %s", tokens[t].code, tokens[t].lexeme);
+        } else {
+            printf("%d", tokens[t].code);
+        }
+        if (t < tokenCount - 1) printf(" ");
+    }
+    printf("\n");
 
     // error 11: no tokens in the source program (empty, only whitespace, or only a comment)
     // always at line 1, column 1; setError ignores it if an earlier error was already found
@@ -449,6 +478,32 @@ int main(int argc, char* argv[]) {
 
     if(errCode != 0)
         printError(errCode, errLine, errCol, errMsg);
+
+    // WRITE OUTPUT FILES
+
+    // tokens.txt
+    FILE *tokOut = fopen("tokens.txt", "w");
+    if (tokOut != NULL) {
+        for (int t = 0; t < tokenCount; t++) {
+            if (tokens[t].code == identsym) {
+                fprintf(tokOut, "%d %d\n", tokens[t].code, tokens[t].value);
+            } else if (tokens[t].code == numbersym) {
+                fprintf(tokOut, "%d %s\n", tokens[t].code, tokens[t].lexeme);
+            } else {
+                fprintf(tokOut, "%d\n", tokens[t].code);
+            }
+        }
+        fclose(tokOut);
+    }
+
+    // nametable.txt
+    FILE *nameOut = fopen("nametable.txt", "w");
+    if (nameOut != NULL) {
+        for (int n = 0; n < nameCount; n++) {
+            fprintf(nameOut, "%d %s %d %d\n", n, names[n].name, names[n].line, names[n].col);
+        }
+        fclose(nameOut);
+    }
 
     // Close file
     fclose(fp);
@@ -549,7 +604,7 @@ void advance(const char *buf, size_t *i, int *line, int *col) {
 }
 
 // records an error, but only the first one: once *errCode is set, later calls do nothing
-void setError(int *errCode, int *errLine, int *errCol, char* errMsg, int code, int line, int col, char* msg){
+void setError(int *errCode, int *errLine, int *errCol, char* errMsg, int code, int line, int col, const char* msg){
     if(*errCode != 0)
         return;
 
@@ -559,6 +614,6 @@ void setError(int *errCode, int *errLine, int *errCol, char* errMsg, int code, i
     strcpy(errMsg, msg);
 }
 
-void printError(int errCode, int errLine, int errCol, char* errMsg){
+void printError(int errCode, int errLine, int errCol, const char* errMsg){
     printf("Error %d at line %d, column %d: %s\n", errCode, errLine, errCol, errMsg);
 }
