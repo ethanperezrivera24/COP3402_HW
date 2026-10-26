@@ -1,0 +1,5 @@
+Test Case: g10_declaration_missing_comma
+What this case covers: error 4: two variable names with no comma between them
+Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Expected: expected_results/g10_declaration_missing_comma.txt
+Your Output: student_output/g10_declaration_missing_comma_output.txt

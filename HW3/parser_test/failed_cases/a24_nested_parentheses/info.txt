@@ -1,0 +1,5 @@
+Test Case: a24_nested_parentheses
+What this case covers: parentheses nested three deep inside an expression
+Reason: output differs from expected_results/a24_nested_parentheses.txt
+Expected: expected_results/a24_nested_parentheses.txt
+Your Output: student_output/a24_nested_parentheses_output.txt

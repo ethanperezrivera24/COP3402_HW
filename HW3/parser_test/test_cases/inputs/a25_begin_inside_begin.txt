@@ -1,0 +1,9 @@
+var x;
+begin
+  begin
+    x = 1
+  end;
+  begin
+    write x
+  end
+end.

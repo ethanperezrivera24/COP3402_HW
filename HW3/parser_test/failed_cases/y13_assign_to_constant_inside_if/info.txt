@@ -1,0 +1,5 @@
+Test Case: y13_assign_to_constant_inside_if
+What this case covers: error 16: assignment to a constant in an if body
+Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Expected: expected_results/y13_assign_to_constant_inside_if.txt
+Your Output: student_output/y13_assign_to_constant_inside_if_output.txt

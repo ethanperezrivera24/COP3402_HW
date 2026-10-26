@@ -1,0 +1,5 @@
+Test Case: a10_nested_control
+What this case covers: an if inside a while inside an if
+Reason: output differs from expected_results/a10_nested_control.txt
+Expected: expected_results/a10_nested_control.txt
+Your Output: student_output/a10_nested_control_output.txt

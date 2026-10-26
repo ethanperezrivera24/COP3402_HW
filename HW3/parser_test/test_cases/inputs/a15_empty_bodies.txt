@@ -1,0 +1,7 @@
+var x;
+begin
+  x = 0;
+  if x == 0 then fi;
+  if x == 1 then else fi;
+  while x < 0 then elihw
+end.

@@ -1,0 +1,20 @@
+7a8,22
+> token  input     text          nonterminal
+>        enter level 0
+> 1      31        const         const-decl
+> 2      1 0       seven         const-decl
+> 3      19        :=            const-decl
+> 4      2 007     007           const-decl
+>        insert entry 0: constant seven, value 7, level 0
+> 5      16        ;             const-decl
+> 6      34        write         statement
+> 7      1 0       seven         factor
+>        lookup seven: entry 0, constant, level 0
+>        mark entry 0
+>        leave level 0
+> 8      17        .             program
+> 
+9a25,27
+> entry  kind       name          value   level  address  mark
+> 0      constant   seven         7       0      -        1
+> 

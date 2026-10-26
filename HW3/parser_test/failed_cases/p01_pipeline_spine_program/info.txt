@@ -1,0 +1,5 @@
+Test Case: p01_pipeline_spine_program
+What this case covers: your lex, then your parser, on the HW2 shared example program
+Reason: output differs from expected_results/p01_pipeline_spine_program.txt
+Expected: expected_results/p01_pipeline_spine_program.txt
+Your Output: student_output/p01_pipeline_spine_program_output.txt

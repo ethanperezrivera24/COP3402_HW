@@ -1,0 +1,5 @@
+Test Case: y21_first_of_two_undeclared
+What this case covers: error 15 at the first of two undeclared names: only the first error is reported
+Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Expected: expected_results/y21_first_of_two_undeclared.txt
+Your Output: student_output/y21_first_of_two_undeclared_output.txt

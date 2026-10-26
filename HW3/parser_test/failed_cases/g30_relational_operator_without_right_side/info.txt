@@ -1,0 +1,5 @@
+Test Case: g30_relational_operator_without_right_side
+What this case covers: error 11 at then: a condition with no expression after its operator
+Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Expected: expected_results/g30_relational_operator_without_right_side.txt
+Your Output: student_output/g30_relational_operator_without_right_side_output.txt

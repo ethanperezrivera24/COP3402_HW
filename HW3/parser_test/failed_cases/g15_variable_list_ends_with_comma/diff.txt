@@ -1,0 +1,17 @@
+7a8,14
+> token  input     text          nonterminal
+>        enter level 0
+> 1      32        var           var-decl
+> 2      1 0       x             var-decl
+>        insert entry 0: variable x, level 0, address 3
+> 3      15        ,             var-decl
+> 
+9a17,19
+> entry  kind       name          value   level  address  mark
+> 0      variable   x             -       0      3        0
+> 
+12c22,23
+< program accepted
+---
+> Error 2 at token 4 ';': const, var, and read must be followed by an identifier
+> 

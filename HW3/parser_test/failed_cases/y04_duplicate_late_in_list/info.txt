@@ -1,0 +1,5 @@
+Test Case: y04_duplicate_late_in_list
+What this case covers: error 14 at the fifth name of a list that repeats the second
+Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Expected: expected_results/y04_duplicate_late_in_list.txt
+Your Output: student_output/y04_duplicate_late_in_list_output.txt

@@ -1,0 +1,5 @@
+Test Case: a09_while_statement_list
+What this case covers: a while body of two statements without begin, ended by elihw
+Reason: output differs from expected_results/a09_while_statement_list.txt
+Expected: expected_results/a09_while_statement_list.txt
+Your Output: student_output/a09_while_statement_list_output.txt

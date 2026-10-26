@@ -1,0 +1,49 @@
+Name Table:
+
+index  name          line  column
+0      c             1     7
+1      x             2     5
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      31        const         const-decl
+2      1 0       c             const-decl
+3      19        :=            const-decl
+4      2 5       5             const-decl
+       insert entry 0: constant c, value 5, level 0
+5      16        ;             const-decl
+6      32        var           var-decl
+7      1 1       x             var-decl
+       insert entry 1: variable x, level 0, address 3
+8      16        ;             var-decl
+9      20        begin         statement
+10     1 1       x             statement
+       lookup x: entry 1, variable, level 0
+11     18        =             statement
+12     1 0       c             factor
+       lookup c: entry 0, constant, level 0
+13     16        ;             statement-list
+14     1 1       x             statement
+       lookup x: entry 1, variable, level 0
+15     18        =             statement
+16     1 1       x             factor
+       lookup x: entry 1, variable, level 0
+17     3         +             expression
+18     1 0       c             factor
+       lookup c: entry 0, constant, level 0
+19     16        ;             statement-list
+20     1 0       c             statement
+       lookup c: entry 0, constant, level 0
+
+Symbol Table:
+
+entry  kind       name          value   level  address  mark
+0      constant   c             5       0      -        0
+1      variable   x             -       0      3        0
+
+Result:
+
+Error 16 at token 20 'c': only a variable may be assigned or read
+

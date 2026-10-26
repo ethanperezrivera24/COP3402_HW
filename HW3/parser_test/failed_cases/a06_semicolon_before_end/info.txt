@@ -1,0 +1,5 @@
+Test Case: a06_semicolon_before_end
+What this case covers: a semicolon before end, legal because a statement may be empty
+Reason: output differs from expected_results/a06_semicolon_before_end.txt
+Expected: expected_results/a06_semicolon_before_end.txt
+Your Output: student_output/a06_semicolon_before_end_output.txt

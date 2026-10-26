@@ -1,0 +1,11 @@
+const k := 2;
+var x, y;
+begin
+  x = (k + 3) * 4 - 6 / k;
+  if x == y then y = 1 fi;
+  if x != y then y = 2 fi;
+  if x < y then y = 3 fi;
+  if x <= y then y = 4 fi;
+  if x > y then y = 5 fi;
+  if x >= y then y = 6 fi
+end.

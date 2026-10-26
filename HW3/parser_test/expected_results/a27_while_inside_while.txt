@@ -1,0 +1,74 @@
+Name Table:
+
+index  name          line  column
+0      i             1     5
+1      j             1     8
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      32        var           var-decl
+2      1 0       i             var-decl
+       insert entry 0: variable i, level 0, address 3
+3      15        ,             var-decl
+4      1 1       j             var-decl
+       insert entry 1: variable j, level 0, address 4
+5      16        ;             var-decl
+6      20        begin         statement
+7      1 0       i             statement
+       lookup i: entry 0, variable, level 0
+8      18        =             statement
+9      2 0       0             factor
+10     16        ;             statement-list
+11     25        while         statement
+12     1 0       i             factor
+       lookup i: entry 0, variable, level 0
+13     9         <             condition
+14     2 3       3             factor
+15     24        then          statement
+16     1 1       j             statement
+       lookup j: entry 1, variable, level 0
+17     18        =             statement
+18     2 0       0             factor
+19     16        ;             statement-list
+20     25        while         statement
+21     1 1       j             factor
+       lookup j: entry 1, variable, level 0
+22     9         <             condition
+23     1 0       i             factor
+       lookup i: entry 0, variable, level 0
+24     24        then          statement
+25     1 1       j             statement
+       lookup j: entry 1, variable, level 0
+26     18        =             statement
+27     1 1       j             factor
+       lookup j: entry 1, variable, level 0
+28     3         +             expression
+29     2 1       1             factor
+30     26        elihw         statement
+31     16        ;             statement-list
+32     1 0       i             statement
+       lookup i: entry 0, variable, level 0
+33     18        =             statement
+34     1 0       i             factor
+       lookup i: entry 0, variable, level 0
+35     3         +             expression
+36     2 1       1             factor
+37     26        elihw         statement
+38     21        end           statement
+       mark entry 0
+       mark entry 1
+       leave level 0
+39     17        .             program
+
+Symbol Table:
+
+entry  kind       name          value   level  address  mark
+0      variable   i             -       0      3        1
+1      variable   j             -       0      4        1
+
+Result:
+
+program accepted
+

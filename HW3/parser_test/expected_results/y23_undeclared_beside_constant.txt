@@ -1,0 +1,31 @@
+Name Table:
+
+index  name          line  column
+0      k             1     7
+1      m             2     11
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      31        const         const-decl
+2      1 0       k             const-decl
+3      19        :=            const-decl
+4      2 2       2             const-decl
+       insert entry 0: constant k, value 2, level 0
+5      16        ;             const-decl
+6      34        write         statement
+7      1 0       k             factor
+       lookup k: entry 0, constant, level 0
+8      5         *             term
+9      1 1       m             factor
+
+Symbol Table:
+
+entry  kind       name          value   level  address  mark
+0      constant   k             2       0      -        0
+
+Result:
+
+Error 15 at token 9 'm': undeclared identifier
+

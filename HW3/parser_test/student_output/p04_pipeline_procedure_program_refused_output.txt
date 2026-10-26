@@ -1,0 +1,15 @@
+Name Table:
+
+index name line column
+0 limit 1 7
+1 count 2 5
+2 total 2 12
+3 step 3 11
+
+Parse Trace:
+
+Symbol Table:
+
+Result:
+
+program accepted

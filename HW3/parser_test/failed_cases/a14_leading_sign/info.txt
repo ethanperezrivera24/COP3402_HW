@@ -1,0 +1,5 @@
+Test Case: a14_leading_sign
+What this case covers: a sign at the start of an expression and inside parentheses
+Reason: output differs from expected_results/a14_leading_sign.txt
+Expected: expected_results/a14_leading_sign.txt
+Your Output: student_output/a14_leading_sign_output.txt

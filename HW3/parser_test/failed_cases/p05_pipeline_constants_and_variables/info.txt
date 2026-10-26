@@ -1,0 +1,5 @@
+Test Case: p05_pipeline_constants_and_variables
+What this case covers: your lex, then your parser, on a loop over constants and variables
+Reason: output differs from expected_results/p05_pipeline_constants_and_variables.txt
+Expected: expected_results/p05_pipeline_constants_and_variables.txt
+Your Output: student_output/p05_pipeline_constants_and_variables_output.txt

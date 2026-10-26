@@ -1,0 +1,25 @@
+7a8,27
+> token  input     text          nonterminal
+>        enter level 0
+> 1      32        var           var-decl
+> 2      1 0       x             var-decl
+>        insert entry 0: variable x, level 0, address 3
+> 3      16        ;             var-decl
+> 4      20        begin         statement
+> 5      16        ;             statement-list
+> 6      1 0       x             statement
+>        lookup x: entry 0, variable, level 0
+> 7      18        =             statement
+> 8      2 1       1             factor
+> 9      16        ;             statement-list
+> 10     16        ;             statement-list
+> 11     16        ;             statement-list
+> 12     21        end           statement
+>        mark entry 0
+>        leave level 0
+> 13     17        .             program
+> 
+9a30,32
+> entry  kind       name          value   level  address  mark
+> 0      variable   x             -       0      3        1
+> 

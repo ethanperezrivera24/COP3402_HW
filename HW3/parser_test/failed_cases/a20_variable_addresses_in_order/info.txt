@@ -1,0 +1,5 @@
+Test Case: a20_variable_addresses_in_order
+What this case covers: five variables take addresses 3 to 7 in declaration order
+Reason: output differs from expected_results/a20_variable_addresses_in_order.txt
+Expected: expected_results/a20_variable_addresses_in_order.txt
+Your Output: student_output/a20_variable_addresses_in_order_output.txt

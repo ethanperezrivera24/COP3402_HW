@@ -1,0 +1,5 @@
+var a, b, c, d, e;
+begin
+  e = 5;
+  a = e
+end.

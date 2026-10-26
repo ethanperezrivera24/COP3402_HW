@@ -1,0 +1,90 @@
+Name Table:
+
+index  name          line  column
+0      step          1     7
+1      limit         1     18
+2      i             2     5
+3      sum           2     8
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      31        const         const-decl
+2      1 0       step          const-decl
+3      19        :=            const-decl
+4      2 2       2             const-decl
+       insert entry 0: constant step, value 2, level 0
+5      15        ,             const-decl
+6      1 1       limit         const-decl
+7      19        :=            const-decl
+8      2 20      20            const-decl
+       insert entry 1: constant limit, value 20, level 0
+9      16        ;             const-decl
+10     32        var           var-decl
+11     1 2       i             var-decl
+       insert entry 2: variable i, level 0, address 3
+12     15        ,             var-decl
+13     1 3       sum           var-decl
+       insert entry 3: variable sum, level 0, address 4
+14     16        ;             var-decl
+15     20        begin         statement
+16     1 2       i             statement
+       lookup i: entry 2, variable, level 0
+17     18        =             statement
+18     2 0       0             factor
+19     16        ;             statement-list
+20     1 3       sum           statement
+       lookup sum: entry 3, variable, level 0
+21     18        =             statement
+22     2 0       0             factor
+23     16        ;             statement-list
+24     25        while         statement
+25     1 2       i             factor
+       lookup i: entry 2, variable, level 0
+26     10        <=            condition
+27     1 1       limit         factor
+       lookup limit: entry 1, constant, level 0
+28     24        then          statement
+29     1 3       sum           statement
+       lookup sum: entry 3, variable, level 0
+30     18        =             statement
+31     1 3       sum           factor
+       lookup sum: entry 3, variable, level 0
+32     3         +             expression
+33     1 2       i             factor
+       lookup i: entry 2, variable, level 0
+34     16        ;             statement-list
+35     1 2       i             statement
+       lookup i: entry 2, variable, level 0
+36     18        =             statement
+37     1 2       i             factor
+       lookup i: entry 2, variable, level 0
+38     3         +             expression
+39     1 0       step          factor
+       lookup step: entry 0, constant, level 0
+40     26        elihw         statement
+41     16        ;             statement-list
+42     34        write         statement
+43     1 3       sum           factor
+       lookup sum: entry 3, variable, level 0
+44     21        end           statement
+       mark entry 0
+       mark entry 1
+       mark entry 2
+       mark entry 3
+       leave level 0
+45     17        .             program
+
+Symbol Table:
+
+entry  kind       name          value   level  address  mark
+0      constant   step          2       0      -        1
+1      constant   limit         20      0      -        1
+2      variable   i             -       0      3        1
+3      variable   sum           -       0      4        1
+
+Result:
+
+program accepted
+

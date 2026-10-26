@@ -1,0 +1,124 @@
+# COP 3402 HW3 - parser test case manifest
+#
+# One test case per line. Fields are separated by a single TAB character.
+#
+#   field 1  case name        also the name of the expected result file
+#   field 2  expected exit    0        the program must exit with status 0
+#                             nonzero  the program must exit with a status
+#                                      from 1 to 123 (a crash is not an error
+#                                      report)
+#   field 3  points           what the case is worth
+#   field 4  mode             files        copy <case>.tokens.txt and
+#                                          <case>.nametable.txt in as tokens.txt
+#                                          and nametable.txt, run ./parser
+#                             names-only   copy only <case>.nametable.txt
+#                             tokens-only  copy only <case>.tokens.txt
+#                             pipeline     copy only <case>.txt, run your
+#                                          ./lex <case>.txt, then ./parser
+#
+# Every case runs in an empty working directory. The points total 100.
+# Blank lines and lines beginning with # are ignored.
+
+a01_empty_program	0	1	files
+a02_write_number	0	1	files
+a03_constants_only	0	1	files
+a04_variables_and_assignment	0	1	files
+a05_begin_end_sequence	0	1	files
+a06_semicolon_before_end	0	1	files
+a07_if_then_fi	0	1	files
+a08_if_else_fi	0	1	files
+a09_while_statement_list	0	1	files
+a10_nested_control	0	1	files
+a11_read_and_write	0	1	files
+a12_every_relational_operator	0	1	files
+a13_operator_precedence_layers	0	1	files
+a14_leading_sign	0	1	files
+a15_empty_bodies	0	1	files
+a16_constant_and_variables	0	1	files
+a17_hw2_spine_program	0	1	files
+a18_hw2_large_program	0	1	files
+a19_hw2_nested_blocks	0	1	files
+a20_variable_addresses_in_order	0	1	files
+a21_constants_in_expression	0	1	files
+a22_constant_with_leading_zeros	0	1	files
+a23_six_digit_constant	0	1	files
+a24_nested_parentheses	0	1	files
+a25_begin_inside_begin	0	1	files
+a26_several_empty_statements	0	1	files
+a27_while_inside_while	0	1	files
+a28_expressions_on_both_sides	0	1	files
+a29_else_branch_only	0	1	files
+a30_declarations_then_empty_statement	0	1	files
+
+g01_missing_period	nonzero	1	files
+g02_tokens_after_period	nonzero	1	files
+g03_const_without_identifier	nonzero	1	files
+g04_two_statements_without_begin	nonzero	1	files
+g05_procedure_declaration	nonzero	1	files
+g06_call_statement	nonzero	1	files
+g07_read_without_identifier	nonzero	1	files
+g08_constant_with_assignment_symbol	nonzero	1	files
+g09_constant_with_name_value	nonzero	1	files
+g10_declaration_missing_comma	nonzero	1	files
+g11_declaration_missing_semicolon	nonzero	1	files
+g12_procedure_after_constants	nonzero	1	files
+g13_call_inside_while	nonzero	1	files
+g14_assignment_with_becomes	nonzero	1	files
+g15_variable_list_ends_with_comma	nonzero	1	files
+g16_begin_without_end	nonzero	1	files
+g17_missing_semicolon_between_statements	nonzero	1	files
+g18_while_with_do	nonzero	1	files
+g19_if_without_then	nonzero	1	files
+g20_if_without_fi	nonzero	1	files
+g21_while_closed_with_od	nonzero	1	files
+g22_condition_with_assignment_symbol	nonzero	1	files
+g23_odd_is_not_a_condition	nonzero	1	files
+g24_missing_right_parenthesis	nonzero	1	files
+g25_sign_after_operator	nonzero	1	files
+g26_procedure_inside_begin	nonzero	1	files
+g27_else_list_without_fi	nonzero	1	files
+g28_empty_parentheses	nonzero	1	files
+g29_assignment_without_expression	nonzero	1	files
+g30_relational_operator_without_right_side	nonzero	1	files
+
+y01_duplicate_variable	nonzero	1	files
+y02_duplicate_constant_and_variable	nonzero	1	files
+y03_duplicate_constants	nonzero	1	files
+y04_duplicate_late_in_list	nonzero	1	files
+y05_duplicate_checked_before_capacity	nonzero	1	files
+y06_undeclared_assignment_target	nonzero	1	files
+y07_undeclared_in_expression	nonzero	1	files
+y08_undeclared_in_read	nonzero	1	files
+y09_undeclared_in_write	nonzero	1	files
+y10_undeclared_in_condition	nonzero	1	files
+y11_assign_to_constant	nonzero	1	files
+y12_read_into_constant	nonzero	1	files
+y13_assign_to_constant_inside_if	nonzero	1	files
+y14_read_into_constant_inside_while	nonzero	1	files
+y15_undeclared_in_parentheses	nonzero	1	files
+y16_undeclared_in_else_branch	nonzero	1	files
+y17_undeclared_in_while_condition	nonzero	1	files
+y18_undeclared_after_declarations	nonzero	1	files
+y19_names_are_case_sensitive	nonzero	1	files
+y20_undeclared_before_assignment_symbol	nonzero	1	files
+y21_first_of_two_undeclared	nonzero	1	files
+y22_constant_before_assignment_symbol	nonzero	1	files
+y23_undeclared_beside_constant	nonzero	1	files
+y24_constant_legal_in_expression_only	nonzero	1	files
+y25_longer_name_is_different	nonzero	1	files
+
+l01_table_holds_100_entries	0	1.25	files
+l02_entry_101_is_refused	nonzero	1.25	files
+l03_missing_tokens_file	nonzero	1.25	names-only
+l04_missing_nametable_file	nonzero	1.25	tokens-only
+
+p01_pipeline_spine_program	0	1	pipeline
+p02_pipeline_large_program	0	1	pipeline
+p03_pipeline_nested_blocks	0	1	pipeline
+p04_pipeline_procedure_program_refused	nonzero	1	pipeline
+p05_pipeline_constants_and_variables	0	1	pipeline
+p06_pipeline_comments_and_tabs	0	1	pipeline
+p07_pipeline_crlf_line_endings	0	1	pipeline
+p08_pipeline_every_operator	0	1	pipeline
+p09_pipeline_length_limits	0	1	pipeline
+p10_pipeline_do_is_reserved	nonzero	1	pipeline

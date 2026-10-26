@@ -1,0 +1,5 @@
+Test Case: a12_every_relational_operator
+What this case covers: each of the six relational operators in a condition
+Reason: output differs from expected_results/a12_every_relational_operator.txt
+Expected: expected_results/a12_every_relational_operator.txt
+Your Output: student_output/a12_every_relational_operator_output.txt

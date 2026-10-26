@@ -1,0 +1,9 @@
+Name Table:
+
+Parse Trace:
+
+Symbol Table:
+
+Result:
+
+program accepted

@@ -1,0 +1,6 @@
+const biggestvalue := 999999;
+var twelvechars1, abcdefghijkl;
+begin
+  twelvechars1 = biggestvalue;
+  abcdefghijkl = twelvechars1 - 100000
+end.

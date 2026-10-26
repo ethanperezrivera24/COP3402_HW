@@ -1,0 +1,99 @@
+a01_empty_program	a program that is only a period: an empty statement, then the period
+a02_write_number	one write statement with a number and no declarations
+a03_constants_only	a constant declaration list and an empty statement
+a04_variables_and_assignment	a variable declaration list and assignments inside begin and end
+a05_begin_end_sequence	a begin block of several statements separated by semicolons
+a06_semicolon_before_end	a semicolon before end, legal because a statement may be empty
+a07_if_then_fi	an if statement without else, closed with fi
+a08_if_else_fi	an if statement with else, each branch a statement list
+a09_while_statement_list	a while body of two statements without begin, ended by elihw
+a10_nested_control	an if inside a while inside an if
+a11_read_and_write	read into variables and write expressions
+a12_every_relational_operator	each of the six relational operators in a condition
+a13_operator_precedence_layers	expression, term, and factor layers with parentheses
+a14_leading_sign	a sign at the start of an expression and inside parentheses
+a15_empty_bodies	if and while bodies that are empty statement lists
+a16_constant_and_variables	a constant and two variables: inserts, lookups of both kinds, and the marks
+a17_hw2_spine_program	the HW2 shared example program: a while body of two statements
+a18_hw2_large_program	the HW2 large program: 100 variables fill the symbol table exactly
+a19_hw2_nested_blocks	the HW2 nested-blocks program: begin inside while, if with else
+a20_variable_addresses_in_order	five variables take addresses 3 to 7 in declaration order
+a21_constants_in_expression	constants used in an expression: each lookup finds a constant
+a22_constant_with_leading_zeros	a number written 007: the value is 7, the text stays 007
+a23_six_digit_constant	a constant of six digits, the largest number the scanner passes
+a24_nested_parentheses	parentheses nested three deep inside an expression
+a25_begin_inside_begin	begin blocks used as statements inside a begin block
+a26_several_empty_statements	empty statements between semicolons in a statement list
+a27_while_inside_while	a while loop whose body holds another while loop
+a28_expressions_on_both_sides	a condition with an operator expression on each side
+a29_else_branch_only	an if whose then list is empty and whose else list is not
+a30_declarations_then_empty_statement	both declaration lists, then an empty main statement
+g01_missing_period	error 1 at end of tokens: the program has no period
+g02_tokens_after_period	error 1 at the first token after the period
+g03_const_without_identifier	error 2: const followed by :=
+g04_two_statements_without_begin	error 1 at a semicolon: the main statement is one statement
+g05_procedure_declaration	error 12 at procedure: a procedure declared after the variables
+g06_call_statement	error 13 at call: a call statement inside begin and end
+g07_read_without_identifier	error 2: read followed by a number
+g08_constant_with_assignment_symbol	error 3: a constant declared with = instead of :=
+g09_constant_with_name_value	error 3: a constant given an identifier instead of a number
+g10_declaration_missing_comma	error 4: two variable names with no comma between them
+g11_declaration_missing_semicolon	error 4: a constant declaration followed by var with no semicolon
+g12_procedure_after_constants	error 12 at procedure: a procedure declared after the constants, with no var
+g13_call_inside_while	error 13 at call: a call statement in a while body
+g14_assignment_with_becomes	error 5: an assignment written with :=
+g15_variable_list_ends_with_comma	error 2: a comma in a variable list followed by a semicolon
+g16_begin_without_end	error 6 at the period: begin never closed
+g17_missing_semicolon_between_statements	error 6 at the second statement: no semicolon between two statements
+g18_while_with_do	error 7 at do: do is a token but no production uses it
+g19_if_without_then	error 7: if condition followed directly by a statement
+g20_if_without_fi	error 8 at end: an if statement never closed with fi
+g21_while_closed_with_od	error 8 at od: a while statement closed with od instead of elihw
+g22_condition_with_assignment_symbol	error 9 at =: a condition compared with the assignment symbol
+g23_odd_is_not_a_condition	error 11 at odd: odd is a token but no production uses it
+g24_missing_right_parenthesis	error 10 at the period: a parenthesis never closed
+g25_sign_after_operator	error 11 at -: a sign may open an expression only
+g26_procedure_inside_begin	error 12 at procedure: inside a statement list, procedure is still reported
+g27_else_list_without_fi	error 8 at end: an else list never closed with fi
+g28_empty_parentheses	error 11 at ): parentheses with no expression inside
+g29_assignment_without_expression	error 11 at ;: an assignment with nothing after =
+g30_relational_operator_without_right_side	error 11 at then: a condition with no expression after its operator
+y01_duplicate_variable	error 14: one variable declared twice in one list
+y02_duplicate_constant_and_variable	error 14: a variable with the name of a constant
+y03_duplicate_constants	error 14 at the second constant's name, before its := and number
+y04_duplicate_late_in_list	error 14 at the fifth name of a list that repeats the second
+y05_duplicate_checked_before_capacity	error 14, not 17: a full table, then a duplicate name
+y06_undeclared_assignment_target	error 15: assignment to a name never declared
+y07_undeclared_in_expression	error 15: an undeclared name in an expression
+y08_undeclared_in_read	error 15: read into an undeclared name
+y09_undeclared_in_write	error 15: write of an undeclared name
+y10_undeclared_in_condition	error 15: an undeclared name in a condition
+y11_assign_to_constant	error 16: assignment to a constant
+y12_read_into_constant	error 16: read into a constant
+y13_assign_to_constant_inside_if	error 16: assignment to a constant in an if body
+y14_read_into_constant_inside_while	error 16: read into a constant in a while body
+y15_undeclared_in_parentheses	error 15: an undeclared name two parentheses deep
+y16_undeclared_in_else_branch	error 15: an undeclared name in an else list
+y17_undeclared_in_while_condition	error 15: an undeclared name in a while condition
+y18_undeclared_after_declarations	error 15 after lookups that succeed: the table keeps its entries, unmarked
+y19_names_are_case_sensitive	error 15: Count is a different name from count
+y20_undeclared_before_assignment_symbol	error 15, not 5: the lookup of y comes before the check of :=
+y21_first_of_two_undeclared	error 15 at the first of two undeclared names: only the first error is reported
+y22_constant_before_assignment_symbol	error 16, not 5: the kind check of c comes before the check of :=
+y23_undeclared_beside_constant	error 15: an undeclared name multiplied by a declared constant
+y24_constant_legal_in_expression_only	error 16: a constant read in two expressions, then assigned
+y25_longer_name_is_different	error 15: sum1 is a different name from sum
+l01_table_holds_100_entries	exactly 100 entries: 50 constants and 50 variables
+l02_entry_101_is_refused	error 17 at the 101st declaration
+l03_missing_tokens_file	error 18: tokens.txt is not in the working directory
+l04_missing_nametable_file	error 18: nametable.txt is not in the working directory
+p01_pipeline_spine_program	your lex, then your parser, on the HW2 shared example program
+p02_pipeline_large_program	your lex, then your parser, on the HW2 large program
+p03_pipeline_nested_blocks	your lex, then your parser, on the HW2 nested-blocks program
+p04_pipeline_procedure_program_refused	your lex on the HW2 procedure program, then your parser stops with error 12
+p05_pipeline_constants_and_variables	your lex, then your parser, on a loop over constants and variables
+p06_pipeline_comments_and_tabs	your lex must drop comments, tabs, and blank lines before the parser
+p07_pipeline_crlf_line_endings	your lex on a program with Windows line endings
+p08_pipeline_every_operator	your lex on every operator and punctuation token the grammar uses
+p09_pipeline_length_limits	your lex on 12-character identifiers and 6-digit numbers
+p10_pipeline_do_is_reserved	your lex must make do a reserved word, so the parser stops with error 7

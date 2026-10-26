@@ -1,0 +1,5 @@
+Test Case: a26_several_empty_statements
+What this case covers: empty statements between semicolons in a statement list
+Reason: output differs from expected_results/a26_several_empty_statements.txt
+Expected: expected_results/a26_several_empty_statements.txt
+Your Output: student_output/a26_several_empty_statements_output.txt

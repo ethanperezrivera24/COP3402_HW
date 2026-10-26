@@ -1,0 +1,5 @@
+var x;
+while x < 3 then
+  x = x + 1;
+  call p
+elihw.

@@ -1,0 +1,33 @@
+Name Table:
+
+index  name          line  column
+0      x             1     5
+1      y             1     8
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      32        var           var-decl
+2      1 0       x             var-decl
+       insert entry 0: variable x, level 0, address 3
+3      15        ,             var-decl
+4      1 1       y             var-decl
+       insert entry 1: variable y, level 0, address 4
+5      16        ;             var-decl
+6      20        begin         statement
+7      1 0       x             statement
+       lookup x: entry 0, variable, level 0
+8      18        =             statement
+9      2 1       1             factor
+
+Symbol Table:
+
+entry  kind       name          value   level  address  mark
+0      variable   x             -       0      3        0
+1      variable   y             -       0      4        0
+
+Result:
+
+Error 6 at token 10 'y': begin must be closed with end
+

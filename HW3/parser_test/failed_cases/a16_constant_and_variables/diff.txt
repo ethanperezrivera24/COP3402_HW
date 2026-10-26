@@ -1,0 +1,46 @@
+9a10,48
+> token  input     text          nonterminal
+>        enter level 0
+> 1      31        const         const-decl
+> 2      1 0       max           const-decl
+> 3      19        :=            const-decl
+> 4      2 100     100           const-decl
+>        insert entry 0: constant max, value 100, level 0
+> 5      16        ;             const-decl
+> 6      32        var           var-decl
+> 7      1 1       x             var-decl
+>        insert entry 1: variable x, level 0, address 3
+> 8      15        ,             var-decl
+> 9      1 2       y             var-decl
+>        insert entry 2: variable y, level 0, address 4
+> 10     16        ;             var-decl
+> 11     20        begin         statement
+> 12     35        read          statement
+> 13     1 1       x             statement
+>        lookup x: entry 1, variable, level 0
+> 14     16        ;             statement-list
+> 15     1 2       y             statement
+>        lookup y: entry 2, variable, level 0
+> 16     18        =             statement
+> 17     1 0       max           factor
+>        lookup max: entry 0, constant, level 0
+> 18     4         -             expression
+> 19     1 1       x             factor
+>        lookup x: entry 1, variable, level 0
+> 20     16        ;             statement-list
+> 21     34        write         statement
+> 22     1 2       y             factor
+>        lookup y: entry 2, variable, level 0
+> 23     21        end           statement
+>        mark entry 0
+>        mark entry 1
+>        mark entry 2
+>        leave level 0
+> 24     17        .             program
+> 
+11a51,55
+> entry  kind       name          value   level  address  mark
+> 0      constant   max           100     0      -        1
+> 1      variable   x             -       0      3        1
+> 2      variable   y             -       0      4        1
+> 

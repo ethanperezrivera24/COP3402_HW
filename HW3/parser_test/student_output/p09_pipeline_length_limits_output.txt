@@ -1,0 +1,14 @@
+Name Table:
+
+index name line column
+0 biggestvalue 1 7
+1 twelvechars1 2 5
+2 abcdefghijkl 2 19
+
+Parse Trace:
+
+Symbol Table:
+
+Result:
+
+program accepted

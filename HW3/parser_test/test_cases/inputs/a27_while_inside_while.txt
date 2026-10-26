@@ -1,0 +1,11 @@
+var i, j;
+begin
+  i = 0;
+  while i < 3 then
+    j = 0;
+    while j < i then
+      j = j + 1
+    elihw;
+    i = i + 1
+  elihw
+end.

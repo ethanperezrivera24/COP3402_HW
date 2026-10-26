@@ -1,0 +1,10 @@
+var i, s;
+begin
+  i = 0;
+  s = 0;
+  while i < 5 then
+    s = s + i;
+    i = i + 1
+  elihw;
+  write s
+end.

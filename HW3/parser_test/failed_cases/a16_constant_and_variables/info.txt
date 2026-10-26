@@ -1,0 +1,5 @@
+Test Case: a16_constant_and_variables
+What this case covers: a constant and two variables: inserts, lookups of both kinds, and the marks
+Reason: output differs from expected_results/a16_constant_and_variables.txt
+Expected: expected_results/a16_constant_and_variables.txt
+Your Output: student_output/a16_constant_and_variables_output.txt

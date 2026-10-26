@@ -1,0 +1,25 @@
+Name Table:
+
+index  name          line  column
+0      count         1     5
+1      Count         2     1
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      32        var           var-decl
+2      1 0       count         var-decl
+       insert entry 0: variable count, level 0, address 3
+3      16        ;             var-decl
+4      1 1       Count         statement
+
+Symbol Table:
+
+entry  kind       name          value   level  address  mark
+0      variable   count         -       0      3        0
+
+Result:
+
+Error 15 at token 4 'Count': undeclared identifier
+

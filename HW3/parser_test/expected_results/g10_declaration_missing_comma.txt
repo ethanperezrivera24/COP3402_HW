@@ -1,0 +1,23 @@
+Name Table:
+
+index  name          line  column
+0      x             1     5
+1      y             1     7
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      32        var           var-decl
+2      1 0       x             var-decl
+       insert entry 0: variable x, level 0, address 3
+
+Symbol Table:
+
+entry  kind       name          value   level  address  mark
+0      variable   x             -       0      3        0
+
+Result:
+
+Error 4 at token 3 'y': declarations must be separated by , and end with ;
+

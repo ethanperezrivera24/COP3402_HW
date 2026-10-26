@@ -1,0 +1,36 @@
+Name Table:
+
+index  name          line  column
+0      a             1     7
+1      b             1     15
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      31        const         const-decl
+2      1 0       a             const-decl
+3      19        :=            const-decl
+4      2 1       1             const-decl
+       insert entry 0: constant a, value 1, level 0
+5      15        ,             const-decl
+6      1 1       b             const-decl
+7      19        :=            const-decl
+8      2 22      22            const-decl
+       insert entry 1: constant b, value 22, level 0
+9      16        ;             const-decl
+       mark entry 0
+       mark entry 1
+       leave level 0
+10     17        .             program
+
+Symbol Table:
+
+entry  kind       name          value   level  address  mark
+0      constant   a             1       0      -        1
+1      constant   b             22      0      -        1
+
+Result:
+
+program accepted
+

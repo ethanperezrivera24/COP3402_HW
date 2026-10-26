@@ -1,0 +1,68 @@
+9a10,70
+> token  input     text          nonterminal
+>        enter level 0
+> 1      31        const         const-decl
+> 2      1 0       limit         const-decl
+> 3      19        :=            const-decl
+> 4      2 10      10            const-decl
+>        insert entry 0: constant limit, value 10, level 0
+> 5      16        ;             const-decl
+> 6      32        var           var-decl
+> 7      1 1       n             var-decl
+>        insert entry 1: variable n, level 0, address 3
+> 8      15        ,             var-decl
+> 9      1 2       total         var-decl
+>        insert entry 2: variable total, level 0, address 4
+> 10     16        ;             var-decl
+> 11     20        begin         statement
+> 12     1 1       n             statement
+>        lookup n: entry 1, variable, level 0
+> 13     18        =             statement
+> 14     2 1       1             factor
+> 15     16        ;             statement-list
+> 16     1 2       total         statement
+>        lookup total: entry 2, variable, level 0
+> 17     18        =             statement
+> 18     2 0       0             factor
+> 19     16        ;             statement-list
+> 20     25        while         statement
+> 21     1 1       n             factor
+>        lookup n: entry 1, variable, level 0
+> 22     10        <=            condition
+> 23     1 0       limit         factor
+>        lookup limit: entry 0, constant, level 0
+> 24     24        then          statement
+> 25     1 2       total         statement
+>        lookup total: entry 2, variable, level 0
+> 26     18        =             statement
+> 27     1 2       total         factor
+>        lookup total: entry 2, variable, level 0
+> 28     3         +             expression
+> 29     1 1       n             factor
+>        lookup n: entry 1, variable, level 0
+> 30     16        ;             statement-list
+> 31     1 1       n             statement
+>        lookup n: entry 1, variable, level 0
+> 32     18        =             statement
+> 33     1 1       n             factor
+>        lookup n: entry 1, variable, level 0
+> 34     3         +             expression
+> 35     2 1       1             factor
+> 36     26        elihw         statement
+> 37     16        ;             statement-list
+> 38     34        write         statement
+> 39     1 2       total         factor
+>        lookup total: entry 2, variable, level 0
+> 40     21        end           statement
+>        mark entry 0
+>        mark entry 1
+>        mark entry 2
+>        leave level 0
+> 41     17        .             program
+> 
+11a73,77
+> entry  kind       name          value   level  address  mark
+> 0      constant   limit         10      0      -        1
+> 1      variable   n             -       0      3        1
+> 2      variable   total         -       0      4        1
+> 

@@ -1,0 +1,5 @@
+Test Case: g20_if_without_fi
+What this case covers: error 8 at end: an if statement never closed with fi
+Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Expected: expected_results/g20_if_without_fi.txt
+Your Output: student_output/g20_if_without_fi_output.txt

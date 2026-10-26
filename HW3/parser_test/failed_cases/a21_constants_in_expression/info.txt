@@ -1,0 +1,5 @@
+Test Case: a21_constants_in_expression
+What this case covers: constants used in an expression: each lookup finds a constant
+Reason: output differs from expected_results/a21_constants_in_expression.txt
+Expected: expected_results/a21_constants_in_expression.txt
+Your Output: student_output/a21_constants_in_expression_output.txt

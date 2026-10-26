@@ -1,0 +1,3 @@
+const big := 999999;
+var x;
+x = big.

@@ -1,0 +1,5 @@
+Test Case: a01_empty_program
+What this case covers: a program that is only a period: an empty statement, then the period
+Reason: output differs from expected_results/a01_empty_program.txt
+Expected: expected_results/a01_empty_program.txt
+Your Output: student_output/a01_empty_program_output.txt

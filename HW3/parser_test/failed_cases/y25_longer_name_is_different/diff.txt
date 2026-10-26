@@ -1,0 +1,18 @@
+8a9,16
+> token  input     text          nonterminal
+>        enter level 0
+> 1      32        var           var-decl
+> 2      1 0       sum           var-decl
+>        insert entry 0: variable sum, level 0, address 3
+> 3      16        ;             var-decl
+> 4      1 1       sum1          statement
+> 
+10a19,21
+> entry  kind       name          value   level  address  mark
+> 0      variable   sum           -       0      3        0
+> 
+13c24,25
+< program accepted
+---
+> Error 15 at token 4 'sum1': undeclared identifier
+> 

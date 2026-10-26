@@ -1,0 +1,5 @@
+Test Case: y16_undeclared_in_else_branch
+What this case covers: error 15: an undeclared name in an else list
+Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Expected: expected_results/y16_undeclared_in_else_branch.txt
+Your Output: student_output/y16_undeclared_in_else_branch_output.txt

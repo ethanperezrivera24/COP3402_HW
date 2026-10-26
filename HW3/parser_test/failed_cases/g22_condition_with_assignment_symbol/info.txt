@@ -1,0 +1,5 @@
+Test Case: g22_condition_with_assignment_symbol
+What this case covers: error 9 at =: a condition compared with the assignment symbol
+Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Expected: expected_results/g22_condition_with_assignment_symbol.txt
+Your Output: student_output/g22_condition_with_assignment_symbol_output.txt

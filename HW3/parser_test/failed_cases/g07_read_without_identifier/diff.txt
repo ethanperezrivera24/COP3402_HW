@@ -1,0 +1,10 @@
+4a5,8
+> token  input     text          nonterminal
+>        enter level 0
+> 1      35        read          statement
+> 
+9c13,14
+< program accepted
+---
+> Error 2 at token 2 '5': const, var, and read must be followed by an identifier
+> 
