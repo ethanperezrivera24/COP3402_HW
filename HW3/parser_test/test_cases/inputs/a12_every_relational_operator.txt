@@ -1,0 +1,10 @@
+var x;
+begin
+  read x;
+  if x == 1 then write 1 fi;
+  if x != 1 then write 2 fi;
+  if x < 1 then write 3 fi;
+  if x <= 1 then write 4 fi;
+  if x > 1 then write 5 fi;
+  if x >= 1 then write 6 fi
+end.

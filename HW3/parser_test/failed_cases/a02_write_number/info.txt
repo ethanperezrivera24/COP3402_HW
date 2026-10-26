@@ -1,0 +1,5 @@
+Test Case: a02_write_number
+What this case covers: one write statement with a number and no declarations
+Reason: output differs from expected_results/a02_write_number.txt
+Expected: expected_results/a02_write_number.txt
+Your Output: student_output/a02_write_number_output.txt

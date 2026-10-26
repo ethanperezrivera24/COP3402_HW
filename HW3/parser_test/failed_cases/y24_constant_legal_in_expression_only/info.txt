@@ -1,0 +1,5 @@
+Test Case: y24_constant_legal_in_expression_only
+What this case covers: error 16: a constant read in two expressions, then assigned
+Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Expected: expected_results/y24_constant_legal_in_expression_only.txt
+Your Output: student_output/y24_constant_legal_in_expression_only_output.txt

@@ -1,0 +1,4 @@
+var x;
+while x < 5 then
+  x = x + 1
+od.

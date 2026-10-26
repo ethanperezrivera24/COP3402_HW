@@ -1,0 +1,5 @@
+const c := 1;
+var x;
+while x < 2 then
+  read c
+elihw.

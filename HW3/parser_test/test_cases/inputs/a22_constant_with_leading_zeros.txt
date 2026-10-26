@@ -1,0 +1,2 @@
+const seven := 007;
+write seven.

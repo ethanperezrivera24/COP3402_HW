@@ -1,0 +1,31 @@
+8a9,29
+> token  input     text          nonterminal
+>        enter level 0
+> 1      32        var           var-decl
+> 2      1 0       x             var-decl
+>        insert entry 0: variable x, level 0, address 3
+> 3      16        ;             var-decl
+> 4      25        while         statement
+> 5      1 0       x             factor
+>        lookup x: entry 0, variable, level 0
+> 6      9         <             condition
+> 7      2 3       3             factor
+> 8      24        then          statement
+> 9      1 0       x             statement
+>        lookup x: entry 0, variable, level 0
+> 10     18        =             statement
+> 11     1 0       x             factor
+>        lookup x: entry 0, variable, level 0
+> 12     3         +             expression
+> 13     2 1       1             factor
+> 14     16        ;             statement-list
+> 
+10a32,34
+> entry  kind       name          value   level  address  mark
+> 0      variable   x             -       0      3        0
+> 
+13c37,38
+< program accepted
+---
+> Error 13 at token 15 'call': call statements are not part of this grammar
+> 

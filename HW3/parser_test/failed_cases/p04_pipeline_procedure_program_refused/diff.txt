@@ -1,0 +1,28 @@
+10a11,26
+> token  input     text          nonterminal
+>        enter level 0
+> 1      31        const         const-decl
+> 2      1 0       limit         const-decl
+> 3      19        :=            const-decl
+> 4      2 10      10            const-decl
+>        insert entry 0: constant limit, value 10, level 0
+> 5      16        ;             const-decl
+> 6      32        var           var-decl
+> 7      1 1       count         var-decl
+>        insert entry 1: variable count, level 0, address 3
+> 8      15        ,             var-decl
+> 9      1 2       total         var-decl
+>        insert entry 2: variable total, level 0, address 4
+> 10     16        ;             var-decl
+> 
+12a29,33
+> entry  kind       name          value   level  address  mark
+> 0      constant   limit         10      0      -        0
+> 1      variable   count         -       0      3        0
+> 2      variable   total         -       0      4        0
+> 
+15c36,37
+< program accepted
+---
+> Error 12 at token 11 'procedure': procedure declarations are not part of this grammar
+> 

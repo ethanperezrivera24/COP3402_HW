@@ -1,0 +1,5 @@
+Test Case: l01_table_holds_100_entries
+What this case covers: exactly 100 entries: 50 constants and 50 variables
+Reason: output differs from expected_results/l01_table_holds_100_entries.txt
+Expected: expected_results/l01_table_holds_100_entries.txt
+Your Output: student_output/l01_table_holds_100_entries_output.txt

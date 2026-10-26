@@ -1,0 +1,5 @@
+Test Case: p02_pipeline_large_program
+What this case covers: your lex, then your parser, on the HW2 large program
+Reason: output differs from expected_results/p02_pipeline_large_program.txt
+Expected: expected_results/p02_pipeline_large_program.txt
+Your Output: student_output/p02_pipeline_large_program_output.txt

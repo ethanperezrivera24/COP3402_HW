@@ -1,0 +1,18 @@
+8a9,16
+> token  input     text          nonterminal
+>        enter level 0
+> 1      31        const         const-decl
+> 2      1 0       a             const-decl
+> 3      19        :=            const-decl
+> 4      2 1       1             const-decl
+>        insert entry 0: constant a, value 1, level 0
+> 
+10a19,21
+> entry  kind       name          value   level  address  mark
+> 0      constant   a             1       0      -        0
+> 
+13c24,25
+< program accepted
+---
+> Error 4 at token 5 'var': declarations must be separated by , and end with ;
+> 

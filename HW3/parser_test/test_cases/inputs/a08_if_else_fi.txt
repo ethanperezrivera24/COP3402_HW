@@ -1,0 +1,11 @@
+var x, y;
+begin
+  read x;
+  if x >= 10 then
+    y = x - 10;
+    write y
+  else
+    y = 10 - x;
+    write y
+  fi
+end.

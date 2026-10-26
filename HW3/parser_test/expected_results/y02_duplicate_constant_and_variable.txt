@@ -1,0 +1,27 @@
+Name Table:
+
+index  name          line  column
+0      x             1     7
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      31        const         const-decl
+2      1 0       x             const-decl
+3      19        :=            const-decl
+4      2 1       1             const-decl
+       insert entry 0: constant x, value 1, level 0
+5      16        ;             const-decl
+6      32        var           var-decl
+7      1 0       x             var-decl
+
+Symbol Table:
+
+entry  kind       name          value   level  address  mark
+0      constant   x             1       0      -        0
+
+Result:
+
+Error 14 at token 7 'x': identifier already declared in this block
+

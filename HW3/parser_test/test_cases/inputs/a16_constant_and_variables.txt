@@ -1,0 +1,7 @@
+const max := 100;
+var x, y;
+begin
+  read x;
+  y = max - x;
+  write y
+end.

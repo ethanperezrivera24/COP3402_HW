@@ -1,0 +1,52 @@
+8a9,54
+> token  input     text          nonterminal
+>        enter level 0
+> 1      32        var           var-decl
+> 2      1 0       x             var-decl
+>        insert entry 0: variable x, level 0, address 3
+> 3      15        ,             var-decl
+> 4      1 1       y             var-decl
+>        insert entry 1: variable y, level 0, address 4
+> 5      16        ;             var-decl
+> 6      20        begin         statement
+> 7      1 1       y             statement
+>        lookup y: entry 1, variable, level 0
+> 8      18        =             statement
+> 9      2 3       3             factor
+> 10     16        ;             statement-list
+> 11     1 0       x             statement
+>        lookup x: entry 0, variable, level 0
+> 12     18        =             statement
+> 13     4         -             expression
+> 14     1 1       y             factor
+>        lookup y: entry 1, variable, level 0
+> 15     3         +             expression
+> 16     2 3       3             factor
+> 17     16        ;             statement-list
+> 18     1 1       y             statement
+>        lookup y: entry 1, variable, level 0
+> 19     18        =             statement
+> 20     3         +             expression
+> 21     2 5       5             factor
+> 22     16        ;             statement-list
+> 23     1 0       x             statement
+>        lookup x: entry 0, variable, level 0
+> 24     18        =             statement
+> 25     13        (             factor
+> 26     4         -             expression
+> 27     2 2       2             factor
+> 28     14        )             factor
+> 29     5         *             term
+> 30     1 1       y             factor
+>        lookup y: entry 1, variable, level 0
+> 31     21        end           statement
+>        mark entry 0
+>        mark entry 1
+>        leave level 0
+> 32     17        .             program
+> 
+10a57,60
+> entry  kind       name          value   level  address  mark
+> 0      variable   x             -       0      3        1
+> 1      variable   y             -       0      4        1
+> 

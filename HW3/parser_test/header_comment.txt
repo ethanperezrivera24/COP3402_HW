@@ -1,0 +1,35 @@
+/*
+Homework:
+parser - HW3 PL/0 parser and symbol table
+
+Author(s): <Your Name Here>
+
+Language: C only
+
+To Compile:
+  gcc -Wall -Wextra -std=c11 -O2 parser.c -o parser
+
+To Execute (on Eustis):
+  ./lex <input_file> && ./parser
+
+where:
+  <input_file> is the path to a text file holding a PL/0 source program;
+  ./lex writes tokens.txt and nametable.txt, and ./parser reads them from
+  the current directory and takes no arguments
+
+Notes:
+  - Implements the recursive-descent parser and symbol table described in
+    the homework instructions.
+  - Prints four sections to standard output: Name Table, Parse Trace,
+    Symbol Table and Result.
+  - Stops at the first syntax or symbol-table error, reports it with its
+    token number, and exits with status 1.
+  - Exits with status 0 when the whole program is accepted.
+  - Tested on Eustis.
+
+Class: COP 3402 - Systems Software
+
+Instructor: Jie Lin, Ph.D.
+
+Due Date: See Webcourses
+*/

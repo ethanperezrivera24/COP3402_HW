@@ -1,0 +1,12 @@
+Name Table:
+
+index name line column
+0 z 1 6
+
+Parse Trace:
+
+Symbol Table:
+
+Result:
+
+program accepted

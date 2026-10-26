@@ -1,0 +1,23 @@
+8a9,25
+> token  input     text          nonterminal
+>        enter level 0
+> 1      31        const         const-decl
+> 2      1 0       a             const-decl
+> 3      19        :=            const-decl
+> 4      2 1       1             const-decl
+>        insert entry 0: constant a, value 1, level 0
+> 5      16        ;             const-decl
+> 6      32        var           var-decl
+> 7      1 1       b             var-decl
+>        insert entry 1: variable b, level 0, address 3
+> 8      16        ;             var-decl
+>        mark entry 0
+>        mark entry 1
+>        leave level 0
+> 9      17        .             program
+> 
+10a28,31
+> entry  kind       name          value   level  address  mark
+> 0      constant   a             1       0      -        1
+> 1      variable   b             -       0      3        1
+> 

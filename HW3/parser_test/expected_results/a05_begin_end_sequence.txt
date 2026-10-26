@@ -1,0 +1,65 @@
+Name Table:
+
+index  name          line  column
+0      a             1     5
+1      b             1     8
+2      c             1     11
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      32        var           var-decl
+2      1 0       a             var-decl
+       insert entry 0: variable a, level 0, address 3
+3      15        ,             var-decl
+4      1 1       b             var-decl
+       insert entry 1: variable b, level 0, address 4
+5      15        ,             var-decl
+6      1 2       c             var-decl
+       insert entry 2: variable c, level 0, address 5
+7      16        ;             var-decl
+8      20        begin         statement
+9      1 0       a             statement
+       lookup a: entry 0, variable, level 0
+10     18        =             statement
+11     2 1       1             factor
+12     16        ;             statement-list
+13     1 1       b             statement
+       lookup b: entry 1, variable, level 0
+14     18        =             statement
+15     1 0       a             factor
+       lookup a: entry 0, variable, level 0
+16     3         +             expression
+17     2 1       1             factor
+18     16        ;             statement-list
+19     1 2       c             statement
+       lookup c: entry 2, variable, level 0
+20     18        =             statement
+21     1 0       a             factor
+       lookup a: entry 0, variable, level 0
+22     3         +             expression
+23     1 1       b             factor
+       lookup b: entry 1, variable, level 0
+24     16        ;             statement-list
+25     34        write         statement
+26     1 2       c             factor
+       lookup c: entry 2, variable, level 0
+27     21        end           statement
+       mark entry 0
+       mark entry 1
+       mark entry 2
+       leave level 0
+28     17        .             program
+
+Symbol Table:
+
+entry  kind       name          value   level  address  mark
+0      variable   a             -       0      3        1
+1      variable   b             -       0      4        1
+2      variable   c             -       0      5        1
+
+Result:
+
+program accepted
+

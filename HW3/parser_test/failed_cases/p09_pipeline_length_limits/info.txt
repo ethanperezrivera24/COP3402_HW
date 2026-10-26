@@ -1,0 +1,5 @@
+Test Case: p09_pipeline_length_limits
+What this case covers: your lex on 12-character identifiers and 6-digit numbers
+Reason: output differs from expected_results/p09_pipeline_length_limits.txt
+Expected: expected_results/p09_pipeline_length_limits.txt
+Your Output: student_output/p09_pipeline_length_limits_output.txt

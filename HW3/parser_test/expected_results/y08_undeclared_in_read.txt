@@ -1,0 +1,18 @@
+Name Table:
+
+index  name          line  column
+0      z             1     6
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      35        read          statement
+2      1 0       z             statement
+
+Symbol Table:
+
+Result:
+
+Error 15 at token 2 'z': undeclared identifier
+

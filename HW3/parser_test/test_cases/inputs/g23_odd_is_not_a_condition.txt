@@ -1,0 +1,4 @@
+var x;
+if odd x then
+  write x
+fi.

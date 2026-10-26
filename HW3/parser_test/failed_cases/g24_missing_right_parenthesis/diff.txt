@@ -1,0 +1,27 @@
+7a8,24
+> token  input     text          nonterminal
+>        enter level 0
+> 1      32        var           var-decl
+> 2      1 0       x             var-decl
+>        insert entry 0: variable x, level 0, address 3
+> 3      16        ;             var-decl
+> 4      1 0       x             statement
+>        lookup x: entry 0, variable, level 0
+> 5      18        =             statement
+> 6      13        (             factor
+> 7      1 0       x             factor
+>        lookup x: entry 0, variable, level 0
+> 8      3         +             expression
+> 9      2 1       1             factor
+> 10     5         *             term
+> 11     2 2       2             factor
+> 
+9a27,29
+> entry  kind       name          value   level  address  mark
+> 0      variable   x             -       0      3        0
+> 
+12c32,33
+< program accepted
+---
+> Error 10 at token 12 '.': a left parenthesis must be closed with a right parenthesis
+> 

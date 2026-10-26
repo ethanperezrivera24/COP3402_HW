@@ -1,0 +1,5 @@
+Test Case: p07_pipeline_crlf_line_endings
+What this case covers: your lex on a program with Windows line endings
+Reason: output differs from expected_results/p07_pipeline_crlf_line_endings.txt
+Expected: expected_results/p07_pipeline_crlf_line_endings.txt
+Your Output: student_output/p07_pipeline_crlf_line_endings_output.txt

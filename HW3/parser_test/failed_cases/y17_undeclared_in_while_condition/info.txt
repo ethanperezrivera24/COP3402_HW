@@ -1,0 +1,5 @@
+Test Case: y17_undeclared_in_while_condition
+What this case covers: error 15: an undeclared name in a while condition
+Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Expected: expected_results/y17_undeclared_in_while_condition.txt
+Your Output: student_output/y17_undeclared_in_while_condition_output.txt

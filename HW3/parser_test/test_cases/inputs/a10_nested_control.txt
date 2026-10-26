@@ -1,0 +1,13 @@
+var n, k;
+begin
+  read n;
+  if n > 0 then
+    k = 0;
+    while k < n then
+      if k / 2 * 2 == k then
+        write k
+      fi;
+      k = k + 1
+    elihw
+  fi
+end.

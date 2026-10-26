@@ -1,0 +1,6 @@
+const a := 1;
+var b, c;
+begin
+  b = a;
+  c = b + d
+end.

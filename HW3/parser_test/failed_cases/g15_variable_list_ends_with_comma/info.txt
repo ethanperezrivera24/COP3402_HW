@@ -1,0 +1,5 @@
+Test Case: g15_variable_list_ends_with_comma
+What this case covers: error 2: a comma in a variable list followed by a semicolon
+Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Expected: expected_results/g15_variable_list_ends_with_comma.txt
+Your Output: student_output/g15_variable_list_ends_with_comma_output.txt

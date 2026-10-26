@@ -1,0 +1,7 @@
+const c := 5;
+var x;
+begin
+  x = c;
+  x = x + c;
+  c = x
+end.

@@ -1,0 +1,5 @@
+Test Case: p08_pipeline_every_operator
+What this case covers: your lex on every operator and punctuation token the grammar uses
+Reason: output differs from expected_results/p08_pipeline_every_operator.txt
+Expected: expected_results/p08_pipeline_every_operator.txt
+Your Output: student_output/p08_pipeline_every_operator_output.txt

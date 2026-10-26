@@ -1,0 +1,5 @@
+Test Case: g25_sign_after_operator
+What this case covers: error 11 at -: a sign may open an expression only
+Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Expected: expected_results/g25_sign_after_operator.txt
+Your Output: student_output/g25_sign_after_operator_output.txt

@@ -1,0 +1,10 @@
+var a, b;
+begin
+  read a;
+  read b;
+  if a * 2 + 1 >= (b - 3) / 2 then
+    write a
+  else
+    write b
+  fi
+end.

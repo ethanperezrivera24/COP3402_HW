@@ -1,0 +1,5 @@
+Test Case: g17_missing_semicolon_between_statements
+What this case covers: error 6 at the second statement: no semicolon between two statements
+Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Expected: expected_results/g17_missing_semicolon_between_statements.txt
+Your Output: student_output/g17_missing_semicolon_between_statements_output.txt

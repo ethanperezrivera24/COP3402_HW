@@ -1,0 +1,24 @@
+Name Table:
+
+index  name          line  column
+0      x             1     5
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      32        var           var-decl
+2      1 0       x             var-decl
+       insert entry 0: variable x, level 0, address 3
+3      16        ;             var-decl
+4      22        if            statement
+
+Symbol Table:
+
+entry  kind       name          value   level  address  mark
+0      variable   x             -       0      3        0
+
+Result:
+
+Error 11 at token 5 'odd': a factor must be an identifier, a number, or (
+

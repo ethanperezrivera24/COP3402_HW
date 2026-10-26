@@ -1,0 +1,5 @@
+Test Case: a03_constants_only
+What this case covers: a constant declaration list and an empty statement
+Reason: output differs from expected_results/a03_constants_only.txt
+Expected: expected_results/a03_constants_only.txt
+Your Output: student_output/a03_constants_only_output.txt

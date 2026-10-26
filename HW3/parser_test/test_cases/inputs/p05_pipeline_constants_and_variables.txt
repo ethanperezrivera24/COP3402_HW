@@ -1,0 +1,11 @@
+const step := 2, limit := 20;
+var i, sum;
+begin
+  i = 0;
+  sum = 0;
+  while i <= limit then
+    sum = sum + i;
+    i = i + step
+  elihw;
+  write sum
+end.

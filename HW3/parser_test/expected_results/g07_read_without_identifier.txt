@@ -1,0 +1,14 @@
+Name Table:
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      35        read          statement
+
+Symbol Table:
+
+Result:
+
+Error 2 at token 2 '5': const, var, and read must be followed by an identifier
+

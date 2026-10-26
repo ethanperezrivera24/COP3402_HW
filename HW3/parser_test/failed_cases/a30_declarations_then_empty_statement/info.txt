@@ -1,0 +1,5 @@
+Test Case: a30_declarations_then_empty_statement
+What this case covers: both declaration lists, then an empty main statement
+Reason: output differs from expected_results/a30_declarations_then_empty_statement.txt
+Expected: expected_results/a30_declarations_then_empty_statement.txt
+Your Output: student_output/a30_declarations_then_empty_statement_output.txt

@@ -1,0 +1,19 @@
+7a8,16
+> token  input     text          nonterminal
+>        enter level 0
+> 1      32        var           var-decl
+> 2      1 0       x             var-decl
+>        insert entry 0: variable x, level 0, address 3
+> 3      16        ;             var-decl
+> 4      1 0       x             statement
+>        lookup x: entry 0, variable, level 0
+> 
+9a19,21
+> entry  kind       name          value   level  address  mark
+> 0      variable   x             -       0      3        0
+> 
+12c24,25
+< program accepted
+---
+> Error 5 at token 5 ':=': an identifier that starts a statement must be followed by =
+> 

@@ -1,0 +1,22 @@
+7a8,19
+> token  input     text          nonterminal
+>        enter level 0
+> 1      32        var           var-decl
+> 2      1 0       x             var-decl
+>        insert entry 0: variable x, level 0, address 3
+> 3      16        ;             var-decl
+> 4      22        if            statement
+> 5      1 0       x             factor
+>        lookup x: entry 0, variable, level 0
+> 6      11        >             condition
+> 7      2 0       0             factor
+> 
+9a22,24
+> entry  kind       name          value   level  address  mark
+> 0      variable   x             -       0      3        0
+> 
+12c27,28
+< program accepted
+---
+> Error 7 at token 8 'write': a condition after if or while must be followed by then
+> 

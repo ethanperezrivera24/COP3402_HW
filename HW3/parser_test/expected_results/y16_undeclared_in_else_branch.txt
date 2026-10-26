@@ -1,0 +1,36 @@
+Name Table:
+
+index  name          line  column
+0      x             1     5
+1      y             5     9
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      32        var           var-decl
+2      1 0       x             var-decl
+       insert entry 0: variable x, level 0, address 3
+3      16        ;             var-decl
+4      22        if            statement
+5      1 0       x             factor
+       lookup x: entry 0, variable, level 0
+6      7         ==            condition
+7      2 0       0             factor
+8      24        then          statement
+9      34        write         statement
+10     1 0       x             factor
+       lookup x: entry 0, variable, level 0
+11     36        else          statement
+12     34        write         statement
+13     1 1       y             factor
+
+Symbol Table:
+
+entry  kind       name          value   level  address  mark
+0      variable   x             -       0      3        0
+
+Result:
+
+Error 15 at token 13 'y': undeclared identifier
+

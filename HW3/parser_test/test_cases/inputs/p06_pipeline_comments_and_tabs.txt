@@ -1,0 +1,12 @@
+/* sum of 1 to n */
+var n,	s;
+
+
+begin
+	read n; /* how far */
+	s = 0;
+	while n > 0 then
+		s = s + n; n = n - 1
+	elihw;
+	write s /* done */
+end.

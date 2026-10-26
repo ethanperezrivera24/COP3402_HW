@@ -1,0 +1,2 @@
+const k := 2;
+write k * m.

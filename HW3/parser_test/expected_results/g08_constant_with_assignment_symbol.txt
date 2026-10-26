@@ -1,0 +1,18 @@
+Name Table:
+
+index  name          line  column
+0      a             1     7
+
+Parse Trace:
+
+token  input     text          nonterminal
+       enter level 0
+1      31        const         const-decl
+2      1 0       a             const-decl
+
+Symbol Table:
+
+Result:
+
+Error 3 at token 3 '=': a constant must be declared as name := number
+
