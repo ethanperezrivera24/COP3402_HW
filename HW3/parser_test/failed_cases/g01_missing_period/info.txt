@@ -1,5 +1,5 @@
 Test Case: g01_missing_period
 What this case covers: error 1 at end of tokens: the program has no period
-Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Reason: output differs from expected_results/g01_missing_period.txt
 Expected: expected_results/g01_missing_period.txt
 Your Output: student_output/g01_missing_period_output.txt

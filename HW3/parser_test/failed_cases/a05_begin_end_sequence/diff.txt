@@ -1,50 +1,28 @@
-9a10,54
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       a             var-decl
+13a14
 >        insert entry 0: variable a, level 0, address 3
-> 3      15        ,             var-decl
-> 4      1 1       b             var-decl
+15a17
 >        insert entry 1: variable b, level 0, address 4
-> 5      15        ,             var-decl
-> 6      1 2       c             var-decl
+17a20
 >        insert entry 2: variable c, level 0, address 5
-> 7      16        ;             var-decl
-> 8      20        begin         statement
-> 9      1 0       a             statement
+20a24
 >        lookup a: entry 0, variable, level 0
-> 10     18        =             statement
-> 11     2 1       1             factor
-> 12     16        ;             statement-list
-> 13     1 1       b             statement
+24a29
 >        lookup b: entry 1, variable, level 0
-> 14     18        =             statement
-> 15     1 0       a             factor
+26a32
 >        lookup a: entry 0, variable, level 0
-> 16     3         +             expression
-> 17     2 1       1             factor
-> 18     16        ;             statement-list
-> 19     1 2       c             statement
+30a37
 >        lookup c: entry 2, variable, level 0
-> 20     18        =             statement
-> 21     1 0       a             factor
+32a40
 >        lookup a: entry 0, variable, level 0
-> 22     3         +             expression
-> 23     1 1       b             factor
+34a43
 >        lookup b: entry 1, variable, level 0
-> 24     16        ;             statement-list
-> 25     34        write         statement
-> 26     1 2       c             factor
+37a47
 >        lookup c: entry 2, variable, level 0
-> 27     21        end           statement
+38a49,51
 >        mark entry 0
 >        mark entry 1
 >        mark entry 2
->        leave level 0
-> 28     17        .             program
-> 
-11a57,61
+43a57,61
 > entry  kind       name          value   level  address  mark
 > 0      variable   a             -       0      3        1
 > 1      variable   b             -       0      4        1

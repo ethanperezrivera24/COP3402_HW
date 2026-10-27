@@ -1,26 +1,11 @@
-8a9,23
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       x             var-decl
+12a13
 >        insert entry 0: variable x, level 0, address 3
-> 3      15        ,             var-decl
-> 4      1 1       y             var-decl
+14a16
 >        insert entry 1: variable y, level 0, address 4
-> 5      16        ;             var-decl
-> 6      20        begin         statement
-> 7      1 0       x             statement
+17a20
 >        lookup x: entry 0, variable, level 0
-> 8      18        =             statement
-> 9      2 1       1             factor
-> 
-10a26,29
+22a26,29
 > entry  kind       name          value   level  address  mark
 > 0      variable   x             -       0      3        0
 > 1      variable   y             -       0      4        0
-> 
-13c32,33
-< program accepted
----
-> Error 6 at token 10 'y': begin must be closed with end
 > 

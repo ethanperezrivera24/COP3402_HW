@@ -1,58 +1,29 @@
-8a9,61
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       i             var-decl
+12a13
 >        insert entry 0: variable i, level 0, address 3
-> 3      15        ,             var-decl
-> 4      1 1       s             var-decl
+14a16
 >        insert entry 1: variable s, level 0, address 4
-> 5      16        ;             var-decl
-> 6      20        begin         statement
-> 7      1 0       i             statement
+17a20
 >        lookup i: entry 0, variable, level 0
-> 8      18        =             statement
-> 9      2 0       0             factor
-> 10     16        ;             statement-list
-> 11     1 1       s             statement
+21a25
 >        lookup s: entry 1, variable, level 0
-> 12     18        =             statement
-> 13     2 0       0             factor
-> 14     16        ;             statement-list
-> 15     25        while         statement
-> 16     1 0       i             factor
+26a31
 >        lookup i: entry 0, variable, level 0
-> 17     9         <             condition
-> 18     2 5       5             factor
-> 19     24        then          statement
-> 20     1 1       s             statement
+30a36
 >        lookup s: entry 1, variable, level 0
-> 21     18        =             statement
-> 22     1 1       s             factor
+32a39
 >        lookup s: entry 1, variable, level 0
-> 23     3         +             expression
-> 24     1 0       i             factor
+34a42
 >        lookup i: entry 0, variable, level 0
-> 25     16        ;             statement-list
-> 26     1 0       i             statement
+36a45
 >        lookup i: entry 0, variable, level 0
-> 27     18        =             statement
-> 28     1 0       i             factor
+38a48
 >        lookup i: entry 0, variable, level 0
-> 29     3         +             expression
-> 30     2 1       1             factor
-> 31     26        elihw         statement
-> 32     16        ;             statement-list
-> 33     34        write         statement
-> 34     1 1       s             factor
+44a55
 >        lookup s: entry 1, variable, level 0
-> 35     21        end           statement
+45a57,58
 >        mark entry 0
 >        mark entry 1
->        leave level 0
-> 36     17        .             program
-> 
-10a64,67
+50a64,67
 > entry  kind       name          value   level  address  mark
 > 0      variable   i             -       0      3        1
 > 1      variable   s             -       0      4        1

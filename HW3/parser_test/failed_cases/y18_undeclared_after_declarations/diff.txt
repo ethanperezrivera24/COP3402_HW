@@ -1,41 +1,28 @@
-10a11,40
-> token  input     text          nonterminal
->        enter level 0
-> 1      31        const         const-decl
-> 2      1 0       a             const-decl
-> 3      19        :=            const-decl
-> 4      2 1       1             const-decl
+16a17
 >        insert entry 0: constant a, value 1, level 0
-> 5      16        ;             const-decl
-> 6      32        var           var-decl
-> 7      1 1       b             var-decl
+19a21
 >        insert entry 1: variable b, level 0, address 3
-> 8      15        ,             var-decl
-> 9      1 2       c             var-decl
+21a24
 >        insert entry 2: variable c, level 0, address 4
-> 10     16        ;             var-decl
-> 11     20        begin         statement
-> 12     1 1       b             statement
+24a28
 >        lookup b: entry 1, variable, level 0
-> 13     18        =             statement
-> 14     1 0       a             factor
+26a31
 >        lookup a: entry 0, constant, level 0
-> 15     16        ;             statement-list
-> 16     1 2       c             statement
+28a34
 >        lookup c: entry 2, variable, level 0
-> 17     18        =             statement
-> 18     1 1       b             factor
+30a37
 >        lookup b: entry 1, variable, level 0
-> 19     3         +             expression
-> 20     1 3       d             factor
-> 
-12a43,47
+33,35d39
+< 21 21 end statement
+<   leave level 0
+< 22 17 . program
+38a43,47
 > entry  kind       name          value   level  address  mark
 > 0      constant   a             1       0      -        0
 > 1      variable   b             -       0      3        0
 > 2      variable   c             -       0      4        0
 > 
-15c50,51
+41c50,51
 < program accepted
 ---
 > Error 15 at token 20 'd': undeclared identifier

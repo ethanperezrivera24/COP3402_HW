@@ -1,5 +1,5 @@
 Test Case: y22_constant_before_assignment_symbol
 What this case covers: error 16, not 5: the kind check of c comes before the check of :=
-Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Reason: output differs from expected_results/y22_constant_before_assignment_symbol.txt
 Expected: expected_results/y22_constant_before_assignment_symbol.txt
 Your Output: student_output/y22_constant_before_assignment_symbol_output.txt

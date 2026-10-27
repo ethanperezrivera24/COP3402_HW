@@ -5,8 +5,13 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 31 const const-decl
+2 1 0 a const-decl
+
 Symbol Table:
 
 Result:
 
-program accepted
+Error 3 at token 3 '=': a constant must be declared as name := number

@@ -6,6 +6,17 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 32 var var-decl
+2 1 0 count var-decl
+3 16 ; var-decl
+4 1 1 Count statement
+5 18 = statement
+6 2 1 1 factor
+  leave level 0
+7 17 . program
+
 Symbol Table:
 
 Result:

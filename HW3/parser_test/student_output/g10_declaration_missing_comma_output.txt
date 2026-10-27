@@ -6,8 +6,13 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 32 var var-decl
+2 1 0 x var-decl
+
 Symbol Table:
 
 Result:
 
-program accepted
+Error 4 at token 3 'y': declarations must be separated by , and end with ;

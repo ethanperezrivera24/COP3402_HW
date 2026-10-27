@@ -1,38 +1,19 @@
-9a10,42
-> token  input     text          nonterminal
->        enter level 0
-> 1      31        const         const-decl
-> 2      1 0       a             const-decl
-> 3      19        :=            const-decl
-> 4      2 1       1             const-decl
+15a16
 >        insert entry 0: constant a, value 1, level 0
-> 5      15        ,             const-decl
-> 6      1 1       b             const-decl
-> 7      19        :=            const-decl
-> 8      2 2       2             const-decl
+19a21
 >        insert entry 1: constant b, value 2, level 0
-> 9      15        ,             const-decl
-> 10     1 2       c             const-decl
-> 11     19        :=            const-decl
-> 12     2 3       3             const-decl
+23a26
 >        insert entry 2: constant c, value 3, level 0
-> 13     16        ;             const-decl
-> 14     34        write         statement
-> 15     1 0       a             factor
+26a30
 >        lookup a: entry 0, constant, level 0
-> 16     3         +             expression
-> 17     1 1       b             factor
+28a33
 >        lookup b: entry 1, constant, level 0
-> 18     5         *             term
-> 19     1 2       c             factor
+30a36,39
 >        lookup c: entry 2, constant, level 0
 >        mark entry 0
 >        mark entry 1
 >        mark entry 2
->        leave level 0
-> 20     17        .             program
-> 
-11a45,49
+35a45,49
 > entry  kind       name          value   level  address  mark
 > 0      constant   a             1       0      -        1
 > 1      constant   b             2       0      -        1

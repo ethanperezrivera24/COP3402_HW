@@ -1,5 +1,5 @@
 Test Case: g05_procedure_declaration
 What this case covers: error 12 at procedure: a procedure declared after the variables
-Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Reason: output differs from expected_results/g05_procedure_declaration.txt
 Expected: expected_results/g05_procedure_declaration.txt
 Your Output: student_output/g05_procedure_declaration_output.txt

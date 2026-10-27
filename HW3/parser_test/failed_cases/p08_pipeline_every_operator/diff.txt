@@ -1,122 +1,56 @@
-9a10,126
-> token  input     text          nonterminal
->        enter level 0
-> 1      31        const         const-decl
-> 2      1 0       k             const-decl
-> 3      19        :=            const-decl
-> 4      2 2       2             const-decl
+15a16
 >        insert entry 0: constant k, value 2, level 0
-> 5      16        ;             const-decl
-> 6      32        var           var-decl
-> 7      1 1       x             var-decl
+18a20
 >        insert entry 1: variable x, level 0, address 3
-> 8      15        ,             var-decl
-> 9      1 2       y             var-decl
+20a23
 >        insert entry 2: variable y, level 0, address 4
-> 10     16        ;             var-decl
-> 11     20        begin         statement
-> 12     1 1       x             statement
+23a27
 >        lookup x: entry 1, variable, level 0
-> 13     18        =             statement
-> 14     13        (             factor
-> 15     1 0       k             factor
+26a31
 >        lookup k: entry 0, constant, level 0
-> 16     3         +             expression
-> 17     2 3       3             factor
-> 18     14        )             factor
-> 19     5         *             term
-> 20     2 4       4             factor
-> 21     4         -             expression
-> 22     2 6       6             factor
-> 23     6         /             term
-> 24     1 0       k             factor
+35a41
 >        lookup k: entry 0, constant, level 0
-> 25     16        ;             statement-list
-> 26     22        if            statement
-> 27     1 1       x             factor
+38a45
 >        lookup x: entry 1, variable, level 0
-> 28     7         ==            condition
-> 29     1 2       y             factor
+40a48
 >        lookup y: entry 2, variable, level 0
-> 30     24        then          statement
-> 31     1 2       y             statement
+42a51
 >        lookup y: entry 2, variable, level 0
-> 32     18        =             statement
-> 33     2 1       1             factor
-> 34     23        fi            statement
-> 35     16        ;             statement-list
-> 36     22        if            statement
-> 37     1 1       x             factor
+48a58
 >        lookup x: entry 1, variable, level 0
-> 38     8         !=            condition
-> 39     1 2       y             factor
+50a61
 >        lookup y: entry 2, variable, level 0
-> 40     24        then          statement
-> 41     1 2       y             statement
+52a64
 >        lookup y: entry 2, variable, level 0
-> 42     18        =             statement
-> 43     2 2       2             factor
-> 44     23        fi            statement
-> 45     16        ;             statement-list
-> 46     22        if            statement
-> 47     1 1       x             factor
+58a71
 >        lookup x: entry 1, variable, level 0
-> 48     9         <             condition
-> 49     1 2       y             factor
+60a74
 >        lookup y: entry 2, variable, level 0
-> 50     24        then          statement
-> 51     1 2       y             statement
+62a77
 >        lookup y: entry 2, variable, level 0
-> 52     18        =             statement
-> 53     2 3       3             factor
-> 54     23        fi            statement
-> 55     16        ;             statement-list
-> 56     22        if            statement
-> 57     1 1       x             factor
+68a84
 >        lookup x: entry 1, variable, level 0
-> 58     10        <=            condition
-> 59     1 2       y             factor
+70a87
 >        lookup y: entry 2, variable, level 0
-> 60     24        then          statement
-> 61     1 2       y             statement
+72a90
 >        lookup y: entry 2, variable, level 0
-> 62     18        =             statement
-> 63     2 4       4             factor
-> 64     23        fi            statement
-> 65     16        ;             statement-list
-> 66     22        if            statement
-> 67     1 1       x             factor
+78a97
 >        lookup x: entry 1, variable, level 0
-> 68     11        >             condition
-> 69     1 2       y             factor
+80a100
 >        lookup y: entry 2, variable, level 0
-> 70     24        then          statement
-> 71     1 2       y             statement
+82a103
 >        lookup y: entry 2, variable, level 0
-> 72     18        =             statement
-> 73     2 5       5             factor
-> 74     23        fi            statement
-> 75     16        ;             statement-list
-> 76     22        if            statement
-> 77     1 1       x             factor
+88a110
 >        lookup x: entry 1, variable, level 0
-> 78     12        >=            condition
-> 79     1 2       y             factor
+90a113
 >        lookup y: entry 2, variable, level 0
-> 80     24        then          statement
-> 81     1 2       y             statement
+92a116
 >        lookup y: entry 2, variable, level 0
-> 82     18        =             statement
-> 83     2 6       6             factor
-> 84     23        fi            statement
-> 85     21        end           statement
+96a121,123
 >        mark entry 0
 >        mark entry 1
 >        mark entry 2
->        leave level 0
-> 86     17        .             program
-> 
-11a129,133
+101a129,133
 > entry  kind       name          value   level  address  mark
 > 0      constant   k             2       0      -        1
 > 1      variable   x             -       0      3        1

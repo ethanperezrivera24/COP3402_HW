@@ -5,8 +5,14 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 32 var var-decl
+2 1 0 x var-decl
+3 15 , var-decl
+
 Symbol Table:
 
 Result:
 
-program accepted
+Error 2 at token 4 ';': const, var, and read must be followed by an identifier

@@ -7,6 +7,30 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 31 const const-decl
+2 1 0 a const-decl
+3 19 := const-decl
+4 2 1 1 const-decl
+5 15 , const-decl
+6 1 1 b const-decl
+7 19 := const-decl
+8 2 2 2 const-decl
+9 15 , const-decl
+10 1 2 c const-decl
+11 19 := const-decl
+12 2 3 3 const-decl
+13 16 ; const-decl
+14 34 write statement
+15 1 0 a factor
+16 3 + expression
+17 1 1 b factor
+18 5 * term
+19 1 2 c factor
+  leave level 0
+20 17 . program
+
 Symbol Table:
 
 Result:

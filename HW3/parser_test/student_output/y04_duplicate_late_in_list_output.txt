@@ -8,6 +8,22 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 32 var var-decl
+2 1 0 a var-decl
+3 15 , var-decl
+4 1 1 b var-decl
+5 15 , var-decl
+6 1 2 c var-decl
+7 15 , var-decl
+8 1 3 d var-decl
+9 15 , var-decl
+10 1 1 b var-decl
+11 16 ; var-decl
+  leave level 0
+12 17 . program
+
 Symbol Table:
 
 Result:

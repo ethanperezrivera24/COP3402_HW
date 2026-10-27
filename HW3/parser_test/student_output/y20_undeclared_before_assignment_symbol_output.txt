@@ -6,8 +6,15 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 32 var var-decl
+2 1 0 x var-decl
+3 16 ; var-decl
+4 1 1 y statement
+
 Symbol Table:
 
 Result:
 
-program accepted
+Error 5 at token 5 ':=': an identifier that starts a statement must be followed by =

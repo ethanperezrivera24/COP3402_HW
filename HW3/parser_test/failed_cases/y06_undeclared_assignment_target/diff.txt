@@ -1,17 +1,15 @@
-8a9,16
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       x             var-decl
+12a13
 >        insert entry 0: variable x, level 0, address 3
-> 3      16        ;             var-decl
-> 4      1 1       y             statement
-> 
-10a19,21
+15,18d15
+< 5 18 = statement
+< 6 2 1 1 factor
+<   leave level 0
+< 7 17 . program
+21a19,21
 > entry  kind       name          value   level  address  mark
 > 0      variable   x             -       0      3        0
 > 
-13c24,25
+24c24,25
 < program accepted
 ---
 > Error 15 at token 4 'y': undeclared identifier

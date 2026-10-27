@@ -5,8 +5,22 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 32 var var-decl
+2 1 0 x var-decl
+3 16 ; var-decl
+4 1 0 x statement
+5 18 = statement
+6 13 ( factor
+7 1 0 x factor
+8 3 + expression
+9 2 1 1 factor
+10 5 * term
+11 2 2 2 factor
+
 Symbol Table:
 
 Result:
 
-program accepted
+Error 10 at token 12 '.': a left parenthesis must be closed with a right parenthesis

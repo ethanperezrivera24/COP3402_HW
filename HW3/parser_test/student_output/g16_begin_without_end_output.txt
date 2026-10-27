@@ -5,8 +5,18 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 32 var var-decl
+2 1 0 x var-decl
+3 16 ; var-decl
+4 20 begin statement
+5 1 0 x statement
+6 18 = statement
+7 2 1 1 factor
+
 Symbol Table:
 
 Result:
 
-program accepted
+Error 6 at token 8 '.': begin must be closed with end

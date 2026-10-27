@@ -8,6 +8,55 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 31 const const-decl
+2 1 0 step const-decl
+3 19 := const-decl
+4 2 2 2 const-decl
+5 15 , const-decl
+6 1 1 limit const-decl
+7 19 := const-decl
+8 2 20 20 const-decl
+9 16 ; const-decl
+10 32 var var-decl
+11 1 2 i var-decl
+12 15 , var-decl
+13 1 3 sum var-decl
+14 16 ; var-decl
+15 20 begin statement
+16 1 2 i statement
+17 18 = statement
+18 2 0 0 factor
+19 16 ; statement-list
+20 1 3 sum statement
+21 18 = statement
+22 2 0 0 factor
+23 16 ; statement-list
+24 25 while statement
+25 1 2 i factor
+26 10 <= condition
+27 1 1 limit factor
+28 24 then statement
+29 1 3 sum statement
+30 18 = statement
+31 1 3 sum factor
+32 3 + expression
+33 1 2 i factor
+34 16 ; statement-list
+35 1 2 i statement
+36 18 = statement
+37 1 2 i factor
+38 3 + expression
+39 1 0 step factor
+40 26 elihw statement
+41 16 ; statement-list
+42 34 write statement
+43 1 3 sum factor
+44 21 end statement
+  leave level 0
+45 17 . program
+
 Symbol Table:
 
 Result:

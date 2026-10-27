@@ -83,6 +83,7 @@ Token tokens[MAX_TOKENS];
 int tokenCount = 0;
 NameEntry names[MAX_NAMES];
 int nameCount = 0;
+int cur = 0; // index of the current token (next one not consumed)
 
 // printed text of every token code, indexed by code
 // tokens.txt only stores code for symbols & reserved words, this is to get the text back
@@ -93,10 +94,48 @@ const char *spellings[37] = {
     "call", "const", "var", "procedure", "write", "read", "else"
 };
 
+// error messages copied from table 3, indexed by error number
+const char *errorMessages[19] = {
+    "",
+    "the program must end with a period, and nothing may follow it",
+    "const, var, and read must be followed by an identifier",
+    "a constant must be declared as name := number",
+    "declarations must be separated by , and end with ;",
+    "an identifier that starts a statement must be followed by =",
+    "begin must be closed with end",
+    "a condition after if or while must be followed by then",
+    "if must be closed with fi, and while with elihw",
+    "a condition must contain one of == != < <= > >=",
+    "a left parenthesis must be closed with a right parenthesis",
+    "a factor must be an identifier, a number, or (",
+    "procedure declarations are not part of this grammar",
+    "call statements are not part of this grammar",
+    "identifier already declared in this block",
+    "undeclared identifier",
+    "only a variable may be assigned or read",
+    "symbol table is full",
+    "cannot open tokens.txt or nametable.txt"
+};
+
 void loadNames(FILE *nf);
 void loadTokens(FILE *tf);
 const char *tokenText(int i);
-void printResults(const char *resultLine);
+void printNameTable(void);
+void printSymbolTable(void);
+void failOpen(void);
+void fail(int n, int i);
+int currentCode(void);
+void consume(const char *owner);
+void program(void);
+void block(void);
+void constDeclaration(void);
+void varDeclaration(void);
+void statement(void);
+void statementList(void);
+void condition(void);
+void expression(void);
+void term(void);
+void factor(void);
 
 int main(int argc, char *argv[]) {
     if(argc != 1) {
@@ -111,8 +150,7 @@ int main(int argc, char *argv[]) {
         // if a file fails to open, close the file that opened
         if(tf) fclose(tf);
         if(nf) fclose(nf);
-        printResults("Error 18: cannot open tokens.txt or nametable.txt");
-        return 1;
+        failOpen();
     }
 
     // load files & close them
@@ -121,9 +159,18 @@ int main(int argc, char *argv[]) {
     fclose(tf);
     fclose(nf);
 
-    // TODO: parse here
+    printNameTable();
+    printf("Parse Trace:\n\n");
+    printf("token input text nonterminal\n");
+    printf("  enter level 0\n");
 
-    printResults("program accepted");
+    // any error inside program() prints the rest of the output and exits
+    program();
+
+    printf("\n"); // closes the parse trace section
+    printSymbolTable();
+    printf("Result:\n\n");
+    printf("program accepted\n");
     return 0;
 }
 
@@ -169,11 +216,8 @@ const char *tokenText(int i) {
     return spellings[tokens[i].code];
 }
 
-// prints the four sections, then the result line
-// every ending goes through here: accepted, an error, or error 18
-// a section only gets its header line when it has content
-void printResults(const char *resultLine) {
-    // Name Table
+// prints name table section, called before parsing starts
+void printNameTable(void) {
     printf("Name Table:\n\n");
     if(nameCount > 0) {
         printf("index name line column\n");
@@ -182,14 +226,267 @@ void printResults(const char *resultLine) {
         }
         printf("\n");
     }
+}
 
-    // Parse Trace (stub for now)
-    printf("Parse Trace:\n\n");
-
-    // Symbol Table (stub for now)
+// stub for now, filled in with the symbol table phases
+void printSymbolTable(void) {
     printf("Symbol Table:\n\n");
+}
 
-    // Result
+// error 18: four headings with nothing under them, then the error line
+void failOpen(void) {
+    printf("Name Table:\n\n");
+    printf("Parse Trace:\n\n");
+    printf("Symbol Table:\n\n");
     printf("Result:\n\n");
-    printf("%s\n", resultLine);
+    printf("Error 18: %s\n", errorMessages[18]);
+    exit(1);
+}
+
+// reports error n at token index i (0 based) and stops
+// syntax errors pass cur (not consumed), symbol table errors pass cur - 1 (already consumed)
+// an index past the last token means "end of tokens"
+void fail(int n, int i) {
+    printf("\n"); // closes the parse trace section
+    printSymbolTable();
+    printf("Result:\n\n");
+    if(i >= tokenCount) {
+        printf("Error %d at end of tokens: %s\n", n, errorMessages[n]);
+    } else {
+        printf("Error %d at token %d '%s': %s\n", n, i + 1, tokenText(i), errorMessages[n]);
+    }
+    exit(1);
+}
+
+// code of the current token, or 0 when the tokens have run out
+// 0 is not a real token code, so comparing against it is always safe
+int currentCode(void) {
+    if(cur >= tokenCount) {
+        return 0;
+    }
+    return tokens[cur].code;
+}
+
+// prints the trace line for the current token, then moves on to the next one
+// owner is the nonterminal whose production contains the token
+void consume(const char *owner) {
+    printf("%d %d", cur + 1, tokens[cur].code);
+    if(tokens[cur].code == identsym) {
+        printf(" %d", tokens[cur].value);
+    } else if(tokens[cur].code == numbersym) {
+        printf(" %s", tokens[cur].lexeme);
+    }
+    printf(" %s %s\n", tokenText(cur), owner);
+    cur++;
+}
+
+// program -> block "."
+void program(void) {
+    block();
+
+    if(currentCode() != periodsym) {
+        fail(1, cur);
+    }
+    consume("program");
+
+    // nothing may follow the period
+    if(cur < tokenCount) {
+        fail(1, cur);
+    }
+}
+
+// block -> [ const-decl ] [ var-decl ] statement
+void block(void) {
+    if(currentCode() == constsym) {
+        constDeclaration();
+    }
+    if(currentCode() == varsym) {
+        varDeclaration();
+    }
+    statement();
+
+    // marks come in a later phase, only the leave line for now
+    printf("  leave level 0\n");
+}
+
+// const-decl -> "const" ident ":=" number { "," ident ":=" number } ";"
+void constDeclaration(void) {
+    consume("const-decl");
+
+    // one pass per ident := number, a comma after the number starts another pass
+    while(1) {
+        if(currentCode() != identsym) {
+            fail(2, cur);
+        }
+        consume("const-decl");
+
+        if(currentCode() != initsym) {
+            fail(3, cur);
+        }
+        consume("const-decl");
+
+        if(currentCode() != numbersym) {
+            fail(3, cur);
+        }
+        consume("const-decl");
+
+        if(currentCode() != commasym) {
+            break;
+        }
+        consume("const-decl");
+    }
+
+    if(currentCode() != semicolonsym) {
+        fail(4, cur);
+    }
+    consume("const-decl");
+}
+
+// var-decl -> "var" ident { "," ident } ";"
+void varDeclaration(void) {
+    consume("var-decl");
+
+    if(currentCode() != identsym) {
+        fail(2, cur);
+    }
+    consume("var-decl");
+
+    while(currentCode() == commasym) {
+        consume("var-decl");
+        if(currentCode() != identsym) {
+            fail(2, cur);
+        }
+        consume("var-decl");
+    }
+
+    if(currentCode() != semicolonsym) {
+        fail(4, cur);
+    }
+    consume("var-decl");
+}
+
+// statement -> [ ident "=" expression | "begin" ... | "if" ... | "while" ... | "read" ident | "write" expression ]
+// the first token picks the alternative, any other token is the empty statement
+void statement(void) {
+    int code = currentCode();
+
+    if(code == identsym) {
+        consume("statement");
+        if(currentCode() != assignsym) {
+            fail(5, cur);
+        }
+        consume("statement");
+        expression();
+    } else if(code == beginsym) {
+        consume("statement");
+        statementList();
+        if(currentCode() != endsym) {
+            fail(6, cur);
+        }
+        consume("statement");
+    } else if(code == ifsym) {
+        consume("statement");
+        condition();
+        if(currentCode() != thensym) {
+            fail(7, cur);
+        }
+        consume("statement");
+        statementList();
+        // else part is optional, fi closes the if either way
+        if(currentCode() == elsesym) {
+            consume("statement");
+            statementList();
+        }
+        if(currentCode() != fisym) {
+            fail(8, cur);
+        }
+        consume("statement");
+    } else if(code == whilesym) {
+        consume("statement");
+        condition();
+        if(currentCode() != thensym) {
+            fail(7, cur);
+        }
+        consume("statement");
+        statementList();
+        if(currentCode() != elihwsym) {
+            fail(8, cur);
+        }
+        consume("statement");
+    } else if(code == readsym) {
+        consume("statement");
+        if(currentCode() != identsym) {
+            fail(2, cur);
+        }
+        consume("statement");
+    } else if(code == writesym) {
+        consume("statement");
+        expression();
+    } else if(code == procsym) {
+        fail(12, cur);
+    } else if(code == callsym) {
+        fail(13, cur);
+    }
+    // anything else: empty statement, consume nothing
+}
+
+// statement-list -> statement { ";" statement }
+void statementList(void) {
+    statement();
+    while(currentCode() == semicolonsym) {
+        consume("statement-list");
+        statement();
+    }
+}
+
+// condition -> expression ( "==" | "!=" | "<" | "<=" | ">" | ">=" ) expression
+void condition(void) {
+    expression();
+
+    // the six relational codes are in a row (eqsym to geqsym)
+    // currentCode() is 0 at end of tokens, so that case lands in the error too
+    if(currentCode() < eqsym || currentCode() > geqsym) {
+        fail(9, cur);
+    }
+    consume("condition");
+    expression();
+}
+
+// expression -> [ "+" | "-" ] term { ( "+" | "-" ) term }
+void expression(void) {
+    if(currentCode() == plussym || currentCode() == minussym) {
+        consume("expression");
+    }
+    term();
+    while(currentCode() == plussym || currentCode() == minussym) {
+        consume("expression");
+        term();
+    }
+}
+
+// term -> factor { ( "*" | "/" ) factor }
+void term(void) {
+    factor();
+    while(currentCode() == multsym || currentCode() == slashsym) {
+        consume("term");
+        factor();
+    }
+}
+
+// factor -> ident | number | "(" expression ")"
+void factor(void) {
+    if(currentCode() == identsym) {
+        consume("factor");
+    } else if(currentCode() == numbersym) {
+        consume("factor");
+    } else if(currentCode() == lparentsym) {
+        consume("factor");
+        expression();
+        if(currentCode() != rparentsym) {
+            fail(10, cur);
+        }
+        consume("factor");
+    } else {
+        fail(11, cur);
+    }
 }

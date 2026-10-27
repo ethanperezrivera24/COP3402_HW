@@ -5,6 +5,18 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 31 const const-decl
+2 1 0 c const-decl
+3 19 := const-decl
+4 2 1 1 const-decl
+5 16 ; const-decl
+6 35 read statement
+7 1 0 c statement
+  leave level 0
+8 17 . program
+
 Symbol Table:
 
 Result:

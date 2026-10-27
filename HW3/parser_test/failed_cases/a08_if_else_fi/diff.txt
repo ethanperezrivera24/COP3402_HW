@@ -1,55 +1,27 @@
-8a9,58
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       x             var-decl
+12a13
 >        insert entry 0: variable x, level 0, address 3
-> 3      15        ,             var-decl
-> 4      1 1       y             var-decl
+14a16
 >        insert entry 1: variable y, level 0, address 4
-> 5      16        ;             var-decl
-> 6      20        begin         statement
-> 7      35        read          statement
-> 8      1 0       x             statement
+18a21
 >        lookup x: entry 0, variable, level 0
-> 9      16        ;             statement-list
-> 10     22        if            statement
-> 11     1 0       x             factor
+21a25
 >        lookup x: entry 0, variable, level 0
-> 12     12        >=            condition
-> 13     2 10      10            factor
-> 14     24        then          statement
-> 15     1 1       y             statement
+25a30
 >        lookup y: entry 1, variable, level 0
-> 16     18        =             statement
-> 17     1 0       x             factor
+27a33
 >        lookup x: entry 0, variable, level 0
-> 18     4         -             expression
-> 19     2 10      10            factor
-> 20     16        ;             statement-list
-> 21     34        write         statement
-> 22     1 1       y             factor
+32a39
 >        lookup y: entry 1, variable, level 0
-> 23     36        else          statement
-> 24     1 1       y             statement
+34a42
 >        lookup y: entry 1, variable, level 0
-> 25     18        =             statement
-> 26     2 10      10            factor
-> 27     4         -             expression
-> 28     1 0       x             factor
+38a47
 >        lookup x: entry 0, variable, level 0
-> 29     16        ;             statement-list
-> 30     34        write         statement
-> 31     1 1       y             factor
+41a51
 >        lookup y: entry 1, variable, level 0
-> 32     23        fi            statement
-> 33     21        end           statement
+43a54,55
 >        mark entry 0
 >        mark entry 1
->        leave level 0
-> 34     17        .             program
-> 
-10a61,64
+48a61,64
 > entry  kind       name          value   level  address  mark
 > 0      variable   x             -       0      3        1
 > 1      variable   y             -       0      4        1

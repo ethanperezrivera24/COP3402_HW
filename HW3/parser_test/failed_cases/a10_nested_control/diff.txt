@@ -1,68 +1,31 @@
-8a9,71
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       n             var-decl
+12a13
 >        insert entry 0: variable n, level 0, address 3
-> 3      15        ,             var-decl
-> 4      1 1       k             var-decl
+14a16
 >        insert entry 1: variable k, level 0, address 4
-> 5      16        ;             var-decl
-> 6      20        begin         statement
-> 7      35        read          statement
-> 8      1 0       n             statement
+18a21
 >        lookup n: entry 0, variable, level 0
-> 9      16        ;             statement-list
-> 10     22        if            statement
-> 11     1 0       n             factor
+21a25
 >        lookup n: entry 0, variable, level 0
-> 12     11        >             condition
-> 13     2 0       0             factor
-> 14     24        then          statement
-> 15     1 1       k             statement
+25a30
 >        lookup k: entry 1, variable, level 0
-> 16     18        =             statement
-> 17     2 0       0             factor
-> 18     16        ;             statement-list
-> 19     25        while         statement
-> 20     1 1       k             factor
+30a36
 >        lookup k: entry 1, variable, level 0
-> 21     9         <             condition
-> 22     1 0       n             factor
+32a39
 >        lookup n: entry 0, variable, level 0
-> 23     24        then          statement
-> 24     22        if            statement
-> 25     1 1       k             factor
+35a43
 >        lookup k: entry 1, variable, level 0
-> 26     6         /             term
-> 27     2 2       2             factor
-> 28     5         *             term
-> 29     2 2       2             factor
-> 30     7         ==            condition
-> 31     1 1       k             factor
+41a50
 >        lookup k: entry 1, variable, level 0
-> 32     24        then          statement
-> 33     34        write         statement
-> 34     1 1       k             factor
+44a54
 >        lookup k: entry 1, variable, level 0
-> 35     23        fi            statement
-> 36     16        ;             statement-list
-> 37     1 1       k             statement
+47a58
 >        lookup k: entry 1, variable, level 0
-> 38     18        =             statement
-> 39     1 1       k             factor
+49a61
 >        lookup k: entry 1, variable, level 0
-> 40     3         +             expression
-> 41     2 1       1             factor
-> 42     26        elihw         statement
-> 43     23        fi            statement
-> 44     21        end           statement
+54a67,68
 >        mark entry 0
 >        mark entry 1
->        leave level 0
-> 45     17        .             program
-> 
-10a74,77
+59a74,77
 > entry  kind       name          value   level  address  mark
 > 0      variable   n             -       0      3        1
 > 1      variable   k             -       0      4        1

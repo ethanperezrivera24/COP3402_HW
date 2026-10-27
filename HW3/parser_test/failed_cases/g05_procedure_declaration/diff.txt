@@ -1,17 +1,6 @@
-8a9,15
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       x             var-decl
+12a13
 >        insert entry 0: variable x, level 0, address 3
-> 3      16        ;             var-decl
-> 
-10a18,20
+16a18,20
 > entry  kind       name          value   level  address  mark
 > 0      variable   x             -       0      3        0
-> 
-13c23,24
-< program accepted
----
-> Error 12 at token 4 'procedure': procedure declarations are not part of this grammar
 > 
