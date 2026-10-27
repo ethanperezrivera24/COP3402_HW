@@ -6,6 +6,44 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 32 var var-decl
+2 1 0 x var-decl
+3 15 , var-decl
+4 1 1 y var-decl
+5 16 ; var-decl
+6 20 begin statement
+7 35 read statement
+8 1 0 x statement
+9 16 ; statement-list
+10 22 if statement
+11 1 0 x factor
+12 12 >= condition
+13 2 10 10 factor
+14 24 then statement
+15 1 1 y statement
+16 18 = statement
+17 1 0 x factor
+18 4 - expression
+19 2 10 10 factor
+20 16 ; statement-list
+21 34 write statement
+22 1 1 y factor
+23 36 else statement
+24 1 1 y statement
+25 18 = statement
+26 2 10 10 factor
+27 4 - expression
+28 1 0 x factor
+29 16 ; statement-list
+30 34 write statement
+31 1 1 y factor
+32 23 fi statement
+33 21 end statement
+  leave level 0
+34 17 . program
+
 Symbol Table:
 
 Result:

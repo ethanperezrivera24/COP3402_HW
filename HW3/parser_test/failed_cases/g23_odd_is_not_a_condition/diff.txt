@@ -1,18 +1,6 @@
-7a8,15
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       x             var-decl
+11a12
 >        insert entry 0: variable x, level 0, address 3
-> 3      16        ;             var-decl
-> 4      22        if            statement
-> 
-9a18,20
+16a18,20
 > entry  kind       name          value   level  address  mark
 > 0      variable   x             -       0      3        0
-> 
-12c23,24
-< program accepted
----
-> Error 11 at token 5 'odd': a factor must be an identifier, a number, or (
 > 

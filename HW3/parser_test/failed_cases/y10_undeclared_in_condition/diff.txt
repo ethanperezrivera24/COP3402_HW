@@ -1,21 +1,19 @@
-8a9,20
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       x             var-decl
+12a13
 >        insert entry 0: variable x, level 0, address 3
-> 3      16        ;             var-decl
-> 4      22        if            statement
-> 5      1 0       x             factor
+15a17
 >        lookup x: entry 0, variable, level 0
-> 6      9         <             condition
-> 7      1 1       limit         factor
-> 
-10a23,25
+18,23d19
+< 8 24 then statement
+< 9 34 write statement
+< 10 1 0 x factor
+< 11 23 fi statement
+<   leave level 0
+< 12 17 . program
+26a23,25
 > entry  kind       name          value   level  address  mark
 > 0      variable   x             -       0      3        0
 > 
-13c28,29
+29c28,29
 < program accepted
 ---
 > Error 15 at token 7 'limit': undeclared identifier

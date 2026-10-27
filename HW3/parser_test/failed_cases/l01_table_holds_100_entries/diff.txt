@@ -1,422 +1,212 @@
-106a107,627
-> token  input     text          nonterminal
->        enter level 0
-> 1      31        const         const-decl
-> 2      1 0       c001          const-decl
-> 3      19        :=            const-decl
-> 4      2 1       1             const-decl
+112a113
 >        insert entry 0: constant c001, value 1, level 0
-> 5      15        ,             const-decl
-> 6      1 1       c002          const-decl
-> 7      19        :=            const-decl
-> 8      2 2       2             const-decl
+116a118
 >        insert entry 1: constant c002, value 2, level 0
-> 9      15        ,             const-decl
-> 10     1 2       c003          const-decl
-> 11     19        :=            const-decl
-> 12     2 3       3             const-decl
+120a123
 >        insert entry 2: constant c003, value 3, level 0
-> 13     15        ,             const-decl
-> 14     1 3       c004          const-decl
-> 15     19        :=            const-decl
-> 16     2 4       4             const-decl
+124a128
 >        insert entry 3: constant c004, value 4, level 0
-> 17     15        ,             const-decl
-> 18     1 4       c005          const-decl
-> 19     19        :=            const-decl
-> 20     2 5       5             const-decl
+128a133
 >        insert entry 4: constant c005, value 5, level 0
-> 21     15        ,             const-decl
-> 22     1 5       c006          const-decl
-> 23     19        :=            const-decl
-> 24     2 6       6             const-decl
+132a138
 >        insert entry 5: constant c006, value 6, level 0
-> 25     15        ,             const-decl
-> 26     1 6       c007          const-decl
-> 27     19        :=            const-decl
-> 28     2 7       7             const-decl
+136a143
 >        insert entry 6: constant c007, value 7, level 0
-> 29     15        ,             const-decl
-> 30     1 7       c008          const-decl
-> 31     19        :=            const-decl
-> 32     2 8       8             const-decl
+140a148
 >        insert entry 7: constant c008, value 8, level 0
-> 33     15        ,             const-decl
-> 34     1 8       c009          const-decl
-> 35     19        :=            const-decl
-> 36     2 9       9             const-decl
+144a153
 >        insert entry 8: constant c009, value 9, level 0
-> 37     15        ,             const-decl
-> 38     1 9       c010          const-decl
-> 39     19        :=            const-decl
-> 40     2 10      10            const-decl
+148a158
 >        insert entry 9: constant c010, value 10, level 0
-> 41     15        ,             const-decl
-> 42     1 10      c011          const-decl
-> 43     19        :=            const-decl
-> 44     2 11      11            const-decl
+152a163
 >        insert entry 10: constant c011, value 11, level 0
-> 45     15        ,             const-decl
-> 46     1 11      c012          const-decl
-> 47     19        :=            const-decl
-> 48     2 12      12            const-decl
+156a168
 >        insert entry 11: constant c012, value 12, level 0
-> 49     15        ,             const-decl
-> 50     1 12      c013          const-decl
-> 51     19        :=            const-decl
-> 52     2 13      13            const-decl
+160a173
 >        insert entry 12: constant c013, value 13, level 0
-> 53     15        ,             const-decl
-> 54     1 13      c014          const-decl
-> 55     19        :=            const-decl
-> 56     2 14      14            const-decl
+164a178
 >        insert entry 13: constant c014, value 14, level 0
-> 57     15        ,             const-decl
-> 58     1 14      c015          const-decl
-> 59     19        :=            const-decl
-> 60     2 15      15            const-decl
+168a183
 >        insert entry 14: constant c015, value 15, level 0
-> 61     15        ,             const-decl
-> 62     1 15      c016          const-decl
-> 63     19        :=            const-decl
-> 64     2 16      16            const-decl
+172a188
 >        insert entry 15: constant c016, value 16, level 0
-> 65     15        ,             const-decl
-> 66     1 16      c017          const-decl
-> 67     19        :=            const-decl
-> 68     2 17      17            const-decl
+176a193
 >        insert entry 16: constant c017, value 17, level 0
-> 69     15        ,             const-decl
-> 70     1 17      c018          const-decl
-> 71     19        :=            const-decl
-> 72     2 18      18            const-decl
+180a198
 >        insert entry 17: constant c018, value 18, level 0
-> 73     15        ,             const-decl
-> 74     1 18      c019          const-decl
-> 75     19        :=            const-decl
-> 76     2 19      19            const-decl
+184a203
 >        insert entry 18: constant c019, value 19, level 0
-> 77     15        ,             const-decl
-> 78     1 19      c020          const-decl
-> 79     19        :=            const-decl
-> 80     2 20      20            const-decl
+188a208
 >        insert entry 19: constant c020, value 20, level 0
-> 81     15        ,             const-decl
-> 82     1 20      c021          const-decl
-> 83     19        :=            const-decl
-> 84     2 21      21            const-decl
+192a213
 >        insert entry 20: constant c021, value 21, level 0
-> 85     15        ,             const-decl
-> 86     1 21      c022          const-decl
-> 87     19        :=            const-decl
-> 88     2 22      22            const-decl
+196a218
 >        insert entry 21: constant c022, value 22, level 0
-> 89     15        ,             const-decl
-> 90     1 22      c023          const-decl
-> 91     19        :=            const-decl
-> 92     2 23      23            const-decl
+200a223
 >        insert entry 22: constant c023, value 23, level 0
-> 93     15        ,             const-decl
-> 94     1 23      c024          const-decl
-> 95     19        :=            const-decl
-> 96     2 24      24            const-decl
+204a228
 >        insert entry 23: constant c024, value 24, level 0
-> 97     15        ,             const-decl
-> 98     1 24      c025          const-decl
-> 99     19        :=            const-decl
-> 100    2 25      25            const-decl
+208a233
 >        insert entry 24: constant c025, value 25, level 0
-> 101    15        ,             const-decl
-> 102    1 25      c026          const-decl
-> 103    19        :=            const-decl
-> 104    2 26      26            const-decl
+212a238
 >        insert entry 25: constant c026, value 26, level 0
-> 105    15        ,             const-decl
-> 106    1 26      c027          const-decl
-> 107    19        :=            const-decl
-> 108    2 27      27            const-decl
+216a243
 >        insert entry 26: constant c027, value 27, level 0
-> 109    15        ,             const-decl
-> 110    1 27      c028          const-decl
-> 111    19        :=            const-decl
-> 112    2 28      28            const-decl
+220a248
 >        insert entry 27: constant c028, value 28, level 0
-> 113    15        ,             const-decl
-> 114    1 28      c029          const-decl
-> 115    19        :=            const-decl
-> 116    2 29      29            const-decl
+224a253
 >        insert entry 28: constant c029, value 29, level 0
-> 117    15        ,             const-decl
-> 118    1 29      c030          const-decl
-> 119    19        :=            const-decl
-> 120    2 30      30            const-decl
+228a258
 >        insert entry 29: constant c030, value 30, level 0
-> 121    15        ,             const-decl
-> 122    1 30      c031          const-decl
-> 123    19        :=            const-decl
-> 124    2 31      31            const-decl
+232a263
 >        insert entry 30: constant c031, value 31, level 0
-> 125    15        ,             const-decl
-> 126    1 31      c032          const-decl
-> 127    19        :=            const-decl
-> 128    2 32      32            const-decl
+236a268
 >        insert entry 31: constant c032, value 32, level 0
-> 129    15        ,             const-decl
-> 130    1 32      c033          const-decl
-> 131    19        :=            const-decl
-> 132    2 33      33            const-decl
+240a273
 >        insert entry 32: constant c033, value 33, level 0
-> 133    15        ,             const-decl
-> 134    1 33      c034          const-decl
-> 135    19        :=            const-decl
-> 136    2 34      34            const-decl
+244a278
 >        insert entry 33: constant c034, value 34, level 0
-> 137    15        ,             const-decl
-> 138    1 34      c035          const-decl
-> 139    19        :=            const-decl
-> 140    2 35      35            const-decl
+248a283
 >        insert entry 34: constant c035, value 35, level 0
-> 141    15        ,             const-decl
-> 142    1 35      c036          const-decl
-> 143    19        :=            const-decl
-> 144    2 36      36            const-decl
+252a288
 >        insert entry 35: constant c036, value 36, level 0
-> 145    15        ,             const-decl
-> 146    1 36      c037          const-decl
-> 147    19        :=            const-decl
-> 148    2 37      37            const-decl
+256a293
 >        insert entry 36: constant c037, value 37, level 0
-> 149    15        ,             const-decl
-> 150    1 37      c038          const-decl
-> 151    19        :=            const-decl
-> 152    2 38      38            const-decl
+260a298
 >        insert entry 37: constant c038, value 38, level 0
-> 153    15        ,             const-decl
-> 154    1 38      c039          const-decl
-> 155    19        :=            const-decl
-> 156    2 39      39            const-decl
+264a303
 >        insert entry 38: constant c039, value 39, level 0
-> 157    15        ,             const-decl
-> 158    1 39      c040          const-decl
-> 159    19        :=            const-decl
-> 160    2 40      40            const-decl
+268a308
 >        insert entry 39: constant c040, value 40, level 0
-> 161    15        ,             const-decl
-> 162    1 40      c041          const-decl
-> 163    19        :=            const-decl
-> 164    2 41      41            const-decl
+272a313
 >        insert entry 40: constant c041, value 41, level 0
-> 165    15        ,             const-decl
-> 166    1 41      c042          const-decl
-> 167    19        :=            const-decl
-> 168    2 42      42            const-decl
+276a318
 >        insert entry 41: constant c042, value 42, level 0
-> 169    15        ,             const-decl
-> 170    1 42      c043          const-decl
-> 171    19        :=            const-decl
-> 172    2 43      43            const-decl
+280a323
 >        insert entry 42: constant c043, value 43, level 0
-> 173    15        ,             const-decl
-> 174    1 43      c044          const-decl
-> 175    19        :=            const-decl
-> 176    2 44      44            const-decl
+284a328
 >        insert entry 43: constant c044, value 44, level 0
-> 177    15        ,             const-decl
-> 178    1 44      c045          const-decl
-> 179    19        :=            const-decl
-> 180    2 45      45            const-decl
+288a333
 >        insert entry 44: constant c045, value 45, level 0
-> 181    15        ,             const-decl
-> 182    1 45      c046          const-decl
-> 183    19        :=            const-decl
-> 184    2 46      46            const-decl
+292a338
 >        insert entry 45: constant c046, value 46, level 0
-> 185    15        ,             const-decl
-> 186    1 46      c047          const-decl
-> 187    19        :=            const-decl
-> 188    2 47      47            const-decl
+296a343
 >        insert entry 46: constant c047, value 47, level 0
-> 189    15        ,             const-decl
-> 190    1 47      c048          const-decl
-> 191    19        :=            const-decl
-> 192    2 48      48            const-decl
+300a348
 >        insert entry 47: constant c048, value 48, level 0
-> 193    15        ,             const-decl
-> 194    1 48      c049          const-decl
-> 195    19        :=            const-decl
-> 196    2 49      49            const-decl
+304a353
 >        insert entry 48: constant c049, value 49, level 0
-> 197    15        ,             const-decl
-> 198    1 49      c050          const-decl
-> 199    19        :=            const-decl
-> 200    2 50      50            const-decl
+308a358
 >        insert entry 49: constant c050, value 50, level 0
-> 201    16        ;             const-decl
-> 202    32        var           var-decl
-> 203    1 50      v001          var-decl
+311a362
 >        insert entry 50: variable v001, level 0, address 3
-> 204    15        ,             var-decl
-> 205    1 51      v002          var-decl
+313a365
 >        insert entry 51: variable v002, level 0, address 4
-> 206    15        ,             var-decl
-> 207    1 52      v003          var-decl
+315a368
 >        insert entry 52: variable v003, level 0, address 5
-> 208    15        ,             var-decl
-> 209    1 53      v004          var-decl
+317a371
 >        insert entry 53: variable v004, level 0, address 6
-> 210    15        ,             var-decl
-> 211    1 54      v005          var-decl
+319a374
 >        insert entry 54: variable v005, level 0, address 7
-> 212    15        ,             var-decl
-> 213    1 55      v006          var-decl
+321a377
 >        insert entry 55: variable v006, level 0, address 8
-> 214    15        ,             var-decl
-> 215    1 56      v007          var-decl
+323a380
 >        insert entry 56: variable v007, level 0, address 9
-> 216    15        ,             var-decl
-> 217    1 57      v008          var-decl
+325a383
 >        insert entry 57: variable v008, level 0, address 10
-> 218    15        ,             var-decl
-> 219    1 58      v009          var-decl
+327a386
 >        insert entry 58: variable v009, level 0, address 11
-> 220    15        ,             var-decl
-> 221    1 59      v010          var-decl
+329a389
 >        insert entry 59: variable v010, level 0, address 12
-> 222    15        ,             var-decl
-> 223    1 60      v011          var-decl
+331a392
 >        insert entry 60: variable v011, level 0, address 13
-> 224    15        ,             var-decl
-> 225    1 61      v012          var-decl
+333a395
 >        insert entry 61: variable v012, level 0, address 14
-> 226    15        ,             var-decl
-> 227    1 62      v013          var-decl
+335a398
 >        insert entry 62: variable v013, level 0, address 15
-> 228    15        ,             var-decl
-> 229    1 63      v014          var-decl
+337a401
 >        insert entry 63: variable v014, level 0, address 16
-> 230    15        ,             var-decl
-> 231    1 64      v015          var-decl
+339a404
 >        insert entry 64: variable v015, level 0, address 17
-> 232    15        ,             var-decl
-> 233    1 65      v016          var-decl
+341a407
 >        insert entry 65: variable v016, level 0, address 18
-> 234    15        ,             var-decl
-> 235    1 66      v017          var-decl
+343a410
 >        insert entry 66: variable v017, level 0, address 19
-> 236    15        ,             var-decl
-> 237    1 67      v018          var-decl
+345a413
 >        insert entry 67: variable v018, level 0, address 20
-> 238    15        ,             var-decl
-> 239    1 68      v019          var-decl
+347a416
 >        insert entry 68: variable v019, level 0, address 21
-> 240    15        ,             var-decl
-> 241    1 69      v020          var-decl
+349a419
 >        insert entry 69: variable v020, level 0, address 22
-> 242    15        ,             var-decl
-> 243    1 70      v021          var-decl
+351a422
 >        insert entry 70: variable v021, level 0, address 23
-> 244    15        ,             var-decl
-> 245    1 71      v022          var-decl
+353a425
 >        insert entry 71: variable v022, level 0, address 24
-> 246    15        ,             var-decl
-> 247    1 72      v023          var-decl
+355a428
 >        insert entry 72: variable v023, level 0, address 25
-> 248    15        ,             var-decl
-> 249    1 73      v024          var-decl
+357a431
 >        insert entry 73: variable v024, level 0, address 26
-> 250    15        ,             var-decl
-> 251    1 74      v025          var-decl
+359a434
 >        insert entry 74: variable v025, level 0, address 27
-> 252    15        ,             var-decl
-> 253    1 75      v026          var-decl
+361a437
 >        insert entry 75: variable v026, level 0, address 28
-> 254    15        ,             var-decl
-> 255    1 76      v027          var-decl
+363a440
 >        insert entry 76: variable v027, level 0, address 29
-> 256    15        ,             var-decl
-> 257    1 77      v028          var-decl
+365a443
 >        insert entry 77: variable v028, level 0, address 30
-> 258    15        ,             var-decl
-> 259    1 78      v029          var-decl
+367a446
 >        insert entry 78: variable v029, level 0, address 31
-> 260    15        ,             var-decl
-> 261    1 79      v030          var-decl
+369a449
 >        insert entry 79: variable v030, level 0, address 32
-> 262    15        ,             var-decl
-> 263    1 80      v031          var-decl
+371a452
 >        insert entry 80: variable v031, level 0, address 33
-> 264    15        ,             var-decl
-> 265    1 81      v032          var-decl
+373a455
 >        insert entry 81: variable v032, level 0, address 34
-> 266    15        ,             var-decl
-> 267    1 82      v033          var-decl
+375a458
 >        insert entry 82: variable v033, level 0, address 35
-> 268    15        ,             var-decl
-> 269    1 83      v034          var-decl
+377a461
 >        insert entry 83: variable v034, level 0, address 36
-> 270    15        ,             var-decl
-> 271    1 84      v035          var-decl
+379a464
 >        insert entry 84: variable v035, level 0, address 37
-> 272    15        ,             var-decl
-> 273    1 85      v036          var-decl
+381a467
 >        insert entry 85: variable v036, level 0, address 38
-> 274    15        ,             var-decl
-> 275    1 86      v037          var-decl
+383a470
 >        insert entry 86: variable v037, level 0, address 39
-> 276    15        ,             var-decl
-> 277    1 87      v038          var-decl
+385a473
 >        insert entry 87: variable v038, level 0, address 40
-> 278    15        ,             var-decl
-> 279    1 88      v039          var-decl
+387a476
 >        insert entry 88: variable v039, level 0, address 41
-> 280    15        ,             var-decl
-> 281    1 89      v040          var-decl
+389a479
 >        insert entry 89: variable v040, level 0, address 42
-> 282    15        ,             var-decl
-> 283    1 90      v041          var-decl
+391a482
 >        insert entry 90: variable v041, level 0, address 43
-> 284    15        ,             var-decl
-> 285    1 91      v042          var-decl
+393a485
 >        insert entry 91: variable v042, level 0, address 44
-> 286    15        ,             var-decl
-> 287    1 92      v043          var-decl
+395a488
 >        insert entry 92: variable v043, level 0, address 45
-> 288    15        ,             var-decl
-> 289    1 93      v044          var-decl
+397a491
 >        insert entry 93: variable v044, level 0, address 46
-> 290    15        ,             var-decl
-> 291    1 94      v045          var-decl
+399a494
 >        insert entry 94: variable v045, level 0, address 47
-> 292    15        ,             var-decl
-> 293    1 95      v046          var-decl
+401a497
 >        insert entry 95: variable v046, level 0, address 48
-> 294    15        ,             var-decl
-> 295    1 96      v047          var-decl
+403a500
 >        insert entry 96: variable v047, level 0, address 49
-> 296    15        ,             var-decl
-> 297    1 97      v048          var-decl
+405a503
 >        insert entry 97: variable v048, level 0, address 50
-> 298    15        ,             var-decl
-> 299    1 98      v049          var-decl
+407a506
 >        insert entry 98: variable v049, level 0, address 51
-> 300    15        ,             var-decl
-> 301    1 99      v050          var-decl
+409a509
 >        insert entry 99: variable v050, level 0, address 52
-> 302    16        ;             var-decl
-> 303    20        begin         statement
-> 304    1 50      v001          statement
+412a513
 >        lookup v001: entry 50, variable, level 0
-> 305    18        =             statement
-> 306    1 0       c001          factor
+414a516
 >        lookup c001: entry 0, constant, level 0
-> 307    16        ;             statement-list
-> 308    34        write         statement
-> 309    1 99      v050          factor
+417a520
 >        lookup v050: entry 99, variable, level 0
-> 310    3         +             expression
-> 311    1 49      c050          factor
+419a523
 >        lookup c050: entry 49, constant, level 0
-> 312    21        end           statement
+420a525,624
 >        mark entry 0
 >        mark entry 1
 >        mark entry 2
@@ -517,10 +307,7 @@
 >        mark entry 97
 >        mark entry 98
 >        mark entry 99
->        leave level 0
-> 313    17        .             program
-> 
-108a630,731
+425a630,731
 > entry  kind       name          value   level  address  mark
 > 0      constant   c001          1       0      -        1
 > 1      constant   c002          2       0      -        1

@@ -8,8 +8,21 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 31 const const-decl
+2 1 0 limit const-decl
+3 19 := const-decl
+4 2 10 10 const-decl
+5 16 ; const-decl
+6 32 var var-decl
+7 1 1 count var-decl
+8 15 , var-decl
+9 1 2 total var-decl
+10 16 ; var-decl
+
 Symbol Table:
 
 Result:
 
-program accepted
+Error 12 at token 11 'procedure': procedure declarations are not part of this grammar

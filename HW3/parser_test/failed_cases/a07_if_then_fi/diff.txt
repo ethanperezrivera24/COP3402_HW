@@ -1,31 +1,14 @@
-7a8,33
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       x             var-decl
+11a12
 >        insert entry 0: variable x, level 0, address 3
-> 3      16        ;             var-decl
-> 4      20        begin         statement
-> 5      35        read          statement
-> 6      1 0       x             statement
+15a17
 >        lookup x: entry 0, variable, level 0
-> 7      16        ;             statement-list
-> 8      22        if            statement
-> 9      1 0       x             factor
+18a21
 >        lookup x: entry 0, variable, level 0
-> 10     11        >             condition
-> 11     2 0       0             factor
-> 12     24        then          statement
-> 13     34        write         statement
-> 14     1 0       x             factor
+23a27
 >        lookup x: entry 0, variable, level 0
-> 15     23        fi            statement
-> 16     21        end           statement
+25a30
 >        mark entry 0
->        leave level 0
-> 17     17        .             program
-> 
-9a36,38
+30a36,38
 > entry  kind       name          value   level  address  mark
 > 0      variable   x             -       0      3        1
 > 

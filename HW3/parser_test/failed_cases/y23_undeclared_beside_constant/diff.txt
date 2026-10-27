@@ -1,23 +1,15 @@
-8a9,22
-> token  input     text          nonterminal
->        enter level 0
-> 1      31        const         const-decl
-> 2      1 0       k             const-decl
-> 3      19        :=            const-decl
-> 4      2 2       2             const-decl
+14a15
 >        insert entry 0: constant k, value 2, level 0
-> 5      16        ;             const-decl
-> 6      34        write         statement
-> 7      1 0       k             factor
+17a19
 >        lookup k: entry 0, constant, level 0
-> 8      5         *             term
-> 9      1 1       m             factor
-> 
-10a25,27
+20,21d21
+<   leave level 0
+< 10 17 . program
+24a25,27
 > entry  kind       name          value   level  address  mark
 > 0      constant   k             2       0      -        0
 > 
-13c30,31
+27c30,31
 < program accepted
 ---
 > Error 15 at token 9 'm': undeclared identifier

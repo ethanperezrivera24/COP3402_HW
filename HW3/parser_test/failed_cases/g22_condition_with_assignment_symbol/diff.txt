@@ -1,20 +1,8 @@
-7a8,17
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       x             var-decl
+11a12
 >        insert entry 0: variable x, level 0, address 3
-> 3      16        ;             var-decl
-> 4      22        if            statement
-> 5      1 0       x             factor
+14a16
 >        lookup x: entry 0, variable, level 0
-> 
-9a20,22
+17a20,22
 > entry  kind       name          value   level  address  mark
 > 0      variable   x             -       0      3        0
-> 
-12c25,26
-< program accepted
----
-> Error 9 at token 6 '=': a condition must contain one of == != < <= > >=
 > 

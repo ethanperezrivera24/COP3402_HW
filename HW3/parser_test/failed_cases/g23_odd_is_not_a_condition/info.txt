@@ -1,5 +1,5 @@
 Test Case: g23_odd_is_not_a_condition
 What this case covers: error 11 at odd: odd is a token but no production uses it
-Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Reason: output differs from expected_results/g23_odd_is_not_a_condition.txt
 Expected: expected_results/g23_odd_is_not_a_condition.txt
 Your Output: student_output/g23_odd_is_not_a_condition_output.txt

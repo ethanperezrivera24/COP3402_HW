@@ -1,20 +1,17 @@
-8a9,19
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       x             var-decl
+12a13
 >        insert entry 0: variable x, level 0, address 3
-> 3      16        ;             var-decl
-> 4      1 0       x             statement
+14a16
 >        lookup x: entry 0, variable, level 0
-> 5      18        =             statement
-> 6      1 1       y             factor
-> 
-10a22,24
+17,20d18
+< 7 3 + expression
+< 8 2 1 1 factor
+<   leave level 0
+< 9 17 . program
+23a22,24
 > entry  kind       name          value   level  address  mark
 > 0      variable   x             -       0      3        0
 > 
-13c27,28
+26c27,28
 < program accepted
 ---
 > Error 15 at token 6 'y': undeclared identifier

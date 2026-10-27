@@ -1,20 +1,17 @@
-7a8,18
-> token  input     text          nonterminal
->        enter level 0
-> 1      31        const         const-decl
-> 2      1 0       c             const-decl
-> 3      19        :=            const-decl
-> 4      2 1       1             const-decl
+13a14
 >        insert entry 0: constant c, value 1, level 0
-> 5      16        ;             const-decl
-> 6      1 0       c             statement
+16,19c17
+< 7 18 = statement
+< 8 2 2 2 factor
+<   leave level 0
+< 9 17 . program
+---
 >        lookup c: entry 0, constant, level 0
-> 
-9a21,23
+22a21,23
 > entry  kind       name          value   level  address  mark
 > 0      constant   c             1       0      -        0
 > 
-12c26,27
+25c26,27
 < program accepted
 ---
 > Error 16 at token 6 'c': only a variable may be assigned or read

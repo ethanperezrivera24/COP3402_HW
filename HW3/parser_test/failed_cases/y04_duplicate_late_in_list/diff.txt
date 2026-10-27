@@ -1,29 +1,23 @@
-10a11,27
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       a             var-decl
+14a15
 >        insert entry 0: variable a, level 0, address 3
-> 3      15        ,             var-decl
-> 4      1 1       b             var-decl
+16a18
 >        insert entry 1: variable b, level 0, address 4
-> 5      15        ,             var-decl
-> 6      1 2       c             var-decl
+18a21
 >        insert entry 2: variable c, level 0, address 5
-> 7      15        ,             var-decl
-> 8      1 3       d             var-decl
+20a24
 >        insert entry 3: variable d, level 0, address 6
-> 9      15        ,             var-decl
-> 10     1 1       b             var-decl
-> 
-12a30,35
+23,25d26
+< 11 16 ; var-decl
+<   leave level 0
+< 12 17 . program
+28a30,35
 > entry  kind       name          value   level  address  mark
 > 0      variable   a             -       0      3        0
 > 1      variable   b             -       0      4        0
 > 2      variable   c             -       0      5        0
 > 3      variable   d             -       0      6        0
 > 
-15c38,39
+31c38,39
 < program accepted
 ---
 > Error 14 at token 10 'b': identifier already declared in this block

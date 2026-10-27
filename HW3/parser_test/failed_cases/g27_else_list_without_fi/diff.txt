@@ -1,30 +1,10 @@
-7a8,27
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       x             var-decl
+11a12
 >        insert entry 0: variable x, level 0, address 3
-> 3      16        ;             var-decl
-> 4      20        begin         statement
-> 5      22        if            statement
-> 6      1 0       x             factor
+15a17
 >        lookup x: entry 0, variable, level 0
-> 7      11        >             condition
-> 8      2 0       0             factor
-> 9      24        then          statement
-> 10     34        write         statement
-> 11     1 0       x             factor
+20a23
 >        lookup x: entry 0, variable, level 0
-> 12     36        else          statement
-> 13     34        write         statement
-> 14     2 0       0             factor
-> 
-9a30,32
+26a30,32
 > entry  kind       name          value   level  address  mark
 > 0      variable   x             -       0      3        0
-> 
-12c35,36
-< program accepted
----
-> Error 8 at token 15 'end': if must be closed with fi, and while with elihw
 > 

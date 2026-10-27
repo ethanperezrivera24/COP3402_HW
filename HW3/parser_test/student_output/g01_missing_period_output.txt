@@ -5,8 +5,18 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 32 var var-decl
+2 1 0 x var-decl
+3 16 ; var-decl
+4 1 0 x statement
+5 18 = statement
+6 2 1 1 factor
+  leave level 0
+
 Symbol Table:
 
 Result:
 
-program accepted
+Error 1 at end of tokens: the program must end with a period, and nothing may follow it

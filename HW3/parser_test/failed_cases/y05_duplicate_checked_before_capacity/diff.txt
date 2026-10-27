@@ -1,310 +1,208 @@
-106a107,411
-> token  input     text          nonterminal
->        enter level 0
-> 1      32        var           var-decl
-> 2      1 0       v001          var-decl
+110a111
 >        insert entry 0: variable v001, level 0, address 3
-> 3      15        ,             var-decl
-> 4      1 1       v002          var-decl
+112a114
 >        insert entry 1: variable v002, level 0, address 4
-> 5      15        ,             var-decl
-> 6      1 2       v003          var-decl
+114a117
 >        insert entry 2: variable v003, level 0, address 5
-> 7      15        ,             var-decl
-> 8      1 3       v004          var-decl
+116a120
 >        insert entry 3: variable v004, level 0, address 6
-> 9      15        ,             var-decl
-> 10     1 4       v005          var-decl
+118a123
 >        insert entry 4: variable v005, level 0, address 7
-> 11     15        ,             var-decl
-> 12     1 5       v006          var-decl
+120a126
 >        insert entry 5: variable v006, level 0, address 8
-> 13     15        ,             var-decl
-> 14     1 6       v007          var-decl
+122a129
 >        insert entry 6: variable v007, level 0, address 9
-> 15     15        ,             var-decl
-> 16     1 7       v008          var-decl
+124a132
 >        insert entry 7: variable v008, level 0, address 10
-> 17     15        ,             var-decl
-> 18     1 8       v009          var-decl
+126a135
 >        insert entry 8: variable v009, level 0, address 11
-> 19     15        ,             var-decl
-> 20     1 9       v010          var-decl
+128a138
 >        insert entry 9: variable v010, level 0, address 12
-> 21     15        ,             var-decl
-> 22     1 10      v011          var-decl
+130a141
 >        insert entry 10: variable v011, level 0, address 13
-> 23     15        ,             var-decl
-> 24     1 11      v012          var-decl
+132a144
 >        insert entry 11: variable v012, level 0, address 14
-> 25     15        ,             var-decl
-> 26     1 12      v013          var-decl
+134a147
 >        insert entry 12: variable v013, level 0, address 15
-> 27     15        ,             var-decl
-> 28     1 13      v014          var-decl
+136a150
 >        insert entry 13: variable v014, level 0, address 16
-> 29     15        ,             var-decl
-> 30     1 14      v015          var-decl
+138a153
 >        insert entry 14: variable v015, level 0, address 17
-> 31     15        ,             var-decl
-> 32     1 15      v016          var-decl
+140a156
 >        insert entry 15: variable v016, level 0, address 18
-> 33     15        ,             var-decl
-> 34     1 16      v017          var-decl
+142a159
 >        insert entry 16: variable v017, level 0, address 19
-> 35     15        ,             var-decl
-> 36     1 17      v018          var-decl
+144a162
 >        insert entry 17: variable v018, level 0, address 20
-> 37     15        ,             var-decl
-> 38     1 18      v019          var-decl
+146a165
 >        insert entry 18: variable v019, level 0, address 21
-> 39     15        ,             var-decl
-> 40     1 19      v020          var-decl
+148a168
 >        insert entry 19: variable v020, level 0, address 22
-> 41     15        ,             var-decl
-> 42     1 20      v021          var-decl
+150a171
 >        insert entry 20: variable v021, level 0, address 23
-> 43     15        ,             var-decl
-> 44     1 21      v022          var-decl
+152a174
 >        insert entry 21: variable v022, level 0, address 24
-> 45     15        ,             var-decl
-> 46     1 22      v023          var-decl
+154a177
 >        insert entry 22: variable v023, level 0, address 25
-> 47     15        ,             var-decl
-> 48     1 23      v024          var-decl
+156a180
 >        insert entry 23: variable v024, level 0, address 26
-> 49     15        ,             var-decl
-> 50     1 24      v025          var-decl
+158a183
 >        insert entry 24: variable v025, level 0, address 27
-> 51     15        ,             var-decl
-> 52     1 25      v026          var-decl
+160a186
 >        insert entry 25: variable v026, level 0, address 28
-> 53     15        ,             var-decl
-> 54     1 26      v027          var-decl
+162a189
 >        insert entry 26: variable v027, level 0, address 29
-> 55     15        ,             var-decl
-> 56     1 27      v028          var-decl
+164a192
 >        insert entry 27: variable v028, level 0, address 30
-> 57     15        ,             var-decl
-> 58     1 28      v029          var-decl
+166a195
 >        insert entry 28: variable v029, level 0, address 31
-> 59     15        ,             var-decl
-> 60     1 29      v030          var-decl
+168a198
 >        insert entry 29: variable v030, level 0, address 32
-> 61     15        ,             var-decl
-> 62     1 30      v031          var-decl
+170a201
 >        insert entry 30: variable v031, level 0, address 33
-> 63     15        ,             var-decl
-> 64     1 31      v032          var-decl
+172a204
 >        insert entry 31: variable v032, level 0, address 34
-> 65     15        ,             var-decl
-> 66     1 32      v033          var-decl
+174a207
 >        insert entry 32: variable v033, level 0, address 35
-> 67     15        ,             var-decl
-> 68     1 33      v034          var-decl
+176a210
 >        insert entry 33: variable v034, level 0, address 36
-> 69     15        ,             var-decl
-> 70     1 34      v035          var-decl
+178a213
 >        insert entry 34: variable v035, level 0, address 37
-> 71     15        ,             var-decl
-> 72     1 35      v036          var-decl
+180a216
 >        insert entry 35: variable v036, level 0, address 38
-> 73     15        ,             var-decl
-> 74     1 36      v037          var-decl
+182a219
 >        insert entry 36: variable v037, level 0, address 39
-> 75     15        ,             var-decl
-> 76     1 37      v038          var-decl
+184a222
 >        insert entry 37: variable v038, level 0, address 40
-> 77     15        ,             var-decl
-> 78     1 38      v039          var-decl
+186a225
 >        insert entry 38: variable v039, level 0, address 41
-> 79     15        ,             var-decl
-> 80     1 39      v040          var-decl
+188a228
 >        insert entry 39: variable v040, level 0, address 42
-> 81     15        ,             var-decl
-> 82     1 40      v041          var-decl
+190a231
 >        insert entry 40: variable v041, level 0, address 43
-> 83     15        ,             var-decl
-> 84     1 41      v042          var-decl
+192a234
 >        insert entry 41: variable v042, level 0, address 44
-> 85     15        ,             var-decl
-> 86     1 42      v043          var-decl
+194a237
 >        insert entry 42: variable v043, level 0, address 45
-> 87     15        ,             var-decl
-> 88     1 43      v044          var-decl
+196a240
 >        insert entry 43: variable v044, level 0, address 46
-> 89     15        ,             var-decl
-> 90     1 44      v045          var-decl
+198a243
 >        insert entry 44: variable v045, level 0, address 47
-> 91     15        ,             var-decl
-> 92     1 45      v046          var-decl
+200a246
 >        insert entry 45: variable v046, level 0, address 48
-> 93     15        ,             var-decl
-> 94     1 46      v047          var-decl
+202a249
 >        insert entry 46: variable v047, level 0, address 49
-> 95     15        ,             var-decl
-> 96     1 47      v048          var-decl
+204a252
 >        insert entry 47: variable v048, level 0, address 50
-> 97     15        ,             var-decl
-> 98     1 48      v049          var-decl
+206a255
 >        insert entry 48: variable v049, level 0, address 51
-> 99     15        ,             var-decl
-> 100    1 49      v050          var-decl
+208a258
 >        insert entry 49: variable v050, level 0, address 52
-> 101    15        ,             var-decl
-> 102    1 50      v051          var-decl
+210a261
 >        insert entry 50: variable v051, level 0, address 53
-> 103    15        ,             var-decl
-> 104    1 51      v052          var-decl
+212a264
 >        insert entry 51: variable v052, level 0, address 54
-> 105    15        ,             var-decl
-> 106    1 52      v053          var-decl
+214a267
 >        insert entry 52: variable v053, level 0, address 55
-> 107    15        ,             var-decl
-> 108    1 53      v054          var-decl
+216a270
 >        insert entry 53: variable v054, level 0, address 56
-> 109    15        ,             var-decl
-> 110    1 54      v055          var-decl
+218a273
 >        insert entry 54: variable v055, level 0, address 57
-> 111    15        ,             var-decl
-> 112    1 55      v056          var-decl
+220a276
 >        insert entry 55: variable v056, level 0, address 58
-> 113    15        ,             var-decl
-> 114    1 56      v057          var-decl
+222a279
 >        insert entry 56: variable v057, level 0, address 59
-> 115    15        ,             var-decl
-> 116    1 57      v058          var-decl
+224a282
 >        insert entry 57: variable v058, level 0, address 60
-> 117    15        ,             var-decl
-> 118    1 58      v059          var-decl
+226a285
 >        insert entry 58: variable v059, level 0, address 61
-> 119    15        ,             var-decl
-> 120    1 59      v060          var-decl
+228a288
 >        insert entry 59: variable v060, level 0, address 62
-> 121    15        ,             var-decl
-> 122    1 60      v061          var-decl
+230a291
 >        insert entry 60: variable v061, level 0, address 63
-> 123    15        ,             var-decl
-> 124    1 61      v062          var-decl
+232a294
 >        insert entry 61: variable v062, level 0, address 64
-> 125    15        ,             var-decl
-> 126    1 62      v063          var-decl
+234a297
 >        insert entry 62: variable v063, level 0, address 65
-> 127    15        ,             var-decl
-> 128    1 63      v064          var-decl
+236a300
 >        insert entry 63: variable v064, level 0, address 66
-> 129    15        ,             var-decl
-> 130    1 64      v065          var-decl
+238a303
 >        insert entry 64: variable v065, level 0, address 67
-> 131    15        ,             var-decl
-> 132    1 65      v066          var-decl
+240a306
 >        insert entry 65: variable v066, level 0, address 68
-> 133    15        ,             var-decl
-> 134    1 66      v067          var-decl
+242a309
 >        insert entry 66: variable v067, level 0, address 69
-> 135    15        ,             var-decl
-> 136    1 67      v068          var-decl
+244a312
 >        insert entry 67: variable v068, level 0, address 70
-> 137    15        ,             var-decl
-> 138    1 68      v069          var-decl
+246a315
 >        insert entry 68: variable v069, level 0, address 71
-> 139    15        ,             var-decl
-> 140    1 69      v070          var-decl
+248a318
 >        insert entry 69: variable v070, level 0, address 72
-> 141    15        ,             var-decl
-> 142    1 70      v071          var-decl
+250a321
 >        insert entry 70: variable v071, level 0, address 73
-> 143    15        ,             var-decl
-> 144    1 71      v072          var-decl
+252a324
 >        insert entry 71: variable v072, level 0, address 74
-> 145    15        ,             var-decl
-> 146    1 72      v073          var-decl
+254a327
 >        insert entry 72: variable v073, level 0, address 75
-> 147    15        ,             var-decl
-> 148    1 73      v074          var-decl
+256a330
 >        insert entry 73: variable v074, level 0, address 76
-> 149    15        ,             var-decl
-> 150    1 74      v075          var-decl
+258a333
 >        insert entry 74: variable v075, level 0, address 77
-> 151    15        ,             var-decl
-> 152    1 75      v076          var-decl
+260a336
 >        insert entry 75: variable v076, level 0, address 78
-> 153    15        ,             var-decl
-> 154    1 76      v077          var-decl
+262a339
 >        insert entry 76: variable v077, level 0, address 79
-> 155    15        ,             var-decl
-> 156    1 77      v078          var-decl
+264a342
 >        insert entry 77: variable v078, level 0, address 80
-> 157    15        ,             var-decl
-> 158    1 78      v079          var-decl
+266a345
 >        insert entry 78: variable v079, level 0, address 81
-> 159    15        ,             var-decl
-> 160    1 79      v080          var-decl
+268a348
 >        insert entry 79: variable v080, level 0, address 82
-> 161    15        ,             var-decl
-> 162    1 80      v081          var-decl
+270a351
 >        insert entry 80: variable v081, level 0, address 83
-> 163    15        ,             var-decl
-> 164    1 81      v082          var-decl
+272a354
 >        insert entry 81: variable v082, level 0, address 84
-> 165    15        ,             var-decl
-> 166    1 82      v083          var-decl
+274a357
 >        insert entry 82: variable v083, level 0, address 85
-> 167    15        ,             var-decl
-> 168    1 83      v084          var-decl
+276a360
 >        insert entry 83: variable v084, level 0, address 86
-> 169    15        ,             var-decl
-> 170    1 84      v085          var-decl
+278a363
 >        insert entry 84: variable v085, level 0, address 87
-> 171    15        ,             var-decl
-> 172    1 85      v086          var-decl
+280a366
 >        insert entry 85: variable v086, level 0, address 88
-> 173    15        ,             var-decl
-> 174    1 86      v087          var-decl
+282a369
 >        insert entry 86: variable v087, level 0, address 89
-> 175    15        ,             var-decl
-> 176    1 87      v088          var-decl
+284a372
 >        insert entry 87: variable v088, level 0, address 90
-> 177    15        ,             var-decl
-> 178    1 88      v089          var-decl
+286a375
 >        insert entry 88: variable v089, level 0, address 91
-> 179    15        ,             var-decl
-> 180    1 89      v090          var-decl
+288a378
 >        insert entry 89: variable v090, level 0, address 92
-> 181    15        ,             var-decl
-> 182    1 90      v091          var-decl
+290a381
 >        insert entry 90: variable v091, level 0, address 93
-> 183    15        ,             var-decl
-> 184    1 91      v092          var-decl
+292a384
 >        insert entry 91: variable v092, level 0, address 94
-> 185    15        ,             var-decl
-> 186    1 92      v093          var-decl
+294a387
 >        insert entry 92: variable v093, level 0, address 95
-> 187    15        ,             var-decl
-> 188    1 93      v094          var-decl
+296a390
 >        insert entry 93: variable v094, level 0, address 96
-> 189    15        ,             var-decl
-> 190    1 94      v095          var-decl
+298a393
 >        insert entry 94: variable v095, level 0, address 97
-> 191    15        ,             var-decl
-> 192    1 95      v096          var-decl
+300a396
 >        insert entry 95: variable v096, level 0, address 98
-> 193    15        ,             var-decl
-> 194    1 96      v097          var-decl
+302a399
 >        insert entry 96: variable v097, level 0, address 99
-> 195    15        ,             var-decl
-> 196    1 97      v098          var-decl
+304a402
 >        insert entry 97: variable v098, level 0, address 100
-> 197    15        ,             var-decl
-> 198    1 98      v099          var-decl
+306a405
 >        insert entry 98: variable v099, level 0, address 101
-> 199    15        ,             var-decl
-> 200    1 99      v100          var-decl
+308a408
 >        insert entry 99: variable v100, level 0, address 102
-> 201    15        ,             var-decl
-> 202    1 0       v001          var-decl
-> 
-108a414,515
+311,313d410
+< 203 16 ; var-decl
+<   leave level 0
+< 204 17 . program
+316a414,515
 > entry  kind       name          value   level  address  mark
 > 0      variable   v001          -       0      3        0
 > 1      variable   v002          -       0      4        0
@@ -407,7 +305,7 @@
 > 98     variable   v099          -       0      101      0
 > 99     variable   v100          -       0      102      0
 > 
-111c518,519
+319c518,519
 < program accepted
 ---
 > Error 14 at token 202 'v001': identifier already declared in this block

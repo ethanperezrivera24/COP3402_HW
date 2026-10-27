@@ -5,6 +5,13 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 35 read statement
+2 1 0 z statement
+  leave level 0
+3 17 . program
+
 Symbol Table:
 
 Result:

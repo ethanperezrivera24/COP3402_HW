@@ -1,41 +1,22 @@
-9a10,45
-> token  input     text          nonterminal
->        enter level 0
-> 1      31        const         const-decl
-> 2      1 0       biggestvalue  const-decl
-> 3      19        :=            const-decl
-> 4      2 999999  999999        const-decl
+15a16
 >        insert entry 0: constant biggestvalue, value 999999, level 0
-> 5      16        ;             const-decl
-> 6      32        var           var-decl
-> 7      1 1       twelvechars1  var-decl
+18a20
 >        insert entry 1: variable twelvechars1, level 0, address 3
-> 8      15        ,             var-decl
-> 9      1 2       abcdefghijkl  var-decl
+20a23
 >        insert entry 2: variable abcdefghijkl, level 0, address 4
-> 10     16        ;             var-decl
-> 11     20        begin         statement
-> 12     1 1       twelvechars1  statement
+23a27
 >        lookup twelvechars1: entry 1, variable, level 0
-> 13     18        =             statement
-> 14     1 0       biggestvalue  factor
+25a30
 >        lookup biggestvalue: entry 0, constant, level 0
-> 15     16        ;             statement-list
-> 16     1 2       abcdefghijkl  statement
+27a33
 >        lookup abcdefghijkl: entry 2, variable, level 0
-> 17     18        =             statement
-> 18     1 1       twelvechars1  factor
+29a36
 >        lookup twelvechars1: entry 1, variable, level 0
-> 19     4         -             expression
-> 20     2 100000  100000        factor
-> 21     21        end           statement
+32a40,42
 >        mark entry 0
 >        mark entry 1
 >        mark entry 2
->        leave level 0
-> 22     17        .             program
-> 
-11a48,52
+37a48,52
 > entry  kind       name          value   level  address  mark
 > 0      constant   biggestvalue  999999  0      -        1
 > 1      variable   twelvechars1  -       0      3        1

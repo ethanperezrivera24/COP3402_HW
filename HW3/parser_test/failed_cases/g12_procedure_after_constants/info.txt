@@ -1,5 +1,5 @@
 Test Case: g12_procedure_after_constants
 What this case covers: error 12 at procedure: a procedure declared after the constants, with no var
-Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Reason: output differs from expected_results/g12_procedure_after_constants.txt
 Expected: expected_results/g12_procedure_after_constants.txt
 Your Output: student_output/g12_procedure_after_constants_output.txt

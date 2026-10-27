@@ -7,6 +7,34 @@ index name line column
 
 Parse Trace:
 
+token input text nonterminal
+  enter level 0
+1 31 const const-decl
+2 1 0 max const-decl
+3 19 := const-decl
+4 2 100 100 const-decl
+5 16 ; const-decl
+6 32 var var-decl
+7 1 1 x var-decl
+8 15 , var-decl
+9 1 2 y var-decl
+10 16 ; var-decl
+11 20 begin statement
+12 35 read statement
+13 1 1 x statement
+14 16 ; statement-list
+15 1 2 y statement
+16 18 = statement
+17 1 0 max factor
+18 4 - expression
+19 1 1 x factor
+20 16 ; statement-list
+21 34 write statement
+22 1 2 y factor
+23 21 end statement
+  leave level 0
+24 17 . program
+
 Symbol Table:
 
 Result:
