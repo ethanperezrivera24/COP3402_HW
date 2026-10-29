@@ -1,5 +1,5 @@
 Test Case: p06_pipeline_comments_and_tabs
 What this case covers: your lex must drop comments, tabs, and blank lines before the parser
-Reason: output differs from expected_results/p06_pipeline_comments_and_tabs.txt
+Reason: unknown mode pipeline in the manifest
 Expected: expected_results/p06_pipeline_comments_and_tabs.txt
 Your Output: student_output/p06_pipeline_comments_and_tabs_output.txt

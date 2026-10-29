@@ -1,5 +1,5 @@
 Test Case: y09_undeclared_in_write
 What this case covers: error 15: write of an undeclared name
-Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Reason: unknown mode files in the manifest
 Expected: expected_results/y09_undeclared_in_write.txt
 Your Output: student_output/y09_undeclared_in_write_output.txt

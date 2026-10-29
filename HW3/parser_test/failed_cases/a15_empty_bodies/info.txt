@@ -1,5 +1,5 @@
 Test Case: a15_empty_bodies
 What this case covers: if and while bodies that are empty statement lists
-Reason: output differs from expected_results/a15_empty_bodies.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/a15_empty_bodies.txt
 Your Output: student_output/a15_empty_bodies_output.txt

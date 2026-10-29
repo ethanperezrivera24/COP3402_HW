@@ -1,5 +1,5 @@
 Test Case: a05_begin_end_sequence
 What this case covers: a begin block of several statements separated by semicolons
-Reason: output differs from expected_results/a05_begin_end_sequence.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/a05_begin_end_sequence.txt
 Your Output: student_output/a05_begin_end_sequence_output.txt

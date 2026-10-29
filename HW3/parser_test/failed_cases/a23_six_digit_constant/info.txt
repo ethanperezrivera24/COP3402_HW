@@ -1,5 +1,5 @@
 Test Case: a23_six_digit_constant
 What this case covers: a constant of six digits, the largest number the scanner passes
-Reason: output differs from expected_results/a23_six_digit_constant.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/a23_six_digit_constant.txt
 Your Output: student_output/a23_six_digit_constant_output.txt

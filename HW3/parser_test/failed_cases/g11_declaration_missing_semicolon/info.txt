@@ -1,5 +1,5 @@
 Test Case: g11_declaration_missing_semicolon
 What this case covers: error 4: a constant declaration followed by var with no semicolon
-Reason: output differs from expected_results/g11_declaration_missing_semicolon.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/g11_declaration_missing_semicolon.txt
 Your Output: student_output/g11_declaration_missing_semicolon_output.txt

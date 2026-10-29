@@ -1,9 +1,0 @@
-13a14
->        insert entry 0: constant seven, value 7, level 0
-16a18,19
->        lookup seven: entry 0, constant, level 0
->        mark entry 0
-21a25,27
-> entry  kind       name          value   level  address  mark
-> 0      constant   seven         7       0      -        1
-> 

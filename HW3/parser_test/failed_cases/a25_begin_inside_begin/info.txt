@@ -1,5 +1,5 @@
 Test Case: a25_begin_inside_begin
 What this case covers: begin blocks used as statements inside a begin block
-Reason: output differs from expected_results/a25_begin_inside_begin.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/a25_begin_inside_begin.txt
 Your Output: student_output/a25_begin_inside_begin_output.txt

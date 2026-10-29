@@ -1,5 +1,5 @@
 Test Case: g20_if_without_fi
 What this case covers: error 8 at end: an if statement never closed with fi
-Reason: output differs from expected_results/g20_if_without_fi.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/g20_if_without_fi.txt
 Your Output: student_output/g20_if_without_fi_output.txt

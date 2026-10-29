@@ -1,0 +1,5 @@
+Test Case: g08_constant_with_assignment_symbol
+What this case covers: error 3: a constant declared with = instead of :=
+Reason: unknown mode files in the manifest
+Expected: expected_results/g08_constant_with_assignment_symbol.txt
+Your Output: student_output/g08_constant_with_assignment_symbol_output.txt

@@ -1,5 +1,5 @@
 Test Case: g16_begin_without_end
 What this case covers: error 6 at the period: begin never closed
-Reason: output differs from expected_results/g16_begin_without_end.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/g16_begin_without_end.txt
 Your Output: student_output/g16_begin_without_end_output.txt

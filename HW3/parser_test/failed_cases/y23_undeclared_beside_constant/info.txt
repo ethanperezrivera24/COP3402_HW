@@ -1,5 +1,5 @@
 Test Case: y23_undeclared_beside_constant
 What this case covers: error 15: an undeclared name multiplied by a declared constant
-Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Reason: unknown mode files in the manifest
 Expected: expected_results/y23_undeclared_beside_constant.txt
 Your Output: student_output/y23_undeclared_beside_constant_output.txt

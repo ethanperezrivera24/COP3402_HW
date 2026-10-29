@@ -1,5 +1,5 @@
 Test Case: a11_read_and_write
 What this case covers: read into variables and write expressions
-Reason: output differs from expected_results/a11_read_and_write.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/a11_read_and_write.txt
 Your Output: student_output/a11_read_and_write_output.txt

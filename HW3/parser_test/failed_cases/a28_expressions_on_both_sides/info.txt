@@ -1,5 +1,5 @@
 Test Case: a28_expressions_on_both_sides
 What this case covers: a condition with an operator expression on each side
-Reason: output differs from expected_results/a28_expressions_on_both_sides.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/a28_expressions_on_both_sides.txt
 Your Output: student_output/a28_expressions_on_both_sides_output.txt

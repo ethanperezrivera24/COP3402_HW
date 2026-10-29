@@ -1,5 +1,5 @@
 Test Case: g09_constant_with_name_value
 What this case covers: error 3: a constant given an identifier instead of a number
-Reason: output differs from expected_results/g09_constant_with_name_value.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/g09_constant_with_name_value.txt
 Your Output: student_output/g09_constant_with_name_value_output.txt

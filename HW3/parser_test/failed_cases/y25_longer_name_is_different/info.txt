@@ -1,5 +1,5 @@
 Test Case: y25_longer_name_is_different
 What this case covers: error 15: sum1 is a different name from sum
-Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Reason: unknown mode files in the manifest
 Expected: expected_results/y25_longer_name_is_different.txt
 Your Output: student_output/y25_longer_name_is_different_output.txt

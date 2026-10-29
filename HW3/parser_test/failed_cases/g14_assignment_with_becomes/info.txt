@@ -1,5 +1,5 @@
 Test Case: g14_assignment_with_becomes
 What this case covers: error 5: an assignment written with :=
-Reason: output differs from expected_results/g14_assignment_with_becomes.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/g14_assignment_with_becomes.txt
 Your Output: student_output/g14_assignment_with_becomes_output.txt

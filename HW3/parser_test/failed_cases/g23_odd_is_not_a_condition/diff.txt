@@ -1,6 +1,0 @@
-11a12
->        insert entry 0: variable x, level 0, address 3
-16a18,20
-> entry  kind       name          value   level  address  mark
-> 0      variable   x             -       0      3        0
-> 

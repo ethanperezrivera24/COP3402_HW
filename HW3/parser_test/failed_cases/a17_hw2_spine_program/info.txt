@@ -1,5 +1,5 @@
 Test Case: a17_hw2_spine_program
 What this case covers: the HW2 shared example program: a while body of two statements
-Reason: output differs from expected_results/a17_hw2_spine_program.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/a17_hw2_spine_program.txt
 Your Output: student_output/a17_hw2_spine_program_output.txt

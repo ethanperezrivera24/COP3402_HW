@@ -1,5 +1,5 @@
 Test Case: g28_empty_parentheses
 What this case covers: error 11 at ): parentheses with no expression inside
-Reason: output differs from expected_results/g28_empty_parentheses.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/g28_empty_parentheses.txt
 Your Output: student_output/g28_empty_parentheses_output.txt

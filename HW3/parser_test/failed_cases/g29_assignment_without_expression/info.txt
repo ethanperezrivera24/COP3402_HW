@@ -1,5 +1,5 @@
 Test Case: g29_assignment_without_expression
 What this case covers: error 11 at ;: an assignment with nothing after =
-Reason: output differs from expected_results/g29_assignment_without_expression.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/g29_assignment_without_expression.txt
 Your Output: student_output/g29_assignment_without_expression_output.txt

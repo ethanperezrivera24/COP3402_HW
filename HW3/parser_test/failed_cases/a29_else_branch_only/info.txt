@@ -1,5 +1,5 @@
 Test Case: a29_else_branch_only
 What this case covers: an if whose then list is empty and whose else list is not
-Reason: output differs from expected_results/a29_else_branch_only.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/a29_else_branch_only.txt
 Your Output: student_output/a29_else_branch_only_output.txt

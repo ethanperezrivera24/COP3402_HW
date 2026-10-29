@@ -1,0 +1,5 @@
+Test Case: l03_missing_tokens_file
+What this case covers: error 18: tokens.txt is not in the working directory
+Reason: unknown mode names-only in the manifest
+Expected: expected_results/l03_missing_tokens_file.txt
+Your Output: student_output/l03_missing_tokens_file_output.txt

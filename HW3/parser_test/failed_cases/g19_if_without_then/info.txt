@@ -1,5 +1,5 @@
 Test Case: g19_if_without_then
 What this case covers: error 7: if condition followed directly by a statement
-Reason: output differs from expected_results/g19_if_without_then.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/g19_if_without_then.txt
 Your Output: student_output/g19_if_without_then_output.txt

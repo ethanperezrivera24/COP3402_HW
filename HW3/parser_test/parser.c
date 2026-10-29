@@ -157,6 +157,7 @@ int isDuplicate(int nameTableIndex);
 int lookup(int nameTableIndex);
 void insertHelper(int kind, int nameIndex, int value, int address);
 void declarationHelper(int nameIndex);
+int lookupHelper(int nameIndex, int mustBeVariable);
 
 int main(int argc, char *argv[]) {
     if(argc != 1) {
@@ -356,7 +357,12 @@ void block(void) {
     }
     statement();
 
-    // marks come in a later phase, only the leave line for now
+    // the block ended, so its names are hidden from lookups but stay in the table
+    for(int i = 0; i < symbolCount; i++){
+        printf("  mark entry %d\n", i);
+        symbolTable[i].mark = 1;
+    }
+
     printf("  leave level 0\n");
 }
 
@@ -409,6 +415,30 @@ void declarationHelper(int nameIndex){
     }
 }
 
+// a helper to look up a used identifier and check its kind
+// mustBeVariable is 1 for assignment and read targets, 0 for a factor
+int lookupHelper(int nameIndex, int mustBeVariable){
+    int entry = lookup(nameIndex);
+
+    if(entry == -1){ // nameIndex is not declared
+        fail(15, cur-1);
+    }
+
+    // event line printed right away so it lands right after the identifier's trace line
+    if(symbolTable[entry].kind == CONSTANT){
+        printf("  lookup %s: entry %d, constant, level %d\n", names[nameIndex].name, entry, symbolTable[entry].level);
+    }
+    else{
+        printf("  lookup %s: entry %d, variable, level %d\n", names[nameIndex].name, entry, symbolTable[entry].level);
+    }
+
+    if(mustBeVariable == 1 && symbolTable[entry].kind != VARIABLE){ // only a VARIABLE can be assigned or read
+        fail(16, cur-1);
+    }
+
+    return entry;
+}
+
 // var-decl -> "var" ident { "," ident } ";"
 void varDeclaration(void) {
     consume("var-decl");
@@ -445,6 +475,10 @@ void statement(void) {
 
     if(code == identsym) {
         consume("statement");
+        // lookup and kind check come before the = check (y20, y22)
+        int nameIndex = tokens[cur - 1].value;
+        lookupHelper(nameIndex, 1);
+
         if(currentCode() != assignsym) {
             fail(5, cur);
         }
@@ -492,6 +526,8 @@ void statement(void) {
             fail(2, cur);
         }
         consume("statement");
+        int nameIndex = tokens[cur - 1].value;
+        lookupHelper(nameIndex, 1);
     } else if(code == writesym) {
         consume("statement");
         expression();
@@ -550,6 +586,8 @@ void term(void) {
 void factor(void) {
     if(currentCode() == identsym) {
         consume("factor");
+        int nameIndex = tokens[cur - 1].value;
+        lookupHelper(nameIndex, 0); // a CONSTANT or a VARIABLE can both be in an expression
     } else if(currentCode() == numbersym) {
         consume("factor");
     } else if(currentCode() == lparentsym) {
@@ -594,9 +632,10 @@ void insertHelper(int kind, int nameIndex, int value, int address){
 
     // event line printed right away so it lands between the right trace lines
     // a constant has no address and a variable has no value, so each kind prints a different shape
-    if(kind == CONSTANT) {
+    if(kind == CONSTANT){
         printf("  insert entry %d: constant %s, value %d, level 0\n", symbolCount, names[nameIndex].name, value);
-    } else {
+    }
+    else{
         printf("  insert entry %d: variable %s, level 0, address %d\n", symbolCount, names[nameIndex].name, address);
         nextAddress++; // if the kind is VARIABLE, then increase nextAddress by 1
     }

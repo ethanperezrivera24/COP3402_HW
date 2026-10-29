@@ -1,5 +1,5 @@
 Test Case: a19_hw2_nested_blocks
 What this case covers: the HW2 nested-blocks program: begin inside while, if with else
-Reason: output differs from expected_results/a19_hw2_nested_blocks.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/a19_hw2_nested_blocks.txt
 Your Output: student_output/a19_hw2_nested_blocks_output.txt
