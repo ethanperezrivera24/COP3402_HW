@@ -42,6 +42,11 @@ Due Date: See Webcourses
 #define MAX_NAMES 200
 #define MAX_IDENT_LEN 12
 #define MAX_NUM_LEN 6
+#define MAX_SYMBOL_COUNT 100
+
+// kinds
+#define CONSTANT 1
+#define VARIABLE 2
 
 // token, nameEntry, tokenType structs copied from lex.c
 // token codes
@@ -78,11 +83,23 @@ typedef struct{
     int col;
 }NameEntry;
 
+typedef struct{
+    int kind;
+    int nameIndex;
+    int value;
+    int level;
+    int address;
+    int mark;
+}SymbolEntry;
+
 // global arrays & counts
 Token tokens[MAX_TOKENS];
 int tokenCount = 0;
 NameEntry names[MAX_NAMES];
 int nameCount = 0;
+SymbolEntry symbolTable[MAX_SYMBOL_COUNT]; // symbol table and declarations
+int symbolCount = 0;
+int nextAddress = 3; // 0 to 2 taken by static link, dynamic link, and return address
 int cur = 0; // index of the current token (next one not consumed)
 
 // printed text of every token code, indexed by code
@@ -136,6 +153,10 @@ void condition(void);
 void expression(void);
 void term(void);
 void factor(void);
+int isDuplicate(int nameTableIndex);
+int lookup(int nameTableIndex);
+void insertHelper(int kind, int nameIndex, int value, int address);
+void declarationHelper(int nameIndex);
 
 int main(int argc, char *argv[]) {
     if(argc != 1) {
@@ -231,6 +252,36 @@ void printNameTable(void) {
 // stub for now, filled in with the symbol table phases
 void printSymbolTable(void) {
     printf("Symbol Table:\n\n");
+    if(symbolCount > 0){
+        printf("entry kind name value level address mark\n");
+        for(int i = 0; i < symbolCount; i++){
+            printf("%d ", i); // entry number
+            if(symbolTable[i].kind == CONSTANT){ // kind
+                printf("constant ");
+            }
+            else{
+                printf("variable ");
+            }
+            printf("%s ", names[symbolTable[i].nameIndex].name); // name
+
+            // value and address are -1 when they don't apply, printed as a dash
+            if(symbolTable[i].value == -1){ // value
+                printf("- ");
+            }
+            else{
+                printf("%d ", symbolTable[i].value);
+            }
+            printf("%d ", symbolTable[i].level); // level
+            if(symbolTable[i].address == -1){ // address
+                printf("- ");
+            }
+            else{
+                printf("%d ", symbolTable[i].address);
+            }
+            printf("%d\n", symbolTable[i].mark); // mark, ends the row
+        }
+        printf("\n");
+    }
 }
 
 // error 18: four headings with nothing under them, then the error line
@@ -319,6 +370,8 @@ void constDeclaration(void) {
             fail(2, cur);
         }
         consume("const-decl");
+        int nameIndex = tokens[cur - 1].value;
+        declarationHelper(nameIndex);
 
         if(currentCode() != initsym) {
             fail(3, cur);
@@ -329,6 +382,8 @@ void constDeclaration(void) {
             fail(3, cur);
         }
         consume("const-decl");
+        int value = atoi(tokens[cur-1].lexeme);
+        insertHelper(CONSTANT, nameIndex, value, -1);
 
         if(currentCode() != commasym) {
             break;
@@ -342,6 +397,18 @@ void constDeclaration(void) {
     consume("const-decl");
 }
 
+// a helper to check duplicate and symbolCount for kind declaration
+void declarationHelper(int nameIndex){
+    // check for duplicates
+    if(isDuplicate(nameIndex)){ // nameIndex is duplicate
+        fail(14, cur-1);
+    }
+
+    if(symbolCount == MAX_SYMBOL_COUNT){ // symbolCount reached its capacity
+        fail(17, cur-1);
+    }
+}
+
 // var-decl -> "var" ident { "," ident } ";"
 void varDeclaration(void) {
     consume("var-decl");
@@ -350,6 +417,9 @@ void varDeclaration(void) {
         fail(2, cur);
     }
     consume("var-decl");
+    int nameIndex = tokens[cur - 1].value;
+    declarationHelper(nameIndex);
+    insertHelper(VARIABLE, nameIndex, -1, nextAddress);
 
     while(currentCode() == commasym) {
         consume("var-decl");
@@ -357,6 +427,9 @@ void varDeclaration(void) {
             fail(2, cur);
         }
         consume("var-decl");
+        nameIndex = tokens[cur - 1].value;
+        declarationHelper(nameIndex);
+        insertHelper(VARIABLE, nameIndex, -1, nextAddress);
     }
 
     if(currentCode() != semicolonsym) {
@@ -489,4 +562,44 @@ void factor(void) {
     } else {
         fail(11, cur);
     }
+}
+
+int isDuplicate(int nameTableIndex){ // check if the name table index is duplicate
+    int lookupValue = lookup(nameTableIndex);
+
+    if(lookupValue == -1){ // not duplicate
+        return 0;
+    }
+
+    return 1; // duplicate
+}
+
+int lookup(int nameTableIndex){ // search the symbol table for the identifier that was just consumed
+    for(int i = 0; i < symbolCount; i++){
+        if(symbolTable[i].nameIndex == nameTableIndex && symbolTable[i].mark == 0){
+            return i;
+        }
+    } 
+
+    return -1; // nothing is matched
+}
+
+void insertHelper(int kind, int nameIndex, int value, int address){
+    symbolTable[symbolCount].kind = kind;
+    symbolTable[symbolCount].nameIndex = nameIndex;
+    symbolTable[symbolCount].value = value;
+    symbolTable[symbolCount].address = address;
+    symbolTable[symbolCount].level = 0;
+    symbolTable[symbolCount].mark = 0;
+
+    // event line printed right away so it lands between the right trace lines
+    // a constant has no address and a variable has no value, so each kind prints a different shape
+    if(kind == CONSTANT) {
+        printf("  insert entry %d: constant %s, value %d, level 0\n", symbolCount, names[nameIndex].name, value);
+    } else {
+        printf("  insert entry %d: variable %s, level 0, address %d\n", symbolCount, names[nameIndex].name, address);
+        nextAddress++; // if the kind is VARIABLE, then increase nextAddress by 1
+    }
+
+    symbolCount++;
 }
