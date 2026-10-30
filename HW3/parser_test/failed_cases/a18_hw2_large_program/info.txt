@@ -1,5 +1,5 @@
 Test Case: a18_hw2_large_program
 What this case covers: the HW2 large program: 100 variables fill the symbol table exactly
-Reason: output differs from expected_results/a18_hw2_large_program.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/a18_hw2_large_program.txt
 Your Output: student_output/a18_hw2_large_program_output.txt

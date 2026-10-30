@@ -1,5 +1,5 @@
 Test Case: y20_undeclared_before_assignment_symbol
 What this case covers: error 15, not 5: the lookup of y comes before the check of :=
-Reason: output differs from expected_results/y20_undeclared_before_assignment_symbol.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/y20_undeclared_before_assignment_symbol.txt
 Your Output: student_output/y20_undeclared_before_assignment_symbol_output.txt

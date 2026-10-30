@@ -1,5 +1,5 @@
 Test Case: p10_pipeline_do_is_reserved
 What this case covers: your lex must make do a reserved word, so the parser stops with error 7
-Reason: output differs from expected_results/p10_pipeline_do_is_reserved.txt
+Reason: unknown mode pipeline in the manifest
 Expected: expected_results/p10_pipeline_do_is_reserved.txt
 Your Output: student_output/p10_pipeline_do_is_reserved_output.txt

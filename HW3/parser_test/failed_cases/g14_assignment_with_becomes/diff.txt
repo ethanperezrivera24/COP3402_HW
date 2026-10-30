@@ -1,8 +1,0 @@
-11a12
->        insert entry 0: variable x, level 0, address 3
-13a15
->        lookup x: entry 0, variable, level 0
-16a19,21
-> entry  kind       name          value   level  address  mark
-> 0      variable   x             -       0      3        0
-> 

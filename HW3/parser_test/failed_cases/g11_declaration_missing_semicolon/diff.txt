@@ -1,6 +1,0 @@
-14a15
->        insert entry 0: constant a, value 1, level 0
-17a19,21
-> entry  kind       name          value   level  address  mark
-> 0      constant   a             1       0      -        0
-> 

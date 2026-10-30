@@ -1,8 +1,0 @@
-12,13d11
-<   leave level 0
-< 3 17 . program
-19c17,18
-< program accepted
----
-> Error 15 at token 2 'z': undeclared identifier
-> 

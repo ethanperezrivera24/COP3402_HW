@@ -1,0 +1,5 @@
+Test Case: g03_const_without_identifier
+What this case covers: error 2: const followed by :=
+Reason: unknown mode files in the manifest
+Expected: expected_results/g03_const_without_identifier.txt
+Your Output: student_output/g03_const_without_identifier_output.txt

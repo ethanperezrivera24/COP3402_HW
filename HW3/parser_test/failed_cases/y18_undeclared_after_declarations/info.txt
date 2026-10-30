@@ -1,5 +1,5 @@
 Test Case: y18_undeclared_after_declarations
 What this case covers: error 15 after lookups that succeed: the table keeps its entries, unmarked
-Reason: exit status should be 1 (this case holds an error on purpose), but it exited with 0
+Reason: unknown mode files in the manifest
 Expected: expected_results/y18_undeclared_after_declarations.txt
 Your Output: student_output/y18_undeclared_after_declarations_output.txt

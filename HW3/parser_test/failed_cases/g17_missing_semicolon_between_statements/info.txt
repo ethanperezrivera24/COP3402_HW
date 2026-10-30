@@ -1,5 +1,5 @@
 Test Case: g17_missing_semicolon_between_statements
 What this case covers: error 6 at the second statement: no semicolon between two statements
-Reason: output differs from expected_results/g17_missing_semicolon_between_statements.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/g17_missing_semicolon_between_statements.txt
 Your Output: student_output/g17_missing_semicolon_between_statements_output.txt

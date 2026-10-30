@@ -1,5 +1,5 @@
 Test Case: g10_declaration_missing_comma
 What this case covers: error 4: two variable names with no comma between them
-Reason: output differs from expected_results/g10_declaration_missing_comma.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/g10_declaration_missing_comma.txt
 Your Output: student_output/g10_declaration_missing_comma_output.txt

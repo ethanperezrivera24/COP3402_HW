@@ -1,5 +1,5 @@
 Test Case: a27_while_inside_while
 What this case covers: a while loop whose body holds another while loop
-Reason: output differs from expected_results/a27_while_inside_while.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/a27_while_inside_while.txt
 Your Output: student_output/a27_while_inside_while_output.txt

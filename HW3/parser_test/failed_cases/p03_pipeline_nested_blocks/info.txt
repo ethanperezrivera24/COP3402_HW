@@ -1,5 +1,5 @@
 Test Case: p03_pipeline_nested_blocks
 What this case covers: your lex, then your parser, on the HW2 nested-blocks program
-Reason: output differs from expected_results/p03_pipeline_nested_blocks.txt
+Reason: unknown mode pipeline in the manifest
 Expected: expected_results/p03_pipeline_nested_blocks.txt
 Your Output: student_output/p03_pipeline_nested_blocks_output.txt

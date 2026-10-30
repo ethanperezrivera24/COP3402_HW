@@ -1,5 +1,5 @@
 Test Case: a07_if_then_fi
 What this case covers: an if statement without else, closed with fi
-Reason: output differs from expected_results/a07_if_then_fi.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/a07_if_then_fi.txt
 Your Output: student_output/a07_if_then_fi_output.txt

@@ -1,5 +1,5 @@
 Test Case: g15_variable_list_ends_with_comma
 What this case covers: error 2: a comma in a variable list followed by a semicolon
-Reason: output differs from expected_results/g15_variable_list_ends_with_comma.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/g15_variable_list_ends_with_comma.txt
 Your Output: student_output/g15_variable_list_ends_with_comma_output.txt

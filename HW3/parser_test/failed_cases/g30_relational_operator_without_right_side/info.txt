@@ -1,5 +1,5 @@
 Test Case: g30_relational_operator_without_right_side
 What this case covers: error 11 at then: a condition with no expression after its operator
-Reason: output differs from expected_results/g30_relational_operator_without_right_side.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/g30_relational_operator_without_right_side.txt
 Your Output: student_output/g30_relational_operator_without_right_side_output.txt

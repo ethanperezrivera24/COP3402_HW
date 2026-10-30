@@ -1,5 +1,5 @@
 Test Case: g05_procedure_declaration
 What this case covers: error 12 at procedure: a procedure declared after the variables
-Reason: output differs from expected_results/g05_procedure_declaration.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/g05_procedure_declaration.txt
 Your Output: student_output/g05_procedure_declaration_output.txt

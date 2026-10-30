@@ -1,5 +1,5 @@
 Test Case: a22_constant_with_leading_zeros
 What this case covers: a number written 007: the value is 7, the text stays 007
-Reason: output differs from expected_results/a22_constant_with_leading_zeros.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/a22_constant_with_leading_zeros.txt
 Your Output: student_output/a22_constant_with_leading_zeros_output.txt

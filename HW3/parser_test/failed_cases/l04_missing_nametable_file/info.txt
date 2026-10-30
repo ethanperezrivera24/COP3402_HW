@@ -1,0 +1,5 @@
+Test Case: l04_missing_nametable_file
+What this case covers: error 18: nametable.txt is not in the working directory
+Reason: unknown mode tokens-only in the manifest
+Expected: expected_results/l04_missing_nametable_file.txt
+Your Output: student_output/l04_missing_nametable_file_output.txt

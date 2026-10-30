@@ -1,5 +1,5 @@
 Test Case: g22_condition_with_assignment_symbol
 What this case covers: error 9 at =: a condition compared with the assignment symbol
-Reason: output differs from expected_results/g22_condition_with_assignment_symbol.txt
+Reason: unknown mode files in the manifest
 Expected: expected_results/g22_condition_with_assignment_symbol.txt
 Your Output: student_output/g22_condition_with_assignment_symbol_output.txt
