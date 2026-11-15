@@ -1,28 +1,5 @@
-1,16c1
-< Name Table:
-< 
-< index name line column
-< 0 k 1 7
-< 1 p 2 11
-< 
-< Parse Trace:
-< 
-< token input text nonterminal
-< enter level 0
-< 1 31 const const-decl
-< 2 1 0 k const-decl
-< 3 19 := const-decl
-< 4 2 1 1 const-decl
-< insert entry 0: constant k, value 1, level 0
-< 5 16 ; const-decl
----
-> Generated Code:
-20,22d4
-< entry kind name value level address mark
-< 0 constant k 1 0 - 0
-< 
-25c7,8
-< Error 12 at token 6 'procedure': procedure declarations are not part of this grammar
+7c7,8
+< Error 12 at token 6 'procedure': a procedure name and a procedure block must each be followed by ;
 ---
 > Error 13 at token 11 'k': call must name a procedure
 > 

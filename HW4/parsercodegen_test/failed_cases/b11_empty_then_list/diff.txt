@@ -1,40 +1,4 @@
-1c1
-< Name Table:
----
-> Generated Code:
-3,33c3,14
-< index name line column
-< 0 x 1 5
-< 
-< Parse Trace:
-< 
-< token input text nonterminal
-< enter level 0
-< 1 32 var var-decl
-< 2 1 0 x var-decl
-< insert entry 0: variable x, level 0, address 3
-< 3 16 ; var-decl
-< 4 20 begin statement
-< 5 35 read statement
-< 6 1 0 x statement
-< lookup x: entry 0, variable, level 0
-< 7 16 ; statement-list
-< 8 22 if statement
-< 9 1 0 x factor
-< lookup x: entry 0, variable, level 0
-< 10 7 == condition
-< 11 2 0 0 factor
-< 12 24 then statement
-< 13 23 fi statement
-< 14 16 ; statement-list
-< 15 34 write statement
-< 16 1 0 x factor
-< lookup x: entry 0, variable, level 0
-< 17 21 end statement
-< mark entry 0
-< leave level 0
-< 18 17 . program
----
+2a3,15
 > index address op L M
 > 0 200 JMP 0 203
 > 1 203 INC 0 4
@@ -47,3 +11,4 @@
 > 8 224 LOD 0 3
 > 9 227 SYS 0 1
 > 10 230 SYS 0 3
+> 

@@ -1,22 +1,7 @@
-Name Table:
-
-index name line column
-0 p 1 5
-
-Parse Trace:
-
-token input text nonterminal
-  enter level 0
-1 32 var var-decl
-2 1 0 p var-decl
-  insert entry 0: variable p, level 0, address 3
-3 16 ; var-decl
+Generated Code:
 
 Symbol Table:
 
-entry kind name value level address mark
-0 variable p - 0 3 0
-
 Result:
 
-Error 12 at token 4 'procedure': procedure declarations are not part of this grammar
+Error 12 at token 4 'procedure': a procedure name and a procedure block must each be followed by ;

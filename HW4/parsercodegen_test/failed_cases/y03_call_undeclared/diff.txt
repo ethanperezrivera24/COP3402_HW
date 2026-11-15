@@ -1,18 +1,5 @@
-1,10c1
-< Name Table:
-< 
-< index name line column
-< 0 p 1 11
-< 1 q 3 6
-< 
-< Parse Trace:
-< 
-< token input text nonterminal
-< enter level 0
----
-> Generated Code:
-16c7,8
-< Error 12 at token 1 'procedure': procedure declarations are not part of this grammar
+7c7,8
+< Error 12 at token 1 'procedure': a procedure name and a procedure block must each be followed by ;
 ---
 > Error 15 at token 6 'q': undeclared identifier
 > 

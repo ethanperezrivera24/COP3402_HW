@@ -1,11 +1,4 @@
-Name Table:
-
-Parse Trace:
-
-token input text nonterminal
-  enter level 0
-  leave level 0
-1 17 . program
+Generated Code:
 
 Symbol Table:
 

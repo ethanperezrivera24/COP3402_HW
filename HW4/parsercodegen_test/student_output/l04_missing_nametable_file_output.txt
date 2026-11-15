@@ -1,6 +1,4 @@
-Name Table:
-
-Parse Trace:
+Generated Code:
 
 Symbol Table:
 

@@ -1,53 +1,4 @@
-1c1
-< Name Table:
----
-> Generated Code:
-3,46c3,16
-< index name line column
-< 0 c 1 7
-< 1 x 2 5
-< 
-< Parse Trace:
-< 
-< token input text nonterminal
-< enter level 0
-< 1 31 const const-decl
-< 2 1 0 c const-decl
-< 3 19 := const-decl
-< 4 2 8 8 const-decl
-< insert entry 0: constant c, value 8, level 0
-< 5 16 ; const-decl
-< 6 32 var var-decl
-< 7 1 1 x var-decl
-< insert entry 1: variable x, level 0, address 3
-< 8 16 ; var-decl
-< 9 20 begin statement
-< 10 35 read statement
-< 11 1 1 x statement
-< lookup x: entry 1, variable, level 0
-< 12 16 ; statement-list
-< 13 1 1 x statement
-< lookup x: entry 1, variable, level 0
-< 14 18 = statement
-< 15 13 ( factor
-< 16 1 1 x factor
-< lookup x: entry 1, variable, level 0
-< 17 4 - expression
-< 18 1 0 c factor
-< lookup c: entry 0, constant, level 0
-< 19 14 ) factor
-< 20 6 / term
-< 21 2 3 3 factor
-< 22 16 ; statement-list
-< 23 34 write statement
-< 24 1 1 x factor
-< lookup x: entry 1, variable, level 0
-< 25 21 end statement
-< mark entry 0
-< mark entry 1
-< leave level 0
-< 26 17 . program
----
+2a3,17
 > index address op L M
 > 0 200 JMP 0 203
 > 1 203 INC 0 4
@@ -62,3 +13,4 @@
 > 10 230 LOD 0 3
 > 11 233 SYS 0 1
 > 12 236 SYS 0 3
+> 

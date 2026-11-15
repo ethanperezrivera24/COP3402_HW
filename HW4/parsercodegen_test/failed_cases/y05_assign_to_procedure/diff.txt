@@ -1,17 +1,5 @@
-1,9c1
-< Name Table:
-< 
-< index name line column
-< 0 p 1 11
-< 
-< Parse Trace:
-< 
-< token input text nonterminal
-< enter level 0
----
-> Generated Code:
-15c7,8
-< Error 12 at token 1 'procedure': procedure declarations are not part of this grammar
+7c7,8
+< Error 12 at token 1 'procedure': a procedure name and a procedure block must each be followed by ;
 ---
 > Error 16 at token 5 'p': only a variable may be assigned or read
 > 
