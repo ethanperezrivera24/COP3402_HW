@@ -1,0 +1,27 @@
+var n, result;
+procedure fact;
+  var i;
+  procedure step;
+    begin
+      result = result * i;
+      i = i - 1
+    end;
+  procedure drive;
+    begin
+      if i > 1 then
+        begin
+          call step;
+          call drive
+        end
+      fi
+    end;
+  begin
+    result = 1;
+    i = n;
+    call drive
+  end;
+begin
+  read n;
+  call fact;
+  write result
+end.

@@ -1,0 +1,8 @@
+Generated Code:
+
+Symbol Table:
+
+Result:
+
+Error 19 at token 10 'p': a procedure name cannot be used in an expression
+

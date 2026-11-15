@@ -1,0 +1,7 @@
+var x;
+procedure get;
+  read x;
+begin
+  call get;
+  write x
+end.

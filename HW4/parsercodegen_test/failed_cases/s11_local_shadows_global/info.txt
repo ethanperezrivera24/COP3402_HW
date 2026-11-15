@@ -1,0 +1,7 @@
+Test Case: s11_local_shadows_global
+What this case covers: a local x hides the global x: LOD 0 3 inside, LOD 0 3 outside, STO 1 for y
+Reason: exit status should be 0, but it exited with status 1
+Expected: expected_results/s11_local_shadows_global.txt
+Your Output: student_output/s11_local_shadows_global_output.txt
+Expected elf.txt: expected_results/s11_local_shadows_global.elf.txt
+Your elf.txt: student_output/s11_local_shadows_global_elf.txt

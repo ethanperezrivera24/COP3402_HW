@@ -1,5 +1,0 @@
-Test Case: y01_duplicate_variable
-What this case covers: error 14: one variable declared twice in one list
-Reason: unknown mode files in the manifest
-Expected: expected_results/y01_duplicate_variable.txt
-Your Output: student_output/y01_duplicate_variable_output.txt

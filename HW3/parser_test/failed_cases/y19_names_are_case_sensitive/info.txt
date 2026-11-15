@@ -1,5 +1,0 @@
-Test Case: y19_names_are_case_sensitive
-What this case covers: error 15: Count is a different name from count
-Reason: unknown mode files in the manifest
-Expected: expected_results/y19_names_are_case_sensitive.txt
-Your Output: student_output/y19_names_are_case_sensitive_output.txt

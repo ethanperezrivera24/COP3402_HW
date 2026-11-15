@@ -1,0 +1,16 @@
+var n, result;
+procedure fact;
+  var i;
+  begin
+    result = 1;
+    i = n;
+    while i > 1 then
+      result = result * i;
+      i = i - 1
+    elihw
+  end;
+begin
+  read n;
+  call fact;
+  write result
+end.

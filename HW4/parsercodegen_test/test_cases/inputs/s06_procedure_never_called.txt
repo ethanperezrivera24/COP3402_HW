@@ -1,0 +1,4 @@
+var x;
+procedure unused;
+  x = 99;
+write 1.

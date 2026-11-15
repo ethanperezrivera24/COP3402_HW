@@ -1,0 +1,7 @@
+Test Case: b06_every_relational_operator
+What this case covers: == != < <= > >= emit OPR 5 to 10
+Reason: output differs from expected_results/b06_every_relational_operator.txt
+Expected: expected_results/b06_every_relational_operator.txt
+Your Output: student_output/b06_every_relational_operator_output.txt
+Expected elf.txt: expected_results/b06_every_relational_operator.elf.txt
+Your elf.txt: student_output/b06_every_relational_operator_elf.txt

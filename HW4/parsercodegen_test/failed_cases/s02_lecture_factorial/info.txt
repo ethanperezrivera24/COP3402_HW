@@ -1,0 +1,7 @@
+Test Case: s02_lecture_factorial
+What this case covers: the course's factorial program: 28 instructions with the procedure's opening JMP
+Reason: exit status should be 0, but it exited with status 1
+Expected: expected_results/s02_lecture_factorial.txt
+Your Output: student_output/s02_lecture_factorial_output.txt
+Expected elf.txt: expected_results/s02_lecture_factorial.elf.txt
+Your elf.txt: student_output/s02_lecture_factorial_elf.txt

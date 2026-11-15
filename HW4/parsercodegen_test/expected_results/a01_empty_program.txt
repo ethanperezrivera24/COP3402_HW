@@ -1,0 +1,13 @@
+Generated Code:
+
+index  address  op   L  M
+0      200      JMP  0  203
+1      203      INC  0  3
+2      206      SYS  0  3
+
+Symbol Table:
+
+Result:
+
+program accepted
+

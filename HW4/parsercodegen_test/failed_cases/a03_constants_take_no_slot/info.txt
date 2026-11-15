@@ -1,0 +1,7 @@
+Test Case: a03_constants_take_no_slot
+What this case covers: constants are LIT values and leave INC at 3
+Reason: output differs from expected_results/a03_constants_take_no_slot.txt
+Expected: expected_results/a03_constants_take_no_slot.txt
+Your Output: student_output/a03_constants_take_no_slot_output.txt
+Expected elf.txt: expected_results/a03_constants_take_no_slot.elf.txt
+Your elf.txt: student_output/a03_constants_take_no_slot_elf.txt

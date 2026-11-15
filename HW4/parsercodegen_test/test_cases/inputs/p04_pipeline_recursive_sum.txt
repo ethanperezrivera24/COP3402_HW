@@ -1,0 +1,13 @@
+var n, sum;
+procedure add;
+  if n > 0 then
+    sum = sum + n;
+    n = n - 1;
+    call add
+  fi;
+begin
+  read n;
+  sum = 0;
+  call add;
+  write sum
+end.

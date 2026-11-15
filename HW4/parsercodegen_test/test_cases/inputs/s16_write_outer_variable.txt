@@ -1,0 +1,7 @@
+var x;
+procedure show;
+  write x;
+begin
+  x = 8;
+  call show
+end.

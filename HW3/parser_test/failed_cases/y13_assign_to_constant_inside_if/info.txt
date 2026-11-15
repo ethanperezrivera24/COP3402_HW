@@ -1,5 +1,0 @@
-Test Case: y13_assign_to_constant_inside_if
-What this case covers: error 16: assignment to a constant in an if body
-Reason: unknown mode files in the manifest
-Expected: expected_results/y13_assign_to_constant_inside_if.txt
-Your Output: student_output/y13_assign_to_constant_inside_if_output.txt

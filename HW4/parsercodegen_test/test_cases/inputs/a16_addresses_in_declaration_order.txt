@@ -1,0 +1,6 @@
+var p, q, r;
+begin
+  r = 1;
+  q = r;
+  p = q
+end.

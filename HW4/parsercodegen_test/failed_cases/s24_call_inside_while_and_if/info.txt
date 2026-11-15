@@ -1,0 +1,7 @@
+Test Case: s24_call_inside_while_and_if
+What this case covers: calls inside a loop and inside both branches of an if
+Reason: exit status should be 0, but it exited with status 1
+Expected: expected_results/s24_call_inside_while_and_if.txt
+Your Output: student_output/s24_call_inside_while_and_if_output.txt
+Expected elf.txt: expected_results/s24_call_inside_while_and_if.elf.txt
+Your elf.txt: student_output/s24_call_inside_while_and_if_elf.txt

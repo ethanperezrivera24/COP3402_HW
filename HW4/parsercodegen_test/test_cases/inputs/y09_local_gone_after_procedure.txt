@@ -1,0 +1,4 @@
+procedure p;
+  var t;
+  t = 1;
+write t.

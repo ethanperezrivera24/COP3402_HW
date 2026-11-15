@@ -1,0 +1,20 @@
+1c1
+< Name Table:
+---
+> Generated Code:
+3,10c3,8
+< Parse Trace:
+< 
+< token input text nonterminal
+< enter level 0
+< 1 34 write statement
+< 2 2 5 5 factor
+< leave level 0
+< 3 17 . program
+---
+> index address op L M
+> 0 200 JMP 0 203
+> 1 203 INC 0 3
+> 2 206 LIT 0 5
+> 3 209 SYS 0 1
+> 4 212 SYS 0 3

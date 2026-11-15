@@ -1,0 +1,39 @@
+Name Table:
+
+index name line column
+0 x 1 5
+
+Parse Trace:
+
+token input text nonterminal
+  enter level 0
+1 32 var var-decl
+2 1 0 x var-decl
+  insert entry 0: variable x, level 0, address 3
+3 16 ; var-decl
+4 1 0 x statement
+  lookup x: entry 0, variable, level 0
+5 18 = statement
+6 13 ( factor
+7 2 10 10 factor
+8 4 - expression
+9 2 3 3 factor
+10 14 ) factor
+11 5 * term
+12 13 ( factor
+13 2 2 2 factor
+14 3 + expression
+15 2 1 1 factor
+16 14 ) factor
+  mark entry 0
+  leave level 0
+17 17 . program
+
+Symbol Table:
+
+entry kind name value level address mark
+0 variable x - 0 3 1
+
+Result:
+
+program accepted

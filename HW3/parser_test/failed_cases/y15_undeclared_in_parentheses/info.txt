@@ -1,5 +1,0 @@
-Test Case: y15_undeclared_in_parentheses
-What this case covers: error 15: an undeclared name two parentheses deep
-Reason: unknown mode files in the manifest
-Expected: expected_results/y15_undeclared_in_parentheses.txt
-Your Output: student_output/y15_undeclared_in_parentheses_output.txt

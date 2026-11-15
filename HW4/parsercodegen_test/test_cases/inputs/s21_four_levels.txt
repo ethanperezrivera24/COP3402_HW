@@ -1,0 +1,12 @@
+var a;
+procedure p;
+  procedure q;
+    procedure r;
+      a = a * 2;
+    call r;
+  call q;
+begin
+  a = 5;
+  call p;
+  write a
+end.

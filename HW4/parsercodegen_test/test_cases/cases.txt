@@ -1,0 +1,119 @@
+# COP 3402 HW4 - compiler test case manifest
+#
+# One test case per line. Fields are separated by a single TAB character.
+#
+#   field 1  case name        also the name of the expected result file
+#   field 2  expected exit    0        every program must exit with status 0
+#                             nonzero  the program must exit with a status
+#                                      from 1 to 123 (a crash is not an error
+#                                      report)
+#   field 3  points           what the case is worth
+#   field 4  mode             files        copy <case>.tokens.txt and
+#                                          <case>.nametable.txt in as tokens.txt
+#                                          and nametable.txt, run ./parsercodegen
+#                             names-only   copy only <case>.nametable.txt
+#                             tokens-only  copy only <case>.tokens.txt
+#                             pipeline     copy only <case>.txt (and
+#                                          <case>.stdin) in, run your
+#                                          ./lex <case>.txt, then
+#                                          ./parsercodegen, then ./vm elf.txt
+#
+# Every case runs in an empty working directory. The points total 95.
+# Blank lines and lines beginning with # are ignored.
+
+a01_empty_program	0	1	files
+a02_write_number	0	1	files
+a03_constants_take_no_slot	0	1	files
+a04_assignment_stores	0	1	files
+a05_read_then_store	0	1	files
+a06_precedence_by_nesting	0	1	files
+a07_subtraction_left_to_right	0	1	files
+a08_parentheses_change_order	0	1	files
+a09_leading_minus_number	0	1	files
+a10_leading_minus_on_a_term	0	1	files
+a11_leading_plus_emits_nothing	0	1	files
+a12_lecture_constant_and_division	0	1	files
+a13_constant_with_leading_zeros	0	1	files
+a14_six_digit_number	0	1	files
+a15_unused_variables_widen_inc	0	1	files
+a16_addresses_in_declaration_order	0	1	files
+a17_empty_statements_emit_nothing	0	1	files
+a18_nested_parentheses	0	1	files
+
+b01_if_then_fi	0	1	files
+b02_lecture_if_else	0	1	files
+b03_if_else_with_lists	0	1	files
+b04_lecture_countdown_while	0	1	files
+b05_while_condition_with_expressions	0	1	files
+b06_every_relational_operator	0	1	files
+b07_if_inside_while	0	1	files
+b08_while_inside_while	0	1	files
+b09_if_else_inside_else	0	1	files
+b10_two_ifs_in_sequence	0	1	files
+b11_empty_then_list	0	1	files
+b12_empty_else_list	0	1	files
+b13_empty_while_body	0	1	files
+b14_if_as_the_whole_statement	0	1	files
+b15_while_as_the_whole_statement	0	1	files
+b16_else_if_chain	0	1	files
+b17_condition_on_constants	0	1	files
+b18_hw2_nested_blocks	0	1	files
+
+s01_lecture_setx	0	1	files
+s02_lecture_factorial	0	1	files
+s03_lecture_nested_siblings	0	1	files
+s04_procedure_without_variables	0	1	files
+s05_empty_procedure	0	1	files
+s06_procedure_never_called	0	1	files
+s07_two_procedures_in_sequence	0	1	files
+s08_level_difference_two	0	1	files
+s09_sibling_call	0	1	files
+s10_recursive_call	0	1	files
+s11_local_shadows_global	0	1	files
+s12_variable_shadows_procedure_name	0	1	files
+s13_constant_inside_procedure	0	1	files
+s14_global_constant_in_procedure	0	1	files
+s15_read_into_outer_variable	0	1	files
+s16_write_outer_variable	0	1	files
+s17_control_flow_inside_procedure	0	1	files
+s18_call_to_outer_sibling	0	1	files
+s19_nested_calls_its_parent	0	1	files
+s20_inner_block_jump	0	1	files
+s21_four_levels	0	1	files
+s22_same_name_at_three_levels	0	1	files
+s23_hw2_procedure_program	0	1	files
+s24_call_inside_while_and_if	0	1	files
+
+g01_procedure_without_identifier	nonzero	1	files
+g02_procedure_name_without_semicolon	nonzero	1	files
+g03_procedure_block_without_semicolon	nonzero	1	files
+g04_call_without_identifier	nonzero	1	files
+g05_procedure_inside_begin	nonzero	1	files
+g06_variables_after_procedure	nonzero	1	files
+
+y01_call_a_variable	nonzero	1	files
+y02_call_a_constant	nonzero	1	files
+y03_call_undeclared	nonzero	1	files
+y04_procedure_in_expression	nonzero	1	files
+y05_assign_to_procedure	nonzero	1	files
+y06_read_into_procedure	nonzero	1	files
+y07_duplicate_procedure_names	nonzero	1	files
+y08_procedure_named_like_variable	nonzero	1	files
+y09_local_gone_after_procedure	nonzero	1	files
+y10_call_to_later_sibling	nonzero	1	files
+
+l01_table_full_inside_procedure	nonzero	1	files
+l02_code_longer_than_200	nonzero	1	files
+l03_missing_tokens_file	nonzero	1	names-only
+l04_missing_nametable_file	nonzero	1	tokens-only
+
+p01_pipeline_factorial	0	1.5	pipeline
+p02_pipeline_setx	0	1.5	pipeline
+p03_pipeline_nested_siblings	0	1.5	pipeline
+p04_pipeline_recursive_sum	0	1.5	pipeline
+p05_pipeline_sibling_calls	0	1.5	pipeline
+p06_pipeline_else_if_chain	0	1.5	pipeline
+p07_pipeline_countdown	0	1.5	pipeline
+p08_pipeline_every_operator	0	1.5	pipeline
+p09_pipeline_shadowing	0	1.5	pipeline
+p10_pipeline_three_levels	0	1.5	pipeline

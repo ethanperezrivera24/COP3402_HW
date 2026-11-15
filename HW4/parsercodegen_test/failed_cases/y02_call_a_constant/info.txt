@@ -1,0 +1,5 @@
+Test Case: y02_call_a_constant
+What this case covers: error 13: call names a constant
+Reason: output differs from expected_results/y02_call_a_constant.txt
+Expected: expected_results/y02_call_a_constant.txt
+Your Output: student_output/y02_call_a_constant_output.txt

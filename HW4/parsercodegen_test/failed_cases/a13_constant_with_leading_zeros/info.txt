@@ -1,0 +1,7 @@
+Test Case: a13_constant_with_leading_zeros
+What this case covers: a constant written 007 is LIT 0 7
+Reason: output differs from expected_results/a13_constant_with_leading_zeros.txt
+Expected: expected_results/a13_constant_with_leading_zeros.txt
+Your Output: student_output/a13_constant_with_leading_zeros_output.txt
+Expected elf.txt: expected_results/a13_constant_with_leading_zeros.elf.txt
+Your elf.txt: student_output/a13_constant_with_leading_zeros_elf.txt

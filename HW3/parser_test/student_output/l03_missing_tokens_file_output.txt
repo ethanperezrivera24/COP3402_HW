@@ -1,0 +1,9 @@
+Name Table:
+
+Parse Trace:
+
+Symbol Table:
+
+Result:
+
+Error 18: cannot open tokens.txt or nametable.txt

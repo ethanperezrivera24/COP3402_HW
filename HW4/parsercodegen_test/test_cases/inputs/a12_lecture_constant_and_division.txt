@@ -1,0 +1,7 @@
+const c := 8;
+var x;
+begin
+  read x;
+  x = (x - c) / 3;
+  write x
+end.

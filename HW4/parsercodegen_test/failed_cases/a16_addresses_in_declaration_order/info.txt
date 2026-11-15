@@ -1,0 +1,7 @@
+Test Case: a16_addresses_in_declaration_order
+What this case covers: variables get addresses 3, 4, 5 in declaration order
+Reason: output differs from expected_results/a16_addresses_in_declaration_order.txt
+Expected: expected_results/a16_addresses_in_declaration_order.txt
+Your Output: student_output/a16_addresses_in_declaration_order_output.txt
+Expected elf.txt: expected_results/a16_addresses_in_declaration_order.elf.txt
+Your elf.txt: student_output/a16_addresses_in_declaration_order_elf.txt

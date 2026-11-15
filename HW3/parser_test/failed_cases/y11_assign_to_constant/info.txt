@@ -1,5 +1,0 @@
-Test Case: y11_assign_to_constant
-What this case covers: error 16: assignment to a constant
-Reason: unknown mode files in the manifest
-Expected: expected_results/y11_assign_to_constant.txt
-Your Output: student_output/y11_assign_to_constant_output.txt

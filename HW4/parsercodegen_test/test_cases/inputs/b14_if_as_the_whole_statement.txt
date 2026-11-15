@@ -1,0 +1,4 @@
+var x;
+if x == 0 then
+  write 1
+fi.

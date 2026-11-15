@@ -1,0 +1,7 @@
+Test Case: a09_leading_minus_number
+What this case covers: a leading minus on a number: LIT 0 0, the number, SUB
+Reason: output differs from expected_results/a09_leading_minus_number.txt
+Expected: expected_results/a09_leading_minus_number.txt
+Your Output: student_output/a09_leading_minus_number_output.txt
+Expected elf.txt: expected_results/a09_leading_minus_number.elf.txt
+Your elf.txt: student_output/a09_leading_minus_number_elf.txt

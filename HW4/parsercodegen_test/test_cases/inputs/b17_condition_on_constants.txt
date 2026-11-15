@@ -1,0 +1,11 @@
+const lo := 1, hi := 9;
+var x;
+begin
+  x = lo;
+  while x <= hi then
+    if lo < hi then
+      x = x + hi
+    fi
+  elihw;
+  write x
+end.

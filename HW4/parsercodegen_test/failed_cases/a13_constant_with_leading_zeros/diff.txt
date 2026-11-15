@@ -1,0 +1,31 @@
+1c1
+< Name Table:
+---
+> Generated Code:
+3,21c3,8
+< index name line column
+< 0 k 1 7
+< 
+< Parse Trace:
+< 
+< token input text nonterminal
+< enter level 0
+< 1 31 const const-decl
+< 2 1 0 k const-decl
+< 3 19 := const-decl
+< 4 2 007 007 const-decl
+< insert entry 0: constant k, value 7, level 0
+< 5 16 ; const-decl
+< 6 34 write statement
+< 7 1 0 k factor
+< lookup k: entry 0, constant, level 0
+< mark entry 0
+< leave level 0
+< 8 17 . program
+---
+> index address op L M
+> 0 200 JMP 0 203
+> 1 203 INC 0 3
+> 2 206 LIT 0 7
+> 3 209 SYS 0 1
+> 4 212 SYS 0 3

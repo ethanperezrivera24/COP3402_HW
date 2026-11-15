@@ -1,0 +1,5 @@
+var x, y;
+begin
+  x = 7;
+  y = x
+end.

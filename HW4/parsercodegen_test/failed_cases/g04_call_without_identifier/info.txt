@@ -1,0 +1,5 @@
+Test Case: g04_call_without_identifier
+What this case covers: error 2: call followed by a number
+Reason: output differs from expected_results/g04_call_without_identifier.txt
+Expected: expected_results/g04_call_without_identifier.txt
+Your Output: student_output/g04_call_without_identifier_output.txt

@@ -1,0 +1,31 @@
+1c1
+< Name Table:
+---
+> Generated Code:
+3,21c3,8
+< index name line column
+< 0 x 1 5
+< 
+< Parse Trace:
+< 
+< token input text nonterminal
+< enter level 0
+< 1 32 var var-decl
+< 2 1 0 x var-decl
+< insert entry 0: variable x, level 0, address 3
+< 3 16 ; var-decl
+< 4 1 0 x statement
+< lookup x: entry 0, variable, level 0
+< 5 18 = statement
+< 6 3 + expression
+< 7 2 7 7 factor
+< mark entry 0
+< leave level 0
+< 8 17 . program
+---
+> index address op L M
+> 0 200 JMP 0 203
+> 1 203 INC 0 4
+> 2 206 LIT 0 7
+> 3 209 STO 0 3
+> 4 212 SYS 0 3

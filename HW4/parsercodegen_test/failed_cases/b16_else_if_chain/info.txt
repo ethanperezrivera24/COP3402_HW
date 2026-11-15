@@ -1,0 +1,7 @@
+Test Case: b16_else_if_chain
+What this case covers: a chain of if inside else, three levels deep
+Reason: output differs from expected_results/b16_else_if_chain.txt
+Expected: expected_results/b16_else_if_chain.txt
+Your Output: student_output/b16_else_if_chain_output.txt
+Expected elf.txt: expected_results/b16_else_if_chain.elf.txt
+Your elf.txt: student_output/b16_else_if_chain_elf.txt

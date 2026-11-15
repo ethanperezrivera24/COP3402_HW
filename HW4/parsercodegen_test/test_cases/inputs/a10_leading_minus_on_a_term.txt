@@ -1,0 +1,7 @@
+var a, b, c, x;
+begin
+  a = 2;
+  b = 3;
+  c = 4;
+  x = -a * b + c
+end.

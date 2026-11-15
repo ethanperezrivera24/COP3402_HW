@@ -1,0 +1,8 @@
+var x;
+procedure bump;
+  x = x + 1;
+begin
+  x = 0;
+  call bump;
+  write x
+end.

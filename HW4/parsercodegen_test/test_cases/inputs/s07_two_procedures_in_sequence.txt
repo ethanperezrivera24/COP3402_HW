@@ -1,0 +1,10 @@
+var x;
+procedure one;
+  x = 1;
+procedure two;
+  x = 2;
+begin
+  call two;
+  call one;
+  write x
+end.

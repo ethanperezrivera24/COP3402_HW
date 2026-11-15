@@ -1,0 +1,7 @@
+Test Case: a14_six_digit_number
+What this case covers: the largest number the scanner allows, 999999, as one LIT
+Reason: output differs from expected_results/a14_six_digit_number.txt
+Expected: expected_results/a14_six_digit_number.txt
+Your Output: student_output/a14_six_digit_number_output.txt
+Expected elf.txt: expected_results/a14_six_digit_number.elf.txt
+Your elf.txt: student_output/a14_six_digit_number_elf.txt

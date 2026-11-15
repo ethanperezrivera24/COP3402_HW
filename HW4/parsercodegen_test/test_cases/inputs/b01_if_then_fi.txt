@@ -1,0 +1,7 @@
+var x;
+begin
+  read x;
+  if x > 0 then
+    write x
+  fi
+end.

@@ -1,0 +1,5 @@
+Test Case: y06_read_into_procedure
+What this case covers: error 16: a procedure name after read
+Reason: output differs from expected_results/y06_read_into_procedure.txt
+Expected: expected_results/y06_read_into_procedure.txt
+Your Output: student_output/y06_read_into_procedure_output.txt

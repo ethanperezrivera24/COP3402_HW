@@ -1,0 +1,14 @@
+var x, y;
+procedure inner;
+  var x;
+  begin
+    x = 5;
+    y = x * 10;
+    write x
+  end;
+begin
+  x = 1;
+  call inner;
+  write x;
+  write y
+end.

@@ -1,0 +1,7 @@
+Test Case: b14_if_as_the_whole_statement
+What this case covers: an if with no begin around it as the program's one statement
+Reason: output differs from expected_results/b14_if_as_the_whole_statement.txt
+Expected: expected_results/b14_if_as_the_whole_statement.txt
+Your Output: student_output/b14_if_as_the_whole_statement_output.txt
+Expected elf.txt: expected_results/b14_if_as_the_whole_statement.elf.txt
+Your elf.txt: student_output/b14_if_as_the_whole_statement_elf.txt

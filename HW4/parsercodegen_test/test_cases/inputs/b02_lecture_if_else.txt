@@ -1,0 +1,10 @@
+var x;
+begin
+  read x;
+  if x > 0 then
+    write 1
+  else
+    write 2
+  fi;
+  write 9
+end.

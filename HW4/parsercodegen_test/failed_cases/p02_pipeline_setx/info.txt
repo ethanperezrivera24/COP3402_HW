@@ -1,0 +1,5 @@
+Test Case: p02_pipeline_setx
+What this case covers: the program of s01 through your lex, compiler and VM
+Reason: your parsercodegen failed: it exited with status 1; its output is in student_output/p02_pipeline_setx_compiler_output.txt
+Expected: expected_results/p02_pipeline_setx.txt
+Your Output: student_output/p02_pipeline_setx_output.txt

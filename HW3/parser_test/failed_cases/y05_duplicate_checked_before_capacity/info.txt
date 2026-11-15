@@ -1,5 +1,0 @@
-Test Case: y05_duplicate_checked_before_capacity
-What this case covers: error 14, not 17: a full table, then a duplicate name
-Reason: unknown mode files in the manifest
-Expected: expected_results/y05_duplicate_checked_before_capacity.txt
-Your Output: student_output/y05_duplicate_checked_before_capacity_output.txt

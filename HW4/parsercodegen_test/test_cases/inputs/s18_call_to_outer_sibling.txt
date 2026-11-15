@@ -1,0 +1,12 @@
+var x;
+procedure a;
+  x = x + 1;
+procedure b;
+  procedure c;
+    call a;
+  call c;
+begin
+  x = 0;
+  call b;
+  write x
+end.
