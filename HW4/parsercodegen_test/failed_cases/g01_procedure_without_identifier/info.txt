@@ -1,0 +1,5 @@
+Test Case: g01_procedure_without_identifier
+What this case covers: error 2: procedure followed by ; instead of a name
+Reason: output differs from expected_results/g01_procedure_without_identifier.txt
+Expected: expected_results/g01_procedure_without_identifier.txt
+Your Output: student_output/g01_procedure_without_identifier_output.txt

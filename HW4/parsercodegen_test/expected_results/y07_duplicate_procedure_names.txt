@@ -1,0 +1,8 @@
+Generated Code:
+
+Symbol Table:
+
+Result:
+
+Error 14 at token 6 'p': identifier already declared in this block
+

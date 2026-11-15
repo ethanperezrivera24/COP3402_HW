@@ -1,5 +1,0 @@
-Test Case: y12_read_into_constant
-What this case covers: error 16: read into a constant
-Reason: unknown mode files in the manifest
-Expected: expected_results/y12_read_into_constant.txt
-Your Output: student_output/y12_read_into_constant_output.txt

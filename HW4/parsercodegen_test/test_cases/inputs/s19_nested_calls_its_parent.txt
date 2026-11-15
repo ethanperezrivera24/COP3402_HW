@@ -1,0 +1,15 @@
+var n;
+procedure outer;
+  procedure inner;
+    begin
+      n = n - 1;
+      call outer
+    end;
+  if n > 0 then
+    call inner
+  fi;
+begin
+  n = 3;
+  call outer;
+  write n
+end.

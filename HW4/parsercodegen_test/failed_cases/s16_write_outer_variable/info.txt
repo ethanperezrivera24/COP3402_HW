@@ -1,0 +1,7 @@
+Test Case: s16_write_outer_variable
+What this case covers: write inside a procedure of a main variable: LOD 1, then SYS 0 1
+Reason: exit status should be 0, but it exited with status 1
+Expected: expected_results/s16_write_outer_variable.txt
+Your Output: student_output/s16_write_outer_variable_output.txt
+Expected elf.txt: expected_results/s16_write_outer_variable.elf.txt
+Your elf.txt: student_output/s16_write_outer_variable_elf.txt

@@ -1,0 +1,7 @@
+Test Case: b17_condition_on_constants
+What this case covers: constants on both sides of a condition are LIT values
+Reason: output differs from expected_results/b17_condition_on_constants.txt
+Expected: expected_results/b17_condition_on_constants.txt
+Your Output: student_output/b17_condition_on_constants_output.txt
+Expected elf.txt: expected_results/b17_condition_on_constants.elf.txt
+Your elf.txt: student_output/b17_condition_on_constants_elf.txt

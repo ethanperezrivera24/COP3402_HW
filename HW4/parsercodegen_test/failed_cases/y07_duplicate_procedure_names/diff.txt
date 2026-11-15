@@ -1,0 +1,17 @@
+1,9c1
+< Name Table:
+< 
+< index name line column
+< 0 p 1 11
+< 
+< Parse Trace:
+< 
+< token input text nonterminal
+< enter level 0
+---
+> Generated Code:
+15c7,8
+< Error 12 at token 1 'procedure': procedure declarations are not part of this grammar
+---
+> Error 14 at token 6 'p': identifier already declared in this block
+> 

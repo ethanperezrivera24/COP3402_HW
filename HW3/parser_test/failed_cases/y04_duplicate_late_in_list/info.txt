@@ -1,5 +1,0 @@
-Test Case: y04_duplicate_late_in_list
-What this case covers: error 14 at the fifth name of a list that repeats the second
-Reason: unknown mode files in the manifest
-Expected: expected_results/y04_duplicate_late_in_list.txt
-Your Output: student_output/y04_duplicate_late_in_list_output.txt

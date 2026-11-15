@@ -1,0 +1,19 @@
+var i, s;
+procedure inc;
+  s = s + 1;
+procedure dec;
+  s = s - 1;
+begin
+  i = 0;
+  s = 0;
+  while i < 4 then
+    if i < 2 then
+      call inc
+    else
+      call dec;
+      call inc
+    fi;
+    i = i + 1
+  elihw;
+  write s
+end.

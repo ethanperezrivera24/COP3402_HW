@@ -1,0 +1,5 @@
+procedure first;
+  call second;
+procedure second;
+  ;
+call first.

@@ -1,0 +1,5 @@
+Test Case: g05_procedure_inside_begin
+What this case covers: error 6: a procedure declaration where a statement must be
+Reason: output differs from expected_results/g05_procedure_inside_begin.txt
+Expected: expected_results/g05_procedure_inside_begin.txt
+Your Output: student_output/g05_procedure_inside_begin_output.txt

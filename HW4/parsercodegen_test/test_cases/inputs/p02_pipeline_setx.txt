@@ -1,0 +1,12 @@
+var x;
+procedure setx;
+  var t;
+  begin
+    t = 42;
+    x = t
+  end;
+begin
+  x = 0;
+  call setx;
+  write x
+end.

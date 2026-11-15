@@ -1,0 +1,5 @@
+Test Case: y05_assign_to_procedure
+What this case covers: error 16: a procedure name as an assignment target
+Reason: output differs from expected_results/y05_assign_to_procedure.txt
+Expected: expected_results/y05_assign_to_procedure.txt
+Your Output: student_output/y05_assign_to_procedure_output.txt

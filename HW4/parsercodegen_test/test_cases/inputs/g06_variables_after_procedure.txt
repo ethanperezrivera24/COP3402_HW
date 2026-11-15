@@ -1,0 +1,4 @@
+procedure p;
+  ;
+var x;
+.

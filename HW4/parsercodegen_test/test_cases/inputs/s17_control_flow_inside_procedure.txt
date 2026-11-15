@@ -1,0 +1,18 @@
+var n;
+procedure count;
+  var i;
+  begin
+    i = 0;
+    while i < n then
+      if i == 2 then
+        write 0
+      else
+        write i
+      fi;
+      i = i + 1
+    elihw
+  end;
+begin
+  read n;
+  call count
+end.

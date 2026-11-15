@@ -1,0 +1,7 @@
+Test Case: b08_while_inside_while
+What this case covers: two loops nested: each back edge goes to its own condition
+Reason: output differs from expected_results/b08_while_inside_while.txt
+Expected: expected_results/b08_while_inside_while.txt
+Your Output: student_output/b08_while_inside_while_output.txt
+Expected elf.txt: expected_results/b08_while_inside_while.elf.txt
+Your elf.txt: student_output/b08_while_inside_while_elf.txt

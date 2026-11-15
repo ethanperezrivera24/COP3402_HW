@@ -1,0 +1,5 @@
+Test Case: p03_pipeline_nested_siblings
+What this case covers: the program of s03 through your lex, compiler and VM, reading 4
+Reason: your parsercodegen failed: it exited with status 1; its output is in student_output/p03_pipeline_nested_siblings_compiler_output.txt
+Expected: expected_results/p03_pipeline_nested_siblings.txt
+Your Output: student_output/p03_pipeline_nested_siblings_output.txt

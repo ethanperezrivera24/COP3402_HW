@@ -1,0 +1,25 @@
+Name Table:
+
+index name line column
+0 total 1 5
+1 first 2 11
+2 second 4 11
+3 k 5 7
+
+Parse Trace:
+
+token input text nonterminal
+  enter level 0
+1 32 var var-decl
+2 1 0 total var-decl
+  insert entry 0: variable total, level 0, address 3
+3 16 ; var-decl
+
+Symbol Table:
+
+entry kind name value level address mark
+0 variable total - 0 3 0
+
+Result:
+
+Error 12 at token 4 'procedure': procedure declarations are not part of this grammar

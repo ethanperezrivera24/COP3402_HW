@@ -1,0 +1,30 @@
+1c1
+< Name Table:
+---
+> Generated Code:
+3,9c3,10
+< index name line column
+< 0 p 1 11
+< 
+< Parse Trace:
+< 
+< token input text nonterminal
+< enter level 0
+---
+> index address op L M
+> 0 200 JMP 0 212
+> 1 203 JMP 0 206
+> 2 206 INC 0 3
+> 3 209 RTN 0 0
+> 4 212 INC 0 3
+> 5 215 CAL 0 203
+> 6 218 SYS 0 3
+12a14,16
+> entry kind name value level address mark
+> 0 procedure p - 0 203 1
+> 
+15c19,20
+< Error 12 at token 1 'procedure': procedure declarations are not part of this grammar
+---
+> program accepted
+> 

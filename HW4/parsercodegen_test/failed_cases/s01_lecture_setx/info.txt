@@ -1,0 +1,7 @@
+Test Case: s01_lecture_setx
+What this case covers: the lecture's setx program: 15 instructions, STO 1 3 for the outer x
+Reason: exit status should be 0, but it exited with status 1
+Expected: expected_results/s01_lecture_setx.txt
+Your Output: student_output/s01_lecture_setx_output.txt
+Expected elf.txt: expected_results/s01_lecture_setx.elf.txt
+Your elf.txt: student_output/s01_lecture_setx_elf.txt

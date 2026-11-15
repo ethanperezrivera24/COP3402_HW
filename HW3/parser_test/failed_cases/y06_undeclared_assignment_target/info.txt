@@ -1,5 +1,0 @@
-Test Case: y06_undeclared_assignment_target
-What this case covers: error 15: assignment to a name never declared
-Reason: unknown mode files in the manifest
-Expected: expected_results/y06_undeclared_assignment_target.txt
-Your Output: student_output/y06_undeclared_assignment_target_output.txt

@@ -1,0 +1,20 @@
+var a;
+procedure p;
+  var b;
+  procedure q;
+    var c;
+    begin
+      c = 3;
+      b = b + c;
+      a = a + b
+    end;
+  begin
+    b = 2;
+    call q;
+    write b
+  end;
+begin
+  a = 1;
+  call p;
+  write a
+end.

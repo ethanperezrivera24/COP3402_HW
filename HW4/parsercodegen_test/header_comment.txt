@@ -1,0 +1,36 @@
+/*
+Homework:
+parsercodegen - HW4 PL/0 compiler: parser, symbol table, and code generator
+
+Author(s): <Your Name Here>
+
+Language: C only
+
+To Compile:
+  gcc -Wall -Wextra -std=c11 -O2 parsercodegen.c -o parsercodegen
+
+To Execute (on Eustis):
+  ./lex <input_file> && ./parsercodegen && ./vm elf.txt
+
+where:
+  <input_file> is the path to a text file holding a PL/0 source program;
+  ./lex writes tokens.txt and nametable.txt, ./parsercodegen reads them
+  from the current directory, takes no arguments, and writes elf.txt, and
+  ./vm runs elf.txt
+
+Notes:
+  - Implements the recursive-descent compiler described in the homework
+    instructions: procedures, lexical levels, and PM/0 code generation.
+  - Prints three sections to standard output: Generated Code, Symbol
+    Table and Result.
+  - Writes elf.txt, one instruction per line as OP L M, only when the
+    whole program is accepted, and then exits with status 0.
+  - Stops at the first error, reports it, and exits with status 1.
+  - Tested on Eustis.
+
+Class: COP 3402 - Systems Software
+
+Instructor: Jie Lin, Ph.D.
+
+Due Date: See Webcourses
+*/

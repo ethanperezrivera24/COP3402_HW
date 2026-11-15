@@ -1,5 +1,0 @@
-Test Case: y21_first_of_two_undeclared
-What this case covers: error 15 at the first of two undeclared names: only the first error is reported
-Reason: unknown mode files in the manifest
-Expected: expected_results/y21_first_of_two_undeclared.txt
-Your Output: student_output/y21_first_of_two_undeclared_output.txt

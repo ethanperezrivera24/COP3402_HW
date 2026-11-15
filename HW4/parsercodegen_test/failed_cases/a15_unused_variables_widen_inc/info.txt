@@ -1,0 +1,7 @@
+Test Case: a15_unused_variables_widen_inc
+What this case covers: four declared variables make INC 0 7 even when none is used
+Reason: output differs from expected_results/a15_unused_variables_widen_inc.txt
+Expected: expected_results/a15_unused_variables_widen_inc.txt
+Your Output: student_output/a15_unused_variables_widen_inc_output.txt
+Expected elf.txt: expected_results/a15_unused_variables_widen_inc.elf.txt
+Your elf.txt: student_output/a15_unused_variables_widen_inc_elf.txt

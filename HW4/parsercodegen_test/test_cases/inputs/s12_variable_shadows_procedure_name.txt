@@ -1,0 +1,11 @@
+var r;
+procedure p;
+  var p;
+  begin
+    p = 4;
+    r = p * p
+  end;
+begin
+  call p;
+  write r
+end.

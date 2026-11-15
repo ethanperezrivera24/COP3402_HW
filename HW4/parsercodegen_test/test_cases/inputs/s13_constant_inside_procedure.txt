@@ -1,0 +1,12 @@
+var r;
+procedure p;
+  const ten := 10;
+  var t;
+  begin
+    t = ten;
+    r = t + ten
+  end;
+begin
+  call p;
+  write r
+end.

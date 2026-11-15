@@ -1,0 +1,11 @@
+var x, y;
+begin
+  read x;
+  if x == 1 then y = 1 fi;
+  if x != 1 then y = 2 fi;
+  if x < 1 then y = 3 fi;
+  if x <= 1 then y = 4 fi;
+  if x > 1 then y = 5 fi;
+  if x >= 1 then y = 6 fi;
+  write y
+end.

@@ -1,0 +1,8 @@
+const base := 100;
+var r;
+procedure p;
+  r = base + 1;
+begin
+  call p;
+  write r
+end.

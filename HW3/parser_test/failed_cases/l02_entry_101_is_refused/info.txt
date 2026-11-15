@@ -1,5 +1,0 @@
-Test Case: l02_entry_101_is_refused
-What this case covers: error 17 at the 101st declaration
-Reason: unknown mode files in the manifest
-Expected: expected_results/l02_entry_101_is_refused.txt
-Your Output: student_output/l02_entry_101_is_refused_output.txt

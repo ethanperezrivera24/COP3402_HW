@@ -1,0 +1,8 @@
+Generated Code:
+
+Symbol Table:
+
+Result:
+
+Error 16 at token 5 'p': only a variable may be assigned or read
+

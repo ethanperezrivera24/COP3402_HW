@@ -1,0 +1,90 @@
+a01_empty_program	a program that is only a period: the opening JMP, INC 0 3, and the halt
+a02_write_number	write of a number: LIT, then SYS 0 1
+a03_constants_take_no_slot	constants are LIT values and leave INC at 3
+a04_assignment_stores	assignment emits the expression, then STO 0 and the variable's address
+a05_read_then_store	read emits SYS 0 2, then STO
+a06_precedence_by_nesting	multiplication and division emitted inside addition and subtraction
+a07_subtraction_left_to_right	a chain of subtractions emits one SUB after each right operand
+a08_parentheses_change_order	parentheses emit their expression before the operator outside them
+a09_leading_minus_number	a leading minus on a number: LIT 0 0, the number, SUB
+a10_leading_minus_on_a_term	a leading minus applies to the whole first term, before the next +
+a11_leading_plus_emits_nothing	a leading plus emits no instruction
+a12_lecture_constant_and_division	the lecture's 13-instruction program with a constant, read, division, and write
+a13_constant_with_leading_zeros	a constant written 007 is LIT 0 7
+a14_six_digit_number	the largest number the scanner allows, 999999, as one LIT
+a15_unused_variables_widen_inc	four declared variables make INC 0 7 even when none is used
+a16_addresses_in_declaration_order	variables get addresses 3, 4, 5 in declaration order
+a17_empty_statements_emit_nothing	empty statements inside begin and end emit no instruction
+a18_nested_parentheses	parentheses nested three deep
+b01_if_then_fi	a one-arm if: JPC patched at fi to the instruction after the body
+b02_lecture_if_else	the lecture's if with else: JMP emitted at else, then the JPC patched
+b03_if_else_with_lists	both branches are statement lists of several statements
+b04_lecture_countdown_while	the lecture's countdown loop: back edge to the condition, exit patched after it
+b05_while_condition_with_expressions	a loop whose condition has an expression on each side
+b06_every_relational_operator	== != < <= > >= emit OPR 5 to 10
+b07_if_inside_while	the inner if's JPC is patched before the loop's own JPC
+b08_while_inside_while	two loops nested: each back edge goes to its own condition
+b09_if_else_inside_else	an if with else inside an else branch: two JMPs patched to two joins
+b10_two_ifs_in_sequence	two ifs one after the other, each patching only its own JPC
+b11_empty_then_list	an if with an empty body: the JPC lands on the very next instruction
+b12_empty_else_list	an empty else branch: the JMP lands on the very next instruction
+b13_empty_while_body	a loop with an empty body: JPC, then the JMP straight back
+b14_if_as_the_whole_statement	an if with no begin around it as the program's one statement
+b15_while_as_the_whole_statement	a loop with no begin around it as the program's one statement
+b16_else_if_chain	a chain of if inside else, three levels deep
+b17_condition_on_constants	constants on both sides of a condition are LIT values
+b18_hw2_nested_blocks	the HW2 nested-blocks program: a loop with begin inside, then an if with else
+s01_lecture_setx	the lecture's setx program: 15 instructions, STO 1 3 for the outer x
+s02_lecture_factorial	the course's factorial program: 28 instructions with the procedure's opening JMP
+s03_lecture_nested_siblings	the lecture's factorial with nested step and drive: 36 instructions
+s04_procedure_without_variables	a procedure that declares nothing still gets its JMP and INC 0 3
+s05_empty_procedure	a procedure whose block is empty: JMP, INC 0 3, RTN
+s06_procedure_never_called	a declared procedure's code is emitted even when no call names it
+s07_two_procedures_in_sequence	the second procedure's entry address follows the first one's RTN
+s08_level_difference_two	a procedure two levels down reaches a main variable with LOD 2 and STO 2
+s09_sibling_call	a procedure calls an earlier sibling: CAL 1 to the sibling's entry
+s10_recursive_call	a procedure calls itself: CAL 1 to its own opening JMP
+s11_local_shadows_global	a local x hides the global x: LOD 0 3 inside, LOD 0 3 outside, STO 1 for y
+s12_variable_shadows_procedure_name	inside p a variable named p hides the procedure p
+s13_constant_inside_procedure	a constant declared in a procedure is a LIT there and takes no slot
+s14_global_constant_in_procedure	a main constant used in a procedure is a LIT, with no level
+s15_read_into_outer_variable	read inside a procedure into a main variable: SYS 0 2, then STO 1
+s16_write_outer_variable	write inside a procedure of a main variable: LOD 1, then SYS 0 1
+s17_control_flow_inside_procedure	jumps inside a procedure carry absolute addresses past the main JMP
+s18_call_to_outer_sibling	a nested procedure calls its parent's earlier sibling: CAL 2
+s19_nested_calls_its_parent	a nested procedure calls the procedure enclosing it before that one's INC exists
+s20_inner_block_jump	a procedure that declares a procedure: its own JMP skips the inner body
+s21_four_levels	procedures nested three deep: LOD 3 reaches main from level 3
+s22_same_name_at_three_levels	one name declared at levels 0, 1 and 2: each use takes the nearest
+s23_hw2_procedure_program	the HW2 procedure program: a loop in main calls step
+s24_call_inside_while_and_if	calls inside a loop and inside both branches of an if
+g01_procedure_without_identifier	error 2: procedure followed by ; instead of a name
+g02_procedure_name_without_semicolon	error 12: the procedure name followed by begin
+g03_procedure_block_without_semicolon	error 12: the procedure's block followed by the period
+g04_call_without_identifier	error 2: call followed by a number
+g05_procedure_inside_begin	error 6: a procedure declaration where a statement must be
+g06_variables_after_procedure	error 1: a var declaration after the procedures
+y01_call_a_variable	error 13: call names a variable
+y02_call_a_constant	error 13: call names a constant
+y03_call_undeclared	error 15: call names nothing declared
+y04_procedure_in_expression	error 19: a procedure name used as a value
+y05_assign_to_procedure	error 16: a procedure name as an assignment target
+y06_read_into_procedure	error 16: a procedure name after read
+y07_duplicate_procedure_names	error 14: two procedures with one name in one block
+y08_procedure_named_like_variable	error 14: a procedure with the name of a variable of the same block
+y09_local_gone_after_procedure	error 15: main uses a name declared only inside a procedure
+y10_call_to_later_sibling	error 15: a procedure calls a sibling declared after it
+l01_table_full_inside_procedure	error 17: the 101st entry is a procedure declared inside a procedure
+l02_code_longer_than_200	error 20: the HW2 large program needs more than 200 instructions
+l03_missing_tokens_file	error 18: tokens.txt is not in the working directory
+l04_missing_nametable_file	error 18: nametable.txt is not in the working directory
+p01_pipeline_factorial	the program of s02 through your lex, compiler and VM, reading 5
+p02_pipeline_setx	the program of s01 through your lex, compiler and VM
+p03_pipeline_nested_siblings	the program of s03 through your lex, compiler and VM, reading 4
+p04_pipeline_recursive_sum	the program of s10 through your lex, compiler and VM, reading 4
+p05_pipeline_sibling_calls	the program of s09 through your lex, compiler and VM: static and dynamic links differ
+p06_pipeline_else_if_chain	the program of b16 through your lex, compiler and VM, reading 85
+p07_pipeline_countdown	the program of b04 through your lex, compiler and VM, reading 3
+p08_pipeline_every_operator	every operator, a leading minus, and a comment through your lex, compiler and VM (no compiler case)
+p09_pipeline_shadowing	the program of s11 through your lex, compiler and VM
+p10_pipeline_three_levels	the program of s08 through your lex, compiler and VM

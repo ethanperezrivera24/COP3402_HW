@@ -1,5 +1,0 @@
-Test Case: y07_undeclared_in_expression
-What this case covers: error 15: an undeclared name in an expression
-Reason: unknown mode files in the manifest
-Expected: expected_results/y07_undeclared_in_expression.txt
-Your Output: student_output/y07_undeclared_in_expression_output.txt

@@ -1,0 +1,7 @@
+Test Case: s05_empty_procedure
+What this case covers: a procedure whose block is empty: JMP, INC 0 3, RTN
+Reason: exit status should be 0, but it exited with status 1
+Expected: expected_results/s05_empty_procedure.txt
+Your Output: student_output/s05_empty_procedure_output.txt
+Expected elf.txt: expected_results/s05_empty_procedure.elf.txt
+Your elf.txt: student_output/s05_empty_procedure_elf.txt

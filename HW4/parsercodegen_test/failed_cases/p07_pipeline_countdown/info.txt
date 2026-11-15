@@ -1,0 +1,5 @@
+Test Case: p07_pipeline_countdown
+What this case covers: the program of b04 through your lex, compiler and VM, reading 3
+Reason: your vm failed: it exited with status 1; its output is in student_output/p07_pipeline_countdown_output.txt
+Expected: expected_results/p07_pipeline_countdown.txt
+Your Output: student_output/p07_pipeline_countdown_output.txt

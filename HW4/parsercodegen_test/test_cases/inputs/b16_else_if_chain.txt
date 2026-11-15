@@ -1,0 +1,17 @@
+var g;
+begin
+  read g;
+  if g >= 90 then
+    write 4
+  else
+    if g >= 80 then
+      write 3
+    else
+      if g >= 70 then
+        write 2
+      else
+        write 0
+      fi
+    fi
+  fi
+end.

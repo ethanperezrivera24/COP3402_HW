@@ -1,0 +1,8 @@
+Generated Code:
+
+Symbol Table:
+
+Result:
+
+Error 12 at token 6 'begin': a procedure name and a procedure block must each be followed by ;
+

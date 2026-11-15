@@ -1,0 +1,30 @@
+Generated Code:
+
+index  address  op   L  M
+0      200      JMP  0  230
+1      203      JMP  0  206
+2      206      INC  0  4
+3      209      LIT  0  4
+4      212      STO  0  3
+5      215      LOD  0  3
+6      218      LOD  0  3
+7      221      MUL  0  3
+8      224      STO  1  3
+9      227      RTN  0  0
+10     230      INC  0  4
+11     233      CAL  0  203
+12     236      LOD  0  3
+13     239      SYS  0  1
+14     242      SYS  0  3
+
+Symbol Table:
+
+entry  kind       name          value   level  address  mark
+0      variable   r             -       0      3        1
+1      procedure  p             -       0      203      1
+2      variable   p             -       1      3        1
+
+Result:
+
+program accepted
+

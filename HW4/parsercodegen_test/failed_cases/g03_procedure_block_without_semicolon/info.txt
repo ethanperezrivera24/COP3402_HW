@@ -1,0 +1,5 @@
+Test Case: g03_procedure_block_without_semicolon
+What this case covers: error 12: the procedure's block followed by the period
+Reason: output differs from expected_results/g03_procedure_block_without_semicolon.txt
+Expected: expected_results/g03_procedure_block_without_semicolon.txt
+Your Output: student_output/g03_procedure_block_without_semicolon_output.txt

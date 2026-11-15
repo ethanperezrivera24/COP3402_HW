@@ -1,0 +1,48 @@
+1c1
+< Name Table:
+---
+> Generated Code:
+3,16c3,18
+< index name line column
+< 0 r 1 5
+< 1 p 2 11
+< 2 ten 3 9
+< 3 t 4 7
+< 
+< Parse Trace:
+< 
+< token input text nonterminal
+< enter level 0
+< 1 32 var var-decl
+< 2 1 0 r var-decl
+< insert entry 0: variable r, level 0, address 3
+< 3 16 ; var-decl
+---
+> index address op L M
+> 0 200 JMP 0 230
+> 1 203 JMP 0 206
+> 2 206 INC 0 4
+> 3 209 LIT 0 10
+> 4 212 STO 0 3
+> 5 215 LOD 0 3
+> 6 218 LIT 0 10
+> 7 221 ADD 0 1
+> 8 224 STO 1 3
+> 9 227 RTN 0 0
+> 10 230 INC 0 4
+> 11 233 CAL 0 203
+> 12 236 LOD 0 3
+> 13 239 SYS 0 1
+> 14 242 SYS 0 3
+21c23,26
+< 0 variable r - 0 3 0
+---
+> 0 variable r - 0 3 1
+> 1 procedure p - 0 203 1
+> 2 constant ten 10 1 - 1
+> 3 variable t - 1 3 1
+25c30,31
+< Error 12 at token 4 'procedure': procedure declarations are not part of this grammar
+---
+> program accepted
+> 

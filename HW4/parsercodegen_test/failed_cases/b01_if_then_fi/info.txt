@@ -1,0 +1,7 @@
+Test Case: b01_if_then_fi
+What this case covers: a one-arm if: JPC patched at fi to the instruction after the body
+Reason: output differs from expected_results/b01_if_then_fi.txt
+Expected: expected_results/b01_if_then_fi.txt
+Your Output: student_output/b01_if_then_fi_output.txt
+Expected elf.txt: expected_results/b01_if_then_fi.elf.txt
+Your elf.txt: student_output/b01_if_then_fi_elf.txt

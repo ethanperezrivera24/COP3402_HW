@@ -1,0 +1,17 @@
+var total;
+procedure first;
+  total = total + 1;
+procedure second;
+  var k;
+  begin
+    k = 3;
+    while k > 0 then
+      call first;
+      k = k - 1
+    elihw
+  end;
+begin
+  total = 10;
+  call second;
+  write total
+end.

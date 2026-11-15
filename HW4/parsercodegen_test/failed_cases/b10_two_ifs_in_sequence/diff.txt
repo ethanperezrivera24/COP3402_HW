@@ -1,0 +1,73 @@
+1c1
+< Name Table:
+---
+> Generated Code:
+3,49c3,22
+< index name line column
+< 0 x 1 5
+< 
+< Parse Trace:
+< 
+< token input text nonterminal
+< enter level 0
+< 1 32 var var-decl
+< 2 1 0 x var-decl
+< insert entry 0: variable x, level 0, address 3
+< 3 16 ; var-decl
+< 4 20 begin statement
+< 5 35 read statement
+< 6 1 0 x statement
+< lookup x: entry 0, variable, level 0
+< 7 16 ; statement-list
+< 8 22 if statement
+< 9 1 0 x factor
+< lookup x: entry 0, variable, level 0
+< 10 11 > condition
+< 11 2 5 5 factor
+< 12 24 then statement
+< 13 1 0 x statement
+< lookup x: entry 0, variable, level 0
+< 14 18 = statement
+< 15 2 5 5 factor
+< 16 23 fi statement
+< 17 16 ; statement-list
+< 18 22 if statement
+< 19 1 0 x factor
+< lookup x: entry 0, variable, level 0
+< 20 9 < condition
+< 21 2 0 0 factor
+< 22 24 then statement
+< 23 1 0 x statement
+< lookup x: entry 0, variable, level 0
+< 24 18 = statement
+< 25 2 0 0 factor
+< 26 23 fi statement
+< 27 16 ; statement-list
+< 28 34 write statement
+< 29 1 0 x factor
+< lookup x: entry 0, variable, level 0
+< 30 21 end statement
+< mark entry 0
+< leave level 0
+< 31 17 . program
+---
+> index address op L M
+> 0 200 JMP 0 203
+> 1 203 INC 0 4
+> 2 206 SYS 0 2
+> 3 209 STO 0 3
+> 4 212 LOD 0 3
+> 5 215 LIT 0 5
+> 6 218 GTR 0 9
+> 7 221 JPC 0 230
+> 8 224 LIT 0 5
+> 9 227 STO 0 3
+> 10 230 LOD 0 3
+> 11 233 LIT 0 0
+> 12 236 LSS 0 7
+> 13 239 JPC 0 248
+> 14 242 LIT 0 0
+> 15 245 STO 0 3
+> 16 248 LOD 0 3
+> 17 251 SYS 0 1
+> 18 254 SYS 0 3

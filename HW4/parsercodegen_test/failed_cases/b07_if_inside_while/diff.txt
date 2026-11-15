@@ -1,0 +1,105 @@
+1c1
+< Name Table:
+---
+> Generated Code:
+3,70c3,33
+< index name line column
+< 0 n 1 5
+< 1 halves 1 8
+< 
+< Parse Trace:
+< 
+< token input text nonterminal
+< enter level 0
+< 1 32 var var-decl
+< 2 1 0 n var-decl
+< insert entry 0: variable n, level 0, address 3
+< 3 15 , var-decl
+< 4 1 1 halves var-decl
+< insert entry 1: variable halves, level 0, address 4
+< 5 16 ; var-decl
+< 6 20 begin statement
+< 7 35 read statement
+< 8 1 0 n statement
+< lookup n: entry 0, variable, level 0
+< 9 16 ; statement-list
+< 10 1 1 halves statement
+< lookup halves: entry 1, variable, level 0
+< 11 18 = statement
+< 12 2 0 0 factor
+< 13 16 ; statement-list
+< 14 25 while statement
+< 15 1 0 n factor
+< lookup n: entry 0, variable, level 0
+< 16 11 > condition
+< 17 2 0 0 factor
+< 18 24 then statement
+< 19 22 if statement
+< 20 1 0 n factor
+< lookup n: entry 0, variable, level 0
+< 21 6 / term
+< 22 2 2 2 factor
+< 23 5 * term
+< 24 2 2 2 factor
+< 25 8 != condition
+< 26 1 0 n factor
+< lookup n: entry 0, variable, level 0
+< 27 24 then statement
+< 28 1 1 halves statement
+< lookup halves: entry 1, variable, level 0
+< 29 18 = statement
+< 30 1 1 halves factor
+< lookup halves: entry 1, variable, level 0
+< 31 3 + expression
+< 32 2 1 1 factor
+< 33 23 fi statement
+< 34 16 ; statement-list
+< 35 1 0 n statement
+< lookup n: entry 0, variable, level 0
+< 36 18 = statement
+< 37 1 0 n factor
+< lookup n: entry 0, variable, level 0
+< 38 4 - expression
+< 39 2 1 1 factor
+< 40 26 elihw statement
+< 41 16 ; statement-list
+< 42 34 write statement
+< 43 1 1 halves factor
+< lookup halves: entry 1, variable, level 0
+< 44 21 end statement
+< mark entry 0
+< mark entry 1
+< leave level 0
+< 45 17 . program
+---
+> index address op L M
+> 0 200 JMP 0 203
+> 1 203 INC 0 5
+> 2 206 SYS 0 2
+> 3 209 STO 0 3
+> 4 212 LIT 0 0
+> 5 215 STO 0 4
+> 6 218 LOD 0 3
+> 7 221 LIT 0 0
+> 8 224 GTR 0 9
+> 9 227 JPC 0 281
+> 10 230 LOD 0 3
+> 11 233 LIT 0 2
+> 12 236 DIV 0 4
+> 13 239 LIT 0 2
+> 14 242 MUL 0 3
+> 15 245 LOD 0 3
+> 16 248 NEQ 0 6
+> 17 251 JPC 0 266
+> 18 254 LOD 0 4
+> 19 257 LIT 0 1
+> 20 260 ADD 0 1
+> 21 263 STO 0 4
+> 22 266 LOD 0 3
+> 23 269 LIT 0 1
+> 24 272 SUB 0 2
+> 25 275 STO 0 3
+> 26 278 JMP 0 218
+> 27 281 LOD 0 4
+> 28 284 SYS 0 1
+> 29 287 SYS 0 3

@@ -1,5 +1,0 @@
-Test Case: p07_pipeline_crlf_line_endings
-What this case covers: your lex on a program with Windows line endings
-Reason: unknown mode pipeline in the manifest
-Expected: expected_results/p07_pipeline_crlf_line_endings.txt
-Your Output: student_output/p07_pipeline_crlf_line_endings_output.txt

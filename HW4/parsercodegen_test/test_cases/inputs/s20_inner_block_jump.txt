@@ -1,0 +1,14 @@
+var x;
+procedure p;
+  var y;
+  procedure q;
+    y = y + 1;
+  begin
+    y = 1;
+    call q;
+    x = y
+  end;
+begin
+  call p;
+  write x
+end.

@@ -1,5 +1,0 @@
-Test Case: y10_undeclared_in_condition
-What this case covers: error 15: an undeclared name in a condition
-Reason: unknown mode files in the manifest
-Expected: expected_results/y10_undeclared_in_condition.txt
-Your Output: student_output/y10_undeclared_in_condition_output.txt

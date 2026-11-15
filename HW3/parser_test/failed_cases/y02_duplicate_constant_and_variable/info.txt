@@ -1,5 +1,0 @@
-Test Case: y02_duplicate_constant_and_variable
-What this case covers: error 14: a variable with the name of a constant
-Reason: unknown mode files in the manifest
-Expected: expected_results/y02_duplicate_constant_and_variable.txt
-Your Output: student_output/y02_duplicate_constant_and_variable_output.txt

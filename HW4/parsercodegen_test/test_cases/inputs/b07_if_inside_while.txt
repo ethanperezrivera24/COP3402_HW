@@ -1,0 +1,12 @@
+var n, halves;
+begin
+  read n;
+  halves = 0;
+  while n > 0 then
+    if n / 2 * 2 != n then
+      halves = halves + 1
+    fi;
+    n = n - 1
+  elihw;
+  write halves
+end.

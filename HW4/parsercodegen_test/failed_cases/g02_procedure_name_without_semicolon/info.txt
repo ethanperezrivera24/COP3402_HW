@@ -1,0 +1,5 @@
+Test Case: g02_procedure_name_without_semicolon
+What this case covers: error 12: the procedure name followed by begin
+Reason: output differs from expected_results/g02_procedure_name_without_semicolon.txt
+Expected: expected_results/g02_procedure_name_without_semicolon.txt
+Your Output: student_output/g02_procedure_name_without_semicolon_output.txt

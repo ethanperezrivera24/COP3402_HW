@@ -1,0 +1,8 @@
+Generated Code:
+
+Symbol Table:
+
+Result:
+
+Error 6 at token 9 'procedure': begin must be closed with end
+

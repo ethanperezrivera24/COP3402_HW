@@ -1,0 +1,4 @@
+var x;
+procedure p;
+  ;
+x = p + 1.

@@ -1,0 +1,7 @@
+Test Case: b05_while_condition_with_expressions
+What this case covers: a loop whose condition has an expression on each side
+Reason: output differs from expected_results/b05_while_condition_with_expressions.txt
+Expected: expected_results/b05_while_condition_with_expressions.txt
+Your Output: student_output/b05_while_condition_with_expressions_output.txt
+Expected elf.txt: expected_results/b05_while_condition_with_expressions.elf.txt
+Your elf.txt: student_output/b05_while_condition_with_expressions_elf.txt
