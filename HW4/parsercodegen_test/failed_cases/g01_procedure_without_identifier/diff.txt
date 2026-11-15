@@ -1,14 +1,5 @@
-1,6c1
-< Name Table:
-< 
-< Parse Trace:
-< 
-< token input text nonterminal
-< enter level 0
----
-> Generated Code:
-12c7,8
-< Error 12 at token 1 'procedure': procedure declarations are not part of this grammar
+7c7,8
+< Error 12 at token 1 'procedure': a procedure name and a procedure block must each be followed by ;
 ---
 > Error 2 at token 2 ';': const, var, procedure, call, and read must be followed by an identifier
 > 

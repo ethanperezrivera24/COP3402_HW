@@ -1,22 +1,4 @@
-1c1
-< Name Table:
----
-> Generated Code:
-3,15c3,18
-< index name line column
-< 0 x 1 5
-< 1 setx 2 11
-< 2 t 3 7
-< 
-< Parse Trace:
-< 
-< token input text nonterminal
-< enter level 0
-< 1 32 var var-decl
-< 2 1 0 x var-decl
-< insert entry 0: variable x, level 0, address 3
-< 3 16 ; var-decl
----
+2a3,19
 > index address op L M
 > 0 200 JMP 0 224
 > 1 203 JMP 0 206
@@ -33,14 +15,15 @@
 > 12 236 LOD 0 3
 > 13 239 SYS 0 1
 > 14 242 SYS 0 3
-20c23,25
-< 0 variable x - 0 3 0
----
+> 
+4a22,26
+> entry kind name value level address mark
 > 0 variable x - 0 3 1
 > 1 procedure setx - 0 203 1
 > 2 variable t - 1 3 1
-24c29,30
-< Error 12 at token 4 'procedure': procedure declarations are not part of this grammar
+> 
+7c29,30
+< Error 12 at token 4 'procedure': a procedure name and a procedure block must each be followed by ;
 ---
 > program accepted
 > 

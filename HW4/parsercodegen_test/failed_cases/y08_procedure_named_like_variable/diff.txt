@@ -1,25 +1,5 @@
-1,13c1
-< Name Table:
-< 
-< index name line column
-< 0 p 1 5
-< 
-< Parse Trace:
-< 
-< token input text nonterminal
-< enter level 0
-< 1 32 var var-decl
-< 2 1 0 p var-decl
-< insert entry 0: variable p, level 0, address 3
-< 3 16 ; var-decl
----
-> Generated Code:
-17,19d4
-< entry kind name value level address mark
-< 0 variable p - 0 3 0
-< 
-22c7,8
-< Error 12 at token 4 'procedure': procedure declarations are not part of this grammar
+7c7,8
+< Error 12 at token 4 'procedure': a procedure name and a procedure block must each be followed by ;
 ---
 > Error 14 at token 5 'p': identifier already declared in this block
 > 

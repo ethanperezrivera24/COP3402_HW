@@ -1,6 +1,0 @@
-1,3c1
-< Name Table:
-< 
-< Parse Trace:
----
-> Generated Code:

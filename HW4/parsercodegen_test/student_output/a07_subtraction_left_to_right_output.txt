@@ -1,27 +1,4 @@
-Name Table:
-
-index name line column
-0 x 1 5
-
-Parse Trace:
-
-token input text nonterminal
-  enter level 0
-1 32 var var-decl
-2 1 0 x var-decl
-  insert entry 0: variable x, level 0, address 3
-3 16 ; var-decl
-4 1 0 x statement
-  lookup x: entry 0, variable, level 0
-5 18 = statement
-6 2 10 10 factor
-7 4 - expression
-8 2 3 3 factor
-9 4 - expression
-10 2 2 2 factor
-  mark entry 0
-  leave level 0
-11 17 . program
+Generated Code:
 
 Symbol Table:
 
