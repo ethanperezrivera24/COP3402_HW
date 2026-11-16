@@ -1,6 +1,6 @@
 Test Case: s07_two_procedures_in_sequence
 What this case covers: the second procedure's entry address follows the first one's RTN
-Reason: exit status should be 0, but it exited with status 1
+Reason: output differs from expected_results/s07_two_procedures_in_sequence.txt
 Expected: expected_results/s07_two_procedures_in_sequence.txt
 Your Output: student_output/s07_two_procedures_in_sequence_output.txt
 Expected elf.txt: expected_results/s07_two_procedures_in_sequence.elf.txt

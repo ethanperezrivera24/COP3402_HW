@@ -1,5 +1,0 @@
-7c7,8
-< Error 12 at token 82 'procedure': a procedure name and a procedure block must each be followed by ;
----
-> Error 17 at token 205 'q': symbol table is full
-> 

@@ -1,5 +1,0 @@
-Test Case: y08_procedure_named_like_variable
-What this case covers: error 14: a procedure with the name of a variable of the same block
-Reason: output differs from expected_results/y08_procedure_named_like_variable.txt
-Expected: expected_results/y08_procedure_named_like_variable.txt
-Your Output: student_output/y08_procedure_named_like_variable_output.txt

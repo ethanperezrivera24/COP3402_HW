@@ -2,6 +2,10 @@ Generated Code:
 
 Symbol Table:
 
+entry kind name value level address mark
+0 variable x - 0 3 1
+1 procedure show - 0 - 1
+
 Result:
 
-Error 12 at token 4 'procedure': a procedure name and a procedure block must each be followed by ;
+program accepted

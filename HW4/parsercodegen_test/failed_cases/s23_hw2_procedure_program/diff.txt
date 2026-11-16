@@ -27,15 +27,7 @@
 > 24 272 SYS 0 1
 > 25 275 SYS 0 3
 > 
-4a33,38
-> entry kind name value level address mark
-> 0 constant limit 10 0 - 1
-> 1 variable count - 0 3 1
-> 2 variable total - 0 4 1
-> 3 procedure step - 0 203 1
-> 
-7c41,42
-< Error 12 at token 11 'procedure': a procedure name and a procedure block must each be followed by ;
+9c37
+< 3 procedure step - 0 - 1
 ---
-> program accepted
-> 
+> 3 procedure step - 0 203 1

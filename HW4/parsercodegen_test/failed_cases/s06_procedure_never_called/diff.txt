@@ -11,13 +11,7 @@
 > 8 224 SYS 0 1
 > 9 227 SYS 0 3
 > 
-4a17,20
-> entry kind name value level address mark
-> 0 variable x - 0 3 1
-> 1 procedure unused - 0 203 1
-> 
-7c23,24
-< Error 12 at token 4 'procedure': a procedure name and a procedure block must each be followed by ;
+7c19
+< 1 procedure unused - 0 - 1
 ---
-> program accepted
-> 
+> 1 procedure unused - 0 203 1

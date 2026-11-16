@@ -1,6 +1,6 @@
 Test Case: s18_call_to_outer_sibling
 What this case covers: a nested procedure calls its parent's earlier sibling: CAL 2
-Reason: exit status should be 0, but it exited with status 1
+Reason: output differs from expected_results/s18_call_to_outer_sibling.txt
 Expected: expected_results/s18_call_to_outer_sibling.txt
 Your Output: student_output/s18_call_to_outer_sibling_output.txt
 Expected elf.txt: expected_results/s18_call_to_outer_sibling.elf.txt

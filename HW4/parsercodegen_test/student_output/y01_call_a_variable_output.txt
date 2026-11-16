@@ -4,4 +4,4 @@ Symbol Table:
 
 Result:
 
-Error 13 at token 4 'call': call must name a procedure
+Error 13 at token 5 'x': call must name a procedure

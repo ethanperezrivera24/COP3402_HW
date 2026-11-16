@@ -4,4 +4,4 @@ Symbol Table:
 
 Result:
 
-Error 13 at token 1 'call': call must name a procedure
+Error 2 at token 2 '5': const, var, procedure, call, and read must be followed by an identifier

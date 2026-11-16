@@ -14,14 +14,7 @@
 > 11 233 SYS 0 1
 > 12 236 SYS 0 3
 > 
-4a20,24
-> entry kind name value level address mark
-> 0 constant base 100 0 - 1
-> 1 variable r - 0 3 1
-> 2 procedure p - 0 203 1
-> 
-7c27,28
-< Error 12 at token 9 'procedure': a procedure name and a procedure block must each be followed by ;
+8c23
+< 2 procedure p - 0 - 1
 ---
-> program accepted
-> 
+> 2 procedure p - 0 203 1

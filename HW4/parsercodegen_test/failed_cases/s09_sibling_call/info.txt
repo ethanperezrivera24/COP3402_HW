@@ -1,6 +1,6 @@
 Test Case: s09_sibling_call
 What this case covers: a procedure calls an earlier sibling: CAL 1 to the sibling's entry
-Reason: exit status should be 0, but it exited with status 1
+Reason: output differs from expected_results/s09_sibling_call.txt
 Expected: expected_results/s09_sibling_call.txt
 Your Output: student_output/s09_sibling_call_output.txt
 Expected elf.txt: expected_results/s09_sibling_call.elf.txt

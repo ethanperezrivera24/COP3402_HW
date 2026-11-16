@@ -1,5 +1,0 @@
-Test Case: y07_duplicate_procedure_names
-What this case covers: error 14: two procedures with one name in one block
-Reason: output differs from expected_results/y07_duplicate_procedure_names.txt
-Expected: expected_results/y07_duplicate_procedure_names.txt
-Your Output: student_output/y07_duplicate_procedure_names_output.txt

@@ -1,6 +1,6 @@
 Test Case: s03_lecture_nested_siblings
 What this case covers: the lecture's factorial with nested step and drive: 36 instructions
-Reason: exit status should be 0, but it exited with status 1
+Reason: output differs from expected_results/s03_lecture_nested_siblings.txt
 Expected: expected_results/s03_lecture_nested_siblings.txt
 Your Output: student_output/s03_lecture_nested_siblings_output.txt
 Expected elf.txt: expected_results/s03_lecture_nested_siblings.elf.txt

@@ -1,5 +1,0 @@
-7c7,8
-< Error 12 at token 4 'procedure': a procedure name and a procedure block must each be followed by ;
----
-> Error 14 at token 5 'p': identifier already declared in this block
-> 

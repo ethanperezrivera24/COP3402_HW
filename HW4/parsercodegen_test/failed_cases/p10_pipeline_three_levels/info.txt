@@ -1,5 +1,5 @@
 Test Case: p10_pipeline_three_levels
 What this case covers: the program of s08 through your lex, compiler and VM
-Reason: your parsercodegen failed: it exited with status 1; its output is in student_output/p10_pipeline_three_levels_compiler_output.txt
+Reason: your vm failed: it exited with status 1; its output is in student_output/p10_pipeline_three_levels_output.txt
 Expected: expected_results/p10_pipeline_three_levels.txt
 Your Output: student_output/p10_pipeline_three_levels_output.txt

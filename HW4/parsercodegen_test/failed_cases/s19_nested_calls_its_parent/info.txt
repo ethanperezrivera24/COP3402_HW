@@ -1,6 +1,6 @@
 Test Case: s19_nested_calls_its_parent
 What this case covers: a nested procedure calls the procedure enclosing it before that one's INC exists
-Reason: exit status should be 0, but it exited with status 1
+Reason: output differs from expected_results/s19_nested_calls_its_parent.txt
 Expected: expected_results/s19_nested_calls_its_parent.txt
 Your Output: student_output/s19_nested_calls_its_parent_output.txt
 Expected elf.txt: expected_results/s19_nested_calls_its_parent.elf.txt

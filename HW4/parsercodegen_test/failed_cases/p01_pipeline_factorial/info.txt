@@ -1,5 +1,5 @@
 Test Case: p01_pipeline_factorial
 What this case covers: the program of s02 through your lex, compiler and VM, reading 5
-Reason: your parsercodegen failed: it exited with status 1; its output is in student_output/p01_pipeline_factorial_compiler_output.txt
+Reason: your vm failed: it exited with status 1; its output is in student_output/p01_pipeline_factorial_output.txt
 Expected: expected_results/p01_pipeline_factorial.txt
 Your Output: student_output/p01_pipeline_factorial_output.txt

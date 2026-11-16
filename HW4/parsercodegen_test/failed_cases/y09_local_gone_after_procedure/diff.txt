@@ -1,5 +1,0 @@
-7c7,8
-< Error 12 at token 1 'procedure': a procedure name and a procedure block must each be followed by ;
----
-> Error 15 at token 12 't': undeclared identifier
-> 

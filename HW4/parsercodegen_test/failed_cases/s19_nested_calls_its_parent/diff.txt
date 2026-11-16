@@ -25,14 +25,9 @@
 > 22 266 SYS 0 1
 > 23 269 SYS 0 3
 > 
-4a31,35
-> entry kind name value level address mark
-> 0 variable n - 0 3 1
+7,8c33,34
+< 1 procedure outer - 0 - 1
+< 2 procedure inner - 1 - 1
+---
 > 1 procedure outer - 0 203 1
 > 2 procedure inner - 1 206 1
-> 
-7c38,39
-< Error 12 at token 4 'procedure': a procedure name and a procedure block must each be followed by ;
----
-> program accepted
-> 

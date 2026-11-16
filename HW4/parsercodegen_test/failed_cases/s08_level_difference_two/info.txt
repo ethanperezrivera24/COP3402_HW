@@ -1,6 +1,6 @@
 Test Case: s08_level_difference_two
 What this case covers: a procedure two levels down reaches a main variable with LOD 2 and STO 2
-Reason: exit status should be 0, but it exited with status 1
+Reason: output differs from expected_results/s08_level_difference_two.txt
 Expected: expected_results/s08_level_difference_two.txt
 Your Output: student_output/s08_level_difference_two_output.txt
 Expected elf.txt: expected_results/s08_level_difference_two.elf.txt

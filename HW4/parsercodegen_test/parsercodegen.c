@@ -48,6 +48,12 @@ Due Date: See Webcourses
 // kinds
 #define CONSTANT 1
 #define VARIABLE 2
+#define PROCEDURE 3
+
+// how a name is being used, decides which kind is allowed
+#define USE_TARGET 1 // assignment target or read: must be a variable (error 16)
+#define USE_CALL 2   // after call: must be a procedure (error 13)
+#define USE_VALUE 3  // inside a factor: constant or variable, a procedure is error 19
 
 // token, nameEntry, tokenType structs copied from lex.c
 // token codes
@@ -145,20 +151,21 @@ void fail(int n, int i);
 int currentCode(void);
 void consume(void);
 void program(void);
-void block(void);
-void constDeclaration(void);
-void varDeclaration(void);
-void statement(void);
-void statementList(void);
-void condition(void);
-void expression(void);
-void term(void);
-void factor(void);
-int isDuplicate(int nameTableIndex);
+void block(int level);
+void constDeclaration(int level);
+void procDeclaration(int level);
+void varDeclaration(int level);
+void statement(int level);
+void statementList(int level);
+void condition(int level);
+void expression(int level);
+void term(int level);
+void factor(int level);
+int isDuplicate(int nameTableIndex, int level);
 int lookup(int nameTableIndex);
-void insertHelper(int kind, int nameIndex, int value, int address);
-void declarationHelper(int nameIndex);
-int lookupHelper(int nameIndex, int mustBeVariable);
+void insertHelper(int kind, int nameIndex, int value, int address, int level);
+void declarationHelper(int nameIndex, int level);
+int lookupHelper(int nameIndex, int use);
 
 int main(int argc, char *argv[]) {
     if(argc != 1) {
@@ -241,11 +248,14 @@ void printSymbolTable(void) {
         printf("entry kind name value level address mark\n");
         for(int i = 0; i < symbolCount; i++){
             printf("%d ", i); // entry number
-            if(symbolTable[i].kind == CONSTANT){ // kind
+              if(symbolTable[i].kind == CONSTANT){ // kind
                 printf("constant ");
             }
-            else{
+            else if(symbolTable[i].kind == VARIABLE){
                 printf("variable ");
+            }
+            else{
+                printf("procedure ");
             }
             printf("%s ", names[symbolTable[i].nameIndex].name); // name
 
@@ -304,7 +314,7 @@ void consume(void) {
 
 // program -> block "."
 void program(void) {
-    block();
+    block(0);
 
     if(currentCode() != periodsym) {
         fail(1, cur);
@@ -317,24 +327,36 @@ void program(void) {
     }
 }
 
-// block -> [ const-decl ] [ var-decl ] statement
-void block(void) {
+// block -> [ const-decl ] [ var-decl ] { proc-decl } statement
+void block(int level) {
+    int start = symbolCount;         // entries from here on belong to this block
+    int savedAddress = nextAddress;  // the enclosing block's next address
+    nextAddress = 3;                 // every block's variables start at 3
+
     if(currentCode() == constsym) {
-        constDeclaration();
+        constDeclaration(level);
     }
     if(currentCode() == varsym) {
-        varDeclaration();
+        varDeclaration(level);
     }
-    statement();
+    while(currentCode() == procsym) {
+        procDeclaration(level);
+    }
+    statement(level);
 
-    // the block ended, so its names are hidden from lookups but stay in the table
-    for(int i = 0; i < symbolCount; i++){
-        symbolTable[i].mark = 1;
+    // the block ended: mark only this block's entries
+    // they stay in the table and still count toward the limit, but no lookup finds them
+    for(int i = start; i < symbolCount; i++){
+        if(symbolTable[i].level == level && symbolTable[i].mark == 0){
+            symbolTable[i].mark = 1;
+        }
     }
+
+    nextAddress = savedAddress;      // hand the enclosing block its value back
 }
 
 // const-decl -> "const" ident ":=" number { "," ident ":=" number } ";"
-void constDeclaration(void) {
+void constDeclaration(int level) {
     consume();
 
     // one pass per ident := number, a comma after the number starts another pass
@@ -344,7 +366,7 @@ void constDeclaration(void) {
         }
         consume();
         int nameIndex = tokens[cur - 1].value;
-        declarationHelper(nameIndex);
+        declarationHelper(nameIndex, level);
 
         if(currentCode() != initsym) {
             fail(3, cur);
@@ -356,7 +378,7 @@ void constDeclaration(void) {
         }
         consume();
         int value = atoi(tokens[cur-1].lexeme);
-        insertHelper(CONSTANT, nameIndex, value, -1);
+        insertHelper(CONSTANT, nameIndex, value, -1, level);
 
         if(currentCode() != commasym) {
             break;
@@ -370,10 +392,36 @@ void constDeclaration(void) {
     consume();
 }
 
-// a helper to check duplicate and symbolCount for kind declaration
-void declarationHelper(int nameIndex){
-    // check for duplicates
-    if(isDuplicate(nameIndex)){ // nameIndex is duplicate
+// proc-decl -> "procedure" ident ";" block ";"
+void procDeclaration(int level) {
+    consume(); // procedure
+
+    if(currentCode() != identsym) {
+        fail(2, cur);
+    }
+    consume();
+    int nameIndex = tokens[cur - 1].value;
+    declarationHelper(nameIndex, level);
+    // entry goes in BEFORE the block is parsed, so the procedure can call itself
+    // value is -1 (a procedure has none), address is -1 until code generation exists
+    insertHelper(PROCEDURE, nameIndex, -1, -1, level);
+
+    if(currentCode() != semicolonsym) {
+        fail(12, cur);
+    }
+    consume();
+
+    block(level + 1); // the body is one level deeper
+
+    if(currentCode() != semicolonsym) {
+        fail(12, cur);
+    }
+    consume();
+}
+
+void declarationHelper(int nameIndex, int level){
+    // check for duplicates at this level
+    if(isDuplicate(nameIndex, level)){ // nameIndex is duplicate
         fail(14, cur-1);
     }
 
@@ -382,24 +430,30 @@ void declarationHelper(int nameIndex){
     }
 }
 
-// a helper to look up a used identifier and check its kind
-// mustBeVariable is 1 for assignment and read targets, 0 for a factor
-int lookupHelper(int nameIndex, int mustBeVariable){
+// a helper to look up a used identifier and check its kind against how it is used
+// the lookup comes first (15), then the kind check, both at the identifier just consumed
+int lookupHelper(int nameIndex, int use){
     int entry = lookup(nameIndex);
 
     if(entry == -1){ // nameIndex is not declared
         fail(15, cur-1);
     }
 
-    if(mustBeVariable == 1 && symbolTable[entry].kind != VARIABLE){ // only a VARIABLE can be assigned or read
+    if(use == USE_TARGET && symbolTable[entry].kind != VARIABLE){ // only a variable can be assigned or read
         fail(16, cur-1);
+    }
+    if(use == USE_CALL && symbolTable[entry].kind != PROCEDURE){ // only a procedure can be called
+        fail(13, cur-1);
+    }
+    if(use == USE_VALUE && symbolTable[entry].kind == PROCEDURE){ // a procedure has no value
+        fail(19, cur-1);
     }
 
     return entry;
 }
 
 // var-decl -> "var" ident { "," ident } ";"
-void varDeclaration(void) {
+void varDeclaration(int level) {
     consume();
 
     if(currentCode() != identsym) {
@@ -407,8 +461,8 @@ void varDeclaration(void) {
     }
     consume();
     int nameIndex = tokens[cur - 1].value;
-    declarationHelper(nameIndex);
-    insertHelper(VARIABLE, nameIndex, -1, nextAddress);
+    declarationHelper(nameIndex, level);
+    insertHelper(VARIABLE, nameIndex, -1, nextAddress, level);
 
     while(currentCode() == commasym) {
         consume();
@@ -417,8 +471,8 @@ void varDeclaration(void) {
         }
         consume();
         nameIndex = tokens[cur - 1].value;
-        declarationHelper(nameIndex);
-        insertHelper(VARIABLE, nameIndex, -1, nextAddress);
+        declarationHelper(nameIndex, level);
+        insertHelper(VARIABLE, nameIndex, -1, nextAddress, level);
     }
 
     if(currentCode() != semicolonsym) {
@@ -429,39 +483,39 @@ void varDeclaration(void) {
 
 // statement -> [ ident "=" expression | "begin" ... | "if" ... | "while" ... | "read" ident | "write" expression ]
 // the first token picks the alternative, any other token is the empty statement
-void statement(void) {
+void statement(int level) {
     int code = currentCode();
 
     if(code == identsym) {
         consume();
         // lookup and kind check come before the = check
         int nameIndex = tokens[cur - 1].value;
-        lookupHelper(nameIndex, 1);
+        lookupHelper(nameIndex, USE_TARGET);
 
         if(currentCode() != assignsym) {
             fail(5, cur);
         }
         consume();
-        expression();
+        expression(level);
     } else if(code == beginsym) {
         consume();
-        statementList();
+        statementList(level);
         if(currentCode() != endsym) {
             fail(6, cur);
         }
         consume();
     } else if(code == ifsym) {
         consume();
-        condition();
+        condition(level);
         if(currentCode() != thensym) {
             fail(7, cur);
         }
         consume();
-        statementList();
+        statementList(level);
         // else part is optional, fi closes the if either way
         if(currentCode() == elsesym) {
             consume();
-            statementList();
+            statementList(level);
         }
         if(currentCode() != fisym) {
             fail(8, cur);
@@ -469,12 +523,12 @@ void statement(void) {
         consume();
     } else if(code == whilesym) {
         consume();
-        condition();
+        condition(level);
         if(currentCode() != thensym) {
             fail(7, cur);
         }
         consume();
-        statementList();
+        statementList(level);
         if(currentCode() != elihwsym) {
             fail(8, cur);
         }
@@ -486,30 +540,34 @@ void statement(void) {
         }
         consume();
         int nameIndex = tokens[cur - 1].value;
-        lookupHelper(nameIndex, 1);
+        lookupHelper(nameIndex, USE_TARGET);
     } else if(code == writesym) {
         consume();
-        expression();
-    } else if(code == procsym) {
-        fail(12, cur);
+        expression(level);
     } else if(code == callsym) {
-        fail(13, cur);
+        consume();
+        if(currentCode() != identsym) {
+            fail(2, cur); // call must be followed by an identifier
+        }
+        consume();
+        int nameIndex = tokens[cur - 1].value;
+        lookupHelper(nameIndex, USE_CALL);
     }
     // anything else: empty statement, consume nothing
 }
 
 // statement-list -> statement { ";" statement }
-void statementList(void) {
-    statement();
+void statementList(int level) {
+    statement(level);
     while(currentCode() == semicolonsym) {
         consume();
-        statement();
+        statement(level);
     }
 }
 
 // condition -> expression ( "==" | "!=" | "<" | "<=" | ">" | ">=" ) expression
-void condition(void) {
-    expression();
+void condition(int level) {
+    expression(level);
 
     // the six relational codes are in a row (eqsym to geqsym)
     // currentCode() is 0 at end of tokens, so that case lands in the error too
@@ -517,41 +575,41 @@ void condition(void) {
         fail(9, cur);
     }
     consume();
-    expression();
+    expression(level);
 }
 
 // expression -> [ "+" | "-" ] term { ( "+" | "-" ) term }
-void expression(void) {
+void expression(int level) {
     if(currentCode() == plussym || currentCode() == minussym) {
         consume();
     }
-    term();
+    term(level);
     while(currentCode() == plussym || currentCode() == minussym) {
         consume();
-        term();
+        term(level);
     }
 }
 
 // term -> factor { ( "*" | "/" ) factor }
-void term(void) {
-    factor();
+void term(int level) {
+    factor(level);
     while(currentCode() == multsym || currentCode() == slashsym) {
         consume();
-        factor();
+        factor(level);
     }
 }
 
 // factor -> ident | number | "(" expression ")"
-void factor(void) {
+void factor(int level) {
     if(currentCode() == identsym) {
         consume();
         int nameIndex = tokens[cur - 1].value;
-        lookupHelper(nameIndex, 0); // a CONSTANT or a VARIABLE can both be in an expression
+        lookupHelper(nameIndex, USE_VALUE); // a CONSTANT or a VARIABLE can both be in an expression
     } else if(currentCode() == numbersym) {
         consume();
     } else if(currentCode() == lparentsym) {
         consume();
-        expression();
+        expression(level);
         if(currentCode() != rparentsym) {
             fail(10, cur);
         }
@@ -561,32 +619,35 @@ void factor(void) {
     }
 }
 
-int isDuplicate(int nameTableIndex){ // check if the name table index is duplicate
-    int lookupValue = lookup(nameTableIndex);
-
-    if(lookupValue == -1){ // not duplicate
-        return 0;
+// duplicate only means an unmarked entry with this name at the SAME level
+// the same name at another level is allowed: the new entry shadows it
+int isDuplicate(int nameTableIndex, int level){
+    for(int i = 0; i < symbolCount; i++){
+        if(symbolTable[i].nameIndex == nameTableIndex && symbolTable[i].level == level && symbolTable[i].mark == 0){
+            return 1; // duplicate
+        }
     }
 
-    return 1; // duplicate
+    return 0; // not duplicate
 }
 
-int lookup(int nameTableIndex){ // search the symbol table for the identifier that was just consumed
-    for(int i = 0; i < symbolCount; i++){
+// newest to oldest, any level, first unmarked match
+int lookup(int nameTableIndex){
+    for(int i = symbolCount - 1; i >= 0; i--){
         if(symbolTable[i].nameIndex == nameTableIndex && symbolTable[i].mark == 0){
             return i;
         }
-    } 
+    }
 
     return -1; // nothing is matched
 }
 
-void insertHelper(int kind, int nameIndex, int value, int address){
+void insertHelper(int kind, int nameIndex, int value, int address, int level){
     symbolTable[symbolCount].kind = kind;
     symbolTable[symbolCount].nameIndex = nameIndex;
     symbolTable[symbolCount].value = value;
     symbolTable[symbolCount].address = address;
-    symbolTable[symbolCount].level = 0;
+    symbolTable[symbolCount].level = level;
     symbolTable[symbolCount].mark = 0;
 
     if(kind == VARIABLE)
