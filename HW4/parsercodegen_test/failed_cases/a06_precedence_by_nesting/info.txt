@@ -1,7 +1,0 @@
-Test Case: a06_precedence_by_nesting
-What this case covers: multiplication and division emitted inside addition and subtraction
-Reason: output differs from expected_results/a06_precedence_by_nesting.txt
-Expected: expected_results/a06_precedence_by_nesting.txt
-Your Output: student_output/a06_precedence_by_nesting_output.txt
-Expected elf.txt: expected_results/a06_precedence_by_nesting.elf.txt
-Your elf.txt: student_output/a06_precedence_by_nesting_elf.txt

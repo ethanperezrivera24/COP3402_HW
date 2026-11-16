@@ -1,17 +1,19 @@
-2a3,14
-> index address op L M
+4c4
+< 0 200 JMP 0 215
+---
 > 0 200 JMP 0 218
-> 1 203 JMP 0 206
-> 2 206 INC 0 3
-> 3 209 LIT 0 99
-> 4 212 STO 1 3
+9,12c9,13
+< 5 215 INC 0 4
+< 6 218 LIT 0 1
+< 7 221 SYS 0 1
+< 8 224 SYS 0 3
+---
 > 5 215 RTN 0 0
 > 6 218 INC 0 4
 > 7 221 LIT 0 1
 > 8 224 SYS 0 1
 > 9 227 SYS 0 3
-> 
-7c19
+18c19
 < 1 procedure unused - 0 - 1
 ---
 > 1 procedure unused - 0 203 1

@@ -1,8 +1,0 @@
-2a3,9
-> index address op L M
-> 0 200 JMP 0 203
-> 1 203 INC 0 7
-> 2 206 LIT 0 1
-> 3 209 SYS 0 1
-> 4 212 SYS 0 3
-> 

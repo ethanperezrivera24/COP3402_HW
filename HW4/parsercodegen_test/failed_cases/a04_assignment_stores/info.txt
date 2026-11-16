@@ -1,7 +1,0 @@
-Test Case: a04_assignment_stores
-What this case covers: assignment emits the expression, then STO 0 and the variable's address
-Reason: output differs from expected_results/a04_assignment_stores.txt
-Expected: expected_results/a04_assignment_stores.txt
-Your Output: student_output/a04_assignment_stores_output.txt
-Expected elf.txt: expected_results/a04_assignment_stores.elf.txt
-Your elf.txt: student_output/a04_assignment_stores_elf.txt
