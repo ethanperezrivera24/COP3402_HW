@@ -1,7 +1,0 @@
-Test Case: a18_nested_parentheses
-What this case covers: parentheses nested three deep
-Reason: output differs from expected_results/a18_nested_parentheses.txt
-Expected: expected_results/a18_nested_parentheses.txt
-Your Output: student_output/a18_nested_parentheses_output.txt
-Expected elf.txt: expected_results/a18_nested_parentheses.elf.txt
-Your elf.txt: student_output/a18_nested_parentheses_elf.txt

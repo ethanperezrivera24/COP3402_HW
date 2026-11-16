@@ -1,7 +1,0 @@
-Test Case: a05_read_then_store
-What this case covers: read emits SYS 0 2, then STO
-Reason: output differs from expected_results/a05_read_then_store.txt
-Expected: expected_results/a05_read_then_store.txt
-Your Output: student_output/a05_read_then_store_output.txt
-Expected elf.txt: expected_results/a05_read_then_store.elf.txt
-Your elf.txt: student_output/a05_read_then_store_elf.txt

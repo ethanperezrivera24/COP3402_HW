@@ -1,7 +1,0 @@
-Test Case: a12_lecture_constant_and_division
-What this case covers: the lecture's 13-instruction program with a constant, read, division, and write
-Reason: output differs from expected_results/a12_lecture_constant_and_division.txt
-Expected: expected_results/a12_lecture_constant_and_division.txt
-Your Output: student_output/a12_lecture_constant_and_division_output.txt
-Expected elf.txt: expected_results/a12_lecture_constant_and_division.elf.txt
-Your elf.txt: student_output/a12_lecture_constant_and_division_elf.txt

@@ -1,7 +1,0 @@
-Test Case: a08_parentheses_change_order
-What this case covers: parentheses emit their expression before the operator outside them
-Reason: output differs from expected_results/a08_parentheses_change_order.txt
-Expected: expected_results/a08_parentheses_change_order.txt
-Your Output: student_output/a08_parentheses_change_order_output.txt
-Expected elf.txt: expected_results/a08_parentheses_change_order.elf.txt
-Your elf.txt: student_output/a08_parentheses_change_order_elf.txt

@@ -1,7 +1,0 @@
-Test Case: a10_leading_minus_on_a_term
-What this case covers: a leading minus applies to the whole first term, before the next +
-Reason: output differs from expected_results/a10_leading_minus_on_a_term.txt
-Expected: expected_results/a10_leading_minus_on_a_term.txt
-Your Output: student_output/a10_leading_minus_on_a_term_output.txt
-Expected elf.txt: expected_results/a10_leading_minus_on_a_term.elf.txt
-Your elf.txt: student_output/a10_leading_minus_on_a_term_elf.txt

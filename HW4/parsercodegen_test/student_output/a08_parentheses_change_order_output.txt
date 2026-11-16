@@ -1,5 +1,18 @@
 Generated Code:
 
+index address op L M
+0 200 JMP 0 203
+1 203 INC 0 4
+2 206 LIT 0 10
+3 209 LIT 0 3
+4 212 SUB 0 2
+5 215 LIT 0 2
+6 218 LIT 0 1
+7 221 ADD 0 1
+8 224 MUL 0 3
+9 227 STO 0 3
+10 230 SYS 0 3
+
 Symbol Table:
 
 entry kind name value level address mark

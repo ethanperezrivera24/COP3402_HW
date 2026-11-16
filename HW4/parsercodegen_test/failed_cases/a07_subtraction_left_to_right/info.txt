@@ -1,7 +1,0 @@
-Test Case: a07_subtraction_left_to_right
-What this case covers: a chain of subtractions emits one SUB after each right operand
-Reason: output differs from expected_results/a07_subtraction_left_to_right.txt
-Expected: expected_results/a07_subtraction_left_to_right.txt
-Your Output: student_output/a07_subtraction_left_to_right_output.txt
-Expected elf.txt: expected_results/a07_subtraction_left_to_right.elf.txt
-Your elf.txt: student_output/a07_subtraction_left_to_right_elf.txt

@@ -1,1 +1,10 @@
-Error: cannot open elf.txt
+	L	M	PC	BP	SP	stack
+Initial values:		200	999	1000
+JMP	0	257	257	999	1000	
+INC	0	4	260	999	996	0 0 0 0 
+LIT	0	1	263	999	995	0 0 0 0 1 
+STO	0	3	266	999	996	0 0 0 1 
+LOD	0	3	269	999	995	0 0 0 1 1 
+Output result is: 1
+SYS	0	1	272	999	996	0 0 0 1 
+SYS	0	3	275	999	996	0 0 0 1 

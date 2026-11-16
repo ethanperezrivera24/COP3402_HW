@@ -1,7 +1,0 @@
-Test Case: a11_leading_plus_emits_nothing
-What this case covers: a leading plus emits no instruction
-Reason: output differs from expected_results/a11_leading_plus_emits_nothing.txt
-Expected: expected_results/a11_leading_plus_emits_nothing.txt
-Your Output: student_output/a11_leading_plus_emits_nothing_output.txt
-Expected elf.txt: expected_results/a11_leading_plus_emits_nothing.elf.txt
-Your elf.txt: student_output/a11_leading_plus_emits_nothing_elf.txt

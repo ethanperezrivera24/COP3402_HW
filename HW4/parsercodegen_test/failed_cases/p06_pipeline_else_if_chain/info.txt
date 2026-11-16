@@ -1,5 +1,5 @@
 Test Case: p06_pipeline_else_if_chain
 What this case covers: the program of b16 through your lex, compiler and VM, reading 85
-Reason: your vm failed: it exited with status 1; its output is in student_output/p06_pipeline_else_if_chain_output.txt
+Reason: VM output differs from expected_results/p06_pipeline_else_if_chain.txt
 Expected: expected_results/p06_pipeline_else_if_chain.txt
 Your Output: student_output/p06_pipeline_else_if_chain_output.txt
