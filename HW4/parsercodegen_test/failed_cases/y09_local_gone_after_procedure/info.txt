@@ -1,5 +1,0 @@
-Test Case: y09_local_gone_after_procedure
-What this case covers: error 15: main uses a name declared only inside a procedure
-Reason: output differs from expected_results/y09_local_gone_after_procedure.txt
-Expected: expected_results/y09_local_gone_after_procedure.txt
-Your Output: student_output/y09_local_gone_after_procedure_output.txt

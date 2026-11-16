@@ -41,15 +41,9 @@
 > 38 314 SYS 0 1
 > 39 317 SYS 0 3
 > 
-4a47,52
-> entry kind name value level address mark
-> 0 variable i - 0 3 1
-> 1 variable s - 0 4 1
+8,9c50,51
+< 2 procedure inc - 0 - 1
+< 3 procedure dec - 0 - 1
+---
 > 2 procedure inc - 0 203 1
 > 3 procedure dec - 0 224 1
-> 
-7c55,56
-< Error 12 at token 6 'procedure': a procedure name and a procedure block must each be followed by ;
----
-> program accepted
-> 

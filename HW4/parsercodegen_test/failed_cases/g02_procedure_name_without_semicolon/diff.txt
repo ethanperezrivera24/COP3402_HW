@@ -1,5 +1,0 @@
-7c7,8
-< Error 12 at token 4 'procedure': a procedure name and a procedure block must each be followed by ;
----
-> Error 12 at token 6 'begin': a procedure name and a procedure block must each be followed by ;
-> 

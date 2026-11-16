@@ -1,5 +1,0 @@
-Test Case: y03_call_undeclared
-What this case covers: error 15: call names nothing declared
-Reason: output differs from expected_results/y03_call_undeclared.txt
-Expected: expected_results/y03_call_undeclared.txt
-Your Output: student_output/y03_call_undeclared_output.txt

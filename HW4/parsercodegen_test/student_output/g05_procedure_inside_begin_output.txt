@@ -4,4 +4,4 @@ Symbol Table:
 
 Result:
 
-Error 12 at token 9 'procedure': a procedure name and a procedure block must each be followed by ;
+Error 6 at token 9 'procedure': begin must be closed with end

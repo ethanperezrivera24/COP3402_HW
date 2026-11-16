@@ -1,5 +1,0 @@
-Test Case: y01_call_a_variable
-What this case covers: error 13: call names a variable
-Reason: output differs from expected_results/y01_call_a_variable.txt
-Expected: expected_results/y01_call_a_variable.txt
-Your Output: student_output/y01_call_a_variable_output.txt

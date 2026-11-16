@@ -1,6 +1,6 @@
 Test Case: s20_inner_block_jump
 What this case covers: a procedure that declares a procedure: its own JMP skips the inner body
-Reason: exit status should be 0, but it exited with status 1
+Reason: output differs from expected_results/s20_inner_block_jump.txt
 Expected: expected_results/s20_inner_block_jump.txt
 Your Output: student_output/s20_inner_block_jump_output.txt
 Expected elf.txt: expected_results/s20_inner_block_jump.elf.txt

@@ -1,5 +1,0 @@
-Test Case: y10_call_to_later_sibling
-What this case covers: error 15: a procedure calls a sibling declared after it
-Reason: output differs from expected_results/y10_call_to_later_sibling.txt
-Expected: expected_results/y10_call_to_later_sibling.txt
-Your Output: student_output/y10_call_to_later_sibling_output.txt

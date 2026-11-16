@@ -1,6 +1,6 @@
 Test Case: s04_procedure_without_variables
 What this case covers: a procedure that declares nothing still gets its JMP and INC 0 3
-Reason: exit status should be 0, but it exited with status 1
+Reason: output differs from expected_results/s04_procedure_without_variables.txt
 Expected: expected_results/s04_procedure_without_variables.txt
 Your Output: student_output/s04_procedure_without_variables_output.txt
 Expected elf.txt: expected_results/s04_procedure_without_variables.elf.txt

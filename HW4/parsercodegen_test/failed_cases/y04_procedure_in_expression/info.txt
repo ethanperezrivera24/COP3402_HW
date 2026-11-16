@@ -1,5 +1,0 @@
-Test Case: y04_procedure_in_expression
-What this case covers: error 19: a procedure name used as a value
-Reason: output differs from expected_results/y04_procedure_in_expression.txt
-Expected: expected_results/y04_procedure_in_expression.txt
-Your Output: student_output/y04_procedure_in_expression_output.txt

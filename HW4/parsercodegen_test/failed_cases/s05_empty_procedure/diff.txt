@@ -8,12 +8,7 @@
 > 5 215 CAL 0 203
 > 6 218 SYS 0 3
 > 
-4a14,16
-> entry kind name value level address mark
-> 0 procedure p - 0 203 1
-> 
-7c19,20
-< Error 12 at token 1 'procedure': a procedure name and a procedure block must each be followed by ;
+6c15
+< 0 procedure p - 0 - 1
 ---
-> program accepted
-> 
+> 0 procedure p - 0 203 1

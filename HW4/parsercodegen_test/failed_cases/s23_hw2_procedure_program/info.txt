@@ -1,6 +1,6 @@
 Test Case: s23_hw2_procedure_program
 What this case covers: the HW2 procedure program: a loop in main calls step
-Reason: exit status should be 0, but it exited with status 1
+Reason: output differs from expected_results/s23_hw2_procedure_program.txt
 Expected: expected_results/s23_hw2_procedure_program.txt
 Your Output: student_output/s23_hw2_procedure_program_output.txt
 Expected elf.txt: expected_results/s23_hw2_procedure_program.elf.txt

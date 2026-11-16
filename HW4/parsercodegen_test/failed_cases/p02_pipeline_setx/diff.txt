@@ -1,4 +1,6 @@
-0a1,18
+1c1,18
+< Error: cannot open elf.txt
+---
 > L M PC BP SP stack
 > Initial values: 200 999 1000
 > JMP 0 224 224 999 1000

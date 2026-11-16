@@ -1,5 +1,0 @@
-Test Case: l01_table_full_inside_procedure
-What this case covers: error 17: the 101st entry is a procedure declared inside a procedure
-Reason: output differs from expected_results/l01_table_full_inside_procedure.txt
-Expected: expected_results/l01_table_full_inside_procedure.txt
-Your Output: student_output/l01_table_full_inside_procedure_output.txt

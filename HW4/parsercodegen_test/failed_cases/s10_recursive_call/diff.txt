@@ -27,14 +27,7 @@
 > 24 272 SYS 0 1
 > 25 275 SYS 0 3
 > 
-4a33,37
-> entry kind name value level address mark
-> 0 variable n - 0 3 1
-> 1 variable sum - 0 4 1
-> 2 procedure add - 0 203 1
-> 
-7c40,41
-< Error 12 at token 6 'procedure': a procedure name and a procedure block must each be followed by ;
+8c36
+< 2 procedure add - 0 - 1
 ---
-> program accepted
-> 
+> 2 procedure add - 0 203 1

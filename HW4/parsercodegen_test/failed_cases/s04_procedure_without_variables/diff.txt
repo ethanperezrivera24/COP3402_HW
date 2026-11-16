@@ -16,13 +16,7 @@
 > 13 239 SYS 0 1
 > 14 242 SYS 0 3
 > 
-4a22,25
-> entry kind name value level address mark
-> 0 variable x - 0 3 1
-> 1 procedure bump - 0 203 1
-> 
-7c28,29
-< Error 12 at token 4 'procedure': a procedure name and a procedure block must each be followed by ;
+7c24
+< 1 procedure bump - 0 - 1
 ---
-> program accepted
-> 
+> 1 procedure bump - 0 203 1
