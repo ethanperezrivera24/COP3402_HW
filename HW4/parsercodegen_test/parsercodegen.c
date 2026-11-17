@@ -293,14 +293,14 @@ const char *tokenText(int i) {
     return spellings[tokens[i].code];
 }
 
-// stub for now, filled in with the symbol table phases
+// filled in with the symbol table phases
 void printSymbolTable(void) {
     printf("Symbol Table:\n\n");
     if(symbolCount > 0){
         printf("entry kind name value level address mark\n");
         for(int i = 0; i < symbolCount; i++){
             printf("%d ", i); // entry number
-              if(symbolTable[i].kind == CONSTANT){ // kind
+            if(symbolTable[i].kind == CONSTANT){ // kind
                 printf("constant ");
             }
             else if(symbolTable[i].kind == VARIABLE){
@@ -596,12 +596,12 @@ void varDeclaration(int level) {
     consume();
 }
 
-// statement -> [ ident "=" expression | "begin" ... | "if" ... | "while" ... | "read" ident | "write" expression ]
+// statement -> [ ident "=" expression | "call" ident | "begin" ... | "if" ... | "while" ... | "read" ident | "write" expression ]
 // the first token picks the alternative, any other token is the empty statement
 void statement(int level) {
-    int code = currentCode();
+    int firstCode = currentCode();
 
-    if(code == identsym) {
+    if(firstCode == identsym) {
         consume();
         // lookup and kind check come before the = check
         int nameIndex = tokens[cur - 1].value;
@@ -613,43 +613,57 @@ void statement(int level) {
         consume();
         expression(level);
         emit(STO, level - symbolTable[entry].level, symbolTable[entry].address);
-    } else if(code == beginsym) {
+    } else if(firstCode == beginsym) {
         consume();
         statementList(level);
         if(currentCode() != endsym) {
             fail(6, cur);
         }
         consume();
-    } else if(code == ifsym) {
+    } else if(firstCode == ifsym) {
         consume();
         condition(level);
         if(currentCode() != thensym) {
             fail(7, cur);
         }
         consume();
+        int jpc = emit(JPC, 0, 0); // jumps over the then list when the condition is 0, target not known yet
         statementList(level);
-        // else part is optional, fi closes the if either way
+
         if(currentCode() == elsesym) {
+            int jmp = emit(JMP, 0, 0); // ends the then list by jumping over the else list
+            patch(jpc);                // emitted first so the JPC lands after this JMP, on the else list
             consume();
             statementList(level);
+            if(currentCode() != fisym) {
+                fail(8, cur);
+            }
+            consume();
+            patch(jmp);                // the JMP lands right after the else list
+        } else {
+            if(currentCode() != fisym) {
+                fail(8, cur);
+            }
+            consume();
+            patch(jpc);                // the JPC lands right after the then list
         }
-        if(currentCode() != fisym) {
-            fail(8, cur);
-        }
+    } else if(firstCode == whilesym) {
         consume();
-    } else if(code == whilesym) {
-        consume();
+        int loopStart = nextCodeAddress(); // W: saved BEFORE the condition emits anything
         condition(level);
         if(currentCode() != thensym) {
             fail(7, cur);
         }
         consume();
+        int jpc = emit(JPC, 0, 0); // leaves the loop when the condition is 0, target not known yet
         statementList(level);
         if(currentCode() != elihwsym) {
             fail(8, cur);
         }
         consume();
-    } else if(code == readsym) {
+        emit(JMP, 0, loopStart);   // back to re-test the condition, emitted BEFORE the patch
+        patch(jpc);                // the exit lands right after the backward jump
+    } else if(firstCode == readsym) {
         consume();
         if(currentCode() != identsym) {
             fail(2, cur);
@@ -659,11 +673,11 @@ void statement(int level) {
         int entry = lookupHelper(nameIndex, USE_TARGET);
         emit(SYS, 0, 2); // read an integer, it lands on the stack
         emit(STO, level - symbolTable[entry].level, symbolTable[entry].address);
-    } else if(code == writesym) {
+    } else if(firstCode == writesym) {
         consume();
         expression(level);
         emit(SYS, 0, 1); // print the value the expression left on the stack
-    } else if(code == callsym) {
+    } else if(firstCode == callsym) {
         consume();
         if(currentCode() != identsym) {
             fail(2, cur); // call must be followed by an identifier
@@ -693,8 +707,12 @@ void condition(int level) {
     if(currentCode() < eqsym || currentCode() > geqsym) {
         fail(9, cur);
     }
+    int op = currentCode(); // save it, consume moves on
     consume();
     expression(level);
+
+    // eqsym..geqsym and EQL..GEQ are in the same order, so the offset carries over
+    emit(OPR, 0, EQL + (op - eqsym));
 }
 
 // expression -> [ "+" | "-" ] term { ( "+" | "-" ) term }

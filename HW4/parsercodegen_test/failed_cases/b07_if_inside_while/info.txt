@@ -1,7 +1,0 @@
-Test Case: b07_if_inside_while
-What this case covers: the inner if's JPC is patched before the loop's own JPC
-Reason: output differs from expected_results/b07_if_inside_while.txt
-Expected: expected_results/b07_if_inside_while.txt
-Your Output: student_output/b07_if_inside_while_output.txt
-Expected elf.txt: expected_results/b07_if_inside_while.elf.txt
-Your elf.txt: student_output/b07_if_inside_while_elf.txt

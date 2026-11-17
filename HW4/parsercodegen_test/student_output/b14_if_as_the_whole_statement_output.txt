@@ -5,9 +5,11 @@ index address op L M
 1 203 INC 0 4
 2 206 LOD 0 3
 3 209 LIT 0 0
-4 212 LIT 0 1
-5 215 SYS 0 1
-6 218 SYS 0 3
+4 212 EQL 0 5
+5 215 JPC 0 224
+6 218 LIT 0 1
+7 221 SYS 0 1
+8 224 SYS 0 3
 
 Symbol Table:
 

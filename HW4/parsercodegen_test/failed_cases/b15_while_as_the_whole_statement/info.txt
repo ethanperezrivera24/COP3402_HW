@@ -1,7 +1,0 @@
-Test Case: b15_while_as_the_whole_statement
-What this case covers: a loop with no begin around it as the program's one statement
-Reason: output differs from expected_results/b15_while_as_the_whole_statement.txt
-Expected: expected_results/b15_while_as_the_whole_statement.txt
-Your Output: student_output/b15_while_as_the_whole_statement_output.txt
-Expected elf.txt: expected_results/b15_while_as_the_whole_statement.elf.txt
-Your elf.txt: student_output/b15_while_as_the_whole_statement_elf.txt

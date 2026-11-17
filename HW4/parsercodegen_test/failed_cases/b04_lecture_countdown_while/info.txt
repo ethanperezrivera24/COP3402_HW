@@ -1,7 +1,0 @@
-Test Case: b04_lecture_countdown_while
-What this case covers: the lecture's countdown loop: back edge to the condition, exit patched after it
-Reason: output differs from expected_results/b04_lecture_countdown_while.txt
-Expected: expected_results/b04_lecture_countdown_while.txt
-Your Output: student_output/b04_lecture_countdown_while_output.txt
-Expected elf.txt: expected_results/b04_lecture_countdown_while.elf.txt
-Your elf.txt: student_output/b04_lecture_countdown_while_elf.txt

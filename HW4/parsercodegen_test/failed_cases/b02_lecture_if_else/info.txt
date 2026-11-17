@@ -1,7 +1,0 @@
-Test Case: b02_lecture_if_else
-What this case covers: the lecture's if with else: JMP emitted at else, then the JPC patched
-Reason: output differs from expected_results/b02_lecture_if_else.txt
-Expected: expected_results/b02_lecture_if_else.txt
-Your Output: student_output/b02_lecture_if_else_output.txt
-Expected elf.txt: expected_results/b02_lecture_if_else.elf.txt
-Your elf.txt: student_output/b02_lecture_if_else_elf.txt

@@ -1,7 +1,0 @@
-Test Case: b10_two_ifs_in_sequence
-What this case covers: two ifs one after the other, each patching only its own JPC
-Reason: output differs from expected_results/b10_two_ifs_in_sequence.txt
-Expected: expected_results/b10_two_ifs_in_sequence.txt
-Your Output: student_output/b10_two_ifs_in_sequence_output.txt
-Expected elf.txt: expected_results/b10_two_ifs_in_sequence.elf.txt
-Your elf.txt: student_output/b10_two_ifs_in_sequence_elf.txt
