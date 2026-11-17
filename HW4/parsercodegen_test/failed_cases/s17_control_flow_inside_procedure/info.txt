@@ -1,7 +1,0 @@
-Test Case: s17_control_flow_inside_procedure
-What this case covers: jumps inside a procedure carry absolute addresses past the main JMP
-Reason: output differs from expected_results/s17_control_flow_inside_procedure.txt
-Expected: expected_results/s17_control_flow_inside_procedure.txt
-Your Output: student_output/s17_control_flow_inside_procedure_output.txt
-Expected elf.txt: expected_results/s17_control_flow_inside_procedure.elf.txt
-Your elf.txt: student_output/s17_control_flow_inside_procedure_elf.txt

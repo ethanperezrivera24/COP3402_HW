@@ -1,7 +1,0 @@
-Test Case: s12_variable_shadows_procedure_name
-What this case covers: inside p a variable named p hides the procedure p
-Reason: output differs from expected_results/s12_variable_shadows_procedure_name.txt
-Expected: expected_results/s12_variable_shadows_procedure_name.txt
-Your Output: student_output/s12_variable_shadows_procedure_name_output.txt
-Expected elf.txt: expected_results/s12_variable_shadows_procedure_name.elf.txt
-Your elf.txt: student_output/s12_variable_shadows_procedure_name_elf.txt

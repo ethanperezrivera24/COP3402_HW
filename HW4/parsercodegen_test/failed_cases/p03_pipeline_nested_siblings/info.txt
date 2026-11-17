@@ -1,5 +1,0 @@
-Test Case: p03_pipeline_nested_siblings
-What this case covers: the program of s03 through your lex, compiler and VM, reading 4
-Reason: VM output differs from expected_results/p03_pipeline_nested_siblings.txt
-Expected: expected_results/p03_pipeline_nested_siblings.txt
-Your Output: student_output/p03_pipeline_nested_siblings_output.txt

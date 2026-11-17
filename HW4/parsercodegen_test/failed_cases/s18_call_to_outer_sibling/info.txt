@@ -1,7 +1,0 @@
-Test Case: s18_call_to_outer_sibling
-What this case covers: a nested procedure calls its parent's earlier sibling: CAL 2
-Reason: output differs from expected_results/s18_call_to_outer_sibling.txt
-Expected: expected_results/s18_call_to_outer_sibling.txt
-Your Output: student_output/s18_call_to_outer_sibling_output.txt
-Expected elf.txt: expected_results/s18_call_to_outer_sibling.elf.txt
-Your elf.txt: student_output/s18_call_to_outer_sibling_elf.txt

@@ -1,7 +1,0 @@
-Test Case: s10_recursive_call
-What this case covers: a procedure calls itself: CAL 1 to its own opening JMP
-Reason: output differs from expected_results/s10_recursive_call.txt
-Expected: expected_results/s10_recursive_call.txt
-Your Output: student_output/s10_recursive_call_output.txt
-Expected elf.txt: expected_results/s10_recursive_call.elf.txt
-Your elf.txt: student_output/s10_recursive_call_elf.txt
