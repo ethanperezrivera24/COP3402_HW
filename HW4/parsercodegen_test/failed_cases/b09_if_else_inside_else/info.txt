@@ -1,7 +1,0 @@
-Test Case: b09_if_else_inside_else
-What this case covers: an if with else inside an else branch: two JMPs patched to two joins
-Reason: output differs from expected_results/b09_if_else_inside_else.txt
-Expected: expected_results/b09_if_else_inside_else.txt
-Your Output: student_output/b09_if_else_inside_else_output.txt
-Expected elf.txt: expected_results/b09_if_else_inside_else.elf.txt
-Your elf.txt: student_output/b09_if_else_inside_else_elf.txt

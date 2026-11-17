@@ -1,7 +1,0 @@
-Test Case: b11_empty_then_list
-What this case covers: an if with an empty body: the JPC lands on the very next instruction
-Reason: output differs from expected_results/b11_empty_then_list.txt
-Expected: expected_results/b11_empty_then_list.txt
-Your Output: student_output/b11_empty_then_list_output.txt
-Expected elf.txt: expected_results/b11_empty_then_list.elf.txt
-Your elf.txt: student_output/b11_empty_then_list_elf.txt

@@ -1,7 +1,0 @@
-Test Case: b18_hw2_nested_blocks
-What this case covers: the HW2 nested-blocks program: a loop with begin inside, then an if with else
-Reason: output differs from expected_results/b18_hw2_nested_blocks.txt
-Expected: expected_results/b18_hw2_nested_blocks.txt
-Your Output: student_output/b18_hw2_nested_blocks_output.txt
-Expected elf.txt: expected_results/b18_hw2_nested_blocks.elf.txt
-Your elf.txt: student_output/b18_hw2_nested_blocks_elf.txt

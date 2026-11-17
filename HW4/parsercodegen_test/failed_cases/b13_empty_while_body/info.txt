@@ -1,7 +1,0 @@
-Test Case: b13_empty_while_body
-What this case covers: a loop with an empty body: JPC, then the JMP straight back
-Reason: output differs from expected_results/b13_empty_while_body.txt
-Expected: expected_results/b13_empty_while_body.txt
-Your Output: student_output/b13_empty_while_body_output.txt
-Expected elf.txt: expected_results/b13_empty_while_body.elf.txt
-Your elf.txt: student_output/b13_empty_while_body_elf.txt
