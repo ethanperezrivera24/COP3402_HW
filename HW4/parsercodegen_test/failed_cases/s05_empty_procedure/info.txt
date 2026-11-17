@@ -1,7 +1,0 @@
-Test Case: s05_empty_procedure
-What this case covers: a procedure whose block is empty: JMP, INC 0 3, RTN
-Reason: output differs from expected_results/s05_empty_procedure.txt
-Expected: expected_results/s05_empty_procedure.txt
-Your Output: student_output/s05_empty_procedure_output.txt
-Expected elf.txt: expected_results/s05_empty_procedure.elf.txt
-Your elf.txt: student_output/s05_empty_procedure_elf.txt

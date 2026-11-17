@@ -1,7 +1,0 @@
-Test Case: s22_same_name_at_three_levels
-What this case covers: one name declared at levels 0, 1 and 2: each use takes the nearest
-Reason: output differs from expected_results/s22_same_name_at_three_levels.txt
-Expected: expected_results/s22_same_name_at_three_levels.txt
-Your Output: student_output/s22_same_name_at_three_levels_output.txt
-Expected elf.txt: expected_results/s22_same_name_at_three_levels.elf.txt
-Your elf.txt: student_output/s22_same_name_at_three_levels_elf.txt

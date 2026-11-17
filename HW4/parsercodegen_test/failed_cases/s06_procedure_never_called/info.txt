@@ -1,7 +1,0 @@
-Test Case: s06_procedure_never_called
-What this case covers: a declared procedure's code is emitted even when no call names it
-Reason: output differs from expected_results/s06_procedure_never_called.txt
-Expected: expected_results/s06_procedure_never_called.txt
-Your Output: student_output/s06_procedure_never_called_output.txt
-Expected elf.txt: expected_results/s06_procedure_never_called.elf.txt
-Your elf.txt: student_output/s06_procedure_never_called_elf.txt

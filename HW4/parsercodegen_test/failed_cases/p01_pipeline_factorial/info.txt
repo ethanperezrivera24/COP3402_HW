@@ -1,5 +1,0 @@
-Test Case: p01_pipeline_factorial
-What this case covers: the program of s02 through your lex, compiler and VM, reading 5
-Reason: VM output differs from expected_results/p01_pipeline_factorial.txt
-Expected: expected_results/p01_pipeline_factorial.txt
-Your Output: student_output/p01_pipeline_factorial_output.txt

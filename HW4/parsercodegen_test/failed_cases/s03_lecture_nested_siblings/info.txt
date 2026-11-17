@@ -1,7 +1,0 @@
-Test Case: s03_lecture_nested_siblings
-What this case covers: the lecture's factorial with nested step and drive: 36 instructions
-Reason: output differs from expected_results/s03_lecture_nested_siblings.txt
-Expected: expected_results/s03_lecture_nested_siblings.txt
-Your Output: student_output/s03_lecture_nested_siblings_output.txt
-Expected elf.txt: expected_results/s03_lecture_nested_siblings.elf.txt
-Your elf.txt: student_output/s03_lecture_nested_siblings_elf.txt

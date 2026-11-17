@@ -1,5 +1,0 @@
-Test Case: p10_pipeline_three_levels
-What this case covers: the program of s08 through your lex, compiler and VM
-Reason: VM output differs from expected_results/p10_pipeline_three_levels.txt
-Expected: expected_results/p10_pipeline_three_levels.txt
-Your Output: student_output/p10_pipeline_three_levels_output.txt

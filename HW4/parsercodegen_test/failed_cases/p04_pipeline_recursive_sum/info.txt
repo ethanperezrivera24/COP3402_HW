@@ -1,5 +1,0 @@
-Test Case: p04_pipeline_recursive_sum
-What this case covers: the program of s10 through your lex, compiler and VM, reading 4
-Reason: VM output differs from expected_results/p04_pipeline_recursive_sum.txt
-Expected: expected_results/p04_pipeline_recursive_sum.txt
-Your Output: student_output/p04_pipeline_recursive_sum_output.txt

@@ -38,7 +38,7 @@ Due Date: See Webcourses
 #include <stdio.h>
 #include <stdlib.h>
 
-// limits specified in assignment
+// limits from the handout
 #define MAX_TOKENS 5000
 #define MAX_NAMES 200
 #define MAX_IDENT_LEN 12
@@ -50,15 +50,14 @@ Due Date: See Webcourses
 #define VARIABLE 2
 #define PROCEDURE 3
 
-// how a name is being used, decides which kind is allowed
-#define USE_TARGET 1 // assignment target or read: must be a variable (error 16)
-#define USE_CALL 2   // after call: must be a procedure (error 13)
-#define USE_VALUE 3  // inside a factor: constant or variable, a procedure is error 19
+// how a name is used
+#define USE_TARGET 1 // assign/read target: variable (err 16)
+#define USE_CALL 2   // call: procedure (err 13)
+#define USE_VALUE 3  // factor: not a procedure (err 19)
 
-// code array limit
 #define MAX_CODE 200
 
-// OP codes (table 3)
+// ops (table 3)
 #define LIT 1
 #define OPR 2
 #define LOD 3
@@ -69,7 +68,7 @@ Due Date: See Webcourses
 #define JPC 8
 #define SYS 9
 
-// M values of OPR (table 4)
+// opr m values (table 4)
 #define RTN 0
 #define ADD 1
 #define SUB 2
@@ -82,35 +81,27 @@ Due Date: See Webcourses
 #define GTR 9
 #define GEQ 10
 
-// token, nameEntry, tokenType structs copied from lex.c
-// token codes
-// first code of each table is pinned so the rest follow in order
+// token codes, copied from lex.c
 typedef enum{
-    // table 2: open classes
     identsym = 1, numbersym,
 
-    // table 3: special symbols
     plussym = 3, minussym, multsym, slashsym, eqsym, neqsym, lessym, leqsym,
     gtrsym, geqsym, lparentsym, rparentsym, commasym, semicolonsym,
     periodsym, assignsym, initsym,
 
-    // table 4: reserved words
     beginsym = 20, endsym, ifsym, fisym, thensym, whilesym, elihwsym, dosym,
     odsym, oddsym, callsym, constsym, varsym, procsym, writesym, readsym,
     elsesym
 }TokenType;
 
-// one token read from tokens.txt
-// value = name table index for identifiers, unused for everything else
-// lexeme = the digits as written for numbers (007 stays 007), unused for everything else
+// value: name table index for idents
+// lexeme: digits as written, keeps leading zeros
 typedef struct{
     int code;
     int value;
     char lexeme[MAX_IDENT_LEN + 1];
 }Token;
 
-// one name table entry, 12 visible chars + terminator
-// line/col are where the identifier was first seen
 typedef struct{
     char name[MAX_IDENT_LEN + 1];
     int line;
@@ -126,27 +117,25 @@ typedef struct{
     int mark;
 }SymbolEntry;
 
-// one PM/0 instruction
 typedef struct{
     int op;
     int l;
     int m;
 }Instruction;
 
-// global arrays & counts
+// globals
 Token tokens[MAX_TOKENS];
 int tokenCount = 0;
 NameEntry names[MAX_NAMES];
 int nameCount = 0;
-SymbolEntry symbolTable[MAX_SYMBOL_COUNT]; // symbol table and declarations
+SymbolEntry symbolTable[MAX_SYMBOL_COUNT];
 int symbolCount = 0;
-int nextAddress = 3; // 0 to 2 taken by static link, dynamic link, and return address
-int cur = 0; // index of the current token (next one not consumed)
+int nextAddress = 3; // 0-2 are sl, dl, ra
+int cur = 0; // current token index
 Instruction code[MAX_CODE];
-int codeCount = 0; // how many instructions have been emitted so far
+int codeCount = 0;
 
-// printed text of every token code, indexed by code
-// tokens.txt only stores code for symbols & reserved words, this is to get the text back
+// token text by code
 const char *spellings[37] = {
     "", "", "",
     "+", "-", "*", "/", "==", "!=", "<", "<=", ">", ">=", "(", ")", ",", ";", ".", "=", ":=",
@@ -154,7 +143,7 @@ const char *spellings[37] = {
     "call", "const", "var", "procedure", "write", "read", "else"
 };
 
-// error messages copied from table 5, indexed by error number
+// error msgs (table 5)
 const char *errorMessages[21] = {
     "",
     "the program must end with a period, and nothing may follow it",
@@ -179,12 +168,10 @@ const char *errorMessages[21] = {
     "generated code exceeds 200 instructions"
 };
 
-// printed names of the OPs, indexed by OP (table 3)
 const char *opNames[10] = {
     "", "LIT", "OPR", "LOD", "STO", "CAL", "INC", "JMP", "JPC", "SYS"
 };
 
-// printed names of the OPR sub-operations, indexed by M (table 4)
 const char *oprNames[11] = {
     "RTN", "ADD", "SUB", "MUL", "DIV", "EQL", "NEQ", "LSS", "LEQ", "GTR", "GEQ"
 };
@@ -224,26 +211,24 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    // open both files before printing anything
+    // open both files before printing
     FILE *tf = fopen("tokens.txt", "r");
     FILE *nf = fopen("nametable.txt", "r");
     if(!tf || !nf) {
-        // if a file fails to open, close the file that opened
         if(tf) fclose(tf);
         if(nf) fclose(nf);
         fail(18, -1);
     }
 
-    // load files & close them
     loadNames(nf);
     loadTokens(tf);
     fclose(tf);
     fclose(nf);
 
-    // any error inside program() prints the rest of the output and exits
+    // errors exit inside program()
     program();
 
-    // accepted: the three sections, then elf.txt
+    // accepted: print sections, write elf
     printCode();
     printSymbolTable();
     printf("Result:\n\n");
@@ -252,8 +237,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-// reads nametable.txt: index, name, line, column on each line
-// an empty file just leaves nameCount at 0
+// reads nametable.txt: index name line col
 void loadNames(FILE *nf) {
     int idx;
     while(nameCount < MAX_NAMES && fscanf(nf, "%d %s %d %d", &idx, names[nameCount].name, &names[nameCount].line, &names[nameCount].col) == 4) {
@@ -261,19 +245,19 @@ void loadNames(FILE *nf) {
     }
 }
 
-// reads tokens.txt: a lone code, or a code of 1 / 2 followed by a second field
+// reads tokens.txt: code, plus a 2nd field for idents and numbers
 void loadTokens(FILE *tf) {
     while(tokenCount < MAX_TOKENS && fscanf(tf, "%d", &tokens[tokenCount].code) == 1) {
         tokens[tokenCount].value = 0;
         tokens[tokenCount].lexeme[0] = '\0';
 
         if(tokens[tokenCount].code == identsym) {
-            // second field is the name table index
+            // name table index
             if(fscanf(tf, "%d", &tokens[tokenCount].value) != 1) {
                 break;
             }
         } else if(tokens[tokenCount].code == numbersym) {
-            // second field is the digits, read as text so leading zeros survive
+            // digits as text, keeps leading zeros
             if(fscanf(tf, "%s", tokens[tokenCount].lexeme) != 1) {
                 break;
             }
@@ -282,7 +266,7 @@ void loadTokens(FILE *tf) {
     }
 }
 
-// printed text of token i (0 based): the name, the digits, or the spelling from table 2
+// text of token i (0 based)
 const char *tokenText(int i) {
     if(tokens[i].code == identsym) {
         return names[tokens[i].value].name;
@@ -293,14 +277,13 @@ const char *tokenText(int i) {
     return spellings[tokens[i].code];
 }
 
-// filled in with the symbol table phases
 void printSymbolTable(void) {
     printf("Symbol Table:\n\n");
     if(symbolCount > 0){
         printf("entry kind name value level address mark\n");
         for(int i = 0; i < symbolCount; i++){
-            printf("%d ", i); // entry number
-            if(symbolTable[i].kind == CONSTANT){ // kind
+            printf("%d ", i);
+            if(symbolTable[i].kind == CONSTANT){
                 printf("constant ");
             }
             else if(symbolTable[i].kind == VARIABLE){
@@ -309,36 +292,35 @@ void printSymbolTable(void) {
             else{
                 printf("procedure ");
             }
-            printf("%s ", names[symbolTable[i].nameIndex].name); // name
+            printf("%s ", names[symbolTable[i].nameIndex].name);
 
-            // value and address are -1 when they don't apply, printed as a dash
-            if(symbolTable[i].value == -1){ // value
+            // -1 prints as a dash
+            if(symbolTable[i].value == -1){
                 printf("- ");
             }
             else{
                 printf("%d ", symbolTable[i].value);
             }
-            printf("%d ", symbolTable[i].level); // level
-            if(symbolTable[i].address == -1){ // address
+            printf("%d ", symbolTable[i].level);
+            if(symbolTable[i].address == -1){
                 printf("- ");
             }
             else{
                 printf("%d ", symbolTable[i].address);
             }
-            printf("%d\n", symbolTable[i].mark); // mark, ends the row
+            printf("%d\n", symbolTable[i].mark);
         }
         printf("\n");
     }
 }
 
-// prints the Generated Code section: heading, header line, one line per instruction
-// an OPR prints the name of its sub-operation instead of "OPR"
 void printCode(void) {
     printf("Generated Code:\n\n");
     if(codeCount > 0) {
         printf("index address op L M\n");
         for(int k = 0; k < codeCount; k++) {
-            printf("%d %d ", k, 200 + 3 * k); // index and address
+            printf("%d %d ", k, 200 + 3 * k);
+            // opr prints its sub-op name
             if(code[k].op == OPR) {
                 printf("%s ", oprNames[code[k].m]);
             } else {
@@ -350,8 +332,7 @@ void printCode(void) {
     }
 }
 
-// writes elf.txt: OP L M as plain numbers, one instruction per line
-// only called for an accepted program
+// writes elf.txt, numbers only
 void writeElf(void) {
     FILE *elf = fopen("elf.txt", "w");
     if(elf == NULL) {
@@ -363,11 +344,9 @@ void writeElf(void) {
     fclose(elf);
 }
 
-// reports error n and stops
-// i = token index
-// syntax errors pass cur (not consumed),
-// symbol table errors pass cur - 1 (already consumed)
-// i past the last token means "end of tokens", i < 0 means no token
+// reports error n and exits
+// i: token index, cur for syntax errors, cur - 1 for symbol table errors
+// i >= tokenCount: end of tokens, i < 0: no token
 void fail(int n, int i) {
     printf("Generated Code:\n\n");
     printf("Symbol Table:\n\n");
@@ -382,8 +361,7 @@ void fail(int n, int i) {
     exit(1);
 }
 
-// code of the current token, or 0 when the tokens have run out
-// 0 is not a real token code, so comparing against it is always safe
+// current token code, 0 at end of tokens
 int currentCode(void) {
     if(cur >= tokenCount) {
         return 0;
@@ -391,21 +369,19 @@ int currentCode(void) {
     return tokens[cur].code;
 }
 
-// moves on to the next token
 void consume(void) {
     cur++;
 }
 
-// address where the next emitted instruction will go
-// instruction k is loaded at 200 + 3k
+// address of the next instr: 200 + 3k
 int nextCodeAddress(void) {
     return 200 + 3 * codeCount;
 }
 
-// appends an instruction and returns its index, error 20 if the array is full
+// appends an instr, returns its index
 int emit(int op, int l, int m) {
     if(codeCount >= MAX_CODE) {
-        fail(20, -1); // no token for this error
+        fail(20, -1);
     }
     code[codeCount].op = op;
     code[codeCount].l = l;
@@ -414,7 +390,7 @@ int emit(int op, int l, int m) {
     return codeCount - 1;
 }
 
-// sets the M of instruction k to the next address, used for jumps emitted before their target exists
+// sets m of instr k to the next address
 void patch(int k) {
     code[k].m = nextCodeAddress();
 }
@@ -427,7 +403,7 @@ void program(void) {
         fail(1, cur);
     }
     consume();
-    emit(SYS, 0, 3); // halt, after the program's period
+    emit(SYS, 0, 3); // halt
 
     // nothing may follow the period
     if(cur < tokenCount) {
@@ -437,11 +413,11 @@ void program(void) {
 
 // block -> [ const-decl ] [ var-decl ] { proc-decl } statement
 void block(int level) {
-    int start = symbolCount;         // entries from here on belong to this block
-    int savedAddress = nextAddress;  // the enclosing block's next address
-    nextAddress = 3;                 // every block's variables start at 3
+    int start = symbolCount;         // this block's entries start here
+    int savedAddress = nextAddress;  // outer block's next address
+    nextAddress = 3;                 // vars start at 3
 
-    // every block opens with a jump over its procedures, patched once they are done
+    // opening jmp over the procs, patched below
     int jmp = emit(JMP, 0, 0);
 
     if(currentCode() == constsym) {
@@ -454,27 +430,25 @@ void block(int level) {
         procDeclaration(level);
     }
 
-    patch(jmp);                // the opening JMP lands here, on the INC
-    emit(INC, 0, nextAddress); // nextAddress is 3 + this block's variables, constants take no slot
+    patch(jmp);                // jmp lands on the inc
+    emit(INC, 0, nextAddress); // 3 + vars, consts take no slot
 
     statement(level);
 
-    // the block ended: mark only this block's entries
-    // they stay in the table and still count toward the limit, but no lookup finds them
+    // block ended: mark its entries
     for(int i = start; i < symbolCount; i++){
         if(symbolTable[i].level == level && symbolTable[i].mark == 0){
             symbolTable[i].mark = 1;
         }
     }
 
-    nextAddress = savedAddress;      // hand the outer block its value back
+    nextAddress = savedAddress;
 }
 
 // const-decl -> "const" ident ":=" number { "," ident ":=" number } ";"
 void constDeclaration(int level) {
     consume();
 
-    // one pass per ident := number, a comma after the number starts another pass
     while(1) {
         if(currentCode() != identsym) {
             fail(2, cur);
@@ -509,7 +483,7 @@ void constDeclaration(int level) {
 
 // proc-decl -> "procedure" ident ";" block ";"
 void procDeclaration(int level) {
-    consume(); // procedure
+    consume();
 
     if(currentCode() != identsym) {
         fail(2, cur);
@@ -517,50 +491,49 @@ void procDeclaration(int level) {
     consume();
     int nameIndex = tokens[cur - 1].value;
     declarationHelper(nameIndex, level);
-    // entry goes in BEFORE the block is parsed, so the procedure can call itself
-    // value is -1 (a procedure has none), address is -1 until code generation exists
-    insertHelper(PROCEDURE, nameIndex, -1, -1, level);
+    // insert before the block (recursion), address = its opening jmp
+    insertHelper(PROCEDURE, nameIndex, -1, nextCodeAddress(), level);
 
     if(currentCode() != semicolonsym) {
         fail(12, cur);
     }
     consume();
 
-    block(level + 1); // the body is one level deeper
+    block(level + 1); // body is one level deeper
 
     if(currentCode() != semicolonsym) {
         fail(12, cur);
     }
     consume();
+    emit(OPR, 0, RTN); // return after the closing ;
 }
 
+// duplicate check (14), then capacity (17)
 void declarationHelper(int nameIndex, int level){
-    // check for duplicates at this level
-    if(isDuplicate(nameIndex, level)){ // nameIndex is duplicate
+    if(isDuplicate(nameIndex, level)){
         fail(14, cur-1);
     }
 
-    if(symbolCount == MAX_SYMBOL_COUNT){ // symbolCount reached its capacity
+    if(symbolCount == MAX_SYMBOL_COUNT){
         fail(17, cur-1);
     }
 }
 
-// a helper to look up a used identifier and check its kind against how it is used
-// the lookup comes first (15), then the kind check, both at the identifier just consumed
+// lookup (15), then kind check by use
 int lookupHelper(int nameIndex, int use){
     int entry = lookup(nameIndex);
 
-    if(entry == -1){ // nameIndex is not declared
+    if(entry == -1){
         fail(15, cur-1);
     }
 
-    if(use == USE_TARGET && symbolTable[entry].kind != VARIABLE){ // only a variable can be assigned or read
+    if(use == USE_TARGET && symbolTable[entry].kind != VARIABLE){
         fail(16, cur-1);
     }
-    if(use == USE_CALL && symbolTable[entry].kind != PROCEDURE){ // only a procedure can be called
+    if(use == USE_CALL && symbolTable[entry].kind != PROCEDURE){
         fail(13, cur-1);
     }
-    if(use == USE_VALUE && symbolTable[entry].kind == PROCEDURE){ // a procedure has no value
+    if(use == USE_VALUE && symbolTable[entry].kind == PROCEDURE){
         fail(19, cur-1);
     }
 
@@ -597,15 +570,14 @@ void varDeclaration(int level) {
 }
 
 // statement -> [ ident "=" expression | "call" ident | "begin" ... | "if" ... | "while" ... | "read" ident | "write" expression ]
-// the first token picks the alternative, any other token is the empty statement
 void statement(int level) {
     int firstCode = currentCode();
 
     if(firstCode == identsym) {
         consume();
-        // lookup and kind check come before the = check
+        // lookup before checking =
         int nameIndex = tokens[cur - 1].value;
-        int entry = lookupHelper(nameIndex, USE_TARGET); // keep it, STO needs it after the expression
+        int entry = lookupHelper(nameIndex, USE_TARGET); // sto needs it after the expression
 
         if(currentCode() != assignsym) {
             fail(5, cur);
@@ -627,42 +599,42 @@ void statement(int level) {
             fail(7, cur);
         }
         consume();
-        int jpc = emit(JPC, 0, 0); // jumps over the then list when the condition is 0, target not known yet
+        int jpc = emit(JPC, 0, 0); // skips then list when false, patched later
         statementList(level);
 
         if(currentCode() == elsesym) {
-            int jmp = emit(JMP, 0, 0); // ends the then list by jumping over the else list
-            patch(jpc);                // emitted first so the JPC lands after this JMP, on the else list
+            int jmp = emit(JMP, 0, 0); // skips the else list
+            patch(jpc);                // after the jmp, so jpc lands on else
             consume();
             statementList(level);
             if(currentCode() != fisym) {
                 fail(8, cur);
             }
             consume();
-            patch(jmp);                // the JMP lands right after the else list
+            patch(jmp);                // lands after else list
         } else {
             if(currentCode() != fisym) {
                 fail(8, cur);
             }
             consume();
-            patch(jpc);                // the JPC lands right after the then list
+            patch(jpc);                // lands after then list
         }
     } else if(firstCode == whilesym) {
         consume();
-        int loopStart = nextCodeAddress(); // W: saved BEFORE the condition emits anything
+        int loopStart = nextCodeAddress(); // saved before the condition emits
         condition(level);
         if(currentCode() != thensym) {
             fail(7, cur);
         }
         consume();
-        int jpc = emit(JPC, 0, 0); // leaves the loop when the condition is 0, target not known yet
+        int jpc = emit(JPC, 0, 0); // exits when false, patched later
         statementList(level);
         if(currentCode() != elihwsym) {
             fail(8, cur);
         }
         consume();
-        emit(JMP, 0, loopStart);   // back to re-test the condition, emitted BEFORE the patch
-        patch(jpc);                // the exit lands right after the backward jump
+        emit(JMP, 0, loopStart);   // back to the condition, before the patch
+        patch(jpc);                // exit lands after the jmp
     } else if(firstCode == readsym) {
         consume();
         if(currentCode() != identsym) {
@@ -671,22 +643,23 @@ void statement(int level) {
         consume();
         int nameIndex = tokens[cur - 1].value;
         int entry = lookupHelper(nameIndex, USE_TARGET);
-        emit(SYS, 0, 2); // read an integer, it lands on the stack
+        emit(SYS, 0, 2);
         emit(STO, level - symbolTable[entry].level, symbolTable[entry].address);
     } else if(firstCode == writesym) {
         consume();
         expression(level);
-        emit(SYS, 0, 1); // print the value the expression left on the stack
+        emit(SYS, 0, 1);
     } else if(firstCode == callsym) {
         consume();
         if(currentCode() != identsym) {
-            fail(2, cur); // call must be followed by an identifier
+            fail(2, cur);
         }
         consume();
         int nameIndex = tokens[cur - 1].value;
-        lookupHelper(nameIndex, USE_CALL);
+        int entry = lookupHelper(nameIndex, USE_CALL);
+        emit(CAL, level - symbolTable[entry].level, symbolTable[entry].address);
     }
-    // anything else: empty statement, consume nothing
+    // anything else: empty statement
 }
 
 // statement-list -> statement { ";" statement }
@@ -702,16 +675,15 @@ void statementList(int level) {
 void condition(int level) {
     expression(level);
 
-    // the six relational codes are in a row (eqsym to geqsym)
-    // currentCode() is 0 at end of tokens, so that case lands in the error too
+    // relational codes are consecutive (eqsym..geqsym)
     if(currentCode() < eqsym || currentCode() > geqsym) {
         fail(9, cur);
     }
-    int op = currentCode(); // save it, consume moves on
+    int op = currentCode();
     consume();
     expression(level);
 
-    // eqsym..geqsym and EQL..GEQ are in the same order, so the offset carries over
+    // eqsym..geqsym and eql..geq share the same order
     emit(OPR, 0, EQL + (op - eqsym));
 }
 
@@ -726,7 +698,7 @@ void expression(int level) {
         consume();
     }
 
-    // a leading minus is 0 - term: LIT 0 0 first, SUB right after the first term
+    // leading minus is 0 - term
     if(negate) {
         emit(LIT, 0, 0);
     }
@@ -736,7 +708,7 @@ void expression(int level) {
     }
 
     while(currentCode() == plussym || currentCode() == minussym) {
-        int op = currentCode(); // save it, consume moves on
+        int op = currentCode();
         consume();
         term(level);
         if(op == plussym) {
@@ -767,9 +739,9 @@ void factor(int level) {
     if(currentCode() == identsym) {
         consume();
         int nameIndex = tokens[cur - 1].value;
-        int entry = lookupHelper(nameIndex, USE_VALUE); // a constant or a variable
+        int entry = lookupHelper(nameIndex, USE_VALUE);
         if(symbolTable[entry].kind == CONSTANT) {
-            emit(LIT, 0, symbolTable[entry].value); // constants take no slot, the value is the code
+            emit(LIT, 0, symbolTable[entry].value); // consts are lit values
         } else {
             emit(LOD, level - symbolTable[entry].level, symbolTable[entry].address);
         }
@@ -788,19 +760,19 @@ void factor(int level) {
     }
 }
 
-// duplicate only means an unmarked entry with this name at the SAME level
-// the same name at another level is allowed: the new entry shadows it
+// duplicate: unmarked entry, same name, same level
+// other levels are shadowed, not duplicates
 int isDuplicate(int nameTableIndex, int level){
     for(int i = 0; i < symbolCount; i++){
         if(symbolTable[i].nameIndex == nameTableIndex && symbolTable[i].level == level && symbolTable[i].mark == 0){
-            return 1; // duplicate
+            return 1;
         }
     }
 
-    return 0; // not duplicate
+    return 0;
 }
 
-// newest to oldest, any level, first unmarked match
+// newest to oldest, first unmarked match
 int lookup(int nameTableIndex){
     for(int i = symbolCount - 1; i >= 0; i--){
         if(symbolTable[i].nameIndex == nameTableIndex && symbolTable[i].mark == 0){
@@ -808,7 +780,7 @@ int lookup(int nameTableIndex){
         }
     }
 
-    return -1; // nothing is matched
+    return -1;
 }
 
 void insertHelper(int kind, int nameIndex, int value, int address, int level){
@@ -820,7 +792,7 @@ void insertHelper(int kind, int nameIndex, int value, int address, int level){
     symbolTable[symbolCount].mark = 0;
 
     if(kind == VARIABLE)
-        nextAddress++; // variables use a slot, constants don't
+        nextAddress++; // vars take a slot, consts don't
 
     symbolCount++;
 }
